@@ -1,0 +1,358 @@
+@@ -0,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to main index</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">Reference screens version:1 to support JIRA&nbsp;stories</h1>
+
+        <h1 class="govuk-heading-m">MVP service</h1>
+        <a href="/mvp/intro-question" class="govuk-button govuk-button">View MVP service</a>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h3 class="govuk-heading-s">User screen flows</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/public/pdfs/pip-eligibility-mvp-nov2021.pdf" class="govuk-link">MVP screen flow</a>
+            </li>
+            <li><a href="/public/pdfs/sign-in-for-pip-apply-private-beta.pdf" class="govuk-link">User 'Sign in' screen flow</a>
+            </li>
+            <li><a href="/public/pdfs/pip-apply-sign-in-locked-account.pdf" class="govuk-link">User forgets password and account locked screen flow</a>
+            </li>
+            <li><a href="/public/pdfs/pip-eligibility-sign-out-flow.pdf" class="govuk-link">User 'Save and sign out' screen flow</a>
+            </li>
+        </ul>
+
+        <h3 class="govuk-heading-s">Screens for Comms sign off</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/public/pdfs/pip-eligibility-mvp-stakeholder-screen-sign-off-v1.pdf" class="govuk-link">Reference for screen sign off-v1</a>
+            </li>
+            <li><a href="/public/pdfs/pip-eligibility-mvp-stakeholder-screen-sign-off-v2.pdf" class="govuk-link">Reference for screen sign off-v2</a>
+            </li>
+            <li><a href="/public/pdfs/pip-eligibility-mvp-stakeholder-screen-sign-off-v3.pdf" class="govuk-link">Reference for screen review - v3 (includes changes from 2nd stakeholder review)</a>
+            </li>
+            <li><a href="/public/pdfs/pip-eligibility-mvp-stakeholder-screen-sign-off-v4.pdf" class="govuk-link">Reference for screen review - v4 (includes changes from Customer Comms SRO review)</a>
+            </li>  
+          </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Screens for reference</h2>
+
+        <h2 class="govuk-heading-s">Landing page</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/intro-question">Have you used the PIP Apply service before?</a>
+                <ul>
+                    <li><a href="mvp/validation/eligibility/intro-question">Validation messages</a></li>
+                </ul>
+            </li>
+        </ul>
+
+       <!--  <h2 class="govuk-heading-s">Eligibility</h2>
+        <ul class="govuk-list govuk-list--bullet">
+
+            <li><a href="/mvp/eligibility-start">Eligibility start page</a>
+
+            </li>
+            <li><a href="/mvp/over-16">How old are you?</a>
+                <ul>
+                    <li><a href="/mvp/validation/eligibility/over-16">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/over-spa">Over state pension age</a>
+                <ul>
+                    <li><a href="/mvp/validation/eligibility/over-spa">Validation message</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/health-condition">Do you have a health condition?</a>
+                <ul>
+                    <li><a href="/mvp/validation/eligibility/health-condition">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/over-9-months">Will the condition last more than 9 months?</a>
+                <ul>
+                    <li><a href="/mvp/validation/eligibility/over-9-months">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/eligible">Eligible</a>
+
+            </li>
+            <li><a href="/mvp/not-eligible">Not eligible</a>
+
+            </li>
+        </ul> -->
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Authenticate and register</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/signed-in">Signed in</a>
+            </li>
+            <li><a href="/mvp/start">Start screen</a>
+            </li>
+            <li><a href="/mvp/signed-out">Signed out</a>
+            </li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Additional Support</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/add-support-communicating">Additional Support - communicating</a>
+                <ul>
+                    <li><a href="/mvp/validation/additional_support/add-support-communicating">Validation messages</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/mvp/add-support">Additional Support - help to fill in forms and understand letters</a>
+                <ul>
+                    <li><a href="/mvp/validation/additional_support/add-support">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/add-support-help">Additional Support - is someone helping you?</a>
+                <ul>
+                    <li><a href="/mvp/validation/additional_support/add-support-help">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/add-support-help">Additional Support - name of person helping</a>
+                <ul>
+                    <li><a href="/mvp/validation/additional_support/add-support-name">Validation messages</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Personal details</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/name">Your name</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/name">Validation messages: empty fields</a></li>
+                    <li><a href="/mvp/validation/personal_details/name-length">Validation messages: character limit</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/nino">Your National Insurance number</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/nino">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/date-of-birth">What is your date of birth?</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/date-of-birth">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/address">Your address</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/address">Validation messages</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/address">Validation messages: character limits</a></li>
+                </ul>
+            </li>
+            <li><a href="mvp/address-other">Alternative safe address</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/address-other">Validation messages</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/address-other">Validation messages: character limits</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/contact-details">Your contact details</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/contact-details">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/alt-format-braille">Alternative formats - Braille</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/alt-format-braille">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/alt-format-sign-language">Alternative formats - Sign language</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/alt-format-sign-language">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/alt-format-audio">Alternative formats - Audio</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/alt-format-audio">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/alt-format-paper">Alternative formats - Paper and other formats</a>
+                <ul>
+                    <li><a href="/mvp/validation/personal_details/alt-format-paper">Validation messages</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Residence and presence</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/nationality">What is your nationality?</a>
+                <ul>
+                    <li><a href="/mvp/validation/res_and_pres/nationality">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/living-in-uk">Did you start living in the UK before 1st January 2021?</a>
+                <ul>
+                    <li><a href="/mvp/validation/res_and_pres/living-in-uk">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/living-in-gb">Have you been in the UK for 2 of the last 3 years</a>
+                <ul>
+                    <li><a href="/mvp/validation/res_and_pres/living-in-gb">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/eu-question">Do you or a family get and payments from an EU country?</a>
+                <ul>
+                    <li><a href="/mvp/validation/res_and_pres/eu-question">Validation messages</a></li>
+                </ul>
+            </li>
+            <!-- <li><a href="/mvp/add-support-help">Additional Support - is someone helping you?</a>
+                <ul>
+                    <li><a href="/mvp/validation/additional_support/add-support-help">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/add-support-help">Additional Support - name of person helping</a>
+                <ul>
+                    <li><a href="/mvp/validation/additional_support/add-support-name">Validation messages</a></li>
+                </ul>
+            </li> -->
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">About your health</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/about_your_health/condition-new-2">Health condition</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/condition-new-2">Validation messages</a></li>
+                </ul>
+            </li>
+            <!-- <li><a href="/mvp/about_your_health/condition-new-2-detail">Health condition details</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/condition-new-2-detail">Validation message</a></li>
+                </ul>
+            </li> -->
+            <li><a href="/mvp/about_your_health/hcp-question">Consent for DWP to contact health professionals</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/hcp-question">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/about_your_health/consent">Consent for HCP to share info</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/consent">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/about_your_health/hcp-1.html">Health Professionals details</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/hcp-1">Validation messages</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/mvp/about_your_health/hcp-another">Are there any other health professionals we can
+                    contact?</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/hcp-another">Validation messages</a></li>
+                </ul>
+            </li>
+
+
+            <li><a href="/mvp/in-hospital">Are you currently in hospital, a hospice, or other accommodation?</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/in-hospital">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/hospital-admission">Hospital admission date</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/hospital-admission">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/hospital-address">Hospital address</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/hospital-address">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/hospice-admission">Hospice admission date</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/hospice-admission">Validation messages</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/mvp/hospice-address">Hospice address</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/hospice-address">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/care-home-admission">Care home or other accommodation admission date</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/care-home-admission">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/mvp/care-home-address">Care Home or other accommodation address</a>
+                <ul>
+                    <li><a href="/mvp/validation/about_your_health/care-home-address">Validation messages</a></li>
+                </ul>
+            </li>
+
+        </ul>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Check answers and form submission</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/check-answers">Check your answers</a>
+                <!-- <ul>
+                    <li><a href="/mvp/remove-hcp-confirmation">Confirm to remove a  Health Professional question</a>
+                    <li><a href="#">Validation message</a>
+                </ul> -->
+        </ul>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/confirmation">Submission confirmation</a>
+        </ul>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Other screens</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/info/accessibility">Accessibility statement</a>
+            <li><a href="/mvp/info/cookies">Cookies message</a>
+            <li><a href="/mvp/info/cookies-details">Cookies details</a>
+            <li><a href="/mvp/error-generic">PIP1 submission error page</a>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <!-- Note: motability page removed from MVP -->
+
+        <!-- <h2 class="govuk-heading-s">Motability</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/mvp/motability-scheme">Consent to receive Motability Scheme info</a>
+                <ul>
+                    <li><a href="/mvp/validation/motability/motability-scheme">Validation messages</a>
+                </ul>
+            </li>
+        </ul>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+
+
+    </div> <!-- govuk-column-full-->
+</div> <!-- govuk-grid row -->
+{% endblock %}

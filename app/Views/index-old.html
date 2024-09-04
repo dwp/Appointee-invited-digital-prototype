@@ -1,0 +1,489 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h1 class="govuk-heading-l">Apply for Personal Independent Payment digital service</h1>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#prototype">
+                        Prototypes for user testing
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#mvp">
+                        Reference files for Jira stories
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#live">
+                        PIP Apply live journey
+                    </a>
+                </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="prototype">
+                <h2 class="govuk-heading-l">Prototypes for starting the PIP application journey</h2>
+                <p>
+                    These prototypes are experimental pages testing hypothesis and designs for claimants who are
+                    starting their PIP
+                    application journey.
+                </p>
+
+                  <p><a href="/PIP1/eligibility/eligibility-intro2">Eligibility & Online Check</a></p>
+                  <p><a href="/PIP1/eligibility/srel/eligibility-start">SREL v1</a></p>
+                  <p><a href="/PIP1/eligibility/srel/special-rules">SREL v2</a></p>
+                  <p><a href="/PIP2/tasklist">PIP2</a></p>
+
+                  
+                <h2 class="govuk-heading-m">Variant journeys</h2>
+                <p><b>December 2022</b></p>
+                <p>Addtional support flag in 'Help with applying' triggering 'Your health' section</p>
+                <p>Conditions being collected in PIP1 for additional support claimants</p>
+                <p>Removing Condition and HCP questions from 'default' journey</p>
+                <p>Moving 'Do you need communications in another format' questions to 'Help with applying' section</p>
+                <p>Moving 'Are you currently staying...' questions to 'Personal details'</p>
+                <p>Updated additional support questions with experimental content for testing</p>
+                <p><a href="/v14/as-list-1">Status tag for adding more conditions (additional support) V1</a></p>
+                <p><a href="/v14/as-list-2">Status tag for adding more conditions (additional support) V2</a></p>
+                <p><a href="/v14/additional-support/start">Current day additional support questions</a></p>
+                <a href="/v14/intro-question" class="govuk-button govuk-button">View</a>
+
+                <h2 class="govuk-heading-m">Version 13</h2>
+                <p><b>Version 13: November 2022</b></p>
+                <p>Addition of Bank Details & Motability Scheme </p>
+                <p><a href="/v13/additional-support-conditions-PIP2/list-1">Ability to add more conditions into PIP2 if needed (additional support)</a></p>
+                <p>2FA content updates</p>
+
+                <a href="/old-prototype/v13/intro-question" class="govuk-button govuk-button">View version 13</a>
+
+                <h2 class="govuk-heading-m">Version 12</h2>
+                <p>Version 12: August 2022</p>
+
+                <a href="/v12/intro-question" class="govuk-button govuk-button">View version 12</a>
+
+                <h2 class="govuk-heading-m">User testing 3 November 2022</h2>
+                <p><b>Version 1</b></p>
+                <a href="/v12/intro-question" class="govuk-button govuk-button">View</a>
+
+                <p><b>Version 2</b></p>
+                <a href="/v12v2/intro-question" class="govuk-button govuk-button">View</a>
+
+                <h2 class="govuk-heading-m">Conditions questions</h2>
+                <p><b>August 2022 -</b> <br> <b>Option 1: Capture all conditions in PIP2, but not in PIP1 journey.</b></p>
+                <a href="/v12/condition-questions/list-1" class="govuk-button govuk-button">View</a>
+                <p><br> <b>Option 1a: Medication, treatments and side effects pages</b></p>
+                <a href="/v12/condition-questions/option-three/list-1" class="govuk-button govuk-button">View</a>
+                <p><br> <b>Option 1b: Medication, treatments and side effects pages (iteration linking conditions)</b></p>
+                <a href="/v12/condition-questions/option-four/list-1" class="govuk-button govuk-button">View</a>
+                <p><br> <b>Option 1c: Undiagnosed conditions - Test 1 (iteration to include undiagnosed and unknown name conditions)</b></p>
+                <a href="/v12/condition-questions/option-five/list-1" class="govuk-button govuk-button">View</a>
+                <p><br> <b>Option 1d: Undiagnosed conditions - Test 2 (iteration to include undiagnosed and unknown name conditions)</b></p>
+                <a href="/v12/condition-questions/option-six/list-1" class="govuk-button govuk-button">View</a>
+                 <!--<p><br> <b>Option 2:</b></p>
+                <a href="/v12/condition-questions/option-two/condition" class="govuk-button govuk-button">View</a>-->
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">ID verification journeys</h2>
+                <p><b>January 2023 -</b><br><b>Option F v1:</b> We are testing the user journey for Option F (DTH OIDV after PIP2). We will skip most of the PIP1 and PIP2 questions and ask participants to sign out after they submit the PIP2. We will be testing the new sign back in page.</p>
+                <a href="/id-verification/optionf-v1/" class="govuk-button govuk-button">Option F prototype</a>
+
+                <p><b>December 2022 -</b><br><b>Version 5:</b> We are testing the user journey for Option F (DTH OIDV after PIP2). We will skip most of the PIP1 and PIP2 questions and ask participants to sign out after they submit the PIP2. We will be testing the new sign back in page.</p>
+                <a href="/id-verification/v5/" class="govuk-button govuk-button">View version 5</a>
+
+                <p><b>October 2022 -</b><br><b>Version 4:</b> We are using the DTH ID verification journey after PIP2. We will skip most of the PIP1 and PIP2 questions but include bank details and motability in PIP2.</p>
+                <a href="/id-verification/v4/" class="govuk-button govuk-button">View version 4</a>
+
+                <p><b>September 2022 -</b><br><b>Version 3:</b> We are using the DTH ID verification journey with KBV uplift. We extended the PIP2 so it includes PIP1 and the ID&V part.</p>
+                <a href="/id-verification/v3/" class="govuk-button govuk-button">View version 3</a>
+
+                <p><b>Version 2:</b> We are using the DTH ID verification journey after the user completes PIP1 and PIP2</p>
+                <a href="/id-verification/v2/" class="govuk-button govuk-button">View version 2</a>
+
+                <p><b>August 2022 -</b><br><b>Version 1:</b> We are using the DTH ID verification journey before PIP1</p>
+                <a href="/id-verification/v1/" class="govuk-button govuk-button">View version 1</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+                <h2 class="govuk-heading-m">Design Sprint - Additional Support</h2>
+                <p><b>August 2022: </b>Start of additonal support journey</p>
+                <a href="/additional_support/start" class="govuk-button govuk-button">View</a>
+                <!-- <p><b>August 2022: </b>Black Navigation</p>
+                <a href="/design-sprint/black-nav-template" class="govuk-button govuk-button">View</a> -->
+                <!-- <p>Grey Navigation</p>
+                <a href="/design-sprint/grey-nav-template" class="govuk-button govuk-button">View</a>
+                <p>Info page</p>
+                <a href="/design-sprint/info-page" class="govuk-button govuk-button">View</a> -->
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+                <h2 class="govuk-heading-m">Experimental designs</h2>
+                <p><b>June 2022 -</b> <br> <b>Scenario 1:</b> One idea that offers an alternative to the tasklist pattern. (Doesn't have checkbox for 'aids and adaptations')</p>
+                <a href="/experimental/v2" class="govuk-button govuk-button">View</a>
+
+                <p><b>Scenario 1-1:</b> One idea that offers an alternative to the tasklist pattern. (includes checkbox for aids and adaptations)</p>
+                <a href="/experimental/alternative_tasklist_idea_1_1/confirmation" class="govuk-button govuk-button">View</a>
+
+                <p>April 2022</p>
+                <p>Presenting the Health Questionnaire in a linear journey</p>
+
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="#" class="govuk-link">linear journey screen flow (to follow)</a>
+                    </li>
+                </ul>
+                <a href="/experimental/linear_journey/confirmation" class="govuk-button govuk-button">View linear journey for health questionnaire</a>
+
+                <a href="/experimental/v11/start" class="govuk-button govuk-button">View full application journey - PIP1 regisatration and linear journey for health questionnaire</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 11</h2>
+                <p>Version 11: 7 December 2021</p>
+                <p>Removing the Alternative Formats question from Contact Details screen</p>
+                <p>Removing conditional reveals from questions: Alternative formats and Nationality</p>
+                <p>Splitting out the 'Paper' and 'Other' alternative formats into seperate flows</p>
+                <p>Removing the Health Condition question from the first part of the application - PIP1</p>
+                <p>Splitting out Check Your Answers into 4 screens, so that they follow each question section (Additional Support, Personal Details, Residence and Presence and About Your Health</p>
+                <p>Testing a the 'Save and sign out' returning user journey</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="#" class="govuk-link">V-11 screen flow (to follow)</a>
+                    </li>
+                </ul>
+                <a href="/v11/intro-question" class="govuk-button govuk-button">View version 11</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 10</h2>
+                <p>Version 10: 18th October 2021</p>
+                <p>Removing the eligibility questions from the flow - MVP decision</p>
+                <p>Adding further information for Additional Support screens - detail reveal</p>
+                <p>Restricitng users to only enter 1 health condition, removing the 'add another' feature button - MVP decision</p>
+                <p>Check your answers. New styled screen to summarise the users answers only. The new screen does not have edit/change links to make changes - MVP decision</p>
+                <p>Passing the Health Professionals data from the first part of the form (PIP1) to the second part (PIP2)</p>
+                <p>Creating a new flow of screens in the PIP2 for Health Professionals details</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v10-oct2021.pdf" class="govuk-link">V-10 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v10/intro-question" class="govuk-button govuk-button">View version 10</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <h2 class="govuk-heading-m">Version 9</h2>
+                <p>Version 9: 9th September 2021</p>
+                <p>Adding the eligiblity question flow back into the service</p>
+                <p class="govuk-body">Includes:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Eligibility start page</li>
+                    <li>Age and health condition eligibility questions</li>
+                    <li>Not eligible screen</li>
+                    <li>Eligible screen</li>
+                </ul>
+                <p>Adding a new service landing page, giving the option of 'New' or 'Existing' user</p>
+                <p>Splitting out 'Alternative formats' question from 'Contact details' screen</p>
+                <p>Adding SMS text updates opt in/out to 'Contact details' screen</p>
+                <p>Content changes to; welcome email, confiramtion screen, alternative formats screens</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v9-sep2021.pdf" class="govuk-link">V-9 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v9/intro-question" class="govuk-button govuk-button">View version 9</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 8</h2>
+                <p>Version 7: 21st July 2021</p>
+                <p>Iterations from UR sessions July (v7)</p>
+                <p>Adding 'Start' page after registration</p>
+                <p>Adding hospital and care home admission screens</p>
+                <p>Removing 'We need to get in touch' screen, changing routing to allow users to continue their
+                    application</p>
+                <p>Adding country slector to address page</p>
+                <p>Updating 'Contact details' page</p>
+                <p>Adding alternative formats pages for braille, Sign Language, audio and other paper formats</p>
+                <p>Moving the position of the call to action button on Confirmation screen</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v8-jul2021.pdf" class="govuk-link">V-8 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/p5/sign-in/intro-question" class="govuk-button govuk-button">View version 8</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 7</h2>
+                <p>Version 7: 8th July 2021</p>
+                <p>Iterations from UR sessions June (v6)</p>
+                <p>Change the 'Sign out' link to a button and the label to "Save and sign out"</p>
+                <p>Changing the EAA benfits, pensions and insurance question to one page with check boxes</p>
+                <p>Adding a 'Consent' screen for contacting health professionals</p>
+                <p>Adding a 'Motability' question to flow</p>
+                <p>Moving the CTA button on 'Confirmation' screen to a more prominent position for users</p>
+                <p>Routing Complex Cases back into the service so the users can complete further health details
+                    questionnaire</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v7-jul2021.pdf" class="govuk-link">V-7 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v7/gov-uk-eligibility" class="govuk-button govuk-button">View version 7</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 6</h2>
+                <p>Version 6: 24th June 2021</p>
+                <p>Iterations from UR sessions June (v5)</p>
+                <p>Joining up the PIP Starting (PIP1) with the health questionnaire (PIP2)</p>
+                <p>Testing alternative 'sign out' link position</p>
+                <p>Changing flow of questions: Eligibility, sign in, assisted support, personal details, residence and
+                    presence, health questions</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v6-jun2021.pdf" class="govuk-link">V-6 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v6/gov-uk-eligibility" class="govuk-button govuk-button">View version 6</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 5</h2>
+                <p>Version 5: 2nd June 2021</p>
+                <p>Iterations from UR sessions in May (v4)</p>
+                <p>Adding further question to determine residency and presence of the claimant</p>
+                <p>Routing exportability (complex cases) to the end of the question flow</p>
+                <p>New pattern for health conditions - add another</p>
+                <p>Adding health professional data capture</p>
+                <p>Removing full IDV check and using register and authentication for the service</p>
+                <p>Adding back personal details questions - name, dob, nino</p>
+                <p>Adding confirmation of signed in page</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v5-jun2021.pdf" class="govuk-link">V-5 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v5/gov-uk-eligibility" class="govuk-button govuk-button">View version 5</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+                <h2 class="govuk-heading-m">Version 4</h2>
+                <p>Version 4: 12 May 2021</p>
+                <p>Iterations as per v3b</p>
+                <p>Added residency and presence questions</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v4-may2021.pdf" class="govuk-link">V-4 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v4/gov-uk-eligibility" class="govuk-button govuk-button">View version 4</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 3b</h2>
+                <p>Version 3b: 28 April 2021</p>
+                <p>Iterations as per v3</p>
+                <p>Added identity verification journey at the end of eligiblity check screens</p>
+                <p>Demonstrating the 'Save and return' feature</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v3b-apr2021.pdf" class="govuk-link">V-3b screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v3b/gov-uk-eligibility" class="govuk-button govuk-button">View version 3b</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 3</h2>
+                <p>Version 3: 28 April 2021</p>
+                <p>Iterations based on UR sessions on 22 and 23 Apr 2021</p>
+                <p>Added condition examples e.g. for mental and neurological conditions</p>
+                <p>Switched the order of the additional support questions </p>
+                <p>Added identity verification journey to the end of the full data capture</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v3-apr2021.pdf" class="govuk-link">V-3 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v3/gov-uk-eligibility" class="govuk-button govuk-button">View version 3</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Testing IDV</h2>
+                <p>Version 2 for IDV testing April 2021</p>
+                <p>Testing the IDV service for PIP users</p>
+                <a href="/v2idv/" class="govuk-button govuk-button">View version 2</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 2b</h2>
+                <p>Version 2a April 2021</p>
+                <p>Change the flow of questions</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v2b-apr2021.pdf" class="govuk-link">V-2b screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v2b/gov-uk-eligibility" class="govuk-button govuk-button">View version 2b</a>
+
+                <h2 class="govuk-heading-m">Version 2a</h2>
+                <p>Version 2a April 2021</p>
+                <p>Iterations based on UR sessions 8th - 9th April 2021</p>
+                <p>Content changes for clearer question understanding</p>
+                <p>Adding GOV UK PIP eligiblity page</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v2a-apr2021.pdf" class="govuk-link">V-2a screen flow</a>
+                    </li>
+                </ul>
+                <p>Adding Additional Support question flow and capturing health conditions</p>
+                <a href="/v2a/gov-uk-eligibility" class="govuk-button govuk-button">View version 2a</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 2</h2>
+                <p>Version 2 March 2021</p>
+                <p>Iterations based on UR sessions 25th - 26th March 2021</p>
+                <p>Content updates providing clearer messaging</p>
+                <p>Changes to the not eligible screen</p>
+                <p>Used for UR on 8th - 9th April 2021</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v2-mar2021.pdf" class="govuk-link">V-2 screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v2/" class="govuk-button govuk-button">View version 2</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 1c</h2>
+                <p>Version 1c March 2021</p>
+                <p>New content for questions and Start page</p>
+                <p>Contains one single not eligible page based on users answers</p>
+                <p>Includes more complex flow for DWP contacting the user</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v1c-mar2021.pdf" class="govuk-link">V-1c screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v1c/" class="govuk-button govuk-button">View version 1c</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 1b</h2>
+
+                <p>Version 1b March 2021</p>
+                <p>New content for questions and Start page</p>
+                <p>Contains individual not eligible pages in the question flow</p>
+                <p>Includes more complex flow for DWP contacting the user</p>
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v1b-mar2021.pdf" class="govuk-link">V-1b screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v1b/" class="govuk-button govuk-button">View version 1b</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 1a</h2>
+                <p>Version 1a March 2021</p>
+
+                <p>First version of eligiblity flow questions</p>
+
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-v1a-mar2021.pdf" class="govuk-link">V-1a screen flow</a>
+                    </li>
+                </ul>
+                <a href="/v1a/" class="govuk-button govuk-button">View version 1a</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 0.2</h2>
+                <p>Version 0.2 January 2021</p>
+
+                <p>Changing the not eligible pages to display for each answer not meeting criteria.</p>
+                <p>Removing the eligible page.</p>
+                <a href="/v0-2/start" class="govuk-button govuk-button">View version 0.2</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Version 0.1</h2>
+                <p>Version 0.1 January 2021</p>
+
+                <p>Iteration of the proof of concept based on research findings and insight.</p>
+                <a href="/v0-1/start" class="govuk-button govuk-button">View version 0.1</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Proof of concept</h2>
+                <h3 class="govuk-heading-s">User screen flow</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-poc-jan2021.pdf" class="govuk-link">Proof of concept
+                            screen flow</a></li>
+                </ul>
+                <p>Proof of concept for User Research January 2021</p>
+                <p>Tested with third party organisations who support citizens with PIP applications</p>
+                <a href="/old-prototype/poc/start" class="govuk-button govuk-button">View proof of concept</a>
+
+
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mvp">
+                <h2 class="govuk-heading-l">Reference files</h2>
+
+                <h2 class="govuk-heading-m">PIP Apply version 1.1 - changes for this iteration:</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Removing all 'conditional reveals' from the Registration (PIP1) part of the aplpication - waiting to be developed</li>
+                    <li>Changes to the Alternative formats screens - waiting to be developed</li>
+                    <li>Changes to the Residence and Presence screens - waiting to be developed</li>
+                    <li>Splitting out Check Your Answers and creating edit links - waiting to be developed</li>
+                </ul>
+
+                <p>Reference screens</p>
+                <a href="index-v1-1" class="govuk-button govuk-button">View PIP Apply v1.1</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">MVP revision 1 - content changes from stakeholder review</h2>
+                <p>Reference screens for MVP</p>
+                <a href="index-mvp-rev-1" class="govuk-button govuk-button">View MVP rev 1 screens</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">MVP</h2>
+                <p>Reference screens for MVP</p>
+                <a href="index-mvp" class="govuk-button govuk-button">View MVP screens</a>
+            </div>
+
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="live">
+                <h2 class="govuk-heading-l">PIP Apply live journey</h2>
+
+                <a href="index-live-v1-0" class="govuk-button govuk-button--secondary">View PIP Apply v1.0</a>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/full-pip-apply-journey-jan-2022.pdf" class="govuk-link">PIP Apply live service screen flow</a></li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            </div>
+        </div> <!-- govuk-tabs -->
+
+    </div> <!-- govuk-grid-column-full -->
+</div> <!-- govuk-grid-row -->
+
+
+
+{% endblock %}

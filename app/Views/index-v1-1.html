@@ -1,0 +1,428 @@
+@@ -0,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to main index</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">Reference screens to support JIRA&nbsp;stories: v1.1</h1>
+
+
+        <a href="/pip1-v1-1/intro-question" class="govuk-button govuk-button">View PIP Apply version 1.1</a>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h3 class="govuk-heading-s">User screen flows</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/public/pdfs/full-pip-apply-journey-apr-2022.pdf" class="govuk-link">Version 1.1 screen flow</a>
+            </li>
+            <li><a href="/public/pdfs/sign-in-for-pip-apply-private-beta.pdf" class="govuk-link">User 'Sign in' screen flow</a>
+            </li>
+            <li><a href="/public/pdfs/pip-apply-sign-in-locked-account.pdf" class="govuk-link">User forgets password and account locked screen flow</a>
+            </li>
+            <li><a href="/public/pdfs/pip-eligibility-sign-out-flow-july-2022.pdf" class="govuk-link">User 'Save and sign out' screen flow</a>
+            </li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Screens for reference</h2>
+
+        <h2 class="govuk-heading-s">Landing page</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/intro-question">Have you used the PIP Apply service before?</a>
+                <ul>
+                    <li><a href="pip1-v1-1/validation/eligibility/intro-question">Validation messages</a></li>
+                </ul>
+            </li>
+        </ul>
+
+       <!--  <h2 class="govuk-heading-s">Eligibility</h2>
+        <ul class="govuk-list govuk-list--bullet">
+
+            <li><a href="/pip1-v1-1/eligibility-start">Eligibility start page</a>
+
+            </li>
+            <li><a href="/pip1-v1-1/over-16">How old are you?</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/eligibility/over-16">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/over-spa">Over state pension age</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/eligibility/over-spa">Validation message</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/health-condition">Do you have a health condition?</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/eligibility/health-condition">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/over-9-months">Will the condition last more than 9 months?</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/eligibility/over-9-months">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/eligible">Eligible</a>
+
+            </li>
+            <li><a href="/pip1-v1-1/not-eligible">Not eligible</a>
+
+            </li>
+        </ul> -->
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Authenticate and register</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/signed-in">Signed in</a>
+            </li>
+            <li><a href="/pip1-v1-1/start">Start screen </a>
+            </li>
+            <li><a href="/pip1-v1-1/sign-out-confirm">Save before sign out warning</a>
+            </li>
+            <li><a href="/pip1-v1-1/signed-out">Signed out</a>
+            </li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Additional Support</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/add-support-communicating">Additional Support - communicating</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/additional_support/add-support-communicating">Validation messages</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/add-support">Additional Support - help to fill in forms and understand letters</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/additional_support/add-support">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/add-support-help">Additional Support - is someone helping you?</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/additional_support/add-support-help">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/add-support-name">Additional Support - name of person helping</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/additional_support/add-support-name">Validation messages</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2 class="govuk-heading-s">Check answers Addtional Support section</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/check-answers-1">Check your answers – (new screen)</a>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Personal details</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/name">Your name</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/name">Validation messages: empty fields</a></li>
+                    <li><a href="/pip1-v1-1/validation/personal_details/name-length">Validation messages: character limit</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/nino">Your National Insurance number</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/nino">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/date-of-birth">What is your date of birth?</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/date-of-birth">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/address">Your address</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/address">Validation messages</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/address-length">Validation messages: character limits</a></li>
+                </ul>
+            </li>
+            <li><a href="pip1-v1-1/address-other">Alternative safe address</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/address-other">Validation messages</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/address-other-length">Validation messages: character limits</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/contact-details">Your contact details (Revised)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/contact-details">Validation messages (Revised)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/your-account"> Your bank or building society account (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/your-account">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/account-details"> Bank or building society account details (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/account-details">Validation messages: empty fields (New)</a></li>
+                    <li><a href="/pip1-v1-1/validation/personal_details/account-details-length">Validation messages: character limits (New)</a></li>
+                    <li><a href="/pip1-v1-1/validation/personal_details/account-details-roll-number">Validation messages: roll number required (New)</a></li>
+                    <li><a href="/pip1-v1-1/validation/personal_details/account-details-roll-number-format">Validation messages: roll number format (New)</a></li>
+                    <li><a href="/pip1-v1-1/validation/personal_details/account-details-combo">Validation messages: incorrect combination (New)</a></li>
+                    <li><a href="/pip1-v1-1/validation/personal_details/account-details-roll-number-invalid">Validation messages: roll number invalid (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/no-account-details"> Continue without entering bank or building society details (New)</a>
+            </li>
+            <li><a href="/pip1-v1-1/motability"> Motability scheme (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/motability">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-formats">Do you need communications in another format? (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-formats">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-formats-choice">Which communication format do you need? (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-formats-choice">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-format-braille">Alternative formats - Braille</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-format-braille">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-format-sign-language">Alternative formats - Sign language</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-format-sign-language">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-format-audio">Alternative formats - Audio</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-format-audio">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-formats-paper">Alternative formats - Paper (Revised)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-formats-paper">Validation messages (Revised)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-formats-paper-colour">Give details for what colour paper you need (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-formats-paper-colour">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-formats-paper-custom-font">Give details of the custom font you need (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-formats-paper-custom-font">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-formats-other">Alternative formats - Other (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-formats-other">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-formats-other-email">Give your email address (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-formats-other-email">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/alt-formats-other-other"> Describe the communication format you need (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/personal_details/alt-formats-other-other">Validation messages (New)</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2 class="govuk-heading-s">Check answers Personal Details section</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/check-answers-2">Check your answers – (new screen)</a>
+        </ul>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Residence and presence</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/nationality">What is your nationality? (Revised)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/res_and_pres/nationality">Validation messages (Revised)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/nationality-of-eaa-or-switzerland">What is your nationality? - EAA or swiss (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/res_and_pres/nationality-of-eaa-or-switzerland">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/nationality-another">What is your nationality? - another nationality (New)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/res_and_pres/nationality-another">Validation messages (New)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/living-in-uk">Did you start living in the UK before 1st January 2021?</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/res_and_pres/living-in-uk">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/living-in-gb">Have you been in the UK for 2 of the last 3 years</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/res_and_pres/living-in-gb">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/eu-question">Do you or a family get and payments from an EU country?</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/res_and_pres/eu-question">Validation messages</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2 class="govuk-heading-s">Check answers Residence & Presence section</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/check-answers-3">Check your answers – (new screen)</a>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">About your health</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/about_your_health/condition-new-2">Health condition</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/condition-new-2">Validation messages</a></li>
+                </ul>
+            </li>
+            <!-- <li><a href="/pip1-v1-1/about_your_health/condition-new-2-detail">Health condition details</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/condition-new-2-detail">Validation message</a></li>
+                </ul>
+            </li> -->
+           <!--  <li><a href="/pip1-v1-1/about_your_health/hcp-question">Consent for DWP to contact healthcare professionals – (revised)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/hcp-question">Validation messages – (revised)</a></li>
+                </ul>
+            </li> -->
+            <li><a href="/pip1-v1-1/about_your_health/consent">Consent for HCP to share info – (revised)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/consent">Validation messages – (revised)</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/about_your_health/hcp-1.html">Health Professionals details – (revised)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/hcp-1">Validation messages – (revised)</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/pip1-v1-1/about_your_health/hcp-another">Are there any other health professionals we can
+                    contact? – (revised)</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/hcp-another">Validation messages – (revised)</a></li>
+                </ul>
+            </li>
+
+
+            <li><a href="/pip1-v1-1/in-hospital">Are you currently staying in any of these places?</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/in-hospital">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/hospital-admission">Hospital admission date</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/hospital-admission">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/hospital-address">Hospital address</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/hospital-address">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/hospice-admission">Hospice admission date</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/hospice-admission">Validation messages</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/pip1-v1-1/hospice-address">Hospice address</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/hospice-address">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/care-home-admission">Care home or other accommodation admission date</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/care-home-admission">Validation messages</a></li>
+                </ul>
+            </li>
+            <li><a href="/pip1-v1-1/care-home-address">Care Home or other accommodation address</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/about_your_health/care-home-address">Validation messages</a></li>
+                </ul>
+            </li>
+
+        </ul>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Check answers About Your Health and form submission</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/check-answers-4">Check your answers – (revised screen)</a>
+                <!-- <ul>
+                    <li><a href="/pip1-v1-1/remove-hcp-confirmation">Confirm to remove a  Health Professional question</a>
+                    <li><a href="#">Validation message</a>
+                </ul> -->
+        </ul>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/confirmation">Submission confirmation</a>
+        </ul>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-s">Other screens</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/info/accessibility">Accessibility statement</a>
+            <li><a href="/pip1-v1-1/info/cookies">Cookies message</a>
+            <li><a href="/pip1-v1-1/info/cookies-details">Cookies details</a>
+            <li><a href="/pip1-v1-1/error-generic">PIP1 submission error page</a>
+        </ul>
+
+        <h2 class="govuk-heading-s">PIP2</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/v12/condition-questions/option-three/list-1">Task list</a>
+        </ul>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <!-- Note: motability page removed from MVP -->
+
+        <!-- <h2 class="govuk-heading-s">Motability</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/pip1-v1-1/motability-scheme">Consent to receive Motability Scheme info</a>
+                <ul>
+                    <li><a href="/pip1-v1-1/validation/motability/motability-scheme">Validation messages</a>
+                </ul>
+            </li>
+        </ul>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+
+
+    </div> <!-- govuk-column-full-->
+</div> <!-- govuk-grid row -->
+{% endblock %}

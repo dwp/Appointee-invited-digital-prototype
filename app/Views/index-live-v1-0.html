@@ -1,0 +1,682 @@
+@@ -0,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to main index</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+                Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#pip1">
+                        Registration - PIP 1
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#pip2">
+                        Health questionnaire - PIP 2
+                    </a>
+                </li>
+            </ul>
+
+            <div class="govuk-tabs__panel" id="pip1">
+                <h2 class="govuk-heading-l">Registration - PIP1</h2>
+
+                <a href="/live-pip1-v1-0/intro-question" class="govuk-button govuk-button">View PIP 1 live service</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip-eligibility-mvp-nov2021.pdf" class="govuk-link">PIP1 live: v1.0 screen
+                            flow</a>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Screens for reference</h2>
+
+                <h2 class="govuk-heading-s">Landing page</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/intro-question">Have you used the PIP Apply service before?</a>
+                        <ul>
+                            <li><a href="live-pip1-v1-0/validation/eligibility/intro-question">Validation messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!--  <h2 class="govuk-heading-s">Eligibility</h2>
+              <ul class="govuk-list govuk-list--bullet">
+
+                  <li><a href="/live-pip1-v1-0/eligibility-start">Eligibility start page</a>
+
+                  </li>
+                  <li><a href="/live-pip1-v1-0/over-16">How old are you?</a>
+                      <ul>
+                          <li><a href="/live-pip1-v1-0/validation/eligibility/over-16">Validation messages</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="/live-pip1-v1-0/over-spa">Over state pension age</a>
+                      <ul>
+                          <li><a href="/live-pip1-v1-0/validation/eligibility/over-spa">Validation message</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="/live-pip1-v1-0/health-condition">Do you have a health condition?</a>
+                      <ul>
+                          <li><a href="/live-pip1-v1-0/validation/eligibility/health-condition">Validation messages</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="/live-pip1-v1-0/over-9-months">Will the condition last more than 9 months?</a>
+                      <ul>
+                          <li><a href="/live-pip1-v1-0/validation/eligibility/over-9-months">Validation messages</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="/live-pip1-v1-0/eligible">Eligible</a>
+
+                  </li>
+                  <li><a href="/live-pip1-v1-0/not-eligible">Not eligible</a>
+
+                  </li>
+              </ul> -->
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Authenticate and register</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/signed-in">Signed in</a>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/start">Start screen</a>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/signed-out">Signed out</a>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Additional Support</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/add-support-communicating">Additional Support - communicating</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/additional_support/add-support-communicating">Validation
+                                    messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/add-support">Additional Support - help to fill in forms and understand
+                            letters</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/additional_support/add-support">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/add-support-help">Additional Support - is someone helping you?</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/additional_support/add-support-help">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/add-support-name">Additional Support - name of person helping</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/additional_support/add-support-name">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Personal details</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/name">Your name</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/name">Validation messages: empty
+                                    fields</a></li>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/name-length">Validation messages:
+                                    character limit</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/nino">Your National Insurance number</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/nino">Validation messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/date-of-birth">What is your date of birth?</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/date-of-birth">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/address">Your address</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/address">Validation messages</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/address-length">Validation
+                                    messages: character limits</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="live-pip1-v1-0/address-other">Alternative safe address</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/address-other">Validation
+                                    messages</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/address-other-length">Validation
+                                    messages: character limits</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/contact-details">Your contact details</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/contact-details">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/alt-format-braille">Alternative formats - Braille</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/alt-format-braille">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/alt-format-sign-language">Alternative formats - Sign language</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/alt-format-sign-language">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/alt-format-audio">Alternative formats - Audio</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/alt-format-audio">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/alt-format-paper">Alternative formats - Paper and other formats</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/personal_details/alt-format-paper">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Residence and presence</h2>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/nationality">What is your nationality?</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/res_and_pres/nationality">Validation messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/living-in-uk">Did you start living in the UK before 1st January
+                            2021?</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/res_and_pres/living-in-uk">Validation messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/living-in-gb">Have you been in the UK for 2 of the last 3 years</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/res_and_pres/living-in-gb">Validation messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/eu-question">Do you or a family get and payments from an EU
+                            country?</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/res_and_pres/eu-question">Validation messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="/live-pip1-v1-0/add-support-help">Additional Support - is someone helping you?</a>
+                      <ul>
+                          <li><a href="/live-pip1-v1-0/validation/additional_support/add-support-help">Validation messages</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="/live-pip1-v1-0/add-support-help">Additional Support - name of person helping</a>
+                      <ul>
+                          <li><a href="/live-pip1-v1-0/validation/additional_support/add-support-name">Validation messages</a></li>
+                      </ul>
+                  </li> -->
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">About your health</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/about_your_health/condition-new-2">Health condition</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/condition-new-2">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="/live-pip1-v1-0/about_your_health/condition-new-2-detail">Health condition details</a>
+                      <ul>
+                          <li><a href="/live-pip1-v1-0/validation/about_your_health/condition-new-2-detail">Validation message</a></li>
+                      </ul>
+                  </li> -->
+                    <li><a href="/live-pip1-v1-0/about_your_health/hcp-question">Consent for DWP to contact healthcare
+                            professionals</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/hcp-question">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/about_your_health/consent">Consent for HCP to share information</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/consent">Validation messages </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/about_your_health/hcp-1.html">Health Professionals details</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/hcp-1">Validation messages</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/live-pip1-v1-0/about_your_health/hcp-another">Are there any other health professionals
+                            we can
+                            contact?</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/hcp-another">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="/live-pip1-v1-0/in-hospital">Are you currently staying in any of these places?</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/in-hospital">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/hospital-admission">Hospital admission date</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/hospital-admission">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/hospital-address">Hospital address</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/hospital-address">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/hospice-admission">Hospice admission date</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/hospice-admission">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/live-pip1-v1-0/hospice-address">Hospice address</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/hospice-address">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/care-home-admission">Care home or other accommodation admission
+                            date</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/care-home-admission">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/live-pip1-v1-0/care-home-address">Care Home or other accommodation address</a>
+                        <ul>
+                            <li><a href="/live-pip1-v1-0/validation/about_your_health/care-home-address">Validation
+                                    messages</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Check answers and form submission</h2>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/check-answers">Check your answers </a>
+                        <!-- <ul>
+                          <li><a href="/live-pip1-v1-0/remove-hcp-confirmation">Confirm to remove a  Health Professional question</a>
+                          <li><a href="#">Validation message</a>
+                      </ul> -->
+                </ul>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/confirmation">Submission confirmation</a>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Other screens</h2>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip1-v1-0/info/accessibility">Accessibility statement</a>
+                    <li><a href="/live-pip1-v1-0/info/cookies">Cookies message</a>
+                    <li><a href="/live-pip1-v1-0/info/cookies-details">Cookies details</a>
+                    <li><a href="/live-pip1-v1-0/error-generic">PIP1 submission error page</a>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <!-- Note: motability page removed from MVP -->
+
+                <!-- <h2 class="govuk-heading-s">Motability</h2>
+
+              <ul class="govuk-list govuk-list--bullet">
+                  <li><a href="/live-pip1-v1-0/motability-scheme">Consent to receive Motability Scheme info</a>
+                      <ul>
+                          <li><a href="/live-pip1-v1-0/validation/motability/motability-scheme">Validation messages</a>
+                      </ul>
+                  </li>
+              </ul>
+
+
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pip2">
+                <h2 class="govuk-heading-l">Health questionnaire - PIP 2</h2>
+
+                <a href="/live-pip2-v1-0/list-1" class="govuk-button govuk-button">View PIP2 live service</a>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h3 class="govuk-heading-s">User screen flows</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/public/pdfs/pip2-jan-2022.pdf" class="govuk-link">PIP 2 live service: v1.0 screen flow</a>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Screens for reference</h2>
+
+                <h2 class="govuk-heading-s">Task list</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/list-1">Task list</a>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">About your health</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/about-your-health/condition">What health condition or disability do you
+                            have?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/about-your-health/conditions-details">Details about the condition or
+                            disability</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/about-your-health/another">Do you have another health condition or
+                            disability?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/about-your-health/condition-2">What other health condition or
+                            disability do you have?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/about-your-health/check">Check your answers for health condition or
+                            disability</a>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">About your health professionals</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/about-your-health-professionals/check">Check your answers for about
+                            your health professioanls</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/about-your-health-professionals/another">Do you want to add another
+                            health professional?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/about-your-health-professionals/health-professional">Health
+                            professional details</a>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Daily living actvities</h2>
+                <h3 class="govuk-heading-s">Prepapring food</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/preparing-food/index">Does your condition affect you preparing food, or
+                            prevent you form doing so?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/preparing-food/details">Tell us about the difficulties you have with
+                            preparing food and how you manage them</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/preparing-food/check">Check your answers: preparing food</a>
+                    </li>
+                </ul>
+
+                <h3 class="govuk-heading-s">Eating and drinking</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/eating-and-drinking/index">Does your coondition affect you eating and
+                            drinking?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/eating-and-drinking/feeding-tube">Do you use a feeding tube or similar
+                            device to eat or drink?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/eating-and-drinking/details">Tell us about the difficulties you have
+                            with eating and drinking and how you manage them</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/eating-and-drinking/check">Check your answers: eating and drinking</a>
+                    </li>
+                </ul>
+
+                <h2 class="govuk-heading-s">Managing treatments</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/managing-treatments/index">Does your condition affect you managing your
+                            treatments?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-treatments/details">Tell us about the difficulties you have
+                            with monitoring changes in your health condition or disability and taking medication, and
+                            how you manage them</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-treatments/therapies">Tell us about any therapies you take at
+                            home that need the help of another person</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-treatments/check">Check your answers: managing treatments</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Washing and bathing</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/washing-and-bathing/index">Does your condition affect you washing and
+                            bathing?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/washing-and-bathing/details">Tell us about the difficulties you have
+                            with washing and bathing and how you manage them</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/washing-and-bathing/check">Check your answers: washing and bathing</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Using the toilet and managing incontinence</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/managing-toilet-needs/index">Does your condition affect you using the
+                            toilet or managing incontinence?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-toilet-needs/details">Tell us about the difficulties you have
+                            with going to the toilet and how you manage them</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-toilet-needs/check">Check your answers: managing toilet
+                            needs</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Dressing and undressing</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/dressing-and-undressing/index">Does your condition affect you dressing
+                            or undressing?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/dressing-and-undressing/details">Tell us about the difficulties you
+                            have with dressing and undressing and how you manage them</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/dressing-and-undressing/check">Check your answers: dressing and
+                            undressing</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Talking, listening and understanding</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/talking-and-listening/index">Does your condition affect you talking,
+                            listening and understanding?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/talking-and-listening/details">Tell us about the difficulties you have
+                            with talking,listening and understanding and how you manage them</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/talking-and-listening/check">Check your answers: talking, listening and
+                            understanding</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Reading</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/reading/index">Does your condition affect you reading?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/reading/details">Tell us about the difficulties you have with reading
+                            words or symbols and how you manage them
+                    </li>
+                    <li><a href="/live-pip2-v1-0/reading/check">Check your answers: reading</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Mixing with other people</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/mixing-with-other-people/index">Does your condition affect you mixing
+                            with other people?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/mixing-with-other-people/details">Tell us about the difficulties you
+                            have with mixing with other people and how you manage them
+                    </li>
+                    <li><a href="/live-pip2-v1-0/mixing-with-other-people/check">Check your answers: mixing with other
+                            people</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Managing money</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/managing-money/index">Does your condition affect you managing your
+                            money?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-money/details">Tell us about the difficulties you have with
+                            managing your money and how you manage them
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-money/check">Check your answers: managing money</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Managing money</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/managing-money/index">Does your condition affect you managing your
+                            money?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-money/details">Tell us about the difficulties you have with
+                            managing your money and how you manage them
+                    </li>
+                    <li><a href="/live-pip2-v1-0/managing-money/check">Check your answers: managing money</a>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Mobility actvities</h2>
+                <h2 class="govuk-heading-s">Planning and following a journey</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/planning-and-following-a-journey/index">Does your condition affect you
+                            planning and following journeys?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/planning-and-following-a-journey/details">Tell us more about the
+                            difficulties you have with planning and following journeys and how you manage them
+                    </li>
+                    <li><a href="/live-pip2-v1-0/planning-and-following-a-journey/check">Check your answers: planning
+                            and following a journey</a>
+                </ul>
+
+                <h2 class="govuk-heading-s">Moving around</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/moving-around/index">Does your condition affect you moving around?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/moving-around/info">How well can you stand and how far can you walk
+                            using any aids or appliances you need?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/moving-around/details">Tell us more about the difficulties you have
+                            with moving around and how you manage them
+                    </li>
+                    <li><a href="/live-pip2-v1-0/moving-around/check">Check your answers: moving around</a>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Addtional information</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/additional-information/index">Is there anything else you would like to
+                            tell us about?</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/additional-information/details">Tell us more about any additional
+                            information
+                    </li>
+                    <li><a href="/live-pip2-v1-0/additional-information/check">Check your answers: additional
+                            information</a>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Upload suppoorting evidence, declaration, form submission and sign out</h2>
+                <h2 class="govuk-heading-s">Upload suppoorting evidence</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/supporting-evidence/index">Introduction</a></li>
+                    <li><a href="/live-pip2-v1-0/supporting-evidence/supporting-evidence">Do you want to upload any
+                            supporting evidence?</a></li>
+                    <li><a href="/live-pip2-v1-0/supporting-evidence/file-upload-help">How to take a photo of your
+                            evidence</a></li>
+                    <li><a href="/live-pip2-v1-0/supporting-evidence/supporting-evidence-upload-1">Upload a file</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/supporting-evidence/supporting-evidence-uploaded-1">Your uploaded
+                            file</a></li>
+                    <li><a href="/live-pip2-v1-0/supporting-evidence/supporting-evidence-upload-2">Upload another
+                            file</a></li>
+                    <li><a href="/live-pip2-v1-0/supporting-evidence/supporting-evidence-uploaded-2">Your uploaded
+                            files</a></li>
+                </ul>
+                </br>
+                <h2 class="govuk-heading-s">Declaration, form submission, signed out</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/apply/declaration">Declaration</a></li>
+                    <li><a href="/live-pip2-v1-0/apply/confirmation">Submission confirmation</a></li>
+                    <li><a href="/live-pip2-v1-0/apply/signed-out">Signed out</a></li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-s">Returning user uploading further evidence</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/live-pip2-v1-0/coming-back/intro-question">Have you used the PIP Apply service
+                            before?</a></li>
+                    <li><a href="/live-pip2-v1-0/coming-back/sign-in">Enter your email and password</a></li>
+                    <li><a href="/live-pip2-v1-0/coming-back/code-text">Enter a 6 digit code from text</a></li>
+                    <li><a href="/live-pip2-v1-0/coming-back/index">Coming back to upload supporting evidence</a></li>
+                    <li><a href="/live-pip2-v1-0/coming-back/supporting-evidence-upload-1">Upload a file</a></li>
+                    <li><a href="/live-pip2-v1-0/coming-back/supporting-evidence-uploaded-1">Your uploaded file</a></li>
+                    <li><a href="/live-pip2-v1-0/coming-back/supporting-evidence-upload-2">Upload another file</a></li>
+                    <li><a href="/live-pip2-v1-0/coming-back/supporting-evidence-uploaded-2">Your uploaded files</a>
+                    </li>
+                    <li><a href="/live-pip2-v1-0/coming-back/confirmation-returning">Uploaded files sent
+                            confirmation</a></li>
+                    <li><a href="/live-pip2-v1-0/coming-back/signed-out">Returning user signed out</a></li>
+
+                </ul>
+
+            </div> <!-- govuk-tabs -->
+
+        </div> <!-- govuk-column-full-->
+    </div> <!-- govuk-grid row -->
+    {% endblock %}
