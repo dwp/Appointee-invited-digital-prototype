@@ -1,0 +1,40 @@
+{% set pageTitle = "How well can you stand and how far can you walk using any aids or appliances you need?" %}
+
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/live-pip2-v1-0/moving-around/details" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+            Why does the distance you can walk vary?
+          </label>
+        </h1>
+        <textarea class="govuk-textarea" id="moving-around" name="moving-around-varies" rows="5" aria-describedby="moving-around-varies-input"></textarea>
+      </div>
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "live-pip2-v1-0/moving-around/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

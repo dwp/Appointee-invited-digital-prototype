@@ -1,0 +1,49 @@
+{% set pageTitle = "Help and contacts" %}
+{% set current = "help" %}
+
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "live-pip2-v1-0/_back-link-list.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Help and contact</h1>
+
+      <h2 class="govuk-heading-m">Help links</h2>
+
+      <p><a href="/public/pdfs/pip2-info-booklet-jan-2022.pdf" download>Help with answering questions and providing supporting evidence (PDF)</a></p>
+
+      <!-- <p><a href="/public/pdfs/pip2-supporting-evidence-help-v1.pdf" download>Help with the types of supporting evidence to upload and send (PDF)</a></p> -->
+
+      <p><a href="https://www.youtube.com/watch?v=KCMRGukO1TM&list=PLeysxjNpEPy8Y73-Ywm7OeAGjFc1Xc-It&index=3">Watch a video about providing information to support your application</a></p>
+
+      <h2 class="govuk-heading-m">If you need a paper form or no longer want to apply</h2>
+
+      <p>Contact the Department for Work and Pensions if:
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you would like to fill in and post a paper form</li>
+        <li>you no longer want to apply for PIP</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Contact DWP</h2>
+
+      <div class="indent-hairline">
+        {% include "live-pip2-v1-0/_contact.html" %}
+      </div>
+
+    </div>
+  </div>
+
+  {% include "live-pip2-v1-0/_prototype-shortcuts.html" %}
+
+{% endblock %}

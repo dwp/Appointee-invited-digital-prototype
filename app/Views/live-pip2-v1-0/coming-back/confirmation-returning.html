@@ -1,0 +1,41 @@
+{% extends "layout-p5-rev-1.html" %}
+
+{% block beforeContent %}
+  {% include "p5-rev-1/_beta-banner.html" %}
+
+{% endblock %}
+
+
+{% set pageTitle = "Information sent" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukPanel({
+        titleText: "Information sent"
+      }) }}
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">We have sent a confirmation email to <strong>email@gmail.com</strong>.</p>
+
+      <p>Sign out to keep your information secure.</p>
+
+      <a href="signed-out" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Sign out</a>
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

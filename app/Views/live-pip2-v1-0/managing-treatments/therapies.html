@@ -1,0 +1,62 @@
+{% set pageTitle = "Tell us about any therapies you take at home that need the help of another person" %}
+
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/live-pip2-v1-0/managing-treatments/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "managingtreatments-therapies",
+        id: "managingtreatments-therapies",
+        rows: "18",
+        value: data['managingtreatments-therapies'],
+        label: {
+          text: "Tell us about any therapies you take at home that need the help of another person",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>We want to know about:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>what the therapy is</li>
+            <li>how often you receive the therapy</li>
+            <li>how long the therapy takes</li>
+            <li>the type of assistance you need from another person and for how long</li>
+            <li>tell us about any help you feel you need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Example</h2>
+            <p>“I need home dialysis for 3 hours on Monday and Friday each week. My partner helps me set up the dialysis equipment and supervises me during the dialysis to make sure I stay safe.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "live-pip2-v1-0/managing-treatments/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

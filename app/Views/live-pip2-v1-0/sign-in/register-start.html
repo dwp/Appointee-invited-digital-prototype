@@ -1,0 +1,56 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Register" %}
+
+{% extends "layout-p5-rev-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-rev-1/_beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Register</h1>
+
+      <form action="enter-details" method="post" novalidate>
+
+      <p>Register so you can securely sign in whenever you use the Apply for PIP service.</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the email address used by the Department for Work and Pensions to contact you</li>
+        <li>your National Insurance number</li>
+        <li>your mobile phone</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>We will send a 6-digit security code to your mobile phone or email address to check that it belongs to you.</p>
+
+      <p>You will also need to create a password.</p>
+
+      <p>Whenever you sign in we will send a new security code to your mobile phone or email address.</p>
+
+      <p>We will check your details against our records to make sure we are dealing with the right person. This also helps protect you from fraud.</p>
+
+
+      <div style="margin-top: 30px"></div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
