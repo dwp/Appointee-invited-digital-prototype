@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply for PIP
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="gov-uk-how-to-claim">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Personal Independence Payment (PIP)
+        </h1>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="#">Overview</a>
+          </li>
+          <li>
+            <p class="govuk-body govuk-!-margin-bottom-0">- Eligibility</p>
+            
+          </li>
+          <li>
+            <a class="govuk-link" href="#">What you'll get</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="gov-uk-how-to-claim">How to claim</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">If your PIP claim is reviewed</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Change of circumstances</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Claiming PIP if you are terminally ill</a>
+          </li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h2 class="govuk-heading-l">Eligibility</h2>
+        <p>You can get Personal Independence Payment (PIP) whether you’re working or not.</p>
+        <p>You must be aged 16 or over and usually have not reached State Pension age to claim.</p>
+        <p>You must also have a physical or mental health condition or disability where you:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>have had difficulties with daily living or getting around (or both) for 3 months</li>
+          <li>expect these difficulties to continue for at least 9 months</li>
+        </ul>
+        <p>You usually need to have lived in England, Scotland or Wales for at least 2 of the last 3 years, and be in one of these countries when you apply. If you’ve recently returned from living in an <a href="#">EEA country</a>, you might be able to get PIP sooner.</p>
+        <div class="govuk-inset-text">
+            <a href="#">Find out about PIP if you live in Northern Ireland.</a>
+        </div>
+        <p>There are <a href="#">different rules</a> if you’re terminally ill and a healthcare professional has said you might have less than 6 months to live.</p>
+        <p>You cannot get PIP and <a href="#">Armed Forces Independence Payment</a> at the same time.</p>
+
+        <h3 class="govuk-heading-m">Daily living difficulties</h3>
+        <p>You may get the <a href="#">daily living part</a> of PIP if you need help more than half of the time with things like:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>preparing or eating food</li>
+          <li>washing, bathing and using the toilet</li>
+          <li>dressing and undressing</li>
+          <li>reading and communicating</li>
+          <li>managing your medicines or treatments</li>
+          <li>making decisions about money</li>
+          <li>engaging with other people</li>
+        </ul>
+
+        <h3 class="govuk-heading-m">Mobility difficulties</h3>
+        <p>You may get the <a href="#">mobility part</a> of PIP if you need help going out or moving around.</p>
+
+        <h3 class="govuk-heading-m">How you’re assessed</h3>
+        <p>You’ll be assessed by an independent healthcare professional to work out the level of help you need.</p>
+
+        <h3 class="govuk-heading-m">If you’ve reached State Pension age</h3>
+        <p>You can get PIP if you:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>were already getting PIP before you reached State Pension age and your condition has not changed</li>
+          <li>have been claiming Disability Living Allowance (DLA) and you’ve had a letter inviting you to apply for PIP</li>
+        </ul>
+        <p>You may get PIP if you previously got it and you were still entitled to it within the last year.</p>
+        <p>If you cannot get PIP, you can apply for <a href="#">Attendance Allowance</a> instead.</p>
+
+        <h3 class="govuk-heading-m">Living abroad</h3>
+        <p>You might still be able to get PIP if you:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>live in an <a href="#">EU or EEA country or Switzerland</a> - you can only get help with daily living needs</li>
+          <li>are a member or family member of the Armed Forces</li>
+        </ul>
+
+        <h3 class="govuk-heading-m">If you’re not a British citizen</h3>
+        <p>You must:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>normally live in or show that you intend to settle in the UK, Ireland, the Isle of Man or the Channel Islands</li>
+          <li>not be subject to <a href="#">immigration control</a> (unless you’re a sponsored immigrant)</li>
+        </ul>
+        <p>You might still be able to get PIP if you are a refugee or have humanitarian protection status.</p>
+
+        <button class="govuk-button" data-module="govuk-button">How to claim</button>
+        <!--<button class="govuk-button" data-module="govuk-button">How to claim</button>-->
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

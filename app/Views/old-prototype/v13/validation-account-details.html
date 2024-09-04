@@ -1,0 +1,36 @@
+{% extends "layout-signed-in-v13.html" %}
+
+{% block pageTitle %}
+Sorry, we cannot save your account details right now
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+          <h1 class="govuk-heading-xl">
+              Sorry, we cannot validate your account details
+          </h1>
+          <p>The information you have provided has been saved.</p>
+          <p>Check you've entered the right details, enter details for a different account or contunue without saving.</p>
+
+        <input type="submit" class="govuk-button" value="Back to details" id="submit">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Continue without saving
+  </button>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

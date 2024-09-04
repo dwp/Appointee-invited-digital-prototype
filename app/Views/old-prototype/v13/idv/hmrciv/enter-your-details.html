@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Enter your details
+{% endblock %}
+
+{% block serviceName %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'includes/phase-banner.njk' %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl ">
+      Enter your details
+    </h1>
+    <p class="govuk-body-l">
+      This is to confirm who you are, so we know what questions to ask you.
+    </p>
+    <form method="post" action="choose-2-items" name="">
+
+      <div class="govuk-form-group" data-required="" data-error="Enter a National Insurance number in the right format">
+        <label class="govuk-label govuk-label--m " for="hmrc-first-name">
+          First name
+        </label>
+
+        <input class="govuk-input govuk-input--width-20" id="hmrc-first-name" name="hmrc-first-name" type="text">
+      </div>
+
+      <div class="govuk-form-group" data-required="" data-error="Enter a National Insurance number in the right format">
+        <label class="govuk-label govuk-label--m " for="hmrc-last-name">
+          Last name
+        </label>
+
+        <input class="govuk-input govuk-input--width-20" id="hmrc-last-name" name="hmrc-last-name" type="text">
+      </div>
+
+      
+      <div class="govuk-form-group" data-required="" data-error="Enter a National Insurance number in the right format">
+        <label class="govuk-label govuk-label--m " for="hmrc-nino">
+          National Insurance number
+        </label>
+
+        <span id="nino-hint" class="govuk-hint">
+          It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'.
+        </span>
+
+        <input class="govuk-input govuk-input--width-20" id="hmrc-nino" name="hmrc-nino" type="text">
+
+      </div>
+      
+      <p class="govuk-body govuk-!-margin-bottom-6"><a href="enter-your-details-with-postcode.html" class="govuk-link">I do not know my National Insurance number</a>.</p>
+
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Date of birth
+        </legend>
+        <div id="dob-hint">
+          <p class="govuk-hint">For example, 31 3 1990</p>
+        </div>
+        <div class="govuk-date-input" id="dob">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dob-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" maxlength="2" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dob-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" maxlength="2" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dob-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" maxlength="4" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <input class="govuk-button " type="submit" value="Continue">
+
+    </form>
+
+  </div>
+
+</div>
+
+      <!-- <details class="govuk-details govuk-!-margin-top-9">
+        <summary class="govuk-details__summary govuk-details__summary--modifier">
+          <span class="govuk-details__summary-text govuk-details__summary-text--modifier"
+            style="display: block; text-decoration: underline; color: #005ea5; cursor: pointer; font-size: 16px">
+            Get help with this page
+          </span>
+        </summary>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading">Get help with this service</h3>
+            <p class="govuk-body">Don't include any personal or financial information. For example, your National
+              Insurance or credit card numbers.</p>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="name">
+                Name
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="email">
+                Email
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="what">
+                What were you doing?
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="what" name="what" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="help">
+                What do you need help with?
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="help" name="help" type="text">
+            </div>
+          </div>
+        </div> -->
+
+
+
+{% endblock %}

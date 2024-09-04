@@ -1,0 +1,40 @@
+{% extends "layout-signed-in-v13.html" %}
+
+{% block pageTitle %}
+Sorry, we cannot save your account details right now
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+          <h1 class="govuk-heading-xl">
+              Sorry, we cannot save your account details right now
+          </h1>
+
+          <p>This is due to a technical issue. Your other information has been saved.</p>
+
+          <p>It's important to continue your claim without saving your account details.</p>
+
+          <div class="govuk-inset-text">
+            <p>Contact the Department for Work and Pensions to provide your account details after you submit your claim.</p>
+          </div>
+          <p>We will send you an email when you submit your claim which will include these contact details.</p>
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

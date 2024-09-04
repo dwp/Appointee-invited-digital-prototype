@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Health condition for another 9 months
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-out.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Will your ability to do everyday tasks or get around be affected for at least 9 months?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over-9-months-1" name="over-9-months" type="radio"
+                data-aria-controls="conditional-over-9-months-1" value="At least 9 months">
+              <label class="govuk-label govuk-radios__label" for="over-9-months-1">
+                Yes, at least 9 months
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over-9-months-2" name="over-9-months" type="radio"
+                data-aria-controls="conditional-over-9-months-1" value="Less than 9 months">
+              <label class="govuk-label govuk-radios__label" for="over-9-months-2">
+                No, less than 9 months
+              </label>
+            </div> <!-- -govuk-radios__item" -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over-9-months-3" name="over-9-months" type="radio"
+                data-aria-controls="conditional-over-9-months-3" value="Not sure">
+              <label class="govuk-label govuk-radios__label" for="over-9-months-3">
+                I'm not sure
+              </label>
+            </div> <!-- -govuk-radios__item" -->
+          </div> <!-- govuk-radios govuk-radios--conditional -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout-signed-in-v13.html" %}
+
+{% block pageTitle %}
+Your bank, building society or credit union account
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+          <h1 class="govuk-heading-xl">
+              Your bank, building society or credit union account
+          </h1>
+
+          <p>We ask you to provide your account details before we make a decision on your claim. This is so we can pay you straight away if you're entitled to PIP.</p>
+          <p>This does not guarantee that your claim will be successful.</p>
+
+          <fieldset class="govuk-fieldset" aria-describedby="your-account-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-heading-m">Can you provide bank, building society or credit union account details?</h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="your-account-1" name="your-account" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="your-account">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="your-account-2" name="your-account" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="your-account-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios -->
+
+          </fieldset>
+
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

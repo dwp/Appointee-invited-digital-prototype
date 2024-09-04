@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Eligible
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Based on your answers, you may be eligible for Personal Independence Payment
+        </h1>
+
+        <p>We will treat your personal information carefully. We may use it for any of our purposes. To learn about your information rights and how we use information, see our <a href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter" class="govuk-link">personal information charter (opens in new tab)</a>.</p>
+
+        <input type="submit" class="govuk-button" value="Start now" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

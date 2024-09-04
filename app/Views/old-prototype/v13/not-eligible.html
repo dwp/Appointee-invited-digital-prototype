@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Not eligible
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-out.html" %}
+{% endblock %}
+
+{% block content %}
+<!-- {{data['destination']}} -->
+
+
+<form id="form">
+  <input type="hidden" value="{{data['destination']}}" name="destination">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Based on your answers, you may not get Personal Independence Payment (PIP)
+      </h1>
+      <ul class="govuk-list govuk-list">
+
+        {% if data['over-16'] == 'Under 16' %}
+        <p class="govuk-body-l">This is because you're under 16 years old. PIP is only for people who are aged 16 or
+          over.</p>
+        <p>You might be able to get Disability Living Allowance for children instead. This is to help with extra costs
+          for children under 16 who need help to do everyday tasks or get around.</p>
+        <a href="https://www.gov.uk/disability-living-allowance-children" role="button" draggable="false"
+          class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+          Apply for Disability Living Allowance for children
+        </a>
+        {% endif %}
+
+        {% if data['overspa'] == 'No' %}
+        <p class="govuk-body-l">This is because you're over State Pension age. PIP is only for people who
+          are under State Pension age.</p>
+        <p>You might be be able to get Attendance Allowance instead. This is for people who have reached State Pension
+          age and need help with extra costs to do everyday tasks or get around.</p>
+        <a href="https://www.gov.uk/attendance-allowance" role="button" draggable="false"
+          class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+          Apply for Attendance Allowance
+        </a>
+        {% endif %}
+
+        {% if data['condition'] == 'No, never' %}
+        <p class="govuk-body-l">This is because you do not need help with everyday tasks or getting around due to a long
+          term health condition or disability.</p>
+        <p>PIP is for people with a long term health condition or disability who need help with extra costs to do
+          everyday tasks or get around.</p>
+        <a href="https://www.gov.uk/browse/benefits" role="button" draggable="false"
+          class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+          See what other benefits are available
+        </a>
+        {% endif %}
+
+        {% if data['over-9-months'] == 'Less than 9 months' %}
+        <p class="govuk-body-l">This is because you do not expect your ability to do everyday tasks or get
+          around to be affected for at least another 9 months.</p>
+        <p>PIP is for people with a long term health condition or disability who need help with extra costs to do
+          everyday tasks or get around.</p>
+        <p>There are other benefits for people who who are temporalily unable to work because they're ill.</p>
+        <a href="https://www.gov.uk/browse/benefits/unable-to-work" role="button" draggable="false"
+          class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+          See what other benefits are available
+        </a>
+        {% endif %}
+
+      </ul>
+
+      <p>You can still <a href="/p5/sign-in/register-start">apply for PIP</a>
+        {% if data['over-16'] == 'Under 16' %} if you're sixteenth birthday is in the next 3 months.{% endif %}
+
+        {% if data['overspa'] == 'No' %} but based on what you've told us, you would not get it. {% endif %}
+
+        {% if data['condition'] == 'No, never' %} but based on what you've told us, you would not get it. {% endif %}
+
+        {% if data['over-9-months'] == 'Less than 9 months' %} but based on what you've told us, you would not get it.{%
+        endif %}</p>
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

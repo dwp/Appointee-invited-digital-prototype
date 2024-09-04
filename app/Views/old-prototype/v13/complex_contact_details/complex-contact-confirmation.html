@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Information sent"
+      }) }}
+
+      <p class="govuk-body">Your details have been sent successfully. Your reference is your National Insurance number.</p>
+
+      <h1 class="govuk-heading-m">What happens next</h1>
+      <p class="govuk-body">The Department for Work and Pensions will contact you by phone to ask for more information.</p>
+      <p class="govuk-body">We will try and call you at your preferred time.</p>
+      <p class="govuk-body">It is now safe to close this window.</p>
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

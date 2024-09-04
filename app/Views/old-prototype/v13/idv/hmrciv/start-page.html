@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+We need to ask some questions to prove your identity
+{% endblock %}
+
+{% block serviceName %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'includes/phase-banner.njk' %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl ">
+      We need to ask some questions to prove your identity
+    </h1>
+
+    <form method="post" action="enter-your-details" name="">
+
+      <p class="govuk-body">You will be asked to give details about two items you may have, like your:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>UK passport</li>
+        <li>payslips or P60</li>
+        <li>tax credits and Voice ID</li>
+      </ul>
+      <p class="govuk-body">You may also be able to answer questions about your credit record.</p>
+
+      <p class="govuk-body">If you cannot answer these questions, you will need to <a href="#">confirm your identity another way</a>.</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">We ask these questions to protect you against malicious or
+        fraudulent attempts to access the service.</p>
+
+      <input class="govuk-button " type="submit" value="Continue">
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
+
+      <!-- <details class="govuk-details govuk-!-margin-top-9">
+        <summary class="govuk-details__summary govuk-details__summary--modifier">
+          <span class="govuk-details__summary-text govuk-details__summary-text--modifier"
+            style="display: block; text-decoration: underline; color: #005ea5; cursor: pointer; font-size: 16px">
+            Get help with this page
+          </span>
+        </summary>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading">Get help with this service</h3>
+            <p class="govuk-body">Don't include any personal or financial information. For example, your National
+              Insurance or credit card numbers.</p>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="name">
+                Name
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="email">
+                Email
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="what">
+                What were you doing?
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="what" name="what" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="help">
+                What do you need help with?
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="help" name="help" type="text">
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="govuk-button">
+          Send
+        </button>
+
+      </details> -->

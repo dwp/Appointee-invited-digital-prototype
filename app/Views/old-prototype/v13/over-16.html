@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Over 16
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              How old are you?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over-16-1" name="over-16" type="radio"
+                data-aria-controls="conditional-over-16-1" value="Under 16">
+              <label class="govuk-label govuk-radios__label" for="over-16-1">
+                Under 16
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over-16-2" name="over-16" type="radio"
+                data-aria-controls="conditional-over-16-2" value="Over 16 below but State Pension age">
+              <label class="govuk-label govuk-radios__label" for="over-16-2">
+                Over 16 but below State Pension age
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over-16-3" name="over-16" type="radio"
+                data-aria-controls="conditional-over-16-3" value="Over State Pension age">
+              <label class="govuk-label govuk-radios__label" for="over-16-3">
+                State Pension age or over
+              </label>
+            </div> <!-- -govuk-radios__item" -->
+          </div> <!-- govuk-radios govuk-radios--conditional -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+      <p><a href="https://www.gov.uk/state-pension-age">Check your State Pension age (opens in new tab)</a>.</p>
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

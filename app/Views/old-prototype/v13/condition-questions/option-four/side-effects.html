@@ -1,0 +1,52 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+    {{ govukRadios({
+      idPrefix: "sideEffects",
+      name: "do-you-get-side-effects",
+      fieldset: {
+        legend: {
+          text: "Do you get any side effects from medications or other treatments?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+        },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Save and continue'
+    }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

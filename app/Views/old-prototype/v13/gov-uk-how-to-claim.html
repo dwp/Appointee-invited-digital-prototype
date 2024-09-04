@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply for PIP
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Personal Independence Payment (PIP)
+        </h1>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="#">Overview</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="gov-uk-eligibility">Eligibility</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">What you'll get</a>
+          </li>
+          <li>
+            <p class="govuk-body govuk-!-margin-bottom-0">- How to claim</p>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">If your PIP claim is reviewed</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Change of circumstances</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Claiming PIP if you are terminally ill</a>
+          </li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h2 class="govuk-heading-l">Make a claim</h2>
+        <p>Before you start you will need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your address</li>
+          <li>your phone number</li>
+          <li>your date of birth</li>
+          <li>your National Insurance number</li>
+          <li>details of any health care professionals who know how your conditions or disabilities affect you</li>
+          <li>hospital, hospice or care home address if you're staying in one</li>
+          <li>your bank or building society account number and sort code</li>
+        </ul>
+
+        <a href="over-16" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+
+        <h3 class="govuk-heading-m">Other ways to apply</h3>
+        <p>DWP - PIP claims <br>
+          Telephone: 0800 917 2222 <br>
+          Textphone: 0800 917 7777 <br>
+          <a href="#">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 917 2222 <br>
+          <a href="#">Video relay service</a> for British Sign Language (BSL) users - <a href="#">check you can use the service</a><br>
+          Calling from abroad: +44 191 218 7766 <br>
+          Monday to Friday, 8am to 5pm <br>
+          <a href="#">Find out about call charges</a></p>
+
+        <h4 class="govuk-heading-m">By post</h4>
+        <p>You can get a form to send information by post (although this can delay the decision on your claim). Write a letter to ask for a form.</p>
+        <p>Personal Independence Payment New Claims <br>
+           Post Handling Site B <br>
+           Wolverhampton <br>
+           WV99 1AH
+        </p>
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Health condition
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-out.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do any health conditions or disabilities affect your ability to do everyday tasks or get around?
+            </h1>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What we mean by everyday tasks, getting around, and health conditions or disabilities
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>You must have a physical or mental health condition or disability that affects your ability to do
+                  everyday tasks or get around.</p>
+                <p>Everyday tasks means:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>preparing food</li>
+                  <li>eating and drinking</li>
+                  <li>managing your medicines or treatments</li>
+                  <li>washing and bathing</li>
+                  <li>using the toilet and managing incontinence</li>
+                  <li>dressing and undressing</li>
+                  <li>talking, listening and understanding</li>
+                  <li>mixing with other people</li>
+                  <li>managing money</li>
+                </ul>
+                <p>Getting around means:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>planning and following a journey</li>
+                  <li>moving around</li>
+                </ul>
+                <p>Select 'Yes, all the time or sometimes' if your ability to do any of these things is ever affected.
+                </p>
+              </div> <!-- govuk-details__text -->
+            </details>
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="condition-1" name="condition" type="radio"
+                  data-aria-controls="conditional-condition-1" value="Yes, all of the time or sometimes">
+                <label class="govuk-label govuk-radios__label" for="condition-1">
+                  Yes, all the time or sometimes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="condition-2" name="condition" type="radio"
+                  data-aria-controls="conditional-condition-2" value="No, never">
+                <label class="govuk-label govuk-radios__label" for="condition-2">
+                  No, never
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="condition-3" name="condition" type="radio"
+                  data-aria-controls="conditional-condition-3" value="Not sure">
+                <label class="govuk-label govuk-radios__label" for="condition-3">
+                  I'm not sure
+                </label>
+              </div> <!-- -govuk-radios__item" -->
+            </div> <!-- govuk-radios govuk-radios--conditional -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-row -->
+</form>
+
+{% endblock %}
