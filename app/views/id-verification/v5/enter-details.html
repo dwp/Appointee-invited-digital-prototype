@@ -1,0 +1,96 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Enter your details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
+
+      <form class="form" action="mobile-phone-verification" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "National Insurance number",
+            isPageHeading: false
+          },
+          hint: {
+            text: "It is on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          id: "ni-number",
+          name: "ni-number",
+          type: "text",
+          spellcheck: false,
+          classes: "govuk-input--width-10"
+        }) }}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "Date of birth",
+              isPageHeading: false
+            }
+          },
+          hint: {
+            text: "For example, 12 11 2007."
+          }
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I am having problems entering my details
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h2 class="govuk-heading-m">Contact DWP</h2>
+          <p>Telephone: 0800 121 6279<br>
+          Textphone: 0800 121 4493<br>
+          <a href="https://www.relayuk.bt.com//">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 121 4433<br>
+          <a href="https://portal.starleaf.com/webrtc?name=DWP&amp;target=DWP@interpreterslive.call.sl">Video relay service</a> for British Sign Language (<abbr title="British Sign Language">BSL</abbr>) users - <a href="https://www.dalanguages.co.uk/dwp-bsl/">check you can use the service</a><br>
+          Monday to Friday, 9am to 5pm. <br>
+          <a href="/call-charges">Find out about call charges</a></p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+{% endblock %}

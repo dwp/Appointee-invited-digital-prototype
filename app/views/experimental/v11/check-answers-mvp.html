@@ -1,0 +1,576 @@
+claim{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% set conditionsLength %}
+{{ data.conditions | length }}
+{% endset %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+            data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">
+                If you need to change any of your answers, use the Back link to go back to the page you need to change.
+
+              </p>
+            </div>
+          </div>
+
+          <h1 class="govuk-heading-l">
+            Check your answers
+          </h1>
+          <!-- Help with applying start -->
+
+
+          <dl class="govuk-summary-list">
+            <h2 class="govuk-heading-m">Help with claiming</h2>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you need help from someone else to communicate with us?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support-communicating'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you usually need help from someone else to fill in forms or understand letters?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support'] }}
+              </dd>
+            </div>
+            {% if data['add-support'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Is someone helping you with this claim?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support-help'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['add-support-help'] === 'Yes' %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Helper's name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support-first-name'] }}<br>
+                {{ data['add-support-last-name'] }}
+            </div>
+            {% endif %}
+          </dl> <!-- govuk-summary-list -->
+          <!-- help with applying end -->
+
+          <!-- personal deatils start -->
+          <dl class="govuk-summary-list">
+            <h2 class="govuk-heading-m">Personal details</h2>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['first-name'] }}<br>
+                {{ data['last-name'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['nino'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob-day'] }} - {{ data['dob-month'] }} - {{ data['dob-year'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['address-line-1'] }}<br>
+                {{ data['address-line-2'] }}<br>
+                {{ data['address-town'] }}<br>
+                {{ data['address-county'] }}<br>
+                {{ data['address-postcode'] }}<br>
+                {{ data['address-country'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Can we write to you at this address?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['safe-address'] }}
+              </dd>
+            </div>
+            {% if data['safe-address'] === 'No' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Alternative address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['other-address-line-1'] }}<br>
+                {{ data['other-address-line-2'] }}<br>
+                {{ data['other-address-town'] }}<br>
+                {{ data['other-address-county'] }}<br>
+                {{ data['other-address-postcode'] }}<br>
+                {{ data['other-address-country'] }}
+              </dd>
+            </div>
+            {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Mobile number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['phone-number'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Alternative number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alternative-phone-number'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Textphone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['textphone'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you want to receive text messages to update you on the progress of your claim?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['sms-updates'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you need communications in another format?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['communication-format'] }}
+              </dd>
+            </div>
+            {% if data['communication-format'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What format do you need communications in?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['format-type'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['format-type'] === 'Braille' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Which braille format do you need?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-format-braile'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['format-type'] === 'Sign Language' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Which type of sign language do you need?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-format-sl'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['format-type'] === 'Audio' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Which type of audio format do you need?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-format-audio'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['format-type'] === 'Paper and other formats' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Which other format do you need?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-format-paper'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['alt-format-paper'] === 'Coloured paper' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Give details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['coloured-paper-detail'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['alt-format-paper'] === 'Large print with a custom font' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Give details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['large-print-custom-font'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['alt-format-paper'] === 'Email' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Enter an email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['contact-by-email'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['alt-format-paper'] === 'Other' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Give details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['other-format'] }}
+              </dd>
+            </div>
+            {% endif %}
+          </dl> <!-- govuk-summary-list -->
+          <!-- personal deatils end -->
+
+          <!-- your nationality start -->
+
+          <dl class="govuk-summary-list">
+            <h2 class="govuk-heading-m">Your nationality</h2>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is your nationality?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['nationality'] }}</br>
+                {% if data['nationality'] === 'A nationality of the European Economic Area (EEA) or Switzerland' %}
+                <div class="govuk-body govuk-!-margin-top-4"> {{ data['eea-country'] }} </div>
+                {% endif %}
+                {% if data['nationality'] === 'Another nationality' %}
+                <div class="govuk-body govuk-!-margin-top-4"> {{ data['nationality-country'] }} </div>
+                {% endif %}
+              </dd>
+            </div>
+            {% if data['nationality'] === 'A nationality of the European Economic Area (EEA) or Switzerland' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Did you start living in the UK before 1 January 2021?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['living-in-uk'] }}
+              </dd>
+            </div>
+            {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Have you been in the UK for at least 2 of the last 3 years?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['gb'] }}
+              </dd>
+            </div>
+            {% if data['gb'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do any of the following apply to you or a family member?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['eu-question'] }}
+              </dd>
+            </div>
+            {% endif %}
+          </dl> <!-- govuk-summary-list -->
+          <!-- your nationality end -->
+
+          <!-- your health start -->
+          <dl class="govuk-summary-list">
+            <h2 class="govuk-heading-m">Your health</h2>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Enter a physical or mental health condition or
+                disability you have
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['your-condition'] }}</br>
+
+              </dd>
+            </div>
+            <!-- <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+               Details about your health condition
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['condition-detail'] }}
+              </dd>
+            </div>    -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Can the Department for Work and Pensions contact any health and care professionals for information about you?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp'] }}
+              </dd>
+            </div>
+            {% if data['hcp'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you agree that your health and care professionals can share relevant information about your health conditions
+                to support your application?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['consent'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['consent'] === 'Yes, I agree' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Health or care professional name and details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-1-name'] }}</br>
+                {{ data['hcp-1-profession'] }}<br>
+                {{ data['hcp-1-phone'] }}<br>
+                {{ data['hcp-1-address-line-1'] }}<br>
+                {{ data['hcp-1-address-line-2'] }}<br>
+                {{ data['hcp-1-address-town'] }}<br>
+                {{ data['hcp-1-address-county'] }}<br>
+                {{ data['hcp-1-address-postcode'] }}<br>
+                {{ data['hcp-1-address-country'] }}<br>
+                {{ data['hcp-1-last-contact-month'] }} - {{ data['hcp-1-last-contact-year'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are there any other health or care professionals we can contact?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-2'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['hcp-2'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Health or care professional name and details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-2-name'] }}</br>
+                {{ data['hcp-2-profession'] }}<br>
+                {{ data['hcp-2-phone'] }}<br>
+                {{ data['hcp-2-address-line-1'] }}<br>
+                {{ data['hcp-2-address-line-2'] }}<br>
+                {{ data['hcp-2-address-town'] }}<br>
+                {{ data['hcp-2-address-county'] }}<br>
+                {{ data['hcp-2-address-postcode'] }}<br>
+                {{ data['hcp-2-address-country'] }}<br>
+                {{ data['hcp-2-last-contact-month'] }} - {{ data['hcp-2-last-contact-year'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are there any other health or care professionals we can contact?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-3'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['hcp-3'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Health or care professional name and details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-3-name'] }}</br>
+                {{ data['hcp-3-profession'] }}<br>
+                {{ data['hcp-3-phone'] }}<br>
+                {{ data['hcp-3-address-line-1'] }}<br>
+                {{ data['hcp-3-address-line-2'] }}<br>
+                {{ data['hcp-3-address-town'] }}<br>
+                {{ data['hcp-3-address-county'] }}<br>
+                {{ data['hcp-3-address-postcode'] }}<br>
+                {{ data['hcp-3-address-country'] }}<br>
+                {{ data['hcp-3-last-contact-month'] }} - {{ data['hcp-3-last-contact-year'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are there any other health or care professionals we can contact?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-4'] }}
+              </dd>
+            </div>
+            {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you currently staying in any of the these places?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospital'] }}
+              </dd>
+            </div>
+            {% if data['hospital'] === 'Hospital' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into hospital?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospital-admission-day'] }} - {{ data['hospital-admission-month'] }} - {{
+                data['hospital-admission-year'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospital address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospital-name'] }}<br>
+                {{ data['hospital-address-line-1'] }}<br>
+                {{ data['hospital-address-line-2'] }}<br>
+                {{ data['hospital-address-town'] }}<br>
+                {{ data['hospital-address-county'] }}<br>
+                {{ data['hospital-address-postcode'] }}<br>
+                {{ data['hospital-address-country'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['hospital'] === 'Hospice' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into the hospice?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospice-admission-day'] }} - {{ data['hospice-admission-month'] }} - {{
+                data['hospice-admission-year'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospice address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospice-name'] }}<br>
+                {{ data['hospice-address-line-1'] }}<br>
+                {{ data['hospice-address-line-2'] }}<br>
+                {{ data['hospice-address-town'] }}<br>
+                {{ data['hospice-address-county'] }}<br>
+                {{ data['hospice-address-postcode'] }}<br>
+                {{ data['hospice-address-country'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['hospital'] === 'Care or nursing home' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into the accommodation?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-admission-day'] }} - {{ data['care-home-admission-month'] }} - {{
+                data['care-home-admission-year'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Accommodation address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-name'] }}<br>
+                {{ data['care-home-address-line-1'] }}<br>
+                {{ data['care-home-address-line-2'] }}<br>
+                {{ data['care-home-address-town'] }}<br>
+                {{ data['care-home-address-county'] }}<br>
+                {{ data['care-home-address-postcode'] }}<br>
+                {{ data['care-home-address-country'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['hospital'] === 'Other' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into the other accommodation?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-admission-day'] }} - {{ data['care-home-admission-month'] }} - {{
+                data['care-home-admission-year'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Other accommodation address?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-name'] }}<br>
+                {{ data['care-home-address-line-1'] }}<br>
+                {{ data['care-home-address-line-2'] }}<br>
+                {{ data['care-home-address-town'] }}<br>
+                {{ data['care-home-address-county'] }}<br>
+                {{ data['care-home-address-postcode'] }}<br>
+                {{ data['care-home-address-country'] }}
+              </dd>
+            </div>
+            {% endif %}
+          </dl> <!-- govuk-summary-list -->
+          <!-- your health end -->
+
+          <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue" id="submit">
+
+        </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
+      </div> <!-- govuk-grid-row -->
+
+    </main>
+  </div> <!-- govuk-width-container -->
+
+</form>
+
+{% endblock %}

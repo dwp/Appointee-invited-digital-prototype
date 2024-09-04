@@ -1,0 +1,35 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "You have signed out" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          {{ pageQuestion }}
+        </h1>
+      </div> <!-- govuk-panel -->
+
+      <p><a class="govuk-link" href="/live-pip2-v1-0/sign-in/sign-in">Sign in</a> again to confirm your identity, or to upload more evidence that might support your application.</p>
+      <p>You’ll need to confirm your identity before we can start to assess your claim.</p>
+      <p>You might find it useful to bookmark the sign in page in your internet browser.</p>
+      <p>You will need your email address, mobile phone and password to sign in.</p>
+      <p>You will not need to answer the questions about your daily living activities or mobility again.</p>
+      <p>It's now safe to close this window.</p>
+
+      <h2 class="govuk-heading-m">Give feedback</h2>
+      <p><a class="govuk-link" href="feedback/feedback" target="_blank">What did you think of this service? (opens in new tab)</a> takes 30 seconds</p>
+      <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
+
+    </div>
+    <a class="usability-testing-link" href="../../blank3"></a>
+  </div>
+{% endblock %}

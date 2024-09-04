@@ -1,0 +1,55 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Check your answers: Motability Scheme" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/id-verification/v4/live-pip2/list-section-3">
+
+      <h1 class="govuk-heading-l">Check your answers: Motability Scheme</h1>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "If you're eligible to join the Motability Scheme would you like us to post you information about it?"
+              },
+              value: {
+                text: data['motability-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/id-verification/v4/live-pip2/motability/",
+                    text: "Change",
+                    visuallyHiddenText: "your answer to whether you are interested in Motability Scheme"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      <a href="/id-verification/v4/live-pip2/list-section-5" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

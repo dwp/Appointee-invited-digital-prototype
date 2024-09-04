@@ -1,0 +1,43 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "We need to check your identity" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>Before we can make a decision about your claim we need to check your identity. We check everyone's identity to protect from fraud.</p>
+
+      <p>Call us</p>
+
+      {{ govukButton({
+        text: "Sign out",
+        href: "sign-out"
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+  </div>
+{% endblock %}

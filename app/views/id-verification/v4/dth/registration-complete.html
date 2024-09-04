@@ -1,0 +1,35 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Registration complete" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>You can now sign in.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "sign-in"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

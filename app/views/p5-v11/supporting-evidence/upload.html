@@ -1,0 +1,85 @@
+{% extends "layout-p5-v11-rev-1.html" %}
+
+{% set pageTitle = "Upload your completed PIP form
+ – Send your PIP form – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "v11/p5-v11-rev-1/_beta-banner.html" %}
+
+  {% include "includes/_work-in-progress.html" %}
+
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v11-rev-1/p5-v11-rev-1/check-your-answers"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v11-rev-1/p5-v11-rev-1/start"
+    }) }}
+  {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if getData.delete == "true" %}
+        <div class="moj-banner moj-banner--success">
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+          <div class="moj-banner__message">
+            <span class="moj-banner__assistive">Success</span>File named {{ data['file-upload-1'] }} has been deleted</div>
+        </div>{# /moj-banner #}
+      {% endif %}
+
+      {% if cya == "true" %}
+        <form action="/v11-rev-1/p5-v11-rev-1/uploading-cya" method="post" novalidate>
+      {% else %}
+        <form action="/v11-rev-1/p5-v11-rev-1/uploading" method="post" novalidate>
+      {% endif %}
+
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Upload your completed PIP form
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          </div>
+        </fieldset>
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
+          Continue
+        </button>
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+    {% include "v11/p5-v11-rev-1/_upload-sidebar.html" %}
+
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

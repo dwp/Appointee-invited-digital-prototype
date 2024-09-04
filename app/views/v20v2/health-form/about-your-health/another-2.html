@@ -1,0 +1,54 @@
+{% set pageTitle = "Other conditions" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <p class="govuk-!-font-size-24">You have added details for:
+        <br><strong>{{ data['condition-name'] | capitalize }}</strong>
+      </p> -->
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "condition3",
+          name: "condition3",
+          fieldset: {
+            legend: {
+              text: "Do you have another condition or disability?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      {% include "./_return-link.html" %}
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

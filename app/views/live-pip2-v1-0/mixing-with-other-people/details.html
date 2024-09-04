@@ -1,0 +1,66 @@
+{% set pageTitle = "Tell us about the difficulties you have with mixing with other people and how you manage them" %}
+
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/live-pip2-v1-0/mixing-with-other-people/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "mixingwithotherpeople-details",
+        id: "mixingwithotherpeople-details",
+        rows: "18",
+        value: data['mixingwithotherpeople-details'],
+        label: {
+          text: "Tell us about the difficulties you have when mixing with other people and how you manage them",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+
+            <li>whether severe anxiety or distress stops you from doing this</li>
+            <li>about any risk of harm to you and others</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Example</h2>
+            <p>“I am always unable to meet new people by myself because I become very distressed. My carer supports me when I interact with new people so I do not become distressed.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "live-pip2-v1-0/mixing-with-other-people/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

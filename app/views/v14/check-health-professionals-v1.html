@@ -1,0 +1,182 @@
+{% set pageTitle = "Check your answers: about your health" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if getData.remove == "true" %}
+      <div class="moj-banner moj-banner--success">
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+        <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>‘{{data['condition-name-1'] | capitalize}}’ has been removed</div>
+      </div>{# /moj-banner #}
+    {% endif %}
+
+    <h1 class="govuk-heading-l">Check your answers: about your health professionals</h1>
+
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+
+      <!-- <header class="app-summary-card__header">
+        <h2 class="app-summary-card__title">
+          {{ data['condition-name-1'] | capitalize }}
+        </h2>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="/p5-v12/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-1'] | lower }}</span>
+          </a>
+        </div>{# /app-summary-card__actions #}
+      </header> -->
+
+      {% for query in data['queriesHCP'] %}
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">{{ query.hcpName }}</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="remove-condition-confirmation">
+              Remove<span class="govuk-visually-hidden"> {{ query.hcpName }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Health professional name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpName }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> age</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Profession
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpProfession }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpPhone }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address line one
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpAddressOne }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address line two
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpAddressTwo }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Town
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpAddressTown }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              County
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpAddressCounty }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpAddressPostcode }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Last contact with professional
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.hcpLastContact }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    {% endfor %}
+
+
+    <p><a href="hcp-pip2">Add another health professional
+    <p><a href="as-list-2" class="govuk-button">Confirm and save</a></p>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

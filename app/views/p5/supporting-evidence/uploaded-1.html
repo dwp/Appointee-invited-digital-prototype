@@ -1,0 +1,79 @@
+{% extends "layout-p5.html" %}
+
+{% set pageTitle = "Check your form – Send your PIP form – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "p5/_beta-banner.html" %}
+  {% include "includes/_work-in-progress.html" %}
+
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/p5/upload-cya"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/p5/upload"
+    }) }}
+  {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check your form</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            <a download href="/">{{ data['file-upload-1'] }}</a>, 2MB
+          </dt>
+          <dd class="govuk-summary-list__actions">
+
+            {% if cya == "true" %}
+              <a class="govuk-link" href="/p5/upload-cya?delete=true">
+                Delete<span class="govuk-visually-hidden"> file</span>
+              </a>
+            {% else %}
+              <a class="govuk-link" href="/p5/upload?delete=true">
+                Delete<span class="govuk-visually-hidden"> file</span>
+              </a>
+            {% endif %}
+          </dd>
+        </div>
+      </dl>
+
+      {% if cya == "true" %}
+        <a href="/p5/check-your-answers" class="govuk-button" data-module="govuk-button">Confirm and save</a>
+      {% else %}
+        <a href="/p5/supporting-evidence" class="govuk-button" data-module="govuk-button">Confirm and save</a>
+      {% endif %}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+    {% include "p5/_upload-sidebar.html" %}
+
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

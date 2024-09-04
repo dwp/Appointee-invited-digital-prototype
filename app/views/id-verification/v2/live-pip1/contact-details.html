@@ -1,0 +1,158 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Your contact details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/id-verification/v2/live-pip1/nationality" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                {{ pageQuestion }}
+              </h1>
+            </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-1">
+                Mobile number <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="phone-number" name="phone-number" type="text"
+                autocomplete="phone-number">
+            </div> <!-- govuk-form-group -->
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="alternative-phone-number">
+                Alternative phone number (optional) <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <div id="dob-hint" class="govuk-hint">
+                Enter an alternative number you can be contacted on, including the dialling code.
+              </div>
+              <input class="govuk-input govuk-!-width-two-thirds" id="alternative-phone-number"
+                name="alternative-phone-number" type="text" autocomplete="phone-number">
+            </div> <!-- govuk-form-group -->
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-town">
+                Textphone (optional)
+              </label>
+              <div id="dob-hint" class="govuk-hint">
+                Textphones do not accept text messages from mobile phones.<br>
+                They're for people who cannot speak or hear clearly.
+              </div>
+              <input class="govuk-input govuk-!-width-two-thirds" id="textphone" name="textphone" type="text"
+                autocomplete="textphone">
+            </div> <!-- govuk-form-group -->
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Do you want to receive text messages to update you on the progress of your claim?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sms-updates-1" name="sms-updates"
+                  type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="sms-updates-1">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sms-updates-2" name="sms-updates"
+                  type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="sms-updates-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div>
+        </div><!-- govuk-for-group -->
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Do you need communications in another format?
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              Other formats could be braille, sign language, audio formats or other paper formats.
+            </div>
+            <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="communication-format-1" name="communication-format" type="radio"
+                  value="Yes" data-aria-controls="communication-format">
+                <label class="govuk-label govuk-radios__label" for="communication-format-1">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="communication-format">
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="format-type-1" name="format-type" type="radio" value="braille">
+                    <label class="govuk-label govuk-radios__label" for="format-type-1">
+                      Braille
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="format-type-2" name="format-type" type="radio"
+                      value="Sign Language">
+                    <label class="govuk-label govuk-radios__label" for="format-type-2">
+                      Sign language
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="format-type-3" name="format-type" type="radio" value="Audio">
+                    <label class="govuk-label govuk-radios__label" for="format-type-3">
+                      Audio
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="format-type-4" name="format-type" type="radio"
+                      value="Paper and other formats">
+                    <label class="govuk-label govuk-radios__label" for="format-type-4">
+                      Paper and other formats
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                </div> <!-- govuk-radios govuk-radios -->
+              </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden -->
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="communication-format-2" name="communication-format" type="radio"
+                  value="No" data-aria-controls="communication-format-2">
+                <label class="govuk-label govuk-radios__label" for="communication-format-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios--conditional govuk-radios--inline -->
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

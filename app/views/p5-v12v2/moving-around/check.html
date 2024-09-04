@@ -1,0 +1,190 @@
+{% set pageTitle = "Check your answers: moving around" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5-v12/list-1">
+
+      <h1 class="govuk-heading-l">Check your answers: moving around</h1>
+
+      {% if data['movingaround-question'] === 'Yes' %}
+
+        {% if data['movingaround-info'] === 'It varies' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you moving around?"
+              },
+              value: {
+                text: data['movingaround-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/moving-around/",
+                    text: "Change",
+                    visuallyHiddenText: "Change your answer to whether your condition affects you moving around"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "How far can you walk using any aids or appliances you need?"
+              },
+              value: {
+                html: 'It varies'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/moving-around/info",
+                    text: "Change",
+                    visuallyHiddenText: "Change your answer to how far can you walk using any aids or appliances you need"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Why does the distance you can walk vary?"
+              },
+              value: {
+                html: data['moving-around-varies']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/moving-around/varies",
+                    text: "Change",
+                    visuallyHiddenText: "Change your answer to why the distance you can walk varies"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with moving around and how you manage them"
+              },
+              value: {
+                html: data['movingaround-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/moving-around/details",
+                    text: "Change",
+                    visuallyHiddenText: "Change your answer to difficulties you have with moving around and how you manage them"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you moving around?"
+              },
+              value: {
+                text: data['movingaround-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/moving-around/",
+                    text: "Change",
+                    visuallyHiddenText: "Change your answer to whether your condition affects you moving around"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "How well can you stand and how far can you walk using any aids or appliances you need?"
+              },
+              value: {
+                html: data['movingaround-info']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/moving-around/info",
+                    text: "Change",
+                    visuallyHiddenText: "Change your answer to how well can you stand and how far can you walk using any aids or appliances you need"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with moving around and how you manage them"
+              },
+              value: {
+                html: data['movingaround-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/moving-around/details",
+                    text: "Change",
+                    visuallyHiddenText: "Change your answer to difficulties you have with moving around and how you manage them"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% endif %}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you moving around?"
+              },
+              value: {
+                text: data['movingaround-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/moving-around/",
+                    text: "Change",
+                    visuallyHiddenText: "Change your answer to whether your condition affects you moving around"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/v12v2/condition-questions/option-three/list-1?movingaround=completed" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

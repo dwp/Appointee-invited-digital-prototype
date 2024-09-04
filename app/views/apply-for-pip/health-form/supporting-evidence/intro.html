@@ -1,0 +1,36 @@
+{% set pageTitle = "Supporting evidence" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form id="form" method="post" action="#">
+    <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">Supporting evidence</h1>
+      <p>It’s important you provide evidence or information about the impacts of any health conditions or disabilities on your daily life, if you can.</p>
+
+      <p>Uploading evidence may mean:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>we can make a quicker decision on your claim</li>
+          <li>we can make an accurate decision and pay you the right amount</li>
+          <li>you may not need to attend an assessment with a health professional</li>
+        </ul>
+
+      <p>You should only upload photos or scanned images of documents you already have. These documents should show how your health condition or disability affects you.</p>
+
+      <p>Do not request documents you might have to pay for, for example a letter from your GP. If we need this evidence we can ask for it ourselves, as long as we have your permission.</p>
+
+    </div><!-- govuk-form-group -->
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+</form>
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

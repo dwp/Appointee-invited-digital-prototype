@@ -1,0 +1,54 @@
+{% extends "layout-signed-in-v4.html" %}
+
+{% block pageTitle %}
+  Help and contact
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+            
+            <h1 class="govuk-heading-l">Help and contacts</h1>
+
+            <!--<h2 class="govuk-heading-m">Help links</h2>
+
+            <p><a href="/public/pdfs/pip-information-booklet.pdf" download>Help with answering questions and providing evidence (PDF)</a></p>
+
+            <p><a href="/public/pdfs/pip-flyer.pdf" download>Help with the types of documentary evidence you should upload and send (PDF)</a></p>
+
+            <p><a href="https://www.youtube.com/watch?v=KCMRGukO1TM&list=PLeysxjNpEPy8Y73-Ywm7OeAGjFc1Xc-It&index=3">Watch a video about providing information to support your claim</a></p>-->
+
+            <h2 class="govuk-heading-m">If you need a paper form or no longer want to apply</h2>
+
+            <p>Call the PIP enquiry line if:
+            <ul class="govuk-list govuk-list--bullet">
+                <li>you would prefer to fill in and post a paper form</li>
+                <li>you no longer want to apply for PIP</li>
+            </ul>
+
+            <h2 class="govuk-heading-m">Contacts</h2>
+
+        {#       <p>Call the PIP enquiry line if you would like to fill in and post a paper form and your evidence instead.</p> #}
+
+            <div class="indent-hairline">
+                <p><strong><abbr title="Personal Independence Payment">PIP</abbr> enquiry line</strong><br>
+                    Telephone: 0800 121 4433<br>
+                    Textphone: 0800 121 4493
+                    <a href="http://ngts.org.uk/"><abbr title="Next Generation Text">NGT</abbr> text relay</a> (if you cannot hear or speak on the phone): 18001 then 0800 121 4433<br>
+                    <a href="https://main.signvideo.me/app/8/10031">Video relay service</a> for British Sign Language (<abbr title="British Sign Language">BSL</abbr>) users - <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY">check you can use the service</a><br>
+                    Calling from abroad: +44 191 218 7766 <br>
+                    Monday to Friday, 9am to 5pm<br>
+                    <a href="/call-charges">Find out about call charges</a></p>
+                    
+                    <p>Available weekdays 8am to 6pm.<br>
+                    Closed public holidays.</p>
+            </div>
+
+            </div>
+        </div>
+{% endblock %}

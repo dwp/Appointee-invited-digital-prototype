@@ -1,0 +1,65 @@
+{% set pageTitle = "Does your condition affect you preparing food, or ever prevent you from doing so?" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-v11/preparing-food/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "preparingfood-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you preparing food, or prevent you from doing so?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means making a simple, one course meal for one. This includes:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>peeling and chopping ingredients</li>
+            <li>opening tins</li>
+            <li>cooking or heating food on a standard hob or using a microwave</li>
+          </ul>
+          <p>Do consider if you can prepare food safely and without being supervised.</p>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("preparingfood-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("preparingfood-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-v11/preparing-food/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

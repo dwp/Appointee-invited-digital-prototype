@@ -1,0 +1,37 @@
+{% block pageTitle %}
+Give details for what colour paper you need
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Give details for what colour paper you need
+            </h1>
+          </legend>
+
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

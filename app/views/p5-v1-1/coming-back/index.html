@@ -1,0 +1,64 @@
+{% set pageTitle = "Supporting evidence" %}
+
+{% extends "layout-p5-v1-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v1-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "p5-v1-1/_beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">Supporting evidence</h1>
+      <p class="govuk-body-l">It is important that you help us to understand your needs by uploading any documentary evidence or information. This should explain how your health condition or disability affects your daily life.</p>
+
+      <p>Examples of documents you could upload include:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>reports about you from health professionals</li>
+          <li>care or treatment plans</li>
+          <li>test results</li>
+          <li>repeat prescription lists</li>
+        </ul>
+
+      <p><a href="/public/pdfs/help-with-types-of-supporting-information-v1.pdf" download>Help with the types of supporting evidence you should upload and send&nbsp;(PDF)</a></p>
+
+      <p>Any delay in sending evidence might mean:</p>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your claim to PIP will take longer to assess</li>
+        <li>you might need an assessment with a health professional which might not have been necessary</li>
+        <li>we might not be able to get all the information we need to make a decision on your claim which accurately reflects your daily living or mobility needs</li>
+      </ul>
+
+      <p><strong>Upload</strong> photos or scans of documents that shows how your health condition or disability affects you carrying out day-to-day activities.</p>
+
+      <p>Only send us copies of information or evidence you already have.</p>
+
+      <p><strong>Do not:</strong></p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>send general information about your condition like fact sheets or information from the internet</li>
+        <li>contact your GP or health professional to ask for new or additional information as they may charge you for this</li>
+      </ul>
+
+{#       <p><a href="/public/pdfs/pip-flyer.pdf" download>Get help with the types of supporting information you should send (PDF)</a></p>
+
+      <p><a href="https://www.youtube.com/watch?v=KCMRGukO1TM&list-1=PLeysxjNpEPy8Y73-Ywm7OeAGjFc1Xc-It&index=3">Watch a video about providing information to support your claim</a></p> #}
+
+
+    </div><!-- govuk-form-group -->
+
+    <a href="supporting-evidence-upload-1" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

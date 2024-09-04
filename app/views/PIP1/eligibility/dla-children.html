@@ -1,0 +1,54 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+Are you getting Disability Living Allowance for children?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" aria-describedby=action-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-heading-xl">Are you getting Disability Living Allowance for children?</h1>
+          </legend>
+          <div id="action-hint" class="govuk-hint">
+
+          </div>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dla-child-1" name="dla-child" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="dla-child-1">
+                 Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dla-child-2" name="dla-child" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="dla-child-2">
+                   No
+                </label>
+              </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+
+        </fieldset>
+
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

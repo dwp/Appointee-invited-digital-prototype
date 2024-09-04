@@ -1,0 +1,65 @@
+{% set pageTitle = "Does your condition affect you managing your treatments?" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5/managing-treatments/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "managingtreatments-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you managing your treatments?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>monitoring changes in your health condition or disability (for example, your blood sugar level, mental state or pain levels)</li>
+            <li>taking medication in the right way and at the right time</li>
+            <li>managing therapies that take place at home which have been recommended by a health professional or pharmacist (for example, physiotherapy or home dialysis)</li>
+          </ul>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("managingtreatments-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("managingtreatments-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5/managing-treatments/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

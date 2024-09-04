@@ -1,0 +1,30 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "We need more information before we can confirm your identity" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>We'll ask you some security questions that only you should know the answers to.</p>
+
+      <p>We'll only use the information you give us to make sure that you are who you say you are.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "kbv-child-dob"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Start
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form id="form" method="post" action="#">
+        <h1 class="govuk-heading-xl">
+          Apply for Personal Independence Payment (PIP)
+        </h1>
+
+        <p>Only use this service if you have called the PIP application phone line and been invited to apply for PIP online.</p>
+
+        <p>Use this service to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>apply for PIP</li>
+            <li>describe how your health condition or disability affects your ability to do every tasks and get around</li>
+            <li>upload any supporting documentary evidence of your condition or disability and how it affects you</li>
+          </ul>
+
+        <h2 class="govuk-heading-l">Before you start</h2>
+
+        <p>You do not have to answer all the questions in one go. You can save your progress at any point and continue later.</p>
+
+        <p>You will need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your personal details including National Insurance number</li>
+          <li>details of your health conditions and disabilities and how they affect your ability to do everyday tasks and get around</li>
+          <li>details of any medicines or treatments you have</li>
+          <li>details of your health care professionals</li>
+          <li>hospital or care home details if you're staying or living in one</li>
+          <li>documentary evidence of your conditions or disabilities, such as doctor's reports, care or treatment plans, test results or repeat prescription lists </li>
+        </ul>
+
+        <a href="/v9/add-support-communicating" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+            Start now
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg>
+        </a>
+
+        </form>
+    </div> <!-- govuk-grid-column-two-thirds -->
+</div> <!-- govuk-grid-column-two-thirds -->
+
+
+{% endblock %}

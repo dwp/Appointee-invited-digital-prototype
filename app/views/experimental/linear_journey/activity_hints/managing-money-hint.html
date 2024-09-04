@@ -1,0 +1,45 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Managing money hint
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                What we mean by managing money
+            </h1>
+          </legend>
+          <div id="mobility-activity-hint" class="govuk-hint">
+            <p>This means:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>understanding how much things cost</li>
+                <li>understanding how much change you should get</li>
+                <li>managing your own budgets, paying your own bills and planning your own future purchases</li>
+              </ul>
+            </p>
+            <p>It does not mean reading a bill, physically opening a letter, taking a bill to the post box or being able to hold your change.</p>
+
+          </div>
+
+      </div> <!-- govuk-form-group -->
+
+
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+
+{% endblock %}

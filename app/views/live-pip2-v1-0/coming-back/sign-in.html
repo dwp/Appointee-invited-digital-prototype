@@ -1,0 +1,78 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Sign in" %}
+
+{% extends "layout-p5-rev-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-rev-1/_beta-banner.html" %}
+  {% include "p5-rev-1/_back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Sign in</h1>
+
+      <form action="code-text" method="post" novalidate>
+
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          classes: "govuk-input--width-20",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+        label: {
+          text: "Password"
+        },
+          classes: "govuk-input--width-20",
+          id: "password",
+          name: "password",
+          type: "password",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+{#         {{ govukButton({
+          text: "Continue"
+        }) }} #}
+
+
+          <a href="code-text" class="govuk-button">Continue</a>
+
+
+      </form>
+
+
+      <h2 class="govuk-heading-m">Problems signing in</h2>
+
+                <ul class="govuk-list signin">
+                    <li>
+                        <a href="reset-password/start" class="govuk-link">I forgot my password</a>
+                    </li>
+                    <li>
+                        <a href="account-recovery/access" class="govuk-link">I cannot access the email or mobile phone number I use to sign in</a>
+                    </li>
+                </ul>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% set pageTitle = "Upload another file" %}
+
+{% extends "layout-p5-v1-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "p5-v1-1/_beta-banner.html" %}
+
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/p5-v1-1/supporting-evidence/supporting-evidence-uploaded-2-cya"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/p5-v1-1/supporting-evidence/supporting-evidence-uploaded-2"
+    }) }}
+  {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if cya == "true" %}
+        <form action="/p5-v1-1/supporting-evidence/uploading-supporting-evidence-3-cya" method="post" novalidate>
+      {% else %}
+        <form action="/p5-v1-1/supporting-evidence/uploading-supporting-evidence-3" method="post" novalidate>
+      {% endif %}
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Upload another file
+            </h1>
+          </legend>
+
+          <p>File types accepted are Word, PDF, JPG and PNG.</p>
+
+            <p>Each file must be smaller than 10MB.</p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help if your files are too big
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>If a file is bigger than 10MB, reduce the file size if you can and try again.</p>
+            <!--  <p>If the combined size of more than one file is bigger than 10MB, try sending fewer files. Use the service again to send any remaining files.</p> -->
+              <p>If you still cannot upload and send your files you can post the information instead. Only send photocopies by post. Call 0800 121 4433 (Textphone: 0800 121 4433) if you do not know the freepost address to send them to.</p>
+            </div>
+          </details>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="supporting-evidence-file-3">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="supporting-evidence-file-3" name="supporting-evidence-file-3" type="file">
+          </div>
+        </fieldset>
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
+          Continue
+        </button>
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

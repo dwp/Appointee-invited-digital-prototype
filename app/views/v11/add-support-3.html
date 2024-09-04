@@ -1,0 +1,74 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Additional support
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v11.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you need help to fill in forms or understand letters?
+            </h1>
+          </legend>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Get help
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>You might need someone to help you fill in this application or to read any letters we send you. This could be a friend, family member or support organistion. If you need any other help contact:</p>
+              <div class="">
+                <p><strong><abbr title=""></abbr>[Name of model office helpline TBC] </strong><br>
+                  Telephone: 0800 XXX XXXX<br>
+                  Textphone: 0800 XXX XXXX
+                  <a href="http://ngts.org.uk/"><abbr title="Next Generation Text">NGT</abbr> text relay</a> (if you cannot hear
+                  or speak on the phone): 18001 then 0800 XXX XXXX<br>
+                  <a href="https://main.signvideo.me/app/8/10031">Video relay service</a> for British Sign Language (<abbr
+                    title="British Sign Language">BSL</abbr>) users - <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY">check
+                    you can use the service</a><br>
+                  Calling from abroad: +44 XXX XXX XXXX <br>
+                  <a href="/call-charges">Find out about call charges</a>
+                </p>
+                <p>Available weekdays Xam to Xpm.<br>
+                  Closed public holidays.</p>
+              </div> <!-- indent-hairline -->
+            </div>
+          </details>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-support" name="add-support" type="radio"
+                value="Yes, all of the time or sometimes">
+              <label class="govuk-label govuk-radios__label" for="add-support">
+                Yes
+              </label>
+
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-support-2" name="add-support" type="radio" value="No, never">
+              <label class="govuk-label govuk-radios__label" for="add-support-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

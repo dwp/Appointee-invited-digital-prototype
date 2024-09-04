@@ -1,0 +1,66 @@
+{% set pageTitle = "Does your condition affect you washing and bathing?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/PIP2/washing-and-bathing/index-answer" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Washing and bathing</h1>
+
+      <p>This means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>washing your body, limbs, face, underarms and hair</li>
+        <li>using a normal bath or shower</li>
+        <li>getting in and out of a normal bath or shower</li>
+      </ul>
+      <p>Consider if you can wash or bathe safely and without being supervised. And consider how much time it takes you and whether you do it too often or not often enough.</p>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "washingandbathing-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you washing and bathing?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("washingandbathing-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("washingandbathing-question", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-v12/washing-and-bathing/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

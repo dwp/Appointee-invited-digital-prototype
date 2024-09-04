@@ -1,0 +1,66 @@
+{% set pageTitle = "Tell us more about the difficulties you have with planning and following journeys and how you manage them" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/mvp/p5/planning-and-following-a-journey/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "planningandfollowingajourney-details",
+        id: "planningandfollowingajourney-details",
+        rows: "18",
+        value: data['planningandfollowingajourney-details'],
+        label: {
+          text: "Tell us more about the difficulties you have with planning and following journeys and how you manage them",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any aids you use, such as an assistance dog or long cane</li>
+            <li>any help you get from another person</li>
+            <li>if severe anxiety or distress stops you from leaving the home, following or completing a journey</li>
+            <li>any help you feel you need but do not get</li>
+
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“About three times a week I am unable to go by myself to shop for food at my local shop because I am too anxious to leave the house. My carer does my shopping for me when this happens.”</p>
+            <p>“I am never able to follow a new or familiar journey safely by myself because I am unable to see. My guide dog helps me stay safe when following journeys.</p>
+            <p>“I am never able to plan new journeys as I find it too difficult to understand maps. My carer plans new journeys for me and tells me how to follow them.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5/planning-and-following-a-journey/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

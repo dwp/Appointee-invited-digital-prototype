@@ -1,0 +1,36 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+We need to get in touch
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v11.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <form id="form" method="post" action="add-support-contact-name">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          We will contact you in the next xx days
+        </h1>
+
+        <p>Enter your contact details and someone from the Department for Work and Pensions will contact you in the next xx days.</p>
+
+        <input type="submit" class="govuk-button" value="Enter contact details" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+
+      <div class="govuk-grid-column-one-third">
+        {% include "includes/help-one-third.html" %}
+      </div> <!-- govuk-grid-column-one-third -->
+      
+    </div> <!-- govuk-grid-row -->
+  </form>
+
+{% endblock %}

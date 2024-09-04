@@ -1,0 +1,61 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Select which option applies to you" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/live-pip1-v1-0/sign-in/answer-choice" method="post" novalidate>
+
+        {{ govukRadios({
+          name: "question",
+          fieldset: {
+            legend: {
+              text: "Select which option applies to you",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "pdf",
+              text: "I was told to download a form"
+            },
+            {
+              value: "html",
+              text: "I was told to fill in a form online"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Content to follow
+        </div>
+      </details>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

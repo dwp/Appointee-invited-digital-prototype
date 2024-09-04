@@ -1,0 +1,43 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Get another 6-digit code sent to email@email.com" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if getData.expired == "true" %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Your 6-digit code has expired. Get another code."
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      <h1 class="govuk-heading-l">Get another 6-digit security code sent to email@email.com</h1>
+
+      
+        <a href="code-email" class="govuk-button">Get another code</a>
+     
+        <p><a href="code-text-op3" class="govuk-button govuk-button--secondary">Get a code by text instead</a></p>
+     
+
+      {% include "p5-v12/sign-in/_problems.html" %}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

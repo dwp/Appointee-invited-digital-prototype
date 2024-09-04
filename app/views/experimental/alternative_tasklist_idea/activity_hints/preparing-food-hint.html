@@ -1,0 +1,80 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Preparing food hint
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" action="#" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+               Preparing food
+            </h1>
+          </legend>
+          <div id="mobility-activity-hint" class="govuk-hint">
+            <p>Preparing food means making a simple, one course meal for one. This includes:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>peeling and chopping ingredients</li>
+                <li>opening tins</li>
+                <li>cooking or heating food on a standard hob or using a microwave</li>
+              </ul>
+            </p>
+
+            <p>We need to know if you have any difficulties doing this:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>safely</li>
+                <li>to an acceptable standard</li>
+                <li>as often as you need to</li>
+                <li>in a reasonable time</li>
+              </ul>
+            </p>
+
+          </div>
+
+            {{ govukRadios({
+              classes: "govuk-radios--inline",
+              idPrefix: "preparing-food-help",
+              name: "preparing-food-help",
+              fieldset: {
+                legend: {
+                  text: "Do you ever have difficulties preparing food?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "Select yes if you need help from someone else or use extra equipment."
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes"
+                },
+                {
+                  value: "No",
+                  text: "No"
+                }
+              ]
+            }) }}
+
+            <br>
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+      </div> <!-- govuk-form-group -->
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+
+{% endblock %}

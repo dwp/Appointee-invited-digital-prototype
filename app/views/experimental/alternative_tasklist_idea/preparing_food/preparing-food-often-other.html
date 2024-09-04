@@ -1,0 +1,37 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Preparing food</h1>
+      <h2 class="govuk-heading-m">What other aids or adaptations do you use?</h2>
+        {{ govukTextarea({
+        name: "aids-adapts-more-detail",
+        id: "aids-adapts-more-detail"
+        }) }}
+
+
+                  {{ govukButton({
+                    text: 'Continue',
+                    href: "preparing-food-difficulties"
+                  }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

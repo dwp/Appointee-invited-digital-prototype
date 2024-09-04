@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your health condition
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="#">
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'What health condition or disability do you have?',
+          classes: "govuk-fieldset__legend--xl",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>By condition or disability, we mean:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>physical</li>
+          <li>blindness and vision impairment</li>
+          <li>hearing and speech difficulties</li>
+          <li>learning, developmental or behavioural difficulties</li>
+          <li>cognitive impairment</li>
+          <li>mental health conditions</li>
+          <li>neurological conditions</li>
+        </ul>
+
+      <p>You can add other conditions and disabilities later if you need to.</p>
+
+      {{ govukInput({
+        id: 'condition-name-1',
+        name: 'condition-name-1',
+        label: {
+          html: 'Name of your first condition or disability',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, kidney failure."
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'condition-date-1',
+        name: 'condition-date-1',
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          html: 'Approximate start date',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, about 14 months ago."
+        }
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: 'Continue'
+      }) }}
+
+    </form>
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

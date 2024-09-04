@@ -1,0 +1,47 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "You have signed out" %}
+
+{% extends "layout-p5-v1-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v1-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v1-1/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          You have signed out
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>To complete your application <a href="/v7/save_and_return/sign-in">sign in</a> again.</p>
+      <p>You will need your email address, mobile phone and password when you next sign in.</p>
+      <p>It is now safe to close this window.</p>
+
+      <h2 class="govuk-heading-m">Give feedback</h2>
+
+      <p><a class="govuk-link" href="feedback/feedback" target="_blank">What did you think of this service? (opens in new tab)</a> takes 30 seconds</p>
+
+      <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
+
+
+      <p>It is now safe to close this window.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

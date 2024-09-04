@@ -1,0 +1,54 @@
+{% set pageTitle = "Check your email" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out-dth.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="name">
+            What is your name
+          </label>
+        <div id="dob-hint" class="govuk-hint">
+          Enter your name as it is shown in official documents. For example, your passport or driving licence.
+        </div>
+</h1>
+        <div id="account-number-hint" class="govuk-label">
+          First name
+        </div>
+        <input class="govuk-input govuk-input--width-30" id="first-name" name="first-name" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <div id="account-number-hint" class="govuk-label">
+          Middle name(s)
+        </div>
+        <input class="govuk-input govuk-input--width-30" id="last-name" name="last-name" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <div id="account-number-hint" class="govuk-label">
+          Last name
+        </div>
+        <input class="govuk-input govuk-input--width-30" id="last-name" name="last-name" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-row -->
+</form>
+
+{% endblock %}

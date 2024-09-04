@@ -1,0 +1,65 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "We need to check your identity" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <p class="govuk-body">
+        You have not confirmed your identity.
+      </p>
+
+      <p class="govuk-body">
+        It’s important you confirm your identity so that we can pay you straight away if your claim is successful. We check everyone's identity to protect from fraud.
+      </p>
+
+      <form action="#" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              What do you want to do?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="next-step-2" name="next-step" type="radio" value="confirm">
+                <label class="govuk-label govuk-radios__label" for="next-step-2">
+                  Confirm my identity
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="next-step-1" name="next-step" type="radio" value="upload">
+                <label class="govuk-label govuk-radios__label" for="next-step-1">
+                  Upload supporting evidence about my condition and how it affects me
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

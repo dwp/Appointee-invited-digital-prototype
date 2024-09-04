@@ -1,0 +1,127 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Accessibility statement
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Accessibility statement for Apply for Personal Independence Payment
+    </h1>
+
+      <p>This accessibility statement is for the Apply for Personal Independence Payment (PIP) service, available at <a href="https://www.apply-for-pip.dwp.gov.uk/">https://www.apply-for-pip.dwp.gov.uk/</a></p>
+
+    <h2 class="govuk-heading-m">Using this service</h2>
+
+      <p>This service is run by the Department for Work and Pensions (DWP). We want as many people as possible to be able to use this service. For example, that means you should be able to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>change colours, contrast levels and fonts</<li>
+          <li>zoom in up to 300% without the text spilling off the screen</li>
+          <li>get from the start of the service to the end using speech recognition software</li>
+          <li>listen to the service using a screen reader</li>
+        </ul>
+
+      <p>We have also made the text in the service as simple as possible to understand.</p>
+
+      <p><a href="https://mcmw.abilitynet.org.uk/">AbilityNet</a> has advice on making your device easier to use if you have a disability.</p>
+
+      <h2 class="govuk-heading-m">How accessible this service is</h2>
+
+
+        <p>The service is using common styles, patterns and components from the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a> which are widely regarded as accessible.</p>
+
+        <p>Some people may find parts of this service difficult to use.</p>
+
+        <p>Some people who do not have JavaScript enabled might not be notified when a conditionally revealed question or selection is shown or hidden.</p>
+
+        <p>Headings are sometimes not read out in JAWS versions 18 and 19 and ZoomText. This is a known issue with Freedom Scientific software. Read more about the issue with headings on <a href="https://github.com/FreedomScientific/VFO-standards-support/issues/100/">GitHub</a>.</p>
+
+        <p>Some reading zones might be missed when using ZoomText. This is most likely to happen in the ‘Check your answers’ sections, particularly where content is placed on the right-hand side of the page.</p>
+
+        <p>Some Read and Write software users have reported that the Play button can sometimes skip some content. Read and Write users might therefore find that the screenshot reader function, which allows users to select the content they want to read, works better than the play button.</p>
+
+        <p>Some text input fields may be longer than the whole width of the screen, depending on the type of device and browser used. This issue has been detected for Samsung devices using Chrome browser, but other devices and browsers may be affected.</p>
+
+
+      <h2 class="govuk-heading-m">Requesting information in a different format</h2>
+
+       <p>Contact us if you need information on this website in a different format like large print, easy read, audio recording or braille.</p>
+
+       <p>We provide a text relay service for people who are deaf, hearing impaired or have a speech impediment.</p>
+
+       <p>Find out <a href="https://www.gov.uk/disability-benefits-helpline">how to contact us</a>.</p>
+
+      <h2 class="govuk-heading-m">Reporting accessibility problems with this service</h2>
+
+        <p>We are always looking to improve the accessibility of this service. If you find any problems that are not listed on this page or think we're not meeting accessibility requirements, contact us by email: <a href="mailto:quarryhouse.applyforpip-accessibility@dwp.gov.uk">quarryhouse.applyforpip-accessibility@dwp.gov.uk</a> </p>
+
+
+      <h2 class="govuk-heading-m">Enforcement procedure</h2>
+
+        <p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the 'accessibility regulations'). If you are not happy with how we respond to your complaint, <a href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
+
+
+      <h2 class="govuk-heading-m">Technical information about this service's accessibility</h2>
+
+        <p>The Department for Work and Pensions is committed to making this service accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.</p>
+
+      <h2 class="govuk-heading-m">Compliance status</h2>
+
+      <p>This service is not compliant with the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1</a> AA standard, due to the non-compliance listed below.</p>
+
+      <h2 class="govuk-heading-m">Non-accessible content</h2>
+
+      <p>The content listed below is non-accessible for the following reasons.</p>
+
+      <h2 class="govuk-heading-m">Non-compliance with the accessibility regulations</h2>
+
+      <ol class="govuk-list govuk-list--number">
+          <li>Some people who do not have JavaScript enabled might not be notified when a conditionally revealed question or selection is shown or hidden. This fails <a href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html">WCAG 2.1 success criterion 4.1.2 Name, Role, Value</a>.</li>
+
+          <li>Some links do not have the correct hidden text so screen reader users cannot access the correct link description. For example, in some ‘Change’ links in ‘Check your answers’ screens. This fails <a href="https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context" class="govuk-link">WCAG 2.1 success criterion 2.4.4: link purpose (in context)</a>.</li>
+
+          <li>Some user interface elements such as radio buttons and text fields do not have semantic markup so screen reader users cannot access the information. Semantic markup is a way of writing and structuring HTML (hypertext markup language) to describe its content’s structural semantics or meaning, not how it visually presents the content. This fails <a href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html" class="govuk-link">WCAG 2.1 success criterion 4.1.2: name, role, value</a>.</li>
+
+          <li>Some text input fields may be longer than the whole width of the screen, depending on the type of device and browser used. This issue has been detected for Samsung devices using Chrome browser, but other devices and browsers may be affected. This issue occurs on screens about health and care professionals, for example in the 'Name' and 'Profession' fields. This fails <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html" class="govuk-link">WCAG 2.1 success criterion 1.4.10: reflow</a>.</li>
+
+          <li>Some content in the authentication screens informs the user of which mobile phone number a 2-factor security code will be sent to. The phone number is partly hidden by ‘XXXXXXX’. Screen readers will therefore read out the hidden part of the phone number as ‘XXXXXXX’. This fails <a href="https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels.html" class="govuk-link">WCAG 2.1 success sriterion 2.4.6: headings and labels</a>. </li>
+
+          <li>On the Help and contact screen there are hidden empty links, these can be tabbed to but provide no focus, or function. This fails <a href="https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context" class="govuk-link">WCAG 2.1 success criterion 2.4.4 (link purpose in content)</a> and <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html" class="govuk-link">Understanding Success Criterion 2.4.7: focus visible</a>.</li>
+
+        </ol>
+
+        <p>We plan to fix these issues by December 2022</p>
+
+
+      <h2 class="govuk-heading-m">How we tested this service</h2>
+
+        <p>The service was last tested on 13 May 2022 and was checked for compliance with WCAG 2.1 AA. The tests were carried out by the Department for Work and Pensions.</p>
+
+        <p>The service was tested using both automated and manual testing.</p>
+
+      <h2 class="govuk-heading-m">What we are doing to improve accessibility</h2>
+
+       <p>We conducted manual testing of the service using assistive technologies such as JAWS and Dragon. This has identified issues, mentioned in the ‘How accessible this service is’ section above, that we are working to fix.</p>
+
+       <p>We will continue to iterate the design of the service to fix issues we are aware of.</p>
+
+      <h2 class="govuk-heading-m">Preparation of this accessibility statement</h2>
+
+        <p>This statement was prepared on 26 January 2022. It was last reviewed on 13 September 2022.</p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+
+{% endblock %}

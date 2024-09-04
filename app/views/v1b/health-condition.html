@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Health condition
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+
+                Do you have a health condition or disability that affects your ability to do everyday tasks or get around?
+
+              </h1>
+            </legend>
+            <p>A health condition or disability can be physical or mental. Examples of everyday tasks include things like preparing and cooking food, eating and drinking, and washing and bathing.</p>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="condition-1" name="condition" type="radio"  data-aria-controls="conditional-condition-1" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="condition-1">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="condition-2" name="condition" type="radio"  data-aria-controls="conditional-condition-2" value="No">
+                <label class="govuk-label govuk-radios__label" for="condition-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <!--<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="condition-2">
+                <div class="govuk-form-group">
+                  <p>You can only get PIP if you have difficulties with everyday tasks or getting around.</p>
+                </div> <!-- govuk-form-group -->
+              <!--</div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden -->
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="condition-3" name="condition" type="radio" data-aria-controls="conditional-condition-3" value="Not sure">
+                <label class="govuk-label govuk-radios__label" for="condition-3">
+                  I'm not sure
+                </label>
+              </div> <!-- -govuk-radios__item" -->
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="condition-3">
+                <div class="govuk-form-group">
+                  <p></p>
+                </div> <!-- govuk-form-group -->
+              </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden -->
+
+            </div> <!-- govuk-radios govuk-radios--conditional -->
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-row -->
+  </form>
+
+{% endblock %}

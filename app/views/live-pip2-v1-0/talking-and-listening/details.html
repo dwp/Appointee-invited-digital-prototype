@@ -1,0 +1,64 @@
+{% set pageTitle = "Tell us about the difficulties you have with talking and listening and how you manage them" %}
+
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/live-pip2-v1-0/talking-and-listening/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "talkingandlistening-details",
+        id: "talkingandlistening-details",
+        rows: "18",
+        value: data['talkingandlistening-details'],
+        label: {
+          text: "Tell us about the difficulties you have with talking, listening and understanding and how you manage them",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any aids or adaptations you use, or help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“I always have difficulty listening because I am hard of hearing. I use 2 hearing aids to help me hear what other people are saying.”</p>
+            <p>“I have difficulty speaking and expressing myself due to having a stroke several years ago. I use a communication board to help me communicate with others.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "live-pip2-v1-0/talking-and-listening/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

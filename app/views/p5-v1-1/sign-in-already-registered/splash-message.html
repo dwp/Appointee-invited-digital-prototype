@@ -1,0 +1,35 @@
+{% set pageTitle = "You are now signed in" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11?_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11?_beta-banner.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+{#       <div class="interruption"> #}
+
+      <h1 class="govuk-heading-l">You are now signed in</h1>
+
+      <p>You can sign out at any point and your answers will be saved.</p>
+
+      <!-- <p>You can return to this application at any time until {% include 'includes/_date.html' %}.</p> -->
+      <!-- Note: deadline date removed for MVP as it varies by claimant -->
+
+      <p class="govuk-!-margin-top-5"><a href="/p5-v11?list" class="govuk-button">Continue to your application</a></p>
+
+{#       </div> #}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Tell DWP how your disability affects you for your PIP claim" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Tell DWP how your disability affects you for your PIP claim</h1>
+
+      <p>Only use this service if you have already started your application for Personal Independence Payment (PIP) by phone and have received an email from the Department for Work and Pensions (DWP).</p>
+
+      <p>Use the service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>tell DWP how your health condition or disability affects you</li>
+        <li>upload any supporting documentary evidence of your condition or disability and how it affects you</li>
+      </ul>
+
+      <p>You will be asked questions about your ability to carry out everyday activities. The answers will help DWP understand the effect of your health condition or disability on your everyday life and assess your entitlement to PIP.</p>
+
+      <p>Take your time and describe all the help you need. You do not have to answer all the questions in one go. You can save your progress at any point and continue later.</p>
+
+      <!-- Note: Before you start section removed as it's now included on the 'register-start' page. -->
+      <!-- <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the email address used by DWP to contact you</li>
+        <li>your National Insurance number</li>
+        <li>your mobile phone</li>
+      </ul> -->
+
+      <div style="margin-top: 30px"></div>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/p5/sign-in/intro-question",
+        isStartButton: true
+      }) }}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

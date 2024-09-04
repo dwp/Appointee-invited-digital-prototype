@@ -1,0 +1,134 @@
+{% extends "layout-signed-in-v4.html" %}
+
+{% block pageTitle %}
+  Contact details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Your contact details
+                </h1>
+              </legend>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Phone number <span class="govuk-visually-hidden">line 1 of 2</span>
+                </label>
+                <div id="dob-hint" class="govuk-hint">
+                  Enter a phone number we can speak to you or leave a message on, including the dialling code.
+                </div>
+                <input class="govuk-input govuk-!-width-two-thirds" id="phone-number" name="phone-number" type="text" autocomplete="phone-number">
+              </div> <!-- govuk-form-group -->
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-town">
+                  Textphone (optional)
+                </label>
+                <div id="dob-hint" class="govuk-hint">
+                  Textphones do not accept text messages from mobile phones.<br>
+                  They're for people who cannot speak or hear clearly.
+                </div>
+                <input class="govuk-input govuk-!-width-two-thirds" id="textphone" name="textphone" type="text" autocomplete="textphone">
+              </div> <!-- govuk-form-group -->
+
+            </fieldset>
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  How would you prefer to be contacted?
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-preference" name="contact-preference" type="radio" value="By letter">
+                  <label class="govuk-label govuk-radios__label" for="contact-preference">
+                    By letter
+                  </label>
+                </div> <!-- govuk-radios__item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-preference-2" name="contact-preference" type="radio" value="By phone">
+                  <label class="govuk-label govuk-radios__label" for="contact-preference-2">
+                    By phone
+                  </label>
+                </div> <!-- govuk-radios__item -->
+              </div> <!-- govuk-radios govuk-radios--inline -->
+
+            </fieldset>
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you need communications in another format?
+                </h1>
+              </legend>
+              <div id="contact-hint" class="govuk-hint">
+                Other formats could be Braille, large print or audio CD.
+              </div>
+              <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="communication-format-1" name="communication-format" type="radio" value="Yes" data-aria-controls="communication-format">
+                  <label class="govuk-label govuk-radios__label" for="communication-format-1">
+                    Yes
+                  </label>
+                </div> <!-- govuk-radios__item -->
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="communication-format">
+                  <div class="govuk-radios govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="format-type-1" name="format-type" type="radio" value="Braille">
+                      <label class="govuk-label govuk-radios__label" for="format-type-1">
+                        Braille
+                      </label>
+                    </div> <!-- govuk-radios__item -->
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="format-type-2" name="format-type" type="radio" value="Large print">
+                      <label class="govuk-label govuk-radios__label" for="format-type-2">
+                        Large print
+                      </label>
+                    </div> <!-- govuk-radios__item -->
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="format-type-3" name="format-type" type="radio" value="Audio CD">
+                      <label class="govuk-label govuk-radios__label" for="format-type-3">
+                        Audio CD
+                      </label>
+                    </div> <!-- govuk-radios__item -->
+                  </div> <!-- govuk-radios govuk-radios -->
+
+                </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden -->
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="communication-format-2" name="communication-format" type="radio" value="No" data-aria-controls="communication-format-2">
+                  <label class="govuk-label govuk-radios__label" for="communication-format-2">
+                    No
+                  </label>
+                </div> <!-- govuk-radios__item -->
+
+              </div> <!-- govuk-radios govuk-radios--conditional govuk-radios--inline -->
+            </fieldset>
+          </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

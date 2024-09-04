@@ -1,0 +1,49 @@
+{% extends "layout-signed-in-v6.html" %}
+
+{% block pageTitle %}
+Are you currently staying in hospital
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Are you currently staying in a hospital or hospice as an in-patient?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-1" name="hospital" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="hospital-1">
+                Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="hospital-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

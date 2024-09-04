@@ -1,0 +1,100 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Enter your details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <p>This is to confirm who you are, so we know what questions to ask you.</p>
+
+      <form class="form" action="/id-verification/v2/id-verification-select" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "first-name",
+          name: "first-name",
+          type: "name",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "last-name",
+          name: "last-name",
+          type: "name",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "National Insurance number",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          id: "ni-number",
+          name: "ni-number",
+          type: "text",
+          spellcheck: false,
+          classes: "govuk-input--width-10"
+        }) }}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "Date of birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1990"
+          }
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p>
+        <a href="#">I don't have that information</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

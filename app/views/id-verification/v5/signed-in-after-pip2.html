@@ -1,0 +1,40 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "You are now signed in" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>You can sign out at any point and your answers will be saved.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/id-verification/v5/pip2-next-step"
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+  </div>
+{% endblock %}

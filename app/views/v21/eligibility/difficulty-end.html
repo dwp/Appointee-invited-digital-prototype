@@ -1,0 +1,38 @@
+{% block pageTitle %}
+Based on your answer, you may not be eligible for PIP
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Based on your answers, you may not be eligible for PIP</h1>
+
+      <!-- <p>PIP is for people who have difficulty doing certain everyday tasks or getting around. The difficulty also has to be due to a disability, or long-term physical or mental health condition.</p> -->
+
+      <p>PIP is for people who find it hard to do certain everyday tasks or get around unaided. This must be due to a long-term physical or mental health condition or disability.</p>
+
+      <p><a href="https://www.gov.uk/browse/benefits">Check what other benefits you may be eligible for</a></p>
+
+
+      <p>If you still think you are eligible you can continue to claim PIP.</p>
+
+      <p>You will be asked to tell DWP how your health condition or disability affects you and provide any supporting evidence. If more information is needed, you'll be invited to an assessment with a health professional. </p>
+
+      <input type="submit" class="govuk-button" value="Check if I can claim online" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

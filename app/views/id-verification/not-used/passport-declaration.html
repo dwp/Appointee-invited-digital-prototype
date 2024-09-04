@@ -1,0 +1,36 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Passport declaration" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <p>We’ll need to check the details you enter with HM Passport Office.</p>
+
+      {{ govukButton({
+        text: "Agree and continue",
+        href: "/id-verification/v1/documents/passport-details"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

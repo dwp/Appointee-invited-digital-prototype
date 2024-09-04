@@ -1,0 +1,55 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Enter the last 4 digits of the account your Tax credits are paid into" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">About your tax credits</span>
+
+      <form class="form" method="post" action={% if tuKbv === "true" %} "./credit-ref-q1" {% else %} "./doc-verification-finish"
+          {% endif %}>
+
+        {{ govukInput({
+          id: "tax-credits",
+          name: "tax-credits",
+          label: {
+            text: "Enter the last 4 digits of the account your Tax credits are paid into",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Get your account number from a bank card, statement, paying in book or cheque book"
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="more-information">I don't have that information</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

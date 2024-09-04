@@ -1,0 +1,53 @@
+{% extends "layout-p5.html" %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% set pageTitle = "Information sent" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukPanel({
+        titleText: "Information sent"
+      }) }}
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">We have sent a confirmation email to <strong>email@gmail.com</strong>.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <!-- Removed as SPD can't provide indicitave timesacles <p>We will normally contact you within [X] weeks about what will happen next.</p> -->
+
+      <p>We will keep you up to date about your PIP claim by text message if you have agreed for us to do this.</p>
+
+      <p>You might be contacted to arrange an assessment with a health professional if more information is needed. </p>
+
+      <p>You may not need a consultation if you have provided enough information for us to make a decision.</p>
+
+      <h2 class="govuk-heading-m">Download a copy of your completed form</h2>
+
+      <p>You can download a copy of your completed form using this link: <a href="#">David Smith PIP application.pdf</a></p>
+
+      <p>You will not be able to download your completed form after you leave this page.</p>
+
+    <h2 class="govuk-heading-m">You have finished your application</h2>
+       <p>Sign out to keep your information secure.</p>
+     
+      <a href="signed-out" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Sign out</a>
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

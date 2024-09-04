@@ -1,0 +1,67 @@
+{% set pageTitle = "How well can you engage face to face?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "mixingwithotherpeople-info",
+        fieldset: {
+          legend: {
+            text: "How well can you engage face to face?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>Select the option that is most relevant to you for more than half of the days in a year.</p>
+        '
+        },
+        items: [
+          {
+            value: "mixingwithotherpeople-option-1",
+            text: "I can engage with people uniaided",
+            checked: checked("mixingwithotherpeople-info", "Option 1")
+          },
+          {
+            value: "mixingwithotherpeople-option-2",
+            text: "I need prompting to be able to engage with other people",
+            checked: checked("mixingwithotherpeople-info", "Option 2")
+          },
+          {
+            value: "mixingwithotherpeople-option-3",
+            text: "I need social support to be able to engage with other people",
+            checked: checked("mixingwithotherpeople-info", "Option 3")
+          },
+          {
+            value: "mixingwithotherpeople-option-4",
+            text: " I cannot engage with other people as it would cause either overwhelming psychological distress or lead me to exhibit behaviour which would result in a substantial risk of harm to myself or another person",
+            checked: checked("mixingwithotherpeople-info", "Option 4")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

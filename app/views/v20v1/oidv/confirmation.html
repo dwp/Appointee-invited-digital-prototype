@@ -1,0 +1,32 @@
+{% set pageTitle = "Information sent" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Identity confirmed
+  </h1>
+</div>
+
+
+    <p class="govuk-body">Your identity has been confirmed. If your claim is successful we will pay you as soon as we have made a decision.</p>
+
+    <h2 class="govuk-heading-m">If you want to upload more supporting evidence</h2>
+
+    <p>To upload supporting evidence that might support your claim, <a href="../claimant-home/landing-4">sign in to the Apply for PIP service</a>.</p>
+
+    <p>You will need your email address, mobile phone and password to sign in to PIP. You will not need to answer the questions about your daily living activities or mobility again.</p>
+
+  </div>
+</div>
+{% endblock %}

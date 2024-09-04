@@ -1,0 +1,94 @@
+{% set pageTitle = "Check your answers: washing and bathing" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5-v12/list-1">
+
+      <h1 class="govuk-heading-l">Check your answers: washing and bathing</h1>
+
+      {% if data['washingandbathing-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you washing and bathing?"
+              },
+              value: {
+                text: data['washingandbathing-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/washing-and-bathing/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to whether your condition affects you washing and bathing"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with washing and bathing and how you manage them"
+              },
+              value: {
+                html: data['washingandbathing-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/washing-and-bathing/details",
+                    text: "Change",
+                    visuallyHiddenText: " change your answer to difficulties you have with washing and bathing and how you manage them"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you washing and bathing?"
+              },
+              value: {
+                text: data['washingandbathing-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/washing-and-bathing/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to whether your condition affects you washing and bathing"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/v12v2/condition-questions/option-three/list-1?washingandbathing=completed" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

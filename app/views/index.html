@@ -1,20 +1,46 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+        <div class="govuk-width-container">
+            <main class="govuk-main-wrapper">
+              <div class="govuk-grid-row">
 
-    <h1 class="govuk-heading-xl">
-      Appointee Home
-    </h1>
+                <h1 class="govuk-heading-xl">PIP Apply Prototypes</h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
-  </div>
-</div>
+                <div class="govuk-grid-column-one-third">
+                  <h2 class="govuk-heading-m">Archive</h2>
+                  <p class="govuk-body">Prototypes created from January 2021 until June 2023</p>
+                  <a href="index-old" class="govuk-button govuk-button">View</a>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                    <h2 class="govuk-heading-m">Latest work</h2>
+                    <p class="govuk-body">Prototypes from July 2023 until present day</p>
+                    <a href="index-work" class="govuk-button govuk-button">View</a>
+                  </div>
+
+                  <div class="govuk-grid-column-one-third">
+                    <h2 class="govuk-heading-m">End to End Journey (WIP)</h2>
+                    <p class="govuk-body">Prototype showing the end to end PIP Apply journey</p>
+                    <a href="apply-for-pip/govuk/how-to-claim" class="govuk-button govuk-button">View</a>
+                  </div>
+              </div>
+            </main>
+          </div>
+
+
+
+    </div> <!-- govuk-grid-column-full -->
+</div> <!-- govuk-grid-row -->
+
+
 
 {% endblock %}

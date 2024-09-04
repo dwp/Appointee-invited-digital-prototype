@@ -1,0 +1,51 @@
+{% extends "layout-signed-in-v12.html" %}
+
+{% block pageTitle %}
+Working and living abroad
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="outside-britain">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Have you been abroad for more than 4 weeks at a time, in the last 3 years?
+            </h1>
+          </legend>
+          <div id="outside-britain-hint" class="govuk-hint">
+            By 'abroad' we mean outside Great Britain or Northern Ireland.<br>
+            Include holidays of more than 4 weeks.
+          </div> <!-- outside-britain-hint -->
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="outside-britain" name="outside-britain" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="outside-britain">
+                Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="outside-britain-2" name="outside-britain" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="outside-britian-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

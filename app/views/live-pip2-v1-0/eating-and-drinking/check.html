@@ -1,0 +1,111 @@
+{% set pageTitle = "Check your answers: eating and drinking" %}
+
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/live-pip2-v1-0/list-1">
+
+      <h1 class="govuk-heading-l">Check your answers: eating and drinking</h1>
+
+      {% if data['eatinganddrinking-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Does your condition affect you eating and drinking?"
+            },
+            value: {
+              text: data['eatinganddrinking-question']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/live-pip2-v1-0/eating-and-drinking/",
+                  text: "Change",
+                  visuallyHiddenText: " your answer for whether your condition affects you eating and drinking"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Do you use a feeding tube or similar device to eat or drink?"
+            },
+            value: {
+              text: data['eatinganddrinking-feedingtube']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/live-pip2-v1-0/eating-and-drinking/feeding-tube",
+                  text: "Change",
+                  visuallyHiddenText: " your answer for whether you use a feeding tube or similar device to eat or drink"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Difficulties you have with eating and drinking and how you manage them"
+            },
+            value: {
+              html: data['eatinganddrinking-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/live-pip2-v1-0/eating-and-drinking/details",
+                  text: "Change",
+                  visuallyHiddenText: " your answer for difficulties you have with eating and drinking and how you manage them"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% else %}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Does your condition affect you eating and drinking?"
+            },
+            value: {
+              text: data['eatinganddrinking-question']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/live-pip2-v1-0/eating-and-drinking/",
+                  text: "Change",
+                  visuallyHiddenText: " your answer for whether your condition affects you eating and drinking"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      <a href="/live-pip2-v1-0/list-1?eatinganddrinking=completed" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Your passport details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">About your UK passport</span>
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <form class="form" method="post" action={% if payslip === "true" %} "./payslip"
+        {% elif p60 === "true" %} "./p60" {% elif tcKbv === "true" %} "./tcKbv"
+        {% elif tuKbv === "true" %} "./tuKbv" {% elif voiceId === "true" %} "./voice-id" {% else %} "./self-assessment" {% endif %}>
+
+        {{ govukInput({
+          label: {
+            text: "Given names",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "As they appear on your passport"
+          },
+          id: "given-names",
+          name: "given-names",
+          type: "name",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Surname",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "As it appears on your passport"
+          },
+          id: "surname",
+          name: "surname",
+          type: "name",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Passport number",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Contains up to 9 numbers and no letters"
+          },
+          id: "passport-number",
+          name: "passport-number",
+          type: "text",
+          spellcheck: false,
+          classes: "govuk-input--width-10"
+        }) }}
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "Date of expiry",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 31 MAR 26 or 31 03 26"
+          }
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="more-information">I don't have that information</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

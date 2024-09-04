@@ -1,0 +1,38 @@
+{% extends "layout-signed-in-v5.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Information sent"
+      }) }}
+
+      <p class="govuk-body">Your details have been sent successfully. Your reference is your National Insurance number.</p>
+
+      <h1 class="govuk-heading-m">What happens next</h1>
+      <p class="govuk-body">You can continue with your PIP application by completing a questionnaire about how you conditions or disabilities affect your daily living and mobility.</p>
+      <p class="govuk-body">You can sign out of the service and return to it later to complete your application.</p>
+      
+      <input type="submit" class="govuk-button" value="Continue to health questionnaire" id="submit">
+
+      <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Sign out
+      </button> -->
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+</form>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% set conditionsLength %}
+{{ data.conditions | length }}
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5/about-your-health/check" method="post" novalidate>
+
+      <table class="govuk-table">
+        <h1 class="govuk-heading-l">Your health conditions</h1>
+        <p>Enter details for each of your conditions or disabilities</p>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Condition</th>
+            <!-- <th scope="col" class="govuk-table__header">Start date</th> -->
+            <th scope="col" class="govuk-table__header">About your condition</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">{{ data['conditions'][0]['condition_name'] }}</th>
+            <!-- <td class="govuk-table__cell">{{ data['conditions'][0]['date'] }}</td> -->
+            <td class="govuk-table__cell"><a class="govuk-link" href="conditions-details">Give details</td>
+          </tr>
+          {% if conditionsLength > 1 %}
+          {% for condition in data.conditions %}
+          {% if not loop.first %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">{{ condition.condition_name }}</th>
+            <!-- <td class="govuk-table__cell">{{ condition.date }}</td> -->
+            <td class="govuk-table__cell"><a class="govuk-link" href="conditions-details-2">Give details</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+    
+        </tbody>
+      </table>
+
+      
+
+      
+
+      <!-- {{ govukButton({
+        text: 'Save and continue'
+      }) }} -->
+      <p><a href="../list?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p>
+
+    </form>
+
+    <p><a href="#">Add another condition or disability</a></p>
+
+    {% include "p5/about-your-health/_return-link.html" %}
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

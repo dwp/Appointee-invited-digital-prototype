@@ -1,0 +1,69 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Motability Scheme
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+          <h1 class="govuk-heading-xl">
+              Motability Scheme
+          </h1>
+
+          <p class="govuk-body">The Motability Scheme lets disabled people lease a car, scooter or powered wheelchair using all or some of their PIP mobility payments.</p>
+          <p class="govuk-body">The scheme is operated by an independent commercial company.</p>
+          <p class="govuk-body">If you would like more information we will share your name and address with the company that operates the scheme.</p>
+
+          <fieldset class="govuk-fieldset" aria-describedby="motability-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-heading-m">If eligible, would you like the Motability Scheme to post you information about it?</h2>
+            </legend>
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="motability-1" name="motability" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="motability">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="motability-2" name="motability" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="motability-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios -->
+
+          </fieldset>
+
+        </div> <!-- govuk-form-group -->
+
+        <p>If you change your mind about receiving Mobility Scheme information contact the Department for Work and Pensions (DWP).</p>
+
+        <h2 class="govuk-heading-m">Contact DWP</h2>
+
+        <p>Telephone: 0800 121 4433 <br>
+        Textphone: 0800 121 4493 <br>
+        <a href="#">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 121 4433 <br>
+        <a href="#">Video relay service</a> for British Sign Language (BSL) users - <a href="#">check you can use the service</a> <br>
+        Monday to Friday, 9am to 5pm. <br>
+        <a href="#">Find out about call charges</a></p>
+
+        <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

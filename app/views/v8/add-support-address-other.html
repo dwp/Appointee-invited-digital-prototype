@@ -1,0 +1,74 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Addtional support other address
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What address can we write to?
+            </h1>
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-other-address-line-1">
+              Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <input class="govuk-input" id="add-support-other-address-line-1" name="add-support-other-address-line-1"
+              type="text" autocomplete="add-support-other-address-line1">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-other-address-line-2">
+              <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+            </label>
+            <input class="govuk-input" id="add-support-other-address-line-2" name="add-support-other-address-line-2"
+              type="text" autocomplete="add-support-other-address-line2">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-other-address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="add-support-other-address-town"
+              name="add-support-other-address-town" type="text" autocomplete="add-support-other-address-level2">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-other-address-county">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="add-support-other-address-county"
+              name="add-support-other-address-county" type="text">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-other-address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="add-support-other-address-postcode"
+              name="add-support-other-address-postcode" type="text" autocomplete="add-support-other-postal-code">
+          </div> <!-- govuk-form-group -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

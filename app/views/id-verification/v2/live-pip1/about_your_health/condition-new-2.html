@@ -1,0 +1,75 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Your health condition" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/id-verification/v2/live-pip1/about_your_health/hcp-question" method="post">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Enter a physical or mental health condition or
+            disability you have</h1>
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+            data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important
+                </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                    Enter only one condition or disability. You can add more later.
+
+                </p>
+            </div>
+        </div> <!-- govuk-notification-banner -->
+
+        <div class="govuk-body">
+            <p>You can add other conditions or disabilities later.</p>
+            <p>Conditions and disabilities include:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>physical conditions, like arthritis, heart disease or diabetes</li>
+                <li>blindness and sight impairment</li>
+                <li>hearing and speech difficulties</li>
+                <li>learning, developmental or behavioural difficulties</li>
+                <li>cognitive impairment</li>
+                <li>mental health conditions, like depression, anxiety or bipolar disorder</li>
+                <li>neurological conditions, like Parkinson's or epilepsy</li>
+            </ul>
+        </div> <!-- govuk-body -->
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="your-condition">
+                    Condition or disability
+                </label>
+            </h1>
+            <input class="govuk-input" id="your-condition" name="your-condition" type="text"
+                aria-describedby="your-condition">
+        </div> <!-- govuk-form-group -->
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

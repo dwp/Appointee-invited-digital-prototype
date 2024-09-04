@@ -1,0 +1,52 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "What is your home address?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <form class="form" action="/id-verification/v1/postcode-select" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Postcode",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Enter your UK postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "postcode",
+          name: "postcode"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
+
+      </form>
+
+      <p>
+        <a href="/id-verification/v1/address">Enter address manually</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Information sent" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukPanel({
+        titleText: "Information sent"
+      }) }}
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">We have sent a confirmation email to <strong>email@gmail.com</strong>.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>We will keep you up to date about your PIP claim by text message if you have agreed for us to do this.</p>
+
+      <p>You might be contacted to arrange an assessment with a health professional if more information is needed. </p>
+
+      <p>You may not need a consultation if you have provided enough information for us to make a decision.</p>
+
+      <h2 class="govuk-heading-m">Download a copy of your completed form</h2>
+
+      <p>You can download a copy of your completed form using this link: <a href="#">David Smith PIP application.pdf</a></p>
+
+      <p>You will not be able to download your completed form after you leave this page.</p>
+
+      <h2 class="govuk-heading-m">You have finished your application</h2>
+
+      <p>Sign out to keep your information secure.</p>
+
+      <a href="/id-verification/v1/sign-out" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Sign out</a>
+
+    </div>
+  </div>
+
+{% endblock %}

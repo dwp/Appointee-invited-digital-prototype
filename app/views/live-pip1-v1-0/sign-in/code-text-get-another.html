@@ -1,0 +1,26 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Get another 6-digit code sent to mobile number XXXX&nbsp;XXX&nbsp;789" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Get another 6-digit security code sent to mobile number ending 789</h1>
+   
+        <a href="/live-pip1-v1-0/sign-in/code-text" class="govuk-button">Get another code</a>
+        
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

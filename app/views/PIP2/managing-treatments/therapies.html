@@ -1,0 +1,60 @@
+{% set pageTitle = "Therapies you take at home with help from another person" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/PIP2/managing-treatments/check" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Therapies you take at home with help from another person</h1>
+
+      <p>We need to know:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>what the therapy is</li>
+        <li>how often you receive the therapy</li>
+        <li>how long the therapy takes</li>
+        <li>the type of assistance you need from another person and for how long</li>
+        <li>tell us about any help you feel you need but do not get</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        <h2 class="govuk-heading-m">Example</h2>
+        <p>“I need home dialysis for 3 hours on Monday and Friday each week. My partner helps me set up the dialysis equipment and supervises me during the dialysis to make sure I stay safe.”</p>
+      </div>
+      {{ govukTextarea({
+        name: "managingtreatments-therapies",
+        id: "managingtreatments-therapies",
+        rows: "18",
+        value: data['managingtreatments-therapies'],
+        label: {
+          text: "Tell us about therapies you take at home with help from another person",
+          isPageHeading: false,
+          classes: "govuk-label--m"
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5-v12/managing-treatments/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

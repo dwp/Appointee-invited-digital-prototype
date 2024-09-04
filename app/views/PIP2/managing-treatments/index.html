@@ -1,0 +1,65 @@
+{% set pageTitle = "Does your condition affect you managing your treatments?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/PIP2/managing-treatments/index-answer" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Managing treatments</h1>
+
+      <p>This means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>monitoring changes in your health condition or disability (for example, your blood sugar level, mental state or pain levels)</li>
+        <li>taking medication in the right way and at the right time</li>
+        <li>managing therapies that take place at home which have been recommended by a health or care professional, or pharmacist (for example, physiotherapy or home dialysis)</li>
+      </ul>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "managingtreatments-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you managing your treatments?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("managingtreatments-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("managingtreatments-question", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-v12/managing-treatments/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

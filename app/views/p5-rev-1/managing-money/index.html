@@ -1,0 +1,67 @@
+{% set pageTitle = "Does your condition affect you managing your money?" %}
+
+{% extends "layout-p5-rev-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-rev-1/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-rev-1/managing-money/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "managingmoney-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you managing your money?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>understanding how much things cost</li>
+            <li>understanding how much change you should get</li>
+            <li>managing your own budgets, paying your own bills and planning your own future purchases</li>
+          </ul>
+          <p>This does not mean taking a bill to the post box or being able to hold your change.</p>
+          <p>This also does not mean being able to read a bill or physically open a letter.</p>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("managingmoney-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("managingmoney-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-rev-1/managing-money/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

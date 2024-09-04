@@ -1,0 +1,76 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "What is your home address?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <h2 class="govuk-heading-m">Postcode</h2>
+
+      <p class="check-info">
+        <span>SE18 7BG</span>
+        <a href="/id-verification/v1/postcode-lookup">
+          Change
+          <span class="govuk-visually-hidden"> postcode</span>
+        </a>
+      </p>
+
+      <form class="form" action="/id-verification/v1/id-verification-start" method="post">
+
+        {{ govukSelect({
+          id: "sort",
+          name: "sort",
+          label: {
+            text: "Select an address",
+            classes: "govuk-label--m"
+          },
+          items: [
+            {
+              value: "3 addresses found",
+              text: "3 addresses found"
+            },
+            {
+              value: "10 Random Street, London, SE18 7BG",
+              text: "10 Random Street, London, SE18 7BG"
+            },
+            {
+              value: "12 Random Street, London, SE18 7BG",
+              text: "12 Random Street, London, SE18 7BG"
+            },
+            {
+              value: "14 Random Street, London, SE18 7BG",
+              text: "14 Random Street, London, SE18 7BG"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p>
+        <a href="/id-verification/v1/address">Enter address manually</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

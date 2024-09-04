@@ -1,0 +1,95 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Preparing food</h1>
+
+      <p class="govuk-body">Preparing food means making a simple, one course meal for one. This includes:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>peeling and chopping ingredients</li>
+            <li>opening tins</li>
+            <li>cooking or heating food on a standard hob or using a microwave</li>
+          </ul>
+
+          <br>
+            {{ govukCheckboxes({
+              idPrefix: "prep-food",
+              name: "prep-food",
+              fieldset: {
+                legend: {
+                  text: "What difficulties do you have preparing or cooking food?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "Select all options that apply even if it’s only sometimes"
+              },
+              items: [
+                {
+                  value: "I cannot prepare or cook food at all",
+                  text: "I cannot prepare or cook food at all"
+                },
+                {
+                  value: "I need help from someone else",
+                  text: "I need help from someone else"
+                },
+                {
+                  value: "I need help but do not get it",
+                  text: "I need help but do not get it"
+                },
+                {
+                  value: "I need to sit down while preparing or cooking",
+                  text: "I need to sit down while preparing or cooking"
+                },
+                {
+                  value: "I need to take rest breaks while preparing or cooking",
+                  text: "I need to take rest breaks while preparing or cooking"
+                },
+                {
+                  value: "I need someone to remind, encourage or supervise me",
+                  text: "I need someone to remind, encourage or supervise me"
+                },
+                {
+                  value: "I need someone to check on me to make sure I’m safe",
+                  text: "I need someone to check on me to make sure I’m safe"
+                },
+                {
+                  value: "I’m at risk of injury like burning or scalding",
+                  text: "I’m at risk of injury like burning or scalding"
+                },
+                {
+                  value: "I need help to read or understand numbers – such as, following simple recipes or using timers",
+                  text: "I need help to read or understand numbers – such as, following simple recipes or using timers"
+                },
+                {
+                  value: "Other",
+                  text: "Other"
+                }
+              ]
+            }) }}
+
+                  {{ govukButton({
+                    text: 'Continue'
+                  }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

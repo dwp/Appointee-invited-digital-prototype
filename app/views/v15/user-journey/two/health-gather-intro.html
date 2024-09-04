@@ -1,0 +1,58 @@
+{% extends "v15/user-journey/two/layout.html" %}
+
+{% block pageTitle %}
+Check your answers nationality
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<!-- {% include "includes/back-link-v12.html" %} -->
+{% endblock %}
+
+{% set conditionsLength %}
+{{ data.conditions | length }}
+{% endset %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h1 class="govuk-heading-l">
+            Stage 2: How your health condition or disability affects you
+          </h1>
+
+          <p class="govuk-body">In this stage you need to give us some more details about your health condition or disability and how they affect you.</p>
+
+          <p class="govuk-body">You must complete stage 2 by 25 September 2023.</p>
+
+          <h2 class="govuk-heading-m">
+            Before you start
+          </h2>
+
+          <p class="govuk-body">It will be useful for you to know:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>details of your health conditions or disabilities and how they affect your ability to do everyday tasks and get around</li>
+              <li>details of any medicines or treatments you have</li>
+              <li>details of your health and care professionals</li>
+              <li>evidence of your conditions or disabilities if you have it, such as doctors' reports, care or treatment plans, test results or repeat prescription lists</li>
+            </ul>
+
+            <p class="govuk-body">You do not have to complete this stage in one go. You can save your answers and come back later.</p>
+
+            <a href="tasklist-before" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+              Start now
+              <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+              </svg></a>
+
+
+    </main>
+  </div> <!-- govuk-width-container -->
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% block pageTitle %}
+Check your answers your details
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post" novalidate>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">Your details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['first-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="name">
+              Change<span class="govuk-visually-hidden"> first name</span>
+            </a>
+          </dd>
+        </div> <!-- govuk-summary-list__row -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['last-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="name">
+              Change<span class="govuk-visually-hidden"> last name</span>
+            </a>
+          </dd>
+        </div> <!-- govuk-summary-list__row -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['nino'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="nino">
+              Change<span class="govuk-visually-hidden"> national insurance number</span>
+            </a>
+          </dd>
+        </div> <!-- govuk-summary-list__row -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['dob-day'] }} - {{ data['dob-month'] }} - {{ data['dob-year'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="date-of-birth">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div> <!-- govuk-summary-list__row -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mobile number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mobile'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="contact-details">
+              Change<span class="govuk-visually-hidden"> mobile number</span>
+            </a>
+          </dd>
+        </div> <!-- govuk-summary-list__row -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['email'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="contact-details">
+              Change<span class="govuk-visually-hidden"> email address</span>
+            </a>
+          </dd>
+        </div> <!-- govuk-summary-list__row -->
+
+
+
+
+      </dl>
+
+      <p>Make sure you've checked your answers before you continue.</p>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
+  </div> <!-- govuk-grid-row -->
+
+
+
+</form>
+
+{% endblock %}

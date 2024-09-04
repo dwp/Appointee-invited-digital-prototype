@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Not eligible
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<!-- {{data['destination']}} -->
+  
+  <form id="form" method="post" action="#">
+    <!-- <input type="hidden" value="{{data['destination']}}" name="destination"> -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Based on your answers, you might not be eligible for Personal Independence Payment (PIP) 
+        </h1>
+        <p>This is because you can only get PIP if you expect your health condition or disability to last at least another 9 months.</p>
+        <p>You can continue to apply for PIP if you still think you’re eligible.</p>
+        <p>If you need help with living costs because you’re too ill to work, you might be eligible for <a href="#">Universal Credit</a> or <a href="#">New style Employment and Support Allowance</a>.</p>
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

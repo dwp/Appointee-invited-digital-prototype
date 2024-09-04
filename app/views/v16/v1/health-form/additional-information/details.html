@@ -1,0 +1,52 @@
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukCharacterCount({
+        name: "additionalinformation-details",
+        id: "additionalinformation-details",
+        rows: "18",
+        maxlength: "5000",
+        value: data['additionalinformation-details'],
+        label: {
+          text: "Additional information",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>Tell us anything else you think we should know about how your health condition or disability affects you, that you have not mentioned already.</p>
+          '
+        }
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save
+        </a>
+      </div>
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

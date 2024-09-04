@@ -1,0 +1,64 @@
+{% set pageTitle = "Does your condition affect you reading?" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5/reading/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "reading-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect your ability to read?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means doing the following in your own language:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>reading written words and numbers both indoors and outdoors</li>
+            <li>reading signs and symbols (for example, a green exit sign on a door) </li>
+          </ul>
+          <p>For this question, you must be able to see the information. Using braille to read is not counted as reading and you should give more detail about how your condition affects your ability to read.</p>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("reading-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("reading-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5/reading/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

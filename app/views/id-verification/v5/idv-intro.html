@@ -1,0 +1,47 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "We need to check your identity" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>You'll need to register with our identity checking system and create a password so you can sign in - this is separate from your Apply for PIP password.</p>
+
+      <p>If you have already registered to confirm your identity for PIP, sign in with the password you have created.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "dth/register"
+      }) }}
+
+      <p>
+        <a href="idv-phone">Confirm your identity by phone</a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+  </div>
+{% endblock %}

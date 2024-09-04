@@ -1,0 +1,40 @@
+{% set pageTitle = "Your registration was successful" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out-dth.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" method="POST" novalidate>
+
+        <h1 class="govuk-heading-xl">Check your phone</h1>
+
+        <div class="govuk-inset-text">
+          <p>We have sent a code to: <br><strong>07123456789</strong></p>
+        </div>
+
+        <p>It might take up to a minute to arrive.</p>
+
+        <p>The code will expire in 5 minutes.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="code" >Enter your security code</label>
+          <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+        </div>
+
+          <input type="submit" class="govuk-button" value="Continue" id="submit">
+          <p><a href="#">I did not get a text message</a></p>
+
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

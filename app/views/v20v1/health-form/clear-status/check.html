@@ -1,0 +1,25 @@
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="#">
+
+      <h1 class="govuk-heading-l">Clear status</h1>
+
+      <p>This will clear all PIP2 statuses to 'Not started'. This will not clear any data entered. To do this please click 'Clear data' in the footer.</p>
+
+
+      <a href="../task-list?clearstatus=completed" class="govuk-button">Confirm</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

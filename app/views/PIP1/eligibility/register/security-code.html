@@ -1,0 +1,52 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+How do you want to receive your security code?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" aria-describedby=action-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-heading-xl">How do you want to receive your security code?</h1>
+          </legend>
+          <div id="action-hint" class="govuk-hint">
+            We will sent a 6 digit code to your mobile phone or to your email address.
+          </div>
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="code-choice-1" name="code-choice" type="radio" value="Send me a text message ">
+              <label class="govuk-label govuk-radios__label" for="code-choice-1">
+                 Send me a text message
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="code-choice-2" name="code-choice" type="radio" value="Send me an email">
+              <label class="govuk-label govuk-radios__label" for="code-choice-2">
+                 Send me an email
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+
+        </fieldset>
+
+      </div> <!-- govuk-form-group -->
+
+      <a href="code-text" class="govuk-button">Continue</a>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

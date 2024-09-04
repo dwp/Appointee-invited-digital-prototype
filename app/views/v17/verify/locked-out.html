@@ -1,0 +1,29 @@
+{% set pageTitle = "Your account has been locked" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your account has been locked</h1>
+
+      <p>To unlock your account you will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your email address</li>
+        <li>your National Insurance number</li>
+        <li>access to your emails and mobile phone</li>
+      </ul>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

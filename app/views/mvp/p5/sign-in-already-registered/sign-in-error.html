@@ -1,0 +1,77 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Enter your details" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="locked-out" method="post" novalidate>
+
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <p>Check your form. Either your email address or password is incorrect.</p>
+            <p style="margin-bottom: 0">Your account might be locked if you continue to enter incorrect information.</p>
+          </div>
+        </div>
+
+        <h1 class="govuk-heading-l">Sign in</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          classes: "govuk-input--width-20",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+        label: {
+          text: "Enter your password"
+        },
+          classes: "govuk-input--width-20",
+          id: "password",
+          name: "password",
+          type: "password",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+      
+      <p><a href="register-start">Register now</a> if you have not used this service before.</p>
+      <p><a href="forgot-password">I forgot my password</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+    </div>{# /govuk-grid-row #}
+
+{% endblock %}

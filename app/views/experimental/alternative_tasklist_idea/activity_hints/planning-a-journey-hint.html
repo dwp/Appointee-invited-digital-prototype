@@ -1,0 +1,76 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Planning and following a journey hint
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" action="#" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                Planning and following a journey?
+            </h1>
+          </legend>
+          <div id="mobility-activity-hint" class="govuk-hint">
+            <p>This means:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>leaving your home to go out</li>
+                <li>following a route you know well</li>
+                <li>working out a new route and following it, for example, if you find a road is closed on a route you know well and need to plan and follow a different route</li>
+              </ul>
+            </p>
+            <p>It does not mean physically moving around.</p>
+
+          </div>
+
+      </div> <!-- govuk-form-group -->
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "planning-journey-help",
+        name: "planning-journey-help",
+        fieldset: {
+          legend: {
+            text: "Do you ever have difficulties planning a journey?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select yes if you need help from someone else or using extra equipment."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <br>
+    <button class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+
+
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+
+{% endblock %}

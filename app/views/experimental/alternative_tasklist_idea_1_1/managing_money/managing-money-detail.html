@@ -1,0 +1,59 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Managing money
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="managing-money-check" method="post" novalidate>
+
+        {{ govukTextarea({
+            name: "managingmoney-details",
+            id: "managingmoney-details",
+            rows: "18",
+            value: data['managingmoney-details'],
+            label: {
+              text: "Tell us about the difficulties you have with managing your money and how you manage them",
+              isPageHeading: true,
+              classes: "govuk-label--l"
+            },
+            hint: {
+              html: '
+              <p>For each difficulty, please tell us:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>how often you have this difficulty – tell us about both good and bad days</li>
+                <li>what the difficulty is</li>
+    
+                <li>why you have it, or how it relates to your condition</li>
+                <li>any help you get from another person</li>
+                <li>any help you feel you need but do not get</li>
+              </ul>
+    
+              <div class="govuk-inset-text">
+                <h2 class="govuk-heading-m">Examples</h2>
+                <p>“Most days I have difficulty making decisions about bills and household budgets because I become very anxious and panicked. My partner helps me make financial decisions.”</p>
+                <p>“I always have difficulty paying for things in shops because I find it difficult to calculate how much things cost. My carer helps me understand how much I need to pay.”</p>
+              </div>
+            '
+            }
+          }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

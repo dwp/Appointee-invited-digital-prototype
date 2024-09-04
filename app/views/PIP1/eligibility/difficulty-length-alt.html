@@ -1,0 +1,85 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+Expected length of difficulties with everyday tasks or getting around
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" aria-describedby=difficulty-length-hint>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-xl">Will you find it hard to do one or more everyday tasks or get around for at least a year from it when started being hard?</h1>
+          </legend>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What we mean by everyday tasks or getting around
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>By everyday tasks or getting around we mean:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>preparing food</li>
+                <li>eating and drinking</li>
+                <li>managing your treatments</li>
+                <li>washing and bathing</li>
+                <li>managing toilet needs or incontinence</li>
+                <li>dressing and undressing</li>
+                <li>talking, listening and understanding</li>
+                <li>reading</li>
+                <li>mixing with other people</li>
+                <li>managing your money</li>
+                <li>planning and following journeys</li>
+                <li>moving around</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="difficulty-length-alt1" name="difficulty-length-alt" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="difficulty-length-alt1">
+                 Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="difficulty-length-alt2" name="difficulty-length-alt" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="difficulty-length-alt2">
+                   No
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="difficulty-length-alt3" name="difficulty-length-alt" type="radio" value="Not sure">
+                  <label class="govuk-label govuk-radios__label" for="difficulty-length-alt3">
+                     I'm not sure
+                  </label>
+                </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+
+        </fieldset>
+
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

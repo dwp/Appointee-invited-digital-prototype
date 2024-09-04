@@ -1,0 +1,73 @@
+{% set pageTitle = "Upload a file" %}
+
+{% extends "v21/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "v21/includes/phase-banner.html" %}
+  {% include "v21/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if getData.delete == "true" %}
+        <div class="moj-banner moj-banner--success">
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+          <div class="moj-banner__message">
+            <span class="moj-banner__assistive">Success</span>File named {{ data['supporting-evidence-file-2'] }} has been deleted</div>
+        </div>{# /moj-banner #}
+      {% endif %}
+
+      <form action="uploading-supporting-evidence-2" method="post" novalidate>
+
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Upload a file
+            </h1>
+          </legend>
+          <br><br>
+
+          <p>Your file must be:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>a PDF, JPEG, JPG, PNG, DOCX, DOC, or DOT</li>
+            <li>smaller than 10MB</li>
+          </ul>
+          </p>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="supporting-evidence-file-1">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="supporting-evidence-file-1" name="supporting-evidence-file-1" type="file">
+          </div>
+        </fieldset>
+
+
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
+          Upload and continue
+        </button>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              If you have problems uploading your files
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>If a file is bigger than 10MB, reduce the file size if you can and try again.</p>
+            <p>If you cannot upload your files you can post photocopies of your documents to DWP instead. Evidence received by post will be considered as part of your PIP claim.</p>
+            <p>Write your name and National Insurance number on each piece of evidence.</p>
+            <p>Post your evidence to:</p>
+            <p>FREEPOST DWP PIP 1</p>
+            <p>You do not need a stamp. Do not use recorded delivery or special delivery.</p>
+          </div>
+        </details>
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

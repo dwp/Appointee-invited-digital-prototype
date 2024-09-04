@@ -1,0 +1,61 @@
+{% block pageTitle %}
+Your contact language preference
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+          <h1 class="govuk-heading-xl">
+              Your contact language preference
+          </h1>
+
+          <p class="govuk-body">You can choose which language we use for spoken and written contact with you.</p>
+          <p class="govuk-body">Phone calls with DWP can always be done in English or Welsh</p>
+
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-heading-m">Which language do you want us to contact you in?</h2>
+            </legend>
+            <div id="medication-hint" class="govuk-hint">
+              This includes things like emails, letters, phone calls and assessments.
+            </div>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="lang-pref" name="lang-pref" type="radio" value="English">
+                <label class="govuk-label govuk-radios__label" for="lang-pref">
+                  English
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="lang-pref" name="lang-pref" type="radio" value="Welsh">
+                <label class="govuk-label govuk-radios__label" for="lang-pref">
+                  Welsh
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios -->
+
+          </fieldset>
+
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Enter a treatment</h1>
+
+      <p>This can be a treatment you have had, you are having, or you are waiting for.</p>
+
+      <p>Include NHS and privately funded treatment.</p>
+
+      <!-- {{ govukInput({
+        id: 'treatments',
+        name: "treatment-name",
+        value: "treatment[name]",
+        hint: {
+          text: "For example, physiotherapy, kidney dialysis or radio therapy.
+                                  Include NHS and privately funded treatment."
+       },
+        label: {
+          html: 'Treatment name'
+        }
+      }) }} -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="width-10">
+          <b>Treatment name</b>
+        </label>
+          <div id="event-name-hint" class="govuk-hint">
+            For example, physiotherapy, counselling, talking therapy, kidney dialysis or radio therapy.
+          </div>
+          <input class="govuk-input" id="event-name" name="treatment-name" value="{{ data['treatment-name'] }}" type="text" aria-describedby="event-name-hint">
+    </div>
+
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="width-10">
+            <b>Approximate start date</b>
+          </label>
+          <div id="event-name-hint" class="govuk-hint">
+                 For example, March 2020 or awaiting start date
+          </div>
+          <input class="govuk-input govuk-!-width-full" id="startDate" name="treatment-start-date" value="{{ data['treatment-start-date'] }}" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+           <label class="govuk-label" for="width-10">
+             <b>Side effects you experience (optional)</b>
+           </label>
+           <div id="event-name-hint" class="govuk-hint">
+                  For example, nausea, headache, dizziness, drowsiness or confusion.
+          </div>
+           <input class="govuk-input govuk-input--width-full" id="side-effect-treatment" name="treatment-side-effect"  value="{{ data['treatment-side-effect'] }}" type="text">
+      </div>
+
+
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "v12/condition-questions/option-five/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

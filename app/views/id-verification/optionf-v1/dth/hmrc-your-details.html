@@ -1,0 +1,86 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Enter your details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Tell us who you are",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Check your identity</span>
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <form class="form" action="hmrc-national-insurance-number" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "first-name",
+          name: "first-name",
+          type: "name",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "last-name",
+          name: "last-name",
+          type: "name",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "Date of birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1980"
+          }
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

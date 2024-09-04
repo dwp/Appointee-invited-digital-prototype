@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Not eligible
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<!-- {{data['destination']}} -->
+
+
+<form id="form" method="get" action="https://www.gov.uk/browse/benefits/disability">
+  <input type="hidden" value="{{data['destination']}}" name="destination">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Based on your answers you might not be eligible for Personal Independence Payment (PIP)
+      </h1>
+      <!--<p class="govuk-body">This is because you told us:</p>-->
+      <ul class="govuk-list govuk-list">
+
+        {% if data['over-16'] == 'Under 16' %}
+        <li>This because you're under 16 years old</li>
+        {% endif %}
+        {% if data['overspa'] == 'No' %}
+        <li>This is because you told us you're over State Pension age - <a href="https://www.gov.uk/attendance-allowance/eligibility">check if you're eligible for Attendance Allowance instead.</a></li>
+        {% endif %}
+        {% if data['condition'] == 'No' %}
+        <li>you do not have a health condition.</li>
+        <!-- <p>You can <a href="#">see what other benefits are available</a></p> -->
+        {% endif %}
+        {% if data['condition'] == 'Not sure' %}
+        <li>This is because you told us you're not sure if you have a health condition that affects your ability to do everyday tasks or get around.</li>
+        <!-- <p>You can <a href="#">see what other benefits are available</a></p> -->
+        {% endif %}
+        {% if data['over-9-months'] == 'Less than 9 months' %}
+        <li>This is because you told us you do not expect your ability to do everyday tasks or get around to be affected for at least another 9 months.</li>
+        <!-- <p>You can <a href="#">see what other benefits are available</a></p> -->
+        {% endif %}
+        
+      </ul>
+
+     <!-- <p>PIP supports you if you have a health condition or disability that affects your ability to do everday tasks or get around.</p>-->
+      <p><a href="https://dth-prototype.herokuapp.com/auth/v8/register/start?service-name=Apply%20for%20PIP">You can still apply</a> and we will ask for more information to assess your application.</p>
+    
+      <button class="govuk-button" href="https://www.gov.uk/browse/benefits/disability">
+        Check what other benefits are available
+      </button>
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

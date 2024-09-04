@@ -1,0 +1,40 @@
+{% set pageTitle = "Change your personal details" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  div.govuk-grid-column-one-third h2 {border-top: 1px solid #b1b4b6; padding-top: 20px;
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your completed form</h1>
+
+      <p>You'll be able to view and download a copy of your completedstage 2 form.</p>
+
+
+      <div class="govuk-inset-text">
+        <h2 class="govuk-heading-s">PIP enquiry line</h2>
+        <p>Telephone: 0800 121 4433</p>
+      </div>
+
+      <p>If you need someone to help you, you can:
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>ask for them to be added to your call - you cannot do this if you use textphone</li>
+        <li>ask someone else to call on your behalf - you’ll need to be with them when they call</li>
+      </ul>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+
+{% endblock %}

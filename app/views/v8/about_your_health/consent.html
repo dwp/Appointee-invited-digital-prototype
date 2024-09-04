@@ -1,0 +1,84 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Consent
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form id="form" method="post" action="#">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form id="form" method="post" action="#"></form>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="consent-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you agree that your health professionals can share relevant information about your health conditions to
+                            support your application?
+                        </h1>
+                    </legend>
+                    <p>The Department for Work and Pensions (DWP), or assessment providers approved by the <a
+                            href="https://www.gov.uk/government/ministers/secretary-of-state-for-work-and-pensions">Secretary
+                            of State</a>, may need more information or evidence to process and make a decision on your
+                        application.
+                    </p>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="consent-1" name="consent" type="radio"
+                                value="Yes, I agree" aria-describedby="consent-1-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="consent-1">
+                                Yes, I agree
+                            </label>
+                            <span id="consent-1-item-hint" class="govuk-hint govuk-radios__hint">
+                                My health professionals can give DWP relevant information to support my application.
+                            </span>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="consent-2" name="consent" type="radio"
+                                value="No, I don't agree" aria-describedby="consent-2-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="consent-2">
+                                No, I do not agree
+                            </label>
+                            <span id="consent-1-item-hint" class="govuk-hint govuk-radios__hint">
+                                DWP will make a decision on my application using the information they have already.
+                            </span>
+                        </div>
+                    </div>
+                </fieldset>
+            </div> <!-- govuk form group -->
+
+            <h2 class="govuk-heading-m">How DWP uses this information</h2>
+
+            <p>If you agree, DWP will store your consent on your behalf. This means your health professionals will know they are legally allowed to share information about you.</p>
+            <p>DWP needs information about your health condition and how it affects you.</p>
+            <p>The law allows DWP to get, keep, and use this information for the purpose of processing and making a
+                decision on your application and on any mandatory reconsideration or appeal that you've made.</p>
+            <h2 class="govuk-heading-m">If you change your mind</h2>
+            <p>You can change your mind at any time. If you do, DWP will not ask your health professionals to share any more
+                information.</p>
+
+            <p class="govuk-body">If you want to give or withdraw your consent later, contact:</p>
+
+            <p class="govuk-body">Phone: 0800 121 4433 <br>
+              Textphone: 0800 121 4493 if you have speech or hearing difficulties</p>
+
+            <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+        </form>
+
+        </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-row -->
+
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% set pageTitle = "Tell us about the difficulties you have with dressing and undressing and how you manage them" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5/dressing-and-undressing/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "dressingandundressing-details",
+        id: "dressingandundressing-details",
+        rows: "18",
+        value: data['dressingandundressing-details'],
+        label: {
+          text: "Tell us about the difficulties you have with dressing and undressing and how you manage them",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any aids or adaptations you use, or help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“About three times a week, I have trouble dressing my upper body because my hands shake too much to do up the buttons on my shirt. I use a button hook to do the buttons on my shirt.”</p>
+            <p>“Most days my partner has to remind me to get dressed during the day.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5/dressing-and-undressing/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

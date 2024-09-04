@@ -1,0 +1,60 @@
+{% extends "layout-signed-out-p5-v12.html" %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+{% endblock %}
+
+{% set pageTitle = "Information sent" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukPanel({
+        titleText: "Application complete"
+      }) }}
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">We have sent a confirmation email to <strong>email@gmail.com</strong>.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <!-- Removed as SPD can't provide indicitave timesacles <p>We will normally contact you within [X] weeks about what will happen next.</p> -->
+
+      <p>We will keep you up to date about your PIP claim by text message if you have agreed for us to do this.</p>
+
+      <p>You might be contacted to arrange an assessment with a health professional if more information is needed. </p>
+
+      <p>You may not need a consultation if you have provided enough information for us to make a decision.</p>
+
+      <h2 class="govuk-heading-m">If you need to upload more supporting evidence</h2>
+
+      <p><a class="govuk-link" href="/p4/sign-in/sign-in">Sign in</a> if you need to upload any more evidence that might support your application.</p>
+
+      <p>You might find it useful to bookmark the sign in page in your internet browser.</p>
+
+      <p>You will need your email address, mobile phone and password to sign in.</p>
+
+      <p>You will not need to answer the questions about your daily living activities or mobility again.</p>
+
+      <h2 class="govuk-heading-m">Give feedback</h2>
+
+      <p><a class="govuk-link" href="feedback/feedback" target="_blank">What did you think of this service? (opens in new tab)</a> takes 30 seconds</p>
+
+      <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
+
+     <p>It's now safe to close this window.</p>
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

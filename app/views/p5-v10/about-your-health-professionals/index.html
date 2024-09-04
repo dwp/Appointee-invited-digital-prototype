@@ -1,0 +1,38 @@
+{% set pageTitle = "About your health professionals" %}
+
+{% extends "layout-p5-v10.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  	<div class="govuk-form-group">
+	    <h1 class="govuk-heading-l">About your health professionals</h1>
+{# 	    <p class="govuk-body-l">Tell us about the professional(s) best placed to advise us on how your health condition or disability affects you.</p>
+	    <p>If we need additional information we may contact the health professionals that support you.</p> #}
+
+
+
+      <p>We ask you to send us supporting evidence with your form, but sometimes we may contact the health professionals who support you for further information.</p>
+
+      <p>Please tell us about any health professionals who treat or care for you most regularly and who are best placed to advise us on how your health condition or disability affects you. </p>
+
+
+
+    </div><!-- govuk-form-group -->
+
+    <a href="/p5-v10/about-your-health-professionals/q-health-professional" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

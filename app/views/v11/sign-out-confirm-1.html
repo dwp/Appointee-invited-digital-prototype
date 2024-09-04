@@ -1,0 +1,67 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Are you sure you want to sign out
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Save your information
+            </h1>
+          </legend>
+
+          <!-- <p>If you did not select 'Save and continue' on the previous screen, any information you entered will not be saved.</p>
+
+          <p>To save your information before you sign out, go back and select 'Save and continue'. Then select 'Sign out'.</p> -->
+
+          <p>If you entered any information on the previous screen, make sure you save it before you sign out.</p>
+
+          <p>Go back and select 'Save and continue'. Then select 'Sign out'.</p>
+
+          <p>If you did not enter any information on the previous screen, it's safe to sign out. </p>
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to save your information before you sign out?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-out-confirm-1" name="sign-out-confirm"
+                type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="sign-out-confirm-1">
+                Yes, take me back so I can save my information
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-out-confirm-2" name="sign-out-confirm"
+                type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="sign-out-confirm-2">
+                No, sign out, I've saved my information
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+          </div> <!-- govuk-radios -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Confrm" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

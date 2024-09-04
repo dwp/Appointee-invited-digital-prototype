@@ -1,0 +1,46 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Get another 6-digit code sent to mobile number XXXX&nbsp;XXX&nbsp;789" %}
+
+{% extends "layout-p5-rev-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-rev-1/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if getData.expired == "true" %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Your 6-digit code has expired. Get another code."
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      <h1 class="govuk-heading-l">Get another 6-digit security code sent to mobile number ending 789</h1>
+
+      {% if getData.scenario === "locked" %}
+        <a href="/p5-rev-1/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>
+        {% include "p5-rev-1/sign-in/_problems.html" %}
+      {% elif getData.scenario === "active" %}
+        <a href="/p5-rev-1/sign-in/code-text?scenario=active" class="govuk-button">Get another code</a>
+        {% include "p5-rev-1/sign-in/_problems.html" %}
+      {% else %}
+        <a href="/p5-rev-1/sign-in/code-text" class="govuk-button">Get another code</a>
+        {% include "p5-rev-1/sign-in/_problems.html" %}
+      {% endif %}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

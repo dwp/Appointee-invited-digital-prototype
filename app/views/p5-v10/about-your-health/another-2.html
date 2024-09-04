@@ -1,0 +1,58 @@
+{% set pageTitle = "Other conditions" %}
+
+{% extends "layout-p5-v10.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-!-font-size-24">You have added details for:
+        <br><strong>{{ data['condition-name-1'] | capitalize }}</strong>
+        <br><strong>{{ data['condition-name-2'] | capitalize }}</strong>
+      </p>
+
+      <form action="/p5-v10/about-your-health/another-2-answer" method="post" novalidate>
+
+        {{ govukRadios({
+          idPrefix: "condition3",
+          name: "condition3",
+          fieldset: {
+            legend: {
+              text: "Do you have another condition or disability?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      {% include "p5-v10/about-your-health-professionals/_return-link.html" %}
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

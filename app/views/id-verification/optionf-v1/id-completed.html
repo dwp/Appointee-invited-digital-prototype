@@ -1,0 +1,29 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Identity confirmed" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Identity confirmed"
+      }) }}
+
+      <p>Your identity has been confirmed. If your claim is successful we will pay you as soon as we have made a decision.</p>
+
+      <h2 class="govuk-heading-s">If you want to upload more supporting evidence</h2>
+
+      <p>To upload supporting evidence that might support your claim, <a href="">sign in to the Apply for PIP service</a>.</p>
+
+      <p>You will need your email address, mobile phone and password to sign in to PIP. You will not need to answer the questions about your daily living activities or mobility again.</p>
+
+    </div>
+  </div>
+{% endblock %}

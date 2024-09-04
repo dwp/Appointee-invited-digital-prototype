@@ -1,0 +1,65 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Does your condition affect you moving around?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "movingaround-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you moving around?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means how well you can walk without any specialist equipment or support from another person </p>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("movingaround-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("movingaround-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    <p><a href="/id-verification/v4/live-pip2/list-section-3-1">Return to list</a></p>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

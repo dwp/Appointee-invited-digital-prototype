@@ -1,0 +1,97 @@
+{% extends "layout-email.html" %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-container-centred">
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">From</th>
+            <td class="govuk-table__cell">DWP PIP</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">To</th>
+            <td class="govuk-table__cell">jerry.bakewell@gmail.com</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Subject</th>
+            <td class="govuk-table__cell">Start your Personal Independence Payment claim</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-container-centred govuk-email-container">
+
+      {{ govukHeader({
+        homepageUrl: "#"
+      }) }}
+
+      <div class="govuk-width-container govuk-email-content">
+
+        <p>Dear Jerry Bakewell,</p>
+
+        <p>Thank you for agreeing to claim Personal Independence Payment (PIP).</p>
+
+        <p>This is a new service. By using it you'll help us to develop and improve it.</p>
+
+        <h2 class="govuk-heading-m">Make a claim</h2>
+
+        <p>You'll need to register and create a password before you start your claim. This will let you securely save progress and return later if you need to take any breaks.</p>
+
+        <p>You can use any device connected to the internet to claim.</p>
+
+        <div class="govuk-inset-text">
+          Register and claim at <a href="/id-verification/v5/intro-question">https://www.apply-for-pip.gov.uk</a>
+        </div>
+
+        <p>Save this web address in your internet browser or keep this email safe. You’ll need it to get back to your claim if you do not complete it in one go.</p>
+
+        <h2 class="govuk-heading-m">When you need to submit your claim by</h2>
+
+        <p>Register and complete the first stage of the claim as soon as you can. This usually takes around 15 minutes. The date you complete this first stage will be your date of claim. The sooner you do this, the earlier your payments could begin if you're awarded PIP.</p>
+
+        <p>You'll see a message on-screen to confirm when you've done this. It will also tell you the date you need to complete the rest of your claim by.</p>
+
+        <h2 class="govuk-heading-m">Get help</h2>
+
+        <p>If you need help, you can also a friend, relative, carer, representative, or local support organisation to help you.</p>
+
+        <p>If you would like to speak to someone from the Department for Work and Pensions (DWP) about your claim, contact:</p>
+
+        <div class="govuk-inset-text">
+          Telephone: 0800 121 6279<br>
+          Textphone: 0800 121 4493 if you have speech or hearing difficulties<br>
+          Relay UK (if you cannot hear or speak on the phone): 18001 then 0800 121 6279<br>
+          <a href="https://relayuk.bt.com">https://relayuk.bt.com</a><br>
+          Video relay service for British Sign Language (BSL) users:<br>
+          <a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl</a><br>
+          Check you can use the video relay service:<br>
+          <a href="https://www.dalanguages.co.uk/dwp-bsl/">https://www.dalanguages.co.uk/dwp-bsl/</a><br>
+          Open 9am to 5pm, Monday to Friday
+        </div>
+
+        <p>Please do not reply to this message. Any email sent in response will be deleted without being read. DWP will never ask you to send any usernames, passwords, personal, health/medical or bank account information via email.</p>
+
+        <p>Yours sincerely,</p>
+
+        <p>Office manager</p>
+
+      </div>
+
+      {{ govukFooter({}) }}
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

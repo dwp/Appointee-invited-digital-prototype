@@ -1,0 +1,61 @@
+{% set pageTitle = "Tell us about the difficulties you have with talking and listening and how you manage them" %}
+
+{% extends "includes/v12/sign-out-pop-up-talking.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/PIP2/talking-and-listening/check" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Difficulties talking, listening and understanding</h1>
+
+      <p>For each difficulty tell us:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>what the difficulty is</li>
+        <li>how often you have this difficulty – tell us about both good and bad days</li>
+        <li>why you have it, or how it relates to your condition</li>
+        <li>any aids or adaptations you use, or help you get from another person</li>
+        <li>any help you feel you need but do not get</li>
+      </ul>
+      <div class="govuk-inset-text">
+        <h2 class="govuk-heading-m">Examples</h2>
+        <p>“I always have difficulty listening because I am hard of hearing. I use 2 hearing aids to help me hear what other people are saying.”</p>
+        <p>“I have difficulty speaking and expressing myself due to having a stroke several years ago. I use a communication board to help me communicate with others.”</p>
+      </div>
+
+      {{ govukTextarea({
+        name: "talkinglistening-details",
+        id: "talkinglistening-details",
+        rows: "18",
+        value: data['talkinglistening-details'],
+        label: {
+          text: "Tell us about difficulties you have with talking, listening and understanding, and how you manage them",
+          isPageHeading: false,
+          classes: "govuk-label--m"
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5-v12/talking-and-listening/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

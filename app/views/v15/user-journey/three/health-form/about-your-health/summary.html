@@ -1,0 +1,55 @@
+{% set pageTitle = "Your health condition or disability" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Your health condition or disability</h1>
+
+    <p>Earlier you told us these things about a condition or disability you have.</p>
+
+    <!-- Coditions start -->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">{{ data['your-condition'] }}</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition or disability
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['your-condition'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['condition-start-date'] }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <p>We now need some more details from you about this condition or disability.</p>
+
+    <p>You can change any details and tell us about other conditions and disabilities later if you need to.</p>
+
+    <p><a href="pip1-condition-details" class="govuk-button">Continue</a></p>
+
+    <!-- <p><a href="../task-list?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p> -->
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

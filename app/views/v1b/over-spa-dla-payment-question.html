@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Over State Pension age more detail
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="dla-payments">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                When did your Disability Living Allowance (DLA) claim end? 
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dla-claim-end-1" name="dla-claim-end" type="radio" value="Less than 12 months ago">
+                <label class="govuk-label govuk-radios__label" for="dla-claim-end-1">
+                  Less than 12 months ago
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dla-claim-end-2" name="dla-claim-end" type="radio" value="More than 12 months ago">
+                <label class="govuk-label govuk-radios__label" for="dla-claim-end-2">
+                  More than 12 months ago
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dla-claim-end-3" name="dla-claim-end" type="radio" value="I'm not sure">
+                <label class="govuk-label govuk-radios__label" for="dla-claim-end-3">
+                  I'm not sure
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios -->     
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

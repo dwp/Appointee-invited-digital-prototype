@@ -1,0 +1,192 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Daily activity list
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="/experimental/linear_journey/preparing_food/preparing-food-detail">
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                    <div class="govuk-form-group">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                          <h1 class="govuk-fieldset__heading">
+                              Everyday tasks and getting around
+                          </h1>
+                      </legend>
+
+                            <p>We need to know which activities you find hard to do yourself:</p>
+
+                            <ul class="govuk-list govuk-list--bullet">
+                              <li>safely</li>
+                              <li>to an acceptable standard</li>
+                              <li>as often as you need to</li>
+                              <li>in a reasonable time</li>
+                            </ul>
+
+                            <p>We also need to know which activities you need help with, even if you do not get help now. This could be help from a person or using equipment.</p>
+
+
+                        <fieldset class="govuk-fieldset" aria-describedby="daily-activity-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h2 class="govuk-fieldset__heading">
+                                    Which activities do your conditions or disabilities affect?
+                                </h2>
+                            </legend>
+                            <div id="daily-activity-hint" class="govuk-hint">
+                                Select all that apply.
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-1" name="daily-activity" type="checkbox"
+                                        value="Preparing food">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity">
+                                        Preparing food
+                                    </label>
+                                    <div id="daily-activity-1-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/preparing-food-hint.html">What we mean by preparing food</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-2" name="daily-activity" type="checkbox"
+                                        value="Eating and drinking">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-2">
+                                        Eating and drinking
+                                    </label>
+                                    <div id="daily-activity-2-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/eating-and-drinking-hint.html">What we mean by eating and drinking</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-3" name="daily-activity" type="checkbox"
+                                        value="Managing medicines and treatments">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-3">
+                                        Managing medicines and treatments
+                                    </label>
+                                    <div id="daily-activity-3-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/managing-treatments-hint.html">What we mean by managing medicines and treatments</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-4" name="daily-activity" type="checkbox"
+                                        value="Washing and bathing">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-4">
+                                        Washing and bathing
+                                    </label>
+                                    <div id="daily-activity-4-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/washing-and-bathing-hint.html">What we mean by washing and bathing</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-5" name="daily-activity" type="checkbox"
+                                        value="Using the toilet and managing incontinence">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-5">
+                                        Using the toilet and managing incontinence
+                                    </label>
+                                    <div id="daily-activity-5-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/toilet-needs-hint.html">What we mean by using the toilet and managing incontinence</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-6" name="daily-activity" type="checkbox"
+                                        value="Dressing and undressing">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-6">
+                                        Dressing and undressing
+                                    </label>
+                                    <div id="daily-activity-6-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/dressing-and-undressing-hint.html">What we mean by dressing and undressing</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-7" name="daily-activity" type="checkbox"
+                                        value="Talking listening and understanding">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-7">
+                                        Talking, listening and understanding
+                                    </label>
+                                    <div id="daily-activity-7-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/talking-and-listening-hint.html">What we mean by talking, listening and understanding</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-8" name="daily-activity" type="checkbox"
+                                        value="Reading">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-8">
+                                        Reading
+                                    </label>
+                                    <div id="daily-activity-8-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/reading-hint.html">What we mean by reading</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-9" name="daily-activity" type="checkbox"
+                                        value="Mixing with other people">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-9">
+                                        Mixing with other people
+                                    </label>
+                                    <div id="daily-activity-9-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/mixing-with-people-hint.html">What we mean by mixing with other people</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-10" name="daily-activity" type="checkbox"
+                                        value="Managing money">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-10">
+                                        Managing money
+                                    </label>
+                                    <div id="daily-activity-10-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/managing-money-hint.html">What we mean by managing money</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="mobility-activity-1" name="mobility-activity" type="checkbox"
+                                        value="Planning and following a journey">
+                                    <label class="govuk-label govuk-checkboxes__label" for="mobility-activity">
+                                        Planning and following a journey
+                                    </label>
+                                    <div id="mobility-activity-1-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/planning-a-journey-hint.html">What we mean by planning and following a journey</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="mobility-activity-2" name="mobility-activity" type="checkbox"
+                                        value="Moving around">
+                                    <label class="govuk-label govuk-checkboxes__label" for="mobility-activity-2">
+                                        Moving around
+                                    </label>
+                                    <div id="mobility-activity-2-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        <a href="activity_hints/moving-around-hint.html">What we mean by moving around</a>
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="daily-activity-11" name="daily-activity" type="checkbox"
+                                        value=" None of these">
+                                    <label class="govuk-label govuk-checkboxes__label" for="daily-activity-11">
+                                        None of these
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </fieldset>
+
+                    </div> <!-- govuk-form-group -->
+
+                    <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+                </div> <!-- govuk-grid-column-two-thirds-from-deskto-->
+            </div> <!-- govuk-grid-row -->
+        </main>
+   </div> <!-- govuk-width-container -->
+</form>
+
+{% endblock %}

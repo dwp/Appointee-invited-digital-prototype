@@ -1,0 +1,31 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Not eligible
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <form id="form" method="post" action="#">
+    <!-- <input type="hidden" value="{{data['destination']}}" name="destination"> -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Based on your answers, you’re not eligible for Personal Independence Payment (PIP)
+        </h1>
+        <p>This is because you’re under 16. You must be aged 16 or over to get PIP.</p>
+
+        <p><a href="https://www.gov.uk/disability-living-allowance-children">Check if you’re eligible for Disability Living Allowance</a></p>
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

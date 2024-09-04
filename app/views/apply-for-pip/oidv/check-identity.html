@@ -1,0 +1,65 @@
+{% set pageTitle = "We need to check your identity" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-heading-xl">Confirm your identity</h1>
+
+        <p>You will need information from 2 sources to confirm your identity online.</p>
+
+        <p>You can choose from:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a valid UK passport</li>
+          <li>a UK driving licence</li>
+          <li>a payslip from the last 3 months</li>
+          <li>a current P60</li>
+          <li>your Self Assessment tax return - the most recent payment you made</li>
+          <li>a current tax credits claim - a recent payment you received</li>
+          <li>your credit record - for example, the date you opened a bank account</li>
+        </ul>
+
+        <fieldset class="govuk-fieldset" aria-describedby=identity-hint>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m">Do you have the right information to confirm your identity online?</h2>
+          </legend>
+
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="check-identity-1" name="check-identity" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="check-identity-1">
+                 Yes - confirm  identity online
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="check-identity-2" name="check-identity" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="check-identity-2">
+                   No - call to confirm identity by phone
+                </label>
+              </div> <!-- govuk-radios__item -->
+        </div> <!-- govuk-radios govuk-radios -->
+
+      </fieldset>
+
+    </div> <!-- govuk-form-group -->
+
+    <a href="https://prototype-dth.herokuapp.com/auth/dev-ready/register/collecting-your-personal-details" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Continue</a>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

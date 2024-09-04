@@ -1,0 +1,66 @@
+{% set pageTitle = "Does your condition affect you eating and drinking?" %}
+
+{% extends "layout-p5-v10.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-v10/eating-and-drinking/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "eatinganddrinking-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you eating and drinking?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>remembering when to eat</li>
+            <li>cutting food into pieces</li>
+            <li>putting food and drink in your mouth</li>
+            <li>chewing and swallowing food and drink</li>
+          </ul>
+          <p>Do consider if you need help cutting up food, getting it to your mouth or if someone needs to prompt, encourage or remind you to eat.</p>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("eatinganddrinking-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("eatinganddrinking-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-v10/eating-and-drinking/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

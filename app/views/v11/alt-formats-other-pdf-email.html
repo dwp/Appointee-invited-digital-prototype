@@ -1,0 +1,37 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Alternative contact format PDF email address
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v11.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="alt-formats-other-pdf-email">
+                    What is your email address?
+                  </label>
+                </h1>
+                <div id="alt-formats-other-pdf-email-hint" class="govuk-hint">
+                    We will send any communications you need in PDF format to this email address.
+                  </div>
+                <input class="govuk-input" id="alt-formats-other-pdf-email" name="alt-formats-other-pdf-email" type="text">
+            </div> <!-- govuk-form-group -->
+
+            <p class="govuk-body">The Department for Work and Pensions may contact you to discuss your communication needs.</p>
+
+            <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+       </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-row -->
+</form>
+
+{% endblock %}

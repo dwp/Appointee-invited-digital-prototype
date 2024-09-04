@@ -1,0 +1,46 @@
+{% set pageTitle = "Upload a file" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Send your evidence by post
+            </h1>
+          </legend>
+          <br><br>
+
+
+        <p>You can post copies of your documents to DWP instead.</p>
+
+        <p>Write your name and National Insurance number on each piece of evidence.</p>
+
+        <p>Post your evidence to:
+          <br>FREEPOST DWP PIP 1</p>
+
+            <p>You do not need a stamp. Do not use recorded delivery or special delivery.
+        </p>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+          </button>
+
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

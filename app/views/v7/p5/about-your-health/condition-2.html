@@ -1,0 +1,73 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/v7/p5/about-your-health/conditions-details-2" method="post" novalidate>
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'What other health condition or disability do you have?',
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>By condition or disability, we mean physical, sight, hearing or speech difficulties, learning, developmental or behavioural difficulties or mental health conditions.</p>
+
+      <p>You can add other conditions and disabilities later if you need to.</p>
+
+      {{ govukInput({
+        id: 'condition-name-2',
+        name: 'condition-name-2',
+        label: {
+          html: 'Name of condition or disability',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, kidney failure."
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'condition-date-2',
+        name: 'condition-date-2',
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          html: 'Approximate start date',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, about 14 months ago."
+        }
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5/about-your-health/_return-link.html" %}
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

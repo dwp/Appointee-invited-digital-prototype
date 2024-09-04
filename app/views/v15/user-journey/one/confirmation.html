@@ -1,0 +1,71 @@
+{% extends "v15/user-journey/one/layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Stage 1 submitted
+          </h1>
+          <div class="govuk-panel__body">
+            You must complete stage 2 by <br><strong>25 September 2023</strong>.
+          </div>
+        </div>
+
+        <p class="govuk-body">You've completed stage 1: your claim registration.</p>
+
+        <p class="govuk-body">The remaining things you need to do to finish your PIP claim are:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Stage 2: How your disability affects you</li>
+              <li>Confirm your identity</li>
+            </ul>
+
+
+      <!-- <p class="govuk-body">Your reference is your National Insurance number.</p> -->
+
+      <!-- <p class="govuk-body">If you're awarded PIP, your payments will start from today.</p> -->
+
+      <h1 class="govuk-heading-m">What to do next</h1>
+
+      <p class="govuk-body">In the next stage, describe how your conditions or disabilities affect your ability to do certain everyday tasks and get around.</p>
+
+      <p class="govuk-body">You can continue now or <a href="#">sign out</a> and come back later. Your progress has been saved.</p>
+
+      <p class="govuk-body">You must complete and submit stage 2 by 25 September 2023.</p>
+      <!-- <input type="submit" class="govuk-button" value="Tell us how your conditions affect you" id="submit"> -->
+
+      <!-- <p class="govuk-body">If you are getting Disability Living Allowance at the moment, this will stop if you do not send your answers and upload any evidence you have by this date.</p> -->
+
+      <input type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">
+
+      <p class="govuk-body">If you need more time to finish stage 2, contact:</p>
+
+      <p class="govuk-body">Telephone: 0800 121 6279 <br>
+        Textphone: 0800 121 4493 if you have speech or hearing difficulties</p>
+
+
+      <!-- <p class="govuk-body">You can <a href="/v14/signed-out">sign out</a> of the service and return to it later to finish your application.</p> -->
+
+
+
+      <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Sign out
+      </button> -->
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+</form>
+
+{% endblock %}

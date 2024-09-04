@@ -1,0 +1,55 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Living in Great Britain
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="living-in-uk-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Have you been in the UK for at least 2 of the last 3 years?
+            </h1>
+          </legend>
+            <div id="living-in-uk" class="govuk-hint">
+              The UK is England, Scotland, Wales and Northern Ireland.
+            </div>
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="gb-1" name="gb" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="gb">
+                Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="gb-2" name="gb" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="gb-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="gb-3" name="gb" type="radio" value="Not sure">
+              <label class="govuk-label govuk-radios__label" for="gb-3">
+                I'm not sure
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-row -->
+</form>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% set pageTitle = "Does your condition affect you using the toilet or managing incontinence?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/PIP2/managing-toilet-needs/index-answer" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Using the toilet or managing incontinence</h1>
+
+      <p>Using the toilet means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>being able to get on or off a normal toilet</li>
+        <li>cleaning yourself after using the toilet</li>
+      </ul>
+      <p>Managing incontinence means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>managing the emptying of your bowel and bladder when you have difficulty controlling this, including if you need a collecting device such as a catheter or stoma bag</li>
+        <li>cleaning yourself after doing so</li>
+      </ul>
+      <p>This does not mean physically getting to the bathroom.</p>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "managingtoiletneeds-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you using the toilet or managing incontinence?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("managingtoiletneeds-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("managingtoiletneeds-question", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-v12/managing-toilet-needs/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

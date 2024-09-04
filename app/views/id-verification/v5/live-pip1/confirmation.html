@@ -1,0 +1,57 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Confirmation" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Stage one submitted
+          </h1>
+          <div class="govuk-panel__body">
+            You must submit further details by <br><strong>11 January 2023</strong>
+          </div>
+        </div>
+
+      <h1 class="govuk-heading-m">What to do next</h1>
+
+      <p class="govuk-body">In the next stage, describe how your conditions or disabilities affect your ability to do certain everyday tasks and get around.</p>
+
+      <p class="govuk-body">You must complete and submit this stage by 11 January 2023. If you do not, we may end your PIP claim.</p>
+
+      <p class="govuk-body">You can also upload any supporting evidence if you have any. You can do this before and after you submit the rest of your claim.</p>
+
+
+      {{ govukButton({
+        text: "Continue your claim",
+        href: "/id-verification/v5/task-list-1",
+        isStartButton: true
+      }) }}
+
+      <p class="govuk-body">If you need more time to finish your claim, contact:</p>
+
+      <p class="govuk-body">Telephone: 0800 XXX XXXX <br>
+        Textphone: 0800 XXX XXXX if you have speech or hearing difficulties</p>
+
+      <p class="govuk-body">You can <a href="">sign out</a> of the service and return to it later to finish your claim.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

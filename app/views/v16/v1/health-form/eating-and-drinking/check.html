@@ -1,0 +1,112 @@
+{% set pageTitle = "Check your answers: eating and drinking" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="#">
+
+      <span class="govuk-caption-xl">Eating and drinking</span>
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <!-- <h1 class="govuk-heading-l">Check your answers: eating and drinking</h1> -->
+
+      {% if data['eatinganddrinking-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Does your condition affect you eating and drinking?"
+            },
+            value: {
+              text: data['eatinganddrinking-question']
+            },
+            actions: {
+              items: [
+                {
+                  href: "./intro",
+                  text: "Change",
+                  visuallyHiddenText: " your answer for whether your condition affects you eating and drinking"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Do you use a feeding tube or similar device to eat or drink?"
+            },
+            value: {
+              text: data['eatinganddrinking-feedingtube']
+            },
+            actions: {
+              items: [
+                {
+                  href: "./feeding-tube",
+                  text: "Change",
+                  visuallyHiddenText: " your answer for whether you use a feeding tube or similar device to eat or drink"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Difficulties you have with eating and drinking and how you manage them"
+            },
+            value: {
+              html: data['eatinganddrinking-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "./details",
+                  text: "Change",
+                  visuallyHiddenText: " your answer for difficulties you have with eating and drinking and how you manage them"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% else %}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Does your condition affect you eating and drinking?"
+            },
+            value: {
+              text: data['eatinganddrinking-question']
+            },
+            actions: {
+              items: [
+                {
+                  href: "./intro",
+                  text: "Change",
+                  visuallyHiddenText: " your answer for whether your condition affects you eating and drinking"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      <div class="govuk-button-group">
+        <a href="../managing-treatments/intro" class="govuk-button">Confirm and continue</a>
+        <a href="../task-list?eatinganddrinking=completed" class="govuk-button govuk-button--secondary">Confirm and return to list</a>
+      </div>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

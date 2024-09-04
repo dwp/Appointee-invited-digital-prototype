@@ -1,0 +1,29 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+Based on your answers, you may not be eligible for PIP
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Based on your answers, you are not eligible for PIP</h1>
+
+      <p>PIP is only for people aged 16 or over.</p>
+
+      <p>You may be eligible for <a href="https://www.gov.uk/disability-living-allowance-children">DLA for children</a> instead.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

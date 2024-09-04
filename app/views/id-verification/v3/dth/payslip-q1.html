@@ -1,0 +1,65 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Enter the amount of National Insurance from a payslip" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">About your payslip</span>
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Use a payslip dated after 22 May 2021</li>
+        <li>Get the figure from the 'Deductions' section</li>
+        <li>Do not use the 'Year To Date' figure</li>
+        <li>The amount of National Insurance you paid must be more than 0.00</li>
+      </ul>
+
+      <form class="form" method="post" action={% if tcKbv === "true" %} "./payslip-q2?tcKbv=true"
+          {% elif selfassessment === "true" %} "./payslip-q2?selfassessment=true" {% elif tuKbv === "true" %} "./payslip-q2?tuKbv=true"
+          {% elif voiceId === "true" %} "./payslip-q2?voiceId=true" {% else %} "./payslip-q2"
+          {% endif %}>
+
+        {{ govukInput({
+          id: "ni-anount",
+          name: "ni-anount",
+          label: {
+            text: "National Insurance contribution",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="more-information">I don't have that information</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

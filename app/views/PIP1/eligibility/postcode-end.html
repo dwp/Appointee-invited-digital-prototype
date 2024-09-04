@@ -1,0 +1,37 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+You cannot claim online
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">We are not taking online claims from people in your postcode area</h1>
+
+      <!-- <p>This is a new service. We are initially testing it with people in certain postcode areas.</p> -->
+
+      <p>You can still claim by phone or with a paper form. The sooner you do this, the earlier you will set the date of claim and the earlier your payments could begin if you're awarded PIP.</p>
+
+      <!-- The sooner you do this, the earlier your payments could begin if you're awarded PIP. -->
+
+      <p>Find out <a href="https://www.gov.uk/pip/how-to-claim">how to claim if you live in England or Wales</a></p>
+
+      <p>Find out <a href="https://www.nidirect.gov.uk/articles/personal-independence-payment-pip#toc-4">how to claim if you live in Northern Ireland</a></p>
+
+      <p>If you live in Scotland you need to <a href="https://www.mygov.scot/adult-disability-payment">apply for Adult Disability Payment (ADP)</a> instead.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

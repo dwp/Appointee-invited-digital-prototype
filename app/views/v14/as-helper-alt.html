@@ -1,0 +1,88 @@
+{% extends "layout-signed-in-v12.html" %}
+
+{% block pageTitle %}
+Additional support name
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="help-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Who is helping you?
+            </h1>
+          </legend>
+          <div id="help-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="family" name="helper" type="checkbox" value="Family member">
+              <label class="govuk-label govuk-checkboxes__label" for="family">
+                A family member
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="friend" name="helper" type="checkbox" value="Friend">
+              <label class="govuk-label govuk-checkboxes__label" for="friend">
+                A friend
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="carer" name="helper" type="checkbox" value="Carer">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                A carer
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="hcp" name="helper" type="checkbox" value="Health professional">
+              <label class="govuk-label govuk-checkboxes__label" for="hcp">
+                A health professional
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="support" name="helper" type="checkbox" value="Support organisation">
+              <label class="govuk-label govuk-checkboxes__label" for="support">
+                A support organisation
+              </label>
+              <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                For example, Citizens Advice, Scope, Carers UK or Turn2us.
+              </div>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="council" name="helper" type="checkbox" value="Local council">
+              <label class="govuk-label govuk-checkboxes__label" for="council">
+                Your local council
+              </label>
+              <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                For example, social services.
+              </div>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="other" name="helper" type="checkbox" value="Other">
+              <label class="govuk-label govuk-checkboxes__label" for="other">
+                Other
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      
+      
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

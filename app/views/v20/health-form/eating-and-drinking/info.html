@@ -1,0 +1,77 @@
+{% set pageTitle = "How well can you take nutrition?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "eatinganddrinking-info",
+        fieldset: {
+          legend: {
+            text: "How well can you take nutrition?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>Select the option that is most relevant to you for more than half of the days in a year.</p>
+        '
+        },
+        items: [
+          {
+            value: "I can take nutrition unaided",
+            text: "I can take nutrition unaided",
+            checked: checked("eatinganddrinking-info", "I can take nutrition unaided")
+          },
+          {
+            value: "I need to use an aid or appliance, or need supervision, to be able to take nutrition, or assistance to be able to cut up food",
+            text: "I need to use an aid or appliance, or need supervision, to be able to take nutrition, or assistance to be able to cut up food",
+            checked: checked("eatinganddrinking-info", "I need to use an aid or appliance, or need supervision, to be able to take nutrition, or assistance to be able to cut up food")
+          },
+          {
+            value: "I need a theraputic sourceto be able to take nutrition",
+            text: "I need a theraputic sourceto be able to take nutrition",
+            checked: checked("eatinganddrinking-info", "I need a theraputic sourceto be able to take nutrition")
+          },
+          {
+            value: "I need prompting to take nutrition",
+            text: "I need prompting to take nutrition",
+            checked: checked("eatinganddrinking-info", "I need prompting to take nutrition")
+          },
+          {
+            value: "I need assistance to be able to manage a theraputic source to take nutrition",
+            text: "I need assistance to be able to manage a theraputic source to take nutrition",
+            checked: checked("eatinganddrinking-info", "I need assistance to be able to manage a theraputic source to take nutrition")
+          },
+          {
+            value: "I cannot convey food and drink to my mouth and need another person to do so",
+            text: "I cannot convey food and drink to my mouth and need another person to do so",
+            checked: checked("eatinganddrinking-info", "I cannot convey food and drink to my mouth and need another person to do so")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

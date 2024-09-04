@@ -1,0 +1,78 @@
+{% extends "layout-signed-out-v2.html" %}
+
+{% block pageTitle %}
+  Enter the 4-digit code
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       <h1 class="govuk-heading-l">A 4-digit code has been texted to<br>XXXX XXX 789</h1>
+
+      <form action="/mvp/p5/start/password" method="POST" novalidate>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="code" >Your 4-digit code</label>
+          <input class="govuk-input govuk-input--width-4 input-capitals" id="code" name="code" maxlength="4" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+        </div>
+
+        <button type="submit" class="govuk-button">Continue</button>
+
+        <!-- No 4 digit code guidance -->
+        <details class="govuk-details" data-module="govuk-details">
+           <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text" id="haveNot4DigitCode">I haven’t received an email with my 4-digit code</span>
+            </summary>
+
+            <div class="govuk-details__text">
+              <p>This could be because:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>The email can take a few minutes to arrive in your email inbox</li>
+                  <li>The email may be in the spam / junk / trash folder of your email inbox</li>
+                  <li>
+                      <span>The email address that you entered on the previous page</span>
+                      <b>(emailjustentered@gmail.com)</b>
+                      <span>is not the email address that you used to save the application
+                  </li>
+                  <li>It is more than XXX days since you saved your application</li>
+              </ul>
+              <span>If you have followed the guidance above and have still not received a code, you will need to</span>
+              <a href="#">contact info here.</a>.    
+            </div>
+          </details>
+
+          <!-- Code does not work guidance -->
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text" id="codeFails">My 4-digit code doesn’t work</span>
+            </summary>
+
+              <div class="govuk-details__text">
+                <p>This could be because:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>You have entered a postcode that doesn’t match the one on the application that you saved</li>
+                  <li>You have entered a 4-digit code that doesn’t match the one on the email that you have just received</li>
+                  <li>You have entered the postcode and the 4-digit code in the wrong boxes</li>
+                  <li><span>The 4-digit code has expired, in which case you can </span><a id="requestNewCode" href="/return-to-application">request a new code</a>
+                  </li>
+                  <li>You have made 10 unsuccessful attempts to return to your application, and have been locked out for 5 minutes</li>
+                </ul>
+
+                <span>If you have followed the guidance above and have still not been able to return to your application, you will need to</span>
+                <a id="codeFailsRestartApplication" href="/applicant">start a new application.</a>
+              </div>
+
+          </details>
+        </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

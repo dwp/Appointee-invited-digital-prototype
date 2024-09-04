@@ -1,0 +1,26 @@
+{% extends "layout-signed-out-p5-v1-1.html" %}
+
+{% block beforeContent %}
+  {% include "p5-v1-1/_beta-banner.html" %}
+{% endblock %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Prototype data cleared
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Prototype data cleared</h1>
+
+      <p>You can <a href="/p5-v1-1/list-1">go back to the list</a> or <a href="/p5-v1-1/sign-in">start a new application</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

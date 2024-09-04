@@ -1,0 +1,44 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Dressing and undressing hint
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                What we mean by dressing and undressing
+            </h1>
+          </legend>
+          <div id="mobility-activity-hint" class="govuk-hint">
+            <p>This means:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>putting on and taking off clothing, including shoes and socks</li>
+                <li>fastening or undoing zips or buttons</li>
+                <li>knowing when to put on or take off clothes</li>
+              </ul>
+            </p>
+
+          </div>
+
+      </div> <!-- govuk-form-group -->
+
+
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+
+{% endblock %}

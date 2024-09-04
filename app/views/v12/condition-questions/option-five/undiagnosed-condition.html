@@ -1,0 +1,68 @@
+{% set pageTitle = "Enter details for your undiganosed condition" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukInput({
+        name: "symptoms",
+        id: "symptoms",
+        label: {
+          text: "What symptoms do you experience with undiagnosed health conditions?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "You will be able to give more details on how your ability to do certain everyday tasks are affected later."
+        }
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "test-results",
+        fieldset: {
+          legend: {
+            text: "Are you waiting for any test results?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "v12/condition-questions/option-five/_return-link.html" %}
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

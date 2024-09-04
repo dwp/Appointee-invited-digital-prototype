@@ -1,0 +1,73 @@
+{% extends "layout-signed-in-v3b.html" %}
+
+{% block pageTitle %}
+  Nationality
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="contact-details" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                What is your nationality?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="British">
+                <label class="govuk-label govuk-radios__label" for="nationality">
+                  British
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="Irish">
+                <label class="govuk-label govuk-radios__label" for="nationality-2">
+                  Irish
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio" value="A nationality of the European Economic Area (EEA)">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                  A nationality of European Economic Area (EEA)
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__divider">or</div>
+
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="cnationality-4" name="nationality" type="radio" value="Another nationality" data-aria-controls="conditional-nationality">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Another nationaility
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nationality">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Tell us which nationality
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="nationality-extra" name="nationality-extra" type="text" spellcheck="false"></div>
+
+                </div>
+
+            </div> <!-- govuk-radios -->
+
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

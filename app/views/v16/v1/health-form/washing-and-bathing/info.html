@@ -1,0 +1,81 @@
+{% set pageTitle = "How well can you wash and bathe?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "washingandbathing-info",
+        fieldset: {
+          legend: {
+            text: "How well can you wash and bathe?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '<p>Select the option that is most relevant to you for more than half of the days in a year.</p>'
+        },
+
+        items: [
+          {
+            value: "washingandbathing-option-1",
+            text: "I can wash and bathe unaided",
+            checked: checked("washingandbathing-info", "Option 1")
+          },
+          {
+            value: "washingandbathing-option-2",
+            text: "I need to use an aid or appliance to be able to wash or bathe",
+            checked: checked("washingandbathing-info", "Option 2")
+          },
+          {
+            value: "washingandbathing-option-3",
+            text: "I need supervision or prompting to be able to wash or bathe",
+            checked: checked("washingandbathing-info", "Option 3")
+          },
+          {
+            value: "washingandbathing-option-4",
+            text: "I need assistance to be able to wash either my hair or body below my waist",
+            checked: checked("washingandbathing-info", "Option 4")
+          },
+          {
+            value: "washingandbathing-option-5",
+            text: "I need assistance to be able to get in or out of a bath or shower",
+            checked: checked("washingandbathing-info", "Option 5")
+          },
+          {
+            value: "washingandbathing-option-6",
+            text: "I need assistance to be able to wash my body between the shoulders and waist",
+            checked: checked("washingandbathing-info", "Option 6")
+          },
+          {
+            value: "washingandbathing-option-7",
+            text: "I cannot wash and bathe at all and need another person to wash my entire body",
+            checked: checked("washingandbathing-info", "Option 7")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

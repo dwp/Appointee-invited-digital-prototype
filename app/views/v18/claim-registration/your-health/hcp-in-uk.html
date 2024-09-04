@@ -1,0 +1,53 @@
+{% block pageTitle %}
+Is your HCP based in the UK?
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" aria-describedby="your-account-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-heading-xl">Is your health or care professional's address in the UK?</h1>
+                <div id="event-name-hint" class="govuk-hint">
+                  This is where you see them such as a health centre, GP surgery or hospital address.
+                </div>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="hcp-in-uk-1" name="hcp-in-uk" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="hcp-in-uk-1">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="hcp-in-uk-2" name="hcp-in-uk" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="hcp-in-uk-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios -->
+
+          </fieldset>
+
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

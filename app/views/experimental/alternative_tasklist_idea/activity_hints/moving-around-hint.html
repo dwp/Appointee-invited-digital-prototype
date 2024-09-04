@@ -1,0 +1,68 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Moving around hint
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" action="#" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                Moving around
+            </h1>
+          </legend>
+          <div id="mobility-activity-hint" class="govuk-hint">
+            <p>This means being able to walk without any specialist equipment or support from another person.</p>
+
+          </div>
+
+      </div> <!-- govuk-form-group -->
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "moving-around-help",
+        name: "moving-around-help",
+        fieldset: {
+          legend: {
+            text: "Do you ever have difficulties moving around?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select yes if you need help from someone else or using extra equipment."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <br>
+    <button class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+
+{% endblock %}

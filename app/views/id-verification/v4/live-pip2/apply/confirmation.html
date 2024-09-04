@@ -1,0 +1,52 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Information sent" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukPanel({
+        titleText: "Stage 2 submitted"
+      }) }}
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">We have sent a confirmation email to <strong>jerry.bakewell@gmail.com</strong>.</p>
+
+      <h2 class="govuk-heading-m">Download a copy of your completed form</h2>
+
+      <p>You can download a copy of your completed form using this link: <a href="#">Jerry Bakewell PIP application.pdf</a></p>
+
+      <p>You will not be able to download your completed form after you leave this page.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>Before we can make a decision about your claim we need to check your identity. We check everyone's identity to protect from fraud.</p>
+
+      <p>If you cannot confirm your identity online you can do it another way.</p>
+
+      <a href="/id-verification/v4/dth/register" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Confirm my identity</a>
+
+    </div>
+  </div>
+
+{% endblock %}

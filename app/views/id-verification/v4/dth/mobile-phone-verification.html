@@ -1,0 +1,64 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Check your phone" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
+
+      <div class="govuk-inset-text">
+        We have sent a code to:<br><b>07123456789</b>
+      </div>
+
+      <p>It might take up to a minute to arrive.</p>
+
+      <p>The code will expire in 5 minutes.</p>
+
+      <form class="form" action="registration-complete" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Enter your security code",
+            isPageHeading: false
+          },
+          id: "mobile-security-code",
+          name: "mobile-security-code",
+          type: "text",
+          classes: "govuk-input--width-10"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="">I did not get a text message</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

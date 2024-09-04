@@ -1,0 +1,39 @@
+{% set pageTitle = "Claimant Home" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  div.govuk-grid-column-one-third h2 {border-top: 1px solid #b1b4b6; padding-top: 20px;
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <br><br>
+      <span class="govuk-caption-xl">Jeff Bridges</span>
+      <h1 class="govuk-heading-xl">Account home</h1>
+
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m"><a href="">Upload supporting evidence</a></h2>
+        <p class="govuk-body">Provide evidence of how your condition or disability affects you.</p>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m"><a href="change-details">Your completed form</a></h2>
+        <p class="govuk-body">Download a copy of your completed stage 2 form (PDF).</p>
+      </div>
+
+
+
+  </div>{# /govuk-grid-column-full #}
+</div>{# /govuk-grid-row #}
+
+
+{% endblock %}

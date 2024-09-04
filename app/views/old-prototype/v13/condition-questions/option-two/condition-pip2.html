@@ -1,0 +1,68 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'Conditions',
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+      <div class="app-summary-card__body">
+        <dl class="govuk-summary-list">
+          {% for query in data['queriesCondition'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Condition
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ query.condition }}
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Add detail<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            {% endfor %}
+      </div>{# /app-summary-card__body #}
+      </section>
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: 'Save and continue',
+        href: "consent"
+      }) }}
+
+    </form>
+
+    {% include "p5-v11/about-your-health/_return-link.html" %}
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% set pageTitle = "Tell us about the difficulties you have with mixing with other people and how you manage them" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukCharacterCount({
+        name: "mixingwithotherpeople-details",
+        id: "mixingwithotherpeople-details",
+        rows: "18",
+        maxlength: "5000",
+        value: data['mixingwithotherpeople-details'],
+        label: {
+          text: "Difficulties mixing with other people",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+
+            <li>whether severe anxiety or distress stops you from doing this</li>
+            <li>about any risk of harm to you and others</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Example</h2>
+            <p>“I am always unable to meet new people by myself because I become very distressed. My carer supports me when I interact with new people so I do not become distressed.”</p>
+          </div>
+          <h2 class="govuk-heading-m">Tell us about the difficulties you have when mixing with other people and how you manage them</h2>
+        '
+        }
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save
+        </a>
+      </div>
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

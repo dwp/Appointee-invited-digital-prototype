@@ -1,0 +1,205 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Preparing food check answers
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+  <form action="/experimental/alternative_tasklist_idea/activity_hints/eating-and-drinking-hint">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h1 class="govuk-heading-l">Check your answers </h1>
+
+          <h2 class="govuk-heading-m">Preparing food</h2>
+
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you ever have difficulties preparing food?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['preparing-food-help'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="activity_hints/preparing-food-hint.html">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['preparing-food-help'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Details how your condition or disability affects you preparing food
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['prep-food'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-detail">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['prep-food'] === 'Other' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What other difficulties do you have preparing or cooking food?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['prep-food-more-detail'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-other">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['preparing-food-help'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you use any aids or adaptations?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['prep-food-adapt-aids'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-adapt-aids.html">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data[prep-food-adapt-aids'] === 'Other' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What other difficulties do you have preparing or cooking food?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['aids-adapts-more-detail'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-often-other.html">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['preparing-food-help'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                How often do you have difficulties preparing or cooking food?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['prep-food-difficulties'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-difficulties.html">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['prep-food-difficulties'] === 'It varies' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Enter how often you have difficulties preparing or cooking food?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['difficulties-more-detail'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-difficulties.html">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['prep-food-difficulties'] === 'Other' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Enter how often you have difficulties preparing or cooking food?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['difficulties-more-detail'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-difficulties.html">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['preparing-food-help'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you want to tell us anything else about the difficulties you have preparing or cooking food?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['prep-food-anything-else'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-anything-else.html">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['prep-food-anything-else'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Enter further details about the difficulties you have preparing or cooking food
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['anything-else-more-detail'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="preparing-food-other-anything-else.html">
+                  Change<span class="govuk-visually-hidden"> details</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+          </dl> <!-- govuk-summary-list govuk-!-margin-bottom-9 -->
+
+
+
+          <!-- <input type="hidden" name="answers-checked" value="true"> -->
+
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+
+
+        </div>
+      </div>
+    </main>
+  </form>
+</div>
+
+
+{% endblock %}

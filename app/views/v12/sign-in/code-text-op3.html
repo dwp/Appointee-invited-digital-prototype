@@ -1,0 +1,46 @@
+{% set pageTitle = "A 6-digit code has been texted to mobile number ending 789" %}
+
+{% extends "layout-signed-out-v11.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} 
+{% endblock %}
+
+{% block beforeContent %}
+{% include "v12/_beta-banner.html" %}
+{% include "v12/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="create-password" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">A 6-digit code has been texted to mobile number ending 789</h1>
+
+      <p>The code expires after 5 minutes.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="code">Enter your 6-digit code</label>
+        <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6"
+          data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+      </div>
+
+
+        <button class="govuk-button" role="button" draggable="false"
+          data-module="govuk-button">Continue</button>
+
+        <p><a href="code-text-get-another">I did not get a code by text</a></p>
+
+
+      <p><a href="code-email" class="govuk-button govuk-button--secondary" draggable="false"
+          data-module="govuk-button">Get a code by email instead</a></p>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

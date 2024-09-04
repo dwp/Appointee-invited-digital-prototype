@@ -1,0 +1,54 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Sign in" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+  {% include "p5-v11/_back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Sign in</h1>
+
+      <form action="/p5-v11/sign-in/choose-scenario" method="post" novalidate>
+
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          classes: "govuk-input--width-20",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+{#         {{ govukButton({
+          text: "Continue"
+        }) }} #}
+
+
+        <a href="password" class="govuk-button">Continue</a>
+
+      </form>
+
+
+      <p><a href="../eligibility-intro2">Check your eligibility</a> if you have not used this service before.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

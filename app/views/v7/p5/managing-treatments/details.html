@@ -1,0 +1,63 @@
+{% set pageTitle = "Tell us about the difficulties you have with monitoring changes in your health condition or disability and taking medication, and how you manage them" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5/managing-treatments/therapies" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "managingtreatments-details",
+        id: "managingtreatments-details",
+        rows: "18",
+        value: data['managingtreatments-details'],
+        label: {
+          text: "Tell us about the difficulties you have with monitoring changes in your health condition or disability and taking medication, and how you manage them",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any aids or adaptations you use, or help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“About four days a week, I have trouble taking my arthritis medication because my wrists hurt when I try to open the pill bottle. I put my pills in a dosette box so I do not need to open the pill bottle on days when I am unable.”</p>
+            <p>“Every evening, I have trouble monitoring my blood glucose levels because I forget and get confused on how to do it. My partner prompts me and helps me measure my blood glucose levels in the evening.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5/managing-treatments/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

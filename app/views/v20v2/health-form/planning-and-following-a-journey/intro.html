@@ -1,0 +1,64 @@
+{% set pageTitle = "Does your condition affect you planning and following journeys?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "planningandfollowingajourney-question",
+        fieldset: {
+          legend: {
+            text: "Planning and following journeys",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means doing the following:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>leaving your home to go out</li>
+            <li>following a route you know well</li>
+            <li>using public transport timetables to travel to somewhere new</li>
+            <li>working out a new route and following it, for example, if you find a road is closed on a route you know well and need to plan and follow a different route</li>
+          </ul>
+          <p>This question is not about if you can physically move around.</p>
+          <h2 class="govuk-heading-m">Does your condition affect you planning and following journeys?</h2>
+          '
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("planningandfollowingajourney-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("planningandfollowingajourney-question", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

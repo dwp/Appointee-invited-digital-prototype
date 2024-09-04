@@ -1,0 +1,262 @@
+{% block pageTitle %}
+GOVUK Eligibility
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-!-margin-top-0 govuk-!-padding-top-0">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Personal Independence Payment (PIP)</h1>
+
+        <aside class="app-mainstream-guide-contents-list" role="complementary">
+  <nav class="app-contents-list" aria-label="Pages in this guide" role="navigation">
+    <h2 class="app-contents-list__title">
+      Contents
+    </h2>
+    <ol class="app-contents-list__list">
+
+      <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+        <a href="./what-pip-is-for">
+          What PIP is for
+        </a>
+      </li>
+      <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+          Eligibility
+      </li>
+
+      <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+        <a href="./how-much-youll-get">
+          How much you’ll get
+        </a>
+      </li>
+
+      <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+        <a href="./how-to-claim">
+          How to claim
+        </a>
+      </li>
+
+      <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+        <a href="./if-your-pip-claim-is-reviewed">
+          If your PIP claim is reviewed
+        </a>
+      </li>
+
+      <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+        <a href="./change-of-circumstances">
+          Change of circumstances
+        </a>
+      </li>
+
+      <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+        <a href="./claiming-pip-if-you-might-have-12-months-or-less-to-live">
+          Claiming PIP if you might have 12 months or less to live
+        </a>
+      </li>
+
+    </ol>
+  </nav>
+</aside>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+      </div>
+    </div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+        <h1 class="govuk-heading-l">Eligibility</h1>
+
+        <p class="govuk-body">You can get Personal Independence Payment (<abbr title="Personal Independence Payment">PIP</abbr>) if all of the following apply to you:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+         <li>you’re 16 or over</li>
+         <li>you have a long-term physical or mental health condition or disability</li>
+         <li>you have <a href="/PIP">difficulty doing certain everyday tasks or getting around</a>
+        </li>
+         <li>you expect the difficulties to last for at least 12 months from when they started</li>
+        </ul>
+
+        <p class="govuk-body">You must also be under <a href="/state-pension-age">State Pension age</a> if you’ve not received <abbr title="Personal Independence Payment">PIP</abbr> before.</p>
+
+        <div role="note" aria-label="Information" class="application-notice info-notice">
+        <div class="govuk-inset-text">If you live in Scotland, you need to <a rel="external" href="https://www.mygov.scot/adult-disability-payment">apply for Adult Disability Payment (ADP)</a> instead.</div>
+        </div>
+
+        <p class="govuk-body">If you’re over State Pension age, you can apply for <a href="/attendance-allowance">Attendance Allowance</a> instead. Or if you’ve received <abbr title="Personal Independence Payment">PIP</abbr> before, you can still make a new claim if you were eligible for it in the year before you reached State Pension age.</p>
+
+        <h2 class="govuk-heading-m">If you get other benefits or income</h2>
+
+        <p class="govuk-body">You can get <abbr title="Personal Independence Payment">PIP</abbr> at the same time as all other benefits, except <a href="/claim-for-injury-received-while-serving/armed-forces-independence-payment-afip">Armed Forces Independence Payment</a>.</p>
+
+        <p class="govuk-body">If you get <a href="/constant-attendance-allowance">Constant Attendance Allowance</a> you’ll get less of the daily living part of <abbr title="Personal Independence Payment">PIP</abbr>.</p>
+
+        <p class="govuk-body">If you get <a href="/guidance/war-pension-scheme-mobility-supplement-wpms">War Pensioners’ Mobility Supplement</a> you will not get the mobility part of <abbr title="Personal Independence Payment">PIP</abbr>.</p>
+
+        <p class="govuk-body">You can get <abbr title="Personal Independence Payment">PIP</abbr> if you’re working or have savings.</p>
+
+        <h2 class="govuk-heading-m">If you’ve recently returned from living abroad</h2>
+
+        <p class="govuk-body">To apply for <abbr title="Personal Independence Payment">PIP</abbr>, you usually need to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+         <li>have lived in England, Scotland or Wales for at least 2 of the last 3 years</li>
+         <li>be living in one of these countries when you apply</li>
+        </ul>
+
+        <p class="govuk-body">If you’ve recently returned from living in the EU, Switzerland, Norway, Iceland or Liechtenstein, you might be able to get <abbr title="Personal Independence Payment">PIP</abbr> sooner.</p>
+
+        <div role="note" aria-label="Information" class="application-notice info-notice">
+        <div class="govuk-inset-text"><a rel="external" href="https://www.nidirect.gov.uk/articles/personal-independence-payment">Find out about PIP if you live in Northern Ireland</a>.</div>
+        </div>
+
+        <h2 class="govuk-heading-m">If you live abroad</h2>
+
+        <p class="govuk-body">You might still be able to get <abbr title="Personal Independence Payment">PIP</abbr> if you either:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+         <li>live in the <a href="/claim-benefits-abroad/disability-benefits">EU, Switzerland, Norway, Iceland or Liechtenstein</a> - you can only get help with daily living tasks</li>
+         <li>work in the Armed Forces, or are a family member of someone who does</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">If you’re not a British citizen</h2>
+
+        <p class="govuk-body">You must:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+         <li>normally live in or show that you intend to settle in the UK, Ireland, the Isle of Man or the Channel Islands</li>
+         <li>not be subject to <a rel="external" href="https://www.citizensadvice.org.uk/immigration/non-eea-nationals-and-the-habitual-residence-test/are-you-subject-to-immigration-control/">immigration control</a> (unless you’re a sponsored immigrant)</li>
+        </ul>
+
+        <p class="govuk-body">If you’re from the EU, Switzerland, Norway, Iceland or Liechtenstein, you and your family usually also need settled or pre-settled status under the EU Settlement Scheme to get <abbr title="Personal Independence Payment">PIP</abbr>. The deadline to apply to the scheme was 30 June 2021 for most people, but you might still be able to apply. <a href="/settled-status-eu-citizens-families/who-can-apply">Check if you can still apply to the EU Settlement Scheme</a>.</p>
+
+        <p class="govuk-body">You might still be able to get <abbr title="Personal Independence Payment">PIP</abbr> if you’re a refugee or have humanitarian protection status.</p>
+
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+  <h2 class="govuk-heading-m" id="subsection-title">
+    Subsection
+  </h2>
+  <nav role="navigation" aria-labelledby="subsection-title">
+    <ul class="govuk-list govuk-!-font-size-16">
+      <li>
+        <a href="#">
+          Related link
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Related link
+        </a>
+      </li>
+      <li>
+        <a href="#" class="govuk-!-font-weight-bold">
+          More <span class="govuk-visually-hidden">in Subsection</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+
+<!-- Disability Living Allowance (DLA) for adults
+Disability Living Allowance (DLA) for children
+Attendance Allowance
+Financial help if you're disabled
+Find a community support group or organisation -->
+
+      </div>
+    </div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <!-- LOWER NAV -->
+        <div>
+
+          <nav class="app-pagination" role="navigation" aria-label="Pagination">
+            <ul class="app-pagination__list">
+
+              <li class="app-pagination__item app-pagination__item--prevous">
+                <a href="#" class="govuk-link app-pagination__link" rel="Prevous">
+                  <span class="app-pagination__link-title">
+                    <svg class="app-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                      <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    <span class="app-pagination__link-text">
+                      Previous
+                    </span>
+                  </span>
+                  <span class="app-pagination__link-divider visually-hidden">:</span>
+                  <span class="app-pagination__link-label">
+                    Link to preivous page
+                  </span>
+                </a>
+              </li>
+
+              <li class="app-pagination__item app-pagination__item--next">
+                <a href="#" class="govuk-link app-pagination__link" rel="next">
+                  <span class="app-pagination__link-title">
+                    <svg class="app-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                      <path d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                    <span class="app-pagination__link-text">
+                      Next
+                    </span>
+                  </span>
+                  <span class="app-pagination__link-divider visually-hidden">:</span>
+                  <span class="app-pagination__link-label">
+                    Link to Next page
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+
+
+      </div>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<!-- LOWER NAV -->
+
+
+
+
+        </main>
+
+</form>
+
+{% endblock %}

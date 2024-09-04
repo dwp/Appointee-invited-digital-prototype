@@ -1,0 +1,65 @@
+{% set pageTitle = "Does your condition affect you dressing or undressing?" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-v12v2/dressing-and-undressing/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "dressingandundressing-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you dressing or undressing?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>putting on and taking off clothing, including shoes and socks</li>
+            <li>needing help to fasten or undo zips or buttons</li>
+            <li>knowing when to put on or take off clothes</li>
+          </ul>
+          <p>Do consider how long it takes you to dress or undress.</p>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("dressingandundressing-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("dressingandundressing-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-v12/dressing-and-undressing/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,353 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Your date of birth
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#dob-day1">Enter your date of birth</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What is your date of birth?
+            </h1>
+          </legend>
+          <div id="dob-hint" class="govuk-hint">
+            For example, 31 3 1980
+          </div>
+          <span id="dob-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter your date of birth
+          </span>
+          <div class="govuk-date-input" id="dob">
+            <div class="govuk-date-input__item">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day1">
+                  Day
+                </label>
+
+                <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-2" id="dob-day1"
+                  name="dob-day1" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month1">
+                  Month
+                </label>
+                <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-2"
+                  id="dob-month1" name="dob-month1" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year1">
+                  Year
+                </label>
+                <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-4" id="dob-year1"
+                  name="dob-year1" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+          </div> <!-- govuk-date-input -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-form-group">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#dob-year2">Enter a real date of birth</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What is your date of birth?
+            </h1>
+          </legend>
+          <div id="dob-hint" class="govuk-hint">
+            For example, 31 3 1980
+          </div>
+          <span id="dob-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter a real date of birth
+          </span>
+          <div class="govuk-date-input" id="dob">
+            <div class="govuk-date-input__item">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day2">
+                  Day
+                </label>
+
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day2"
+                  name="dob-day2" type="text" pattern="[0-9]*" inputmode="numeric" value="11">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month2">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="dob-month2" name="dob-month2" type="text" pattern="[0-9]*" inputmode="numeric" value="10">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year2">
+                  Year
+                </label>
+                <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-4" id="dob-year2"
+                  name="dob-year2" type="text" pattern="[0-9]*" inputmode="numeric" value="2999">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+          </div> <!-- govuk-date-input -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-form-group">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#dob-day3">Date of birth must include a day</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What is your date of birth?
+            </h1>
+          </legend>
+          <div id="dob-hint" class="govuk-hint">
+            For example, 31 3 1980
+          </div>
+          <span id="dob-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Date of birth must include a day
+          </span>
+          <div class="govuk-date-input" id="dob">
+            <div class="govuk-date-input__item">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day3">
+                  Day
+                </label>
+
+                <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-2" id="dob-day3"
+                  name="dob-day3" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month2">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="dob-month2" name="dob-month2" type="text" pattern="[0-9]*" inputmode="numeric" value="10">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year2">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year2"
+                  name="dob-year2" type="text" pattern="[0-9]*" inputmode="numeric" value="1999">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+          </div> <!-- govuk-date-input -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-form-group">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#dob-month3">Date of birth must include a month</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What is your date of birth?
+            </h1>
+          </legend>
+          <div id="dob-hint" class="govuk-hint">
+            For example, 31 3 1980
+          </div>
+          <span id="dob-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Date of birth must include a month
+          </span>
+          <div class="govuk-date-input" id="dob">
+            <div class="govuk-date-input__item">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day3">
+                  Day
+                </label>
+
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day3"
+                  name="dob-day3" type="text" pattern="[0-9]*" inputmode="numeric" value="11">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month2">
+                  Month
+                </label>
+                <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-2"
+                  id="dob-month3" name="dob-month3" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year2">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year2"
+                  name="dob-year2" type="text" pattern="[0-9]*" inputmode="numeric" value="1999">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+          </div> <!-- govuk-date-input -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-form-group">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#dob-year3">Date of birth must include a year</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What is your date of birth?
+            </h1>
+          </legend>
+          <div id="dob-hint" class="govuk-hint">
+            For example, 31 3 1980
+          </div>
+          <span id="dob-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Date of birth must include a year
+          </span>
+          <div class="govuk-date-input" id="dob">
+            <div class="govuk-date-input__item">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day3">
+                  Day
+                </label>
+
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day3"
+                  name="dob-day3" type="text" pattern="[0-9]*" inputmode="numeric" value="11">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month2">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="dob-month3" name="dob-month3" type="text" pattern="[0-9]*" inputmode="numeric" value="10">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year3">
+                  Year
+                </label>
+                <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-4" id="dob-year3"
+                  name="dob-year3" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+          </div> <!-- govuk-date-input -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

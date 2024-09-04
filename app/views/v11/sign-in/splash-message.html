@@ -1,0 +1,33 @@
+{% set pageTitle = "You are now signed in" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "p5-v11/_beta-banner.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+<form>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          You have signed out
+        </h1>
+      </div> <!-- govuk-panel -->
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>If you have not finished your application your progress has been saved.</p>
+      <p>To complete your application <a href="/mvp/save_and_return/sign-in">sign in</a> again.</p>
+      <p>You will need your email address, mobile phone and password when you next sign in.</p>
+      <p>It is now safe to close this window.</p>
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+</form>
+
+{% endblock %}

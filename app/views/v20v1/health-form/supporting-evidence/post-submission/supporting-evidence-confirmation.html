@@ -1,0 +1,31 @@
+{% set pageTitle = "Information sent" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Information sent
+  </h1>
+</div>
+
+
+    <p class="govuk-body">We have sent a confirmation email to <strong>jeff.bridges@gmail.com</strong>.</p>
+
+    <p>Sign out to keep your information secure.</p>
+
+
+    <a href="../oidv/check-identity" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Sign out</a>
+
+  </div>
+</div>
+{% endblock %}

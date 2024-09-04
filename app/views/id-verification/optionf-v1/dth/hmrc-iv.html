@@ -1,0 +1,45 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Confirm your identity" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Confirm your identity",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        We need to check your identity
+      </h1>
+
+      <p>We will ask you for personal details, like your:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>name</li>
+        <li>date of birth</li>
+        <li>National Insurance number</li>
+        <li>postcode</li>
+      </ul>
+
+      <p>We will check the details you give us with our records and then ask some security questions to confirm your identity.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "hmrc-your-details"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

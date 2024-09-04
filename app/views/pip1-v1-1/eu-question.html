@@ -1,0 +1,75 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Receiving payments from an EU country
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="eu-question">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+                Do any of the following apply to you or a family member?
+            </h1>
+          </legend>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What we mean by family member
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              By ‘family member’ we mean husband, wife, civil partner or a parent you’re dependent on.
+            </div>
+          </details>
+
+          <p>Select all that apply.</p>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="eu-question" name="eu-question" type="checkbox" value="Getting a pension or benefit from an EEA country">
+              <label class="govuk-label govuk-checkboxes__label" for="eu-question">
+                Getting a pension or benefit from a European Economic Area (EEA) country or Switzerland
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="eu-question-2" name="eu-question" type="checkbox" value="Paid or paying insurance to an EEA country">
+              <label class="govuk-label govuk-checkboxes__label" for="eu-question-2">
+                Working, paying or have paid insurance connected to work in an EEA country or Switzerland.
+              </label>
+            </div>
+            <div class="govuk-checkboxes__divider"><p>or</p></div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="eu-question-3" name="eu-question" type="checkbox" value="None of these">
+              <label class="govuk-label govuk-checkboxes__label" for="eu-question-3">
+                None of these
+              </label>
+            </div>
+          </div>
+
+
+          <br>
+          <p><a href="https://www.gov.uk/eu-eea" class="govuk-link" rel="noreferrer noopener" target="_blank">Check which countries are in the EEA (opens in new tab)</a></p>
+
+
+        </fieldset>
+      </div>
+
+
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

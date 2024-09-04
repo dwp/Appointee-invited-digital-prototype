@@ -1,0 +1,48 @@
+{% set pageTitle = "Information sent" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-panel govuk-panel--confirmation">
+<h1 class="govuk-panel__title">
+  Stage 2 submitted
+</h1>
+
+</div>
+
+
+    <p class="govuk-body">We have received your stage 2 form. We have sent a confirmation email to <strong>martin.johnson@gmail.com</strong>.</p>
+
+    <h2 class="govuk-heading-m">Your submission</h2>
+
+    <p><a href="submission">View a copy of your submitted form (PDF)</a></p>
+    <p><a href="submission">View a copy of your submitted form (Accessible version HTML)</a></p>
+
+    <p>You will not be able to download your completed form after you leave this page.</p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>We will keep you up to date about your PIP claim by text message if you have agreed for us to do this.</p>
+
+    <p>You might be contacted to arrange an assessment with a health professional if more information is needed. You may not need an assessment if you have provided enough information for us to make a decision.</p>
+
+    <h2 class="govuk-heading-m">Confirm your identity</h2>
+
+    <p>It’s important you confirm your identity so that we can pay you straight away if your claim is successful. We check everyone's identity to protect from fraud.</p>
+
+    <a href="" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Confirm your identity</a>
+
+    <p>Your stage 2 form is saved. You can <a href="sign-out">sign out</a> of the service and return to it later to confirm your identity, or to upload more evidence that might support your claim.</p>
+
+  </div>
+</div>
+{% endblock %}

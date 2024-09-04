@@ -1,0 +1,39 @@
+{% set pageTitle = "Get another 6 digit code sent to mobile number XXXX&nbsp;XXX&nbsp;789" %}
+
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if getData.expired == "true" %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Your 6 digit code has expired. Get another code."
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      <h1 class="govuk-heading-xl">Get another 6 digit code sent to mobile number ending 789</h1>
+
+        <a href="code-text" class="govuk-button">Get another code</a>
+
+        {% include "p5-v11/sign-in/_problems.html" %}
+
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

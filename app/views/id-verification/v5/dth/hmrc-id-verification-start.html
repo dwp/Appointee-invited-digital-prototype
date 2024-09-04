@@ -1,0 +1,136 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Confirm your identity" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Confirm your identity",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        We need you to confirm your identity
+      </h1>
+
+      <p>We will ask you about items you may have, like your:</p>
+
+      <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            UK passport
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">To be able use this option, your passport must be:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>issued in the UK</li>
+            <li>not expired or cancelled</li>
+            <li>not be reported as lost or stolen</li>
+          </ul>
+          <p class="govuk-body">The data we use to match is provided by HMRC, and you will be asked to give your consent to us sharing the details you enter with them before you start.</p>
+        </div>
+      </details>
+
+      <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Payslips or P60
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h2 class="govuk-heading-s">
+            Payslip
+          </h2>
+          <p class="govuk-body">
+            You need a payslip from within the last 3 months to use this option. You cannot use a payslip that has a zero or negative amount.
+          </p>
+          <h2 class="govuk-heading-s">
+            P60
+          </h2>
+          <p class="govuk-body">
+            You need a current P60 to use this option. Your P60 must have a total for your figure of more than zero.
+          </p>
+        </div>
+      </details>
+
+      <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Self Assessment
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            You will need to give us details of the most recent payment you made towards your Self Assessment. You can get this information from your bank account or statement.
+          </p>
+          <p class="govuk-body">
+            Payments can take time to show on our system. Try using a previous payment if the most recent payment does not work.
+          </p>
+        </div>
+      </details>
+
+      <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Tax Credits (including Voice ID)
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            Answering these questions will not affect your credit rating.
+          </p>
+          <p class="govuk-body">
+            You need a UK address and enough credit history to use this option. The data we use to match is provided by TransUnion, and you will be asked to give your consent to us sharing the details you enter with them before you start.
+          </p>
+          <p class="govuk-body">
+            You will be asked questions about information held on your credit record in the last 3 years. For example the year you took out
+          </p>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Credit record
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+           Answering these questions will not affect your credit rating.
+         </p>
+         <p class="govuk-body">
+           You need a UK address and enough credit history to use this option. The data we use to match is provided by TransUnion, and you will be asked to give your consent to us sharing the details you enter with them before you start.
+         </p>
+         <p class="govuk-body">
+           You will be asked questions about information held on your credit record in the last 3 years. For example the year you took out a credit card or phone contract, or last opened a bank account.
+         </p>
+        </div>
+      </details>
+
+      <p>You will be able to choose how to confirm your identity.</p>
+
+      <p>We do this to protect you against fraud.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "choose-2-items"
+      }) }}
+
+      <p>
+        <a href="more-information">I do not have any of these items</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

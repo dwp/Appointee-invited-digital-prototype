@@ -1,0 +1,30 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Identity check complete" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>You have completed the identity check successfully.</p>
+
+      <p>You can now continue with your PIP application.</p>
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/id-verification/v1/live-pip1/add-support-communicating"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

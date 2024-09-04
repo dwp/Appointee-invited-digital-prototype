@@ -1,0 +1,191 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-width-container">
+            <main class="govuk-main-wrapper">
+              <div class="govuk-grid-row">
+
+                <h1 class="govuk-heading-xl">Latest work</h1>
+
+                <div class="govuk-inset-text">
+                  <p>For the latest representation of live, view the <a href="apply-for-pip/govuk/how-to-claim">end-to-end journey</a> (WIP).</p>
+                </div>
+
+                <!-- <div class="govuk-grid-column-two-thirds">
+                  <h2 class="govuk-heading-m">July 2023</h2>
+                  <span>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="preparingfood">Work in progress</strong>
+                  </span>
+                  <p class="govuk-body">Lastest version of prototype</p>
+                  <a href="v14/intro-question" class="govuk-button govuk-button">View</a>
+                </div> -->
+
+                <h2 class="govuk-heading-m">GUID translation service integration - July 2024 - V21</h2>
+                <strong class="govuk-tag govuk-tag--purple">Being worked on</strong>
+                <br><br>
+                <p>Inegrating the GUID translation to remove the need for a user to input their NINO.</p>
+                <h3 class="govuk-heading-s">Changes include</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Removal of NINO screen</li>
+                  <li>Removal of NINO from 'Check your answers'</li>
+                  <li>Reorder of 'Name' screens from DTH</li>
+                  <li>Reorder of 'DOB' screens from DTH</li>
+                  <li>Reorder of 'Postcode' screens from DTH</li>
+                  <li>New user journey</li>
+                </ul>
+
+                <a href="v21/govuk/how-to-claim" class="govuk-button govuk-button">View</a>
+
+                <hr>
+                <br>
+
+
+                <div class="govuk-grid-column-two-thirds">
+
+                  <h2 class="govuk-heading-m">Claimant Home MVP - May 2024 - V20</h2>
+                  <strong class="govuk-tag govuk-tag--yellow">On hold</strong>
+                  <br><br>
+                  <p>Claimant Home MVP for 'Invited Digital' and 'Self-Serve' users.</p>
+                  <h3 class="govuk-heading-s">Design decisions</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>User can start a claim</li>
+                    <li>User can continue their claim</li>
+                    <li>User can upload supporting evidence</li>
+                    <li>User can confirm their identity</li>
+                    <li>User can view and download a copy of their form</li>
+                  </ul>
+
+                  <a href="research" class="govuk-button govuk-button">View</a>
+
+                  <hr>
+                  <br>
+
+
+                  <h2 class="govuk-heading-m">Evidence, IDV and Claimant Home - Feb 2023</h2>
+                  <strong class="govuk-tag govuk-tag--purple">Being worked on</strong>
+                  <br><br>
+                  <p>Introducing Claimant Home within the context of completed PIP1 and signing back in.</p>
+                  <h3 class="govuk-heading-s">Changes include</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>2 versons of claimant home covering the contexts of PIP2 not completed and PIP2 completed</li>
+                    <li>Updates to the PIP2 evidence section - layout and content, including PDF removal</li>
+                    <li>Updates to PIP2 submitted screen to convey latest change to OIDV rule</li>
+                    <li>Updates to check identity screen to convey latest change to OIDV rule</li>
+                    <li>Access to completed health information via Claimant Home with updated HTML format</li>
+                  </ul>
+
+                  <a href="v19/verify/sign-in/dth" class="govuk-button govuk-button">View</a>
+
+                  <hr>
+                  <br>
+
+                  <h2 class="govuk-heading-m">Find an address service - Nov 2023</h2>
+                  <strong class="govuk-tag govuk-tag--purple">Being worked on</strong>
+                  <br><br>
+                  <p>Introducing the DWP Find an Address service for PIP1's 3 address related contexts.</p>
+                  <h3 class="govuk-heading-s">Changes include</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Personal details</li>
+                    <li>Health Care Professional</li>
+                    <li>Places currently staying (if staying in hospital, hospice, etc)</li>
+                  </ul>
+
+                  <a href="v18/claim-registration/start" class="govuk-button govuk-button">View</a>
+
+                  <hr>
+                  <br>
+
+                  <h2 class="govuk-heading-m">PIP2 structured questions and flow - Oct/Nov 2023</h2>
+                  <strong class="govuk-tag govuk-tag--purple">Being worked on</strong>
+                  <br><br>
+                  <p>Early first phase research on structured questions based on descritors and improved journey flow.
+                    Both elements raised as part of the 2022 assessment.</p>
+                  <h3 class="govuk-heading-s">Changes include</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Addition of descriptor based structured questions to each PIP2 task (content unchanged)</li>
+                    <li>Option to 'Save as draft' on long text area questions</li>
+                    <li>Character count onn text area boxes</li>
+                    <li>Option to continue straight to next task on the journey or go back to task list on confirmation of check your answer pages</li>
+                    <li>HTML accessable version of submission document</li>
+                  </ul>
+
+                  <a href="v16/v1/health-form/task-list" class="govuk-button govuk-button">View</a>
+
+                  <hr>
+                  <br>
+
+                  <h2 class="govuk-heading-m">Repeat claims - Sept/Oct 2023</h2>
+                  <strong class="govuk-tag govuk-tag--blue">Ready to go</strong>
+                  <br><br>
+                  <p>An MVP to allow a small defined set of users to repeat claim if thier claim is not active.</p>
+                  <h3 class="govuk-heading-s">Changes include</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Updates to sign in content to cover new context</li>
+                    <li>Addition of new online eligibility question 'Have you applied for PIP online before?'</li>
+                    <li>Iteration to NINo fallout page to cover new scenarios</li>
+                    <li>New signed in experince post PIP2 submission for those without an active claim and so can repeat claim (including postcode check)</li>
+                  </ul>
+
+                  <a href="v17/govuk/how-to-claim" class="govuk-button govuk-button">View</a>
+
+                  <hr>
+                  <br>
+
+                  <h2 class="govuk-heading-m">Additional support/Health questions - Sept 2023</h2>
+                  <strong class="govuk-tag govuk-tag--blue">Ready to go</strong>
+                  <br><br>
+                  <p>Iteration of the User Journey work as well as streamlining the service around health
+                    based questions to ensure we have the data we require and avoid duplication of data input
+                    across the service.</p>
+                  <h3 class="govuk-heading-s">Changes include</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Iteration of PIP2 submission page, highlighting the application download</li>
+                    <li>Iterating the PIP1 condition page, adding approximate start date</li>
+                    <li>Removing ability to add more than one HCP in the PIP1</li>
+                    <li>Pulling condition and HCP data through to PIP2, using new summary pages to display what has previously been entered.</li>
+                    <li>A/B of 2 status tags on task list to represent that data has been pulled across from PIP1</li>
+                    <li>Updates for content of page that sets the AS marker in PIP1 to create parity with phone script </li>
+                  </ul>
+
+                  <a href="v15/user-journey/three/start" class="govuk-button govuk-button">View</a>
+
+                  <hr>
+                  <br>
+
+                  <h2 class="govuk-heading-m">User journey expectations - July 2023</h2>
+                  <strong class="govuk-tag govuk-tag--yellow">To be revisited</strong>
+                  <br><br>
+                  <p>Work exploring user expectations within the PIP journey, aiming to
+                    highlight steps in the journey so claimants can get a better understanding of
+                    what is happening and what to expect next.</p>
+                  <h3 class="govuk-heading-s">Changes include</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Redesign of PIP1 and PIP2 submission pages</li>
+                    <li>Addition of PIP2 introduction page</li>
+                  </ul>
+                  <a href="v15/user-journey/one/start" class="govuk-button govuk-button">Journey 1</a>
+                  <a href="v15/user-journey/two/start" class="govuk-button govuk-button">Journey 2</a>
+
+                  <hr>
+                  <br>
+
+                </div>
+
+              </div>
+            </main>
+          </div>
+
+    </div> <!-- govuk-grid-column-full -->
+</div> <!-- govuk-grid-row -->
+
+
+
+{% endblock %}

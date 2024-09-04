@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% set pageTitle = "Personal Independence Payment: Tell us how your health condition or disability affects you" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+<p style="padding: 20px; margin: 0"><strong>Subject:</strong> {{ pageTitle }}</p>
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "notify-width-container-border"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="notify-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full sans">
+
+      <p>Dear [Full name],</p>
+
+      <p>Thank you for starting your Personal Independence Payment (PIP) claim.</p>
+
+      <p>We need to find out more information about your daily living and mobility needs to help us make our decision.</p>
+
+      <h2 class="govuk-heading-m">What you need to do</h2>
+
+      <p>Tell the Department for Work and Pensions how your disability affects you and upload any supporting evidence using our online service.</p>
+
+      <p>You do not need to answer all the questions in one go. You can save the web address below in your internet browser or keep this email safe. This will let you easily return to the service more than once if you need to.</p>
+
+      <p>It might be helpful to keep a diary of how your disability affects you for a few days. Write down a list of things you need help with or find difficult.</p>
+
+      <p>You can also gather copies of evidence or information that describes how your condition or disability affects your daily life to help you fill in the form.</p>
+
+      <p>Before you start you will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your email address we sent this email to and access to your emails</li>
+        <li>your National Insurance number</li>
+        <li>your mobile phone</li>
+      </ul>
+
+      <p>Go to <a href="/p5-v12/sign-in/intro">[URL of service/HTML service identifier]</a></p>
+
+      <h2 class="govuk-heading-m">When you need to do it by</h2>
+
+      <p>Please answer all the questions and upload any evidence you have by [one calendar month from date of first invite email issued-Day Month Year-].</p>
+
+      <p>If you do not we may end your PIP claim.</p>
+
+      <p>If you are getting Disability Living Allowance at the moment, this will stop if you do not send your answers and upload any evidence you have by this date.</p>
+
+      <p>If you need to ask for more time to complete the form, please contact:</p>
+
+      <p>Phone: 0800 121 4433<br>
+      Textphone: 0800 121 4493 if you have speech or hearing difficulties</p>
+
+      <h2 class="govuk-heading-m">Get help</h2>
+
+      <p>If you need help filling in any part of this form you can ask a friend, relative, carer, representative, or local support organisation to help you.</p>
+
+      <p>There is information at each step of the online service to help you. You can also download PDF guides and watch a video from the ‘Help and contacts’ section.</p>
+
+      <h2 class="govuk-heading-m">Other ways to send your information</h2>
+
+      <p>If you decide you would like to fill in and send a paper form and any supporting evidence by post instead contact:</p>
+
+      <p>Phone: 0800 121 4433<br>
+      Textphone: 0800 121 4493 if you have speech or hearing difficulties</p>
+
+
+      <p>Yours sincerely,</p>
+
+      <p>Office manager</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+</div>{# /notify-width-container #}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

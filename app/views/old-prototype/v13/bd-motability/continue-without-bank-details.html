@@ -1,0 +1,45 @@
+{% extends "layout-signed-in-v13.html" %}
+
+{% block pageTitle %}
+Continue without entering account details
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+          <h1 class="govuk-heading-xl">
+              Continue without entering account details
+          </h1>
+
+          <p>Continue your claim if you're unable to provide bank, building society or credit union account details now.</p>
+          <div class="govuk-inset-text">
+            <p>Contact the Department for Work and Pensions (DWP) to provide account details later, after submitting your claim.</p>
+          </div>
+
+          <h2 class="govuk-heading-m">Contact DWP</h2>
+
+          <p>Telephone: 0800 121 4433 <br>
+          Textphone: 0800 121 4493 <br>
+          <a href="#">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 121 4433 <br>
+          <a href="#">Video relay service</a> for British Sign Language (BSL) users - <a href="#">check you can use the service</a> <br>
+          Monday to Friday, 9am to 5pm. <br>
+          <a href="#">Find out about call charges</a></p>
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

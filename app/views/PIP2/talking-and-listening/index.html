@@ -1,0 +1,65 @@
+{% set pageTitle = "Does your condition affect you talking, listening and understanding?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/PIP2/talking-and-listening/index-answer" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Talking, listening and understanding</h1>
+
+      <p>This means doing the following in your own language:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>communicating by speaking clearly to people</li>
+        <li>being understood by others</li>
+        <li>listening and understanding what people say</li>
+      </ul>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "talkingandlistening-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you talking, listening and understanding?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("talkingandlistening-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("talkingandlistening-question", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-v12/talking-and-listening/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

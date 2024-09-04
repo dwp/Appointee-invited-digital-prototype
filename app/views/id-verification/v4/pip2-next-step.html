@@ -1,0 +1,57 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "What do you want to do?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form id="form" method="post" action="#">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="new-existing-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                {{ pageQuestion }}
+              </h1>
+            </legend>
+            <p>We cannot make a decision on your claim until your identity has been confirmed. You can still upload supporting evidence after you have confirmed your identity.</p>
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="next-step-2" name="next-step" type="radio" value="confirm">
+                <label class="govuk-label govuk-radios__label" for="next-step-2">
+                  Confirm my identity
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="next-step-1" name="next-step" type="radio" value="upload">
+                <label class="govuk-label govuk-radios__label" for="next-step-1">
+                  Upload supporting evidence
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios -->
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

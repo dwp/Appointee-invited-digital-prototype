@@ -1,0 +1,34 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Alternative contact format other details
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="alt-formats-other-other">
+                  Describe the communication format you need
+                  </label>
+                </h1>
+                <input class="govuk-input" id="alt-formats-other-other" name="alt-formats-other-other" type="text">
+            </div> <!-- govuk-form-group -->
+
+            <p class="govuk-body">The Department for Work and Pensions may contact you to discuss your communication needs.</p>
+
+            <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+       </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-row -->
+</form>
+
+{% endblock %}

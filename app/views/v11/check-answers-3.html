@@ -1,0 +1,136 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Check your answers nationality
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<!-- {% include "includes/back-link-v11.html" %} -->
+{% endblock %}
+
+{% set conditionsLength %}
+{{ data.conditions | length }}
+{% endset %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h1 class="govuk-heading-l">
+            Check your answers
+          </h1>
+
+          <h2 class="govuk-heading-m">Your nationality</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is your nationality?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['nationality'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nationality">
+                  Change<span class="govuk-visually-hidden"> nationality</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% if data['nationality'] === 'A nationality of the European Economic Area (EEA) or Switzerland' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is your nationality?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['eea-country'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nationality-of-eaa-or-switzerland.html">
+                  Change<span class="govuk-visually-hidden"> your nationality</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['nationality'] === 'A nationality of the European Economic Area (EEA) or Switzerland' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Did you start living in the UK before 1 January 2021?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['living-in-uk'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="living-in-uk">
+                  Change<span class="govuk-visually-hidden"> when you started living in the UK</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['nationality'] === 'Another nationality' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is your nationality?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['other-nationality'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nationality-another.html">
+                  Change<span class="govuk-visually-hidden"> your natioinality</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Have you been in the UK for at least 2 of the last 3 years?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['gb'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="living-in-gb">
+                  Change<span class="govuk-visually-hidden"> where you have lived</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% if data['gb'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do any of the following apply to you or a family member?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['eu-question'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="eu-question">
+                  Change<span class="govuk-visually-hidden"> what applies to you or a family member</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+          </dl>
+
+          <p>Make sure you've checked your answers before you save and continue.</p>
+
+          <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue" id="submit">
+
+        </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
+      </div> <!-- govuk-grid-row -->
+
+    </main>
+  </div> <!-- govuk-width-container -->
+
+</form>
+
+{% endblock %}

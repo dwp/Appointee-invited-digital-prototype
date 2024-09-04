@@ -1,0 +1,45 @@
+{% extends "layout-signed-in-v5.html" %}
+
+{% block pageTitle %}
+Where you live
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-out.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you currently live in England, Scotland or Wales?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="where-live">
+                Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-live-2" name="where-live" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="where-live-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

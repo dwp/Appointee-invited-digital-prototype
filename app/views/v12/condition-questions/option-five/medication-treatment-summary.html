@@ -1,0 +1,192 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+      <!-- <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      {% for query in data['queriesMedication'] %}
+      <dt class="govuk-summary-list__key">
+        Medication name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ query.medication }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden">medicaton name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Dosage
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ query.dosage }}
+      </dd>
+          {% endfor %}
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden">dosage</span>
+        </a>
+      </dd>
+    </div> -->
+
+    <h1 class="govuk-heading-l">Summary: medications and treatments</h1>
+
+<!-- table for medications and dosage -->
+<!--<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+
+  <tbody class="govuk-table__body">
+    {% for query in data['queriesTreatment'] %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Treatment name</th>
+      <td class="govuk-table__cell">{{ query.treatment }}</td>
+      <td class="govuk-table__cell"><a href="your-treatment">Change</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Treatment start date</th>
+      <td class="govuk-table__cell">{{ query.treatmentStartDate }}</td>
+      <td class="govuk-table__cell"><a href="your-treatment">Change</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Side effect</th>
+      <td class="govuk-table__cell">{{ query.treatmentSideEffect }}</td>
+      <td class="govuk-table__cell"><a href="your-treatment">Change</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Related conditions</th>
+      <td class="govuk-table__cell">{{ query.treatmentRelatedCondition }}</td>
+      <td class="govuk-table__cell"><a href="your-treatment-condition">Change</a></td>
+    </tr> -->
+
+    <!-- <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{ query.medication }} side effects</th>
+      <td class="govuk-table__cell">{{ query.sideEffects }}</td>
+      <td class="govuk-table__cell"><a href="#">Change</a></td>
+    </tr> -->
+    <!--{% endfor %}
+  </tbody>
+</table>-->
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Do you take or do you plan to take any medication?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['do-you-take-medication'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="medication">
+        Change<span class="govuk-visually-hidden"> medication choice</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Have you had, are you having, or are you waiting for any other treatments?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['further-treatments'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="further-treatments">
+        Change<span class="govuk-visually-hidden"> treatment</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Your medications</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="check-answers">
+          Change<span class="govuk-visually-hidden"> medication</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      {% for query in data['queriesMedication'] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          {{ query.medication }}
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Your treatments</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="treatment-check-answers">
+          Change<span class="govuk-visually-hidden"> treatment choice</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      {% for query in data['queriesTreatment'] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          {{ query.treatment }}
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+  </div>
+
+
+  </form>
+
+    <br>
+      {{ govukButton({
+        text: 'Confirm and save',
+        href: "list-1"
+      }) }}
+
+    {% include "v12/condition-questions/option-four/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

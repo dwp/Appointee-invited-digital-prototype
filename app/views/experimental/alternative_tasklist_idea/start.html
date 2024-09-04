@@ -1,0 +1,49 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Start
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form id="form" method="post" action="#">
+        <h1 class="govuk-heading-xl">
+          Tell us how your conditions or disabilities affect you
+        </h1>
+
+        <p>Use this stage of your claim to:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+
+            <li>list your conditions and disabilities</li>
+            <li>give details of your medicines or treatments</li>
+            <li>give details of health and care professionals you have not already told us about</li>
+            <li>describe how your conditions or disabilities affect your ability to do certain everyday tasks and get around</li>
+            <li>upload any supporting evidence of your conditions or disabilities and how they affect you</li>
+
+          </ul>
+
+          <p>Take your time and give as much information as you can. You do not have to answer all the questions in one go.</p>
+
+          <p>You will save your progress each time you select 'Save and continue'. You can sign out at any point and continue later from where you last saved.</p>
+
+        <a href="/experimental/alternative_tasklist_idea/condition" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+            Start now
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg>
+        </a>
+
+        </form>
+    </div> <!-- govuk-grid-column-two-thirds -->
+</div> <!-- govuk-grid-column-two-thirds -->
+
+
+{% endblock %}

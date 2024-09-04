@@ -1,0 +1,59 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+    {{ govukRadios({
+      idPrefix: "medication",
+      name: "do-you-take-medication",
+      fieldset: {
+        legend: {
+          text: "Do you take any medication or have any planned?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+              text: "Medication includes, tablets, liquid medicine, patches, inhalers or injections."
+          },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        },
+        {
+          value: "I'm not sure",
+          text: "I'm not sure"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Save and continue'
+    }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

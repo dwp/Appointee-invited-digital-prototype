@@ -1,0 +1,102 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Check your answers help with applying
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% set conditionsLength %}
+{{ data.conditions | length }}
+{% endset %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h1 class="govuk-heading-l">
+            Check your answers
+          </h1>
+
+          <h2 class="govuk-heading-m">Help with applying</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you need help from someone else to communicate with us?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support-communicating'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-support-communicating">
+                  Change<span class="govuk-visually-hidden"> if you need help communicating</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you usually need help from someone else to fill in forms or understand letters?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-support">
+                  Change<span class="govuk-visually-hidden"> if you need help </span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% if data['add-support'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Is someone helping you with this claim?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support-help'] }}<br>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-support-help">
+                  Change<span class="govuk-visually-hidden"> is someone helping you</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['add-support-help'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Helper's name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support-first-name'] }}<br>
+                {{ data['add-support-last-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-support-name">
+                  Change<span class="govuk-visually-hidden"> fisrt name</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+          </dl>
+
+          <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue" id="submit">
+        </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
+      </div> <!-- govuk-grid-row -->
+
+    </main>
+  </div> <!-- govuk-width-container -->
+
+</form>
+
+{% endblock %}

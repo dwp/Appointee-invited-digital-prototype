@@ -1,0 +1,116 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Alternative contact format paper
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+           
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Which other format do you need?
+                        </h1>
+                    </legend>
+                    <div id="contact-hint" class="govuk-hint">
+                        Select one option.
+                    </div>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-format-paper-1" name="alt-format-paper" type="radio" value="Coloured paper" data-aria-controls="conditional-coloured-paper">
+                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-1">
+                                Coloured paper
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-coloured-paper">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="coloured-paper-detail">
+                                    Give details
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="coloured-paper-detail" name="coloured-paper-detail" type="text" spellcheck="false" autocomplete="none">
+                            </div>
+                        </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden -->
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-format-paper-2" name="alt-format-paper" type="radio" value="Large print 16 point font" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-2">
+                                Large print &ndash; 16 point font
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-format-paper-3" name="alt-format-paper" type="radio" value="Large print with a custom font" data-aria-controls="conditional-contact-3">
+                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-3">
+                                Large print with a custom font
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="large-print-custom-font">
+                                    Give details
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="large-print-custom-font" name="large-print-custom-font" type="text" autocomplete="none">
+                            </div>
+                        </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden-->
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-format-paper-4" name="alt-format-paper" type="radio" value="Accessible PDF" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-4">
+                                Accessible PDF
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-format-paper-5" name="alt-format-paper" type="radio" value="Email" data-aria-controls="conditional-contact-5">
+                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-5">
+                                Email
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-5">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-email">
+                                    Enter an email address
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" autocomplete="email">
+                            </div>
+                        </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden-->
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-format-paper-6" name="alt-format-paper" type="radio" value="Other" data-aria-controls="conditional-contact-6">
+                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-5">
+                                Other
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-contact-6">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="other-format">
+                                    Give details
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="other-format" name="other-format" type="text" autocomplete="none">
+                            </div>
+                        </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden-->
+
+                    </div> <!-- govuk-radios govuk-radios--conditional -->
+                </fieldset>
+            </div> <!-- govuk-form-group -->
+
+            <p class="govuk-body">The Department for Work and Pensions may contact you to discuss your communication needs.</p>
+
+            <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+
+        </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

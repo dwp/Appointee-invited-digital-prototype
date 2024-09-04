@@ -1,0 +1,59 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Daily activity list
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                    <div class="govuk-form-group">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                          <h1 class="govuk-fieldset__heading">
+                              Everyday tasks and getting around
+                          </h1>
+                      </legend>
+
+                           <p class="govuk-body">Personal Independance Payment (PIP) can help with extra living costs if you have
+                              both:</p>
+                              <ul class="govuk-list govuk-list--bullet">
+                                <li>a long term physical or mental health condition or disability</li>
+                                <li>difficulties doing certain everyday tasks or getting around because of your condition or disability</li>
+                              </ul>
+
+                              <p class="govuk-body">We will assess how difficult you find the following tasks:</p>
+                                 <ul class="govuk-list govuk-list--bullet">
+                                   <li>Preparing food</li>
+                                   <li>Eating and drinking</li>
+                                   <li>Managing medicines and treatments</li>
+                                   <li>Washing and bathing</li>
+                                   <li>Using the toilet and managing incontinence</li>
+                                   <li>Dressing and undressing</li>
+                                   <li>Talking, listening and understanding</li>
+                                   <li>Reading</li>
+                                   <li>Mixing with other people</li>
+                                   <li>Managing money</li>
+                                   <li>Planning and following a journey</li>
+                                   <li>Moving around</li>
+                                 </ul>
+
+                    {{ govukButton({
+                      text: 'Save and continue',
+                      href: "/experimental/alternative_tasklist_idea/activity_hints/preparing-food-hint"
+                    }) }}
+        </main>
+   </div> <!-- govuk-width-container -->
+</form>
+
+{% endblock %}

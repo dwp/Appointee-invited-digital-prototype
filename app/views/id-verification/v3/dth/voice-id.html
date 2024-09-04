@@ -1,0 +1,41 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "You've chosen to use voice ID" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl ">
+            You've chosen to use voice ID
+        </h1>
+
+        <p class="govuk-body">We're calling you now on the number you used to set up security.</p>
+        <p class="govuk-body">This may take up to 35 seconds. Please stay on this page.</p>
+
+        <a class="govuk-button" href={% if tuKbv === "true" %} "./credit-ref-q1" {% else %} "./doc-verification-finish"
+            {% endif %}>Continue</a>
+
+        <p class="govuk-body"></p>
+        <p class="body-text"><a href="more-information">I don't have that information</a></p>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "We have sent you a text message with your security code" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">A 6-digit code has been texted to mobile number ending 789</h1>
+
+      <p>The code expires after 5 minutes.</p>
+
+      <form class="form" action="signed-in-after-pip2" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Enter your 6-digit code",
+            isPageHeading: false
+          },
+          id: "mobile-security-code",
+          name: "mobile-security-code",
+          type: "text",
+          classes: "govuk-input--width-5"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p><a href="">I did not get a text message</a></p>
+
+      <p><a href="">I cannot access the mobile phone number I use to sign in</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

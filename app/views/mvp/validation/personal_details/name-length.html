@@ -1,0 +1,72 @@
+@@ -0,0 +1,68 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Name
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#first-name">First name must be 35 characters or fewer</a>
+              </li>
+              <li>
+                <a href="#last-name">Last name must be 35 characters or fewer</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+
+
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="name">
+              Your name
+            </label>
+          </h1>
+          <div class="govuk-form-group govuk-form-group--error">
+          <div id="account-number-hint " class="govuk-hint">
+            First name
+          </div>
+          <span id="first-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> First name must be 35 characters or fewer
+          </span>
+          <input class="govuk-input govuk-input--error govuk-input--width-30" id="first-name" name="first-name"
+            type="text">
+        </div>
+        <div class="govuk-form-group  govuk-form-group--error">
+          <div id="account-number-hint" class="govuk-hint">
+            Last name
+          </div>
+          <span id="last-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Last name must be 35 characters or fewer
+          </span>
+          <input class="govuk-input govuk-input--error govuk-input--width-30" id="last-name" name="last-name"
+            type="text">
+        </div> <!-- govuk-form-group govuk-form-group--error -->
+
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-row -->
+</form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% block pageTitle %}
+You cannot claim online if you're already getting PIP or Disability Living Allowance (DLA)
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">You cannot claim online if you're currently getting PIP or Disability Living Allowance (DLA)</h1>
+
+      <p>The letter you got when your PIP or DLA was approved will tell you when your claim will end and if it will be reviewed.</p>
+
+      <p><a href="https://www.gov.uk/pip/when-your-pip-claim-is-reviewed">Find out what to do if you're already getting get PIP</a></p>
+
+      <p><a href="https://www.gov.uk/dla-disability-living-allowance-benefit/your-DLA-claim">Find out what to do if you're already getting DLA</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

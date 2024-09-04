@@ -1,0 +1,59 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+What do you want to do?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" aria-describedby=action-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-heading-xl">What do you want to do?</h1>
+          </legend>
+          <div id="action-hint" class="govuk-hint">
+
+          </div>
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="eligibility-choice-1" name="eligibility-choice" type="radio" value="Check I am eligible for PIP">
+              <label class="govuk-label govuk-radios__label" for="eligibility-choice-1">
+                 Check if I'm eligible for PIP and if I can claim online
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="eligibility-choice-2" name="eligibility-choice" type="radio" value="Check if I can use the online service">
+              <label class="govuk-label govuk-radios__label" for="eligibility-choice-2">
+                 Just check if I can claim PIP online
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="eligibility-choice-3" name="eligibility-choice" type="radio" value="Sign into my account">
+              <label class="govuk-label govuk-radios__label" for="eligibility-choice-3">
+                 Sign in &ndash; I've started an online claim or had an email inviting me to
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+
+        </fieldset>
+
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

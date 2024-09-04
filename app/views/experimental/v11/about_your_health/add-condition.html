@@ -1,0 +1,63 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Your health condition
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set formAction = "/check-condition" %}
+
+      <form action="{{ formAction }}" method="post" novalidate>
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">What physical or mental health conditions or disabilities do you
+          have?</h1>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What we mean by conditions or disabilities
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Conditions and disabilities include:</p>
+          <ul class="govuk-list govuk-list--bullet">
+              <li>physical conditions, like arthritis, heart disease or diabetes</li>
+              <li>blindness and sight impairment</li>
+              <li>hearing and speech difficulties</li>
+              <li>learning, developmental or behavioural difficulties</li>
+              <li>cognitive impairment</li>
+              <li>mental health conditions, like depression, anxiety or bipolar disorder</li>
+              <li>neurological conditions, like Parkinson's or epilepsy</li>
+          </ul>
+        </div>
+      </details>
+
+        {{ govukInput({
+          label: {
+            text: "Enter a condition or disability
+            ",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "condition-type",
+          name: "condition[type]",
+          value: choice or ''
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

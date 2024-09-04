@@ -1,0 +1,82 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "You opened a current account in MONTH YEAR, which provider was it with?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">About your mortgage</span>
+
+      <form class="form" action="id-verification-completed" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                {{ pageQuestion }}
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="account-provider-1" name="account-provider" type="radio" value="account1">
+                <label class="govuk-label govuk-radios__label" for="account-provider-1">
+                  Account 1
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="paccount-provider-2" name="account-provider" type="radio" value="account2">
+                <label class="govuk-label govuk-radios__label" for="account-provider-2">
+                  Account 2
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="account-provider-3" name="account-provider" type="radio" value="account3">
+                <label class="govuk-label govuk-radios__label" for="account-provider-3">
+                  Account 3
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="account-provider-4" name="account-provider" type="radio" value="account4">
+                <label class="govuk-label govuk-radios__label" for="account-provider-4">
+                  Account 4
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="account-provider-5" name="account-provider" type="radio" value="none">
+                <label class="govuk-label govuk-radios__label" for="account-provider-5">
+                  None of the above
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="more-information">I don't have that information</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

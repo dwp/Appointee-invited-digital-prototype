@@ -1,0 +1,119 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'Enter another condition or disability',
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <div id="more-detail-hint" class="govuk-hint">
+        If you don't know the name of your health problem or it has not been diagnosed, then please provide a descriptive name.
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What we mean by condition or disability
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+             Conditions and disabilities include:
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>physical conditions, like arthritis, heart disease or diabetes</li>
+                  <li>blindness and sight impairment</li>
+                  <li>hearing and speech difficulties</li>
+                  <li>learning, developmental or behavioural difficulties</li>
+                  <li>cognitive impairment</li>
+                  <li>mental health conditions, like depression, anxiety or bipolar disorder</li>
+                  <li>neurological conditions, like Parkinson's or epilepsy</li>
+                </ul>
+          </div>
+    </details>
+
+      {{ govukInput({
+        id: 'condition-name-1',
+        name: 'condition-name',
+        label: {
+          html: 'Name of health problem',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, kidney failure."
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'startDate',
+        name: 'condition-start-date',
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          html: 'Approximate start date',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, March 2010."
+        }
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        id: 'diagnosed',
+        name: "condition-diagnosed",
+        fieldset: {
+          legend: {
+            text: "Has it been diagnosed by a health or care professional?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Let us know of any undiagnosed health problems that effect you."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "v12/condition-questions/option-five/_return-link.html" %}
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

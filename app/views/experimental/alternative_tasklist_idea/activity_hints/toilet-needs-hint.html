@@ -1,0 +1,83 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Using the toilet and managing incontinence hint
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" action="#" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                Using the toilet and managing incontinence
+            </h1>
+          </legend>
+          <div id="mobility-activity-hint" class="govuk-hint">
+            <p>Using the toilet means:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>being able to get on or off a normal toilet</li>
+                <li>cleaning yourself after using the toilet</li>
+              </ul>
+            </p>
+
+            <p>Managing incontinence means:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>managing the emptying of your bowel and bladder when you have difficulty controlling this, including if you need a collecting device such as a catheter or stoma bag</li>
+                <li>cleaning yourself after doing so</li>
+              </ul>
+            </p>
+
+            <p>It does not mean physically getting to the bathroom.</p>
+
+          </div>
+
+      </div> <!-- govuk-form-group -->
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "toilet-help",
+        name: "toilet-help",
+        fieldset: {
+          legend: {
+            text: "Do you ever have difficulties using the toilet and managing incontinence?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select yes if you need help from someone else or using extra equipment."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <br>
+    <button class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+
+
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+
+{% endblock %}

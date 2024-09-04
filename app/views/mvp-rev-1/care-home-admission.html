@@ -1,0 +1,67 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+When were you admitted to care-home
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="care-home-admission">
+                When did you go into this accommodation?
+              </label>
+            </h1>
+
+          </div>
+
+            <div id="care-home-admission" class="govuk-hint">
+              For example, 30 9 2021
+            </div>
+
+          <div class="govuk-date-input" id="care-home-admission">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="care-home-admission">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="care-home-admission-day" name="care-home-admission-day"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="care-home-admission-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="care-home-admission-month" name="care-home-admission-month"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="care-home-admission-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="care-home-admission-year" name="care-home-admission-year"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+          </div> <!-- govuk-date-input -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-row -->
+</form>
+
+{% endblock %}

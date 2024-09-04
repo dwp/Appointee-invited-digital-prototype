@@ -1,0 +1,42 @@
+{% set pageTitle = "Your registration was successful" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out-dth.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Register</h1>
+
+      <form action="#" method="post" novalidate>
+
+        <p>Create an acoount so you can sign in securely each time you visit.</p>
+
+        <div class="govuk-inset-text">
+          <a href="/v21/eligibility/register/matching/sign-in">Sign in if you have already created an account</a>.
+        </div>
+
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+        <p>You will need:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>an email address</li>
+          <li>a mobile phone</li>
+        </ul>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

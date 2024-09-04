@@ -1,0 +1,119 @@
+{% set pageTitle = "Check your uploaded files" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "p5-v11/_beta-banner.html" %}
+
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/p5-v11/supporting-evidence/check"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/p5-v11/supporting-evidence/index?uploaded=3"
+    }) }}
+  {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if cya == "true" %}
+        <form action="/p5-v11/supporting-evidence/supporting-evidence-uploaded-3-data-cya" method="post" novalidate>
+      {% else %}
+        <form action="/p5-v11/supporting-evidence/supporting-evidence-uploaded-3-data" method="post" novalidate>
+      {% endif %}
+
+        <h1 class="govuk-heading-l">Your uploaded files</h1>
+
+        <h2 class="govuk-heading-m">Files added</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 1
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/">{{ data['supporting-evidence-file-1'] }}</a>, 2MB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" href="#">
+                Delete<span class="govuk-visually-hidden"> file 1</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/">{{ data['supporting-evidence-file-2'] }}</a>, 5MB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" href="#">
+                Delete<span class="govuk-visually-hidden"> file 2</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 3
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/">{{ data['supporting-evidence-file-3'] }}</a>, 6MB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" href="/p5-v11/supporting-evidence/supporting-evidence-uploaded-2?delete=true">
+                Delete<span class="govuk-visually-hidden"> file 3</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want to upload another piece of evidence?
+          </legend>
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes" name="question" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no" name="question" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no">
+                No
+              </label>
+            </div>
+          </div>
+
+          </fieldset>
+        </div>{# /govuk-form-group #}
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+        Confirm
+        </button>
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

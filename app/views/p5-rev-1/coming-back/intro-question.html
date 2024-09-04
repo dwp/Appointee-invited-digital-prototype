@@ -1,0 +1,53 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Is this the first time you’re using this service?" %}
+
+{% extends "layout-p5-rev-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-rev-1/_beta-banner.html" %}
+    
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="sign-in " method="post" novalidate>
+
+        {{ govukRadios({
+          name: "question",
+          fieldset: {
+            legend: {
+              text: "Have you used the Apply for PIP online service before?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I already have a password"
+            },
+            {
+              value: "no",
+              text: "No, I need to create a password"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

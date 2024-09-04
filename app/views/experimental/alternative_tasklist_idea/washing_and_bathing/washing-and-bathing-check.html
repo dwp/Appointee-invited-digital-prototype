@@ -1,0 +1,59 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Washing and bathing check answers
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-width-container">
+       
+      
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+      
+              <h1 class="govuk-heading-l">Check your answers </h1>
+      
+              <h2 class="govuk-heading-m">Washing and bathing</h2>
+             
+      
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                   Details how your condition or disability affects you washing and bathing
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['washingandbathing-details'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="washing-and-bathing-detail">
+                      Change<span class="govuk-visually-hidden"> details</span>
+                    </a>
+                  </dd>
+                </div>
+               </dl> 
+      
+              <form action="/experimental/linear_journey/dressing_and_undressing/dressing-and-undressing-detail" method="post" novalidate>
+      
+                <input type="hidden" name="answers-checked" value="true">
+      
+                <button class="govuk-button" data-module="govuk-button">
+                  Save and continue
+                </button>
+      
+              </form>
+      
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+{% endblock %}

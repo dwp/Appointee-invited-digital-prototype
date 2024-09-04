@@ -1,0 +1,92 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Are you currently staying in hospital
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#hospital-1">Select if you are staying in a hospital, hospice, care or nursing home, other, or none of these</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Are you currently staying in any of the these places?
+            </h1>
+          </legend>
+            <div id="contact-hint" class="govuk-hint">
+              Select one option.
+            </div>
+            <span id="add-support-communicating-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span>Select if you are staying in a hospital, care or nursin home, hospice, other, or none of these
+            </span>
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-1" name="hospital" type="radio" value="Hospital">
+              <label class="govuk-label govuk-radios__label" for="hospital-1">
+                Hospital
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="Hospice">
+              <label class="govuk-label govuk-radios__label" for="hospital2">
+                Hospice
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-3" name="hospital" type="radio" value="Care or nursing home">
+              <label class="govuk-label govuk-radios__label" for="hospital-3">
+                Care or nursing home
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-4" name="hospital" type="radio" value="Other accommodation">
+              <label class="govuk-label govuk-radios__label" for="hospital-4">
+                Other
+              </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                This includes residential college, respite care, sheltered housing or other accommodation.
+              </div>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-5" name="hospital" type="radio" value="None of these">
+              <label class="govuk-label govuk-radios__label" for="hospital-5">
+                No, none of these
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Preparing food</h1>
+
+            {{ govukRadios({
+              idPrefix: "prep-food-difficulties-1-1",
+              name: "prep-food-difficulties-1-1",
+              fieldset: {
+                legend: {
+                  text: "How often do you have difficulties preparing or cooking food?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "Select one option"
+              },
+              items: [
+                {
+                  value: "Every day",
+                  text: "Every day"
+                },
+                {
+                  value: "Most but not all days",
+                  text: "Most but not all days"
+                },
+                {
+                  value: "More than once a week",
+                  text: "More than once a week"
+                },
+                {
+                  value: "More than once a month",
+                  text: "More than once a month"
+                },
+                {
+                  value: "It varies",
+                  text: "It varies"
+                },
+                {
+                  value: "Other",
+                  text: "Other"
+                }
+              ]
+            }) }}
+
+                  {{ govukButton({
+                    text: 'Continue'
+                  }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

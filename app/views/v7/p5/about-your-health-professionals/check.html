@@ -1,0 +1,128 @@
+{% set pageTitle = "Check your answers: about your health professionals" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if getData.remove == "true" %}
+      <div class="moj-banner moj-banner--success">
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+        <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>Jason Jackson has been removed</div>
+      </div>{# /moj-banner #}
+    {% endif %}
+
+    <h1 class="govuk-heading-l">Check your answers: about your health professionals</h1>
+
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+
+      <header class="app-summary-card__header">
+        <h2 class="app-summary-card__title">
+          {{ data['professional-name-1'] | title }}
+        </h2>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-1'] | title }}</span>
+          </a>
+        </div>{# /app-summary-card__actions #}
+      </header>
+
+      <div class="app-summary-card__body">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Details"
+              },
+              value: {
+              html: '<p class="govuk-body">' +
+                data["professional-name-1"] | title + '<br>' +
+                data["professional-profession-1"] | title + '<br>' +
+                data["professional-phone-1"] | title + '<br>' +
+                data["professional-address-line-1-1"] | title + '<br>' +
+                data["professional-address-line-2-1"] | title + '<br>' +
+                data["professional-address-town-1"] | title + '<br>' +
+                data["professional-address-postcode-1"] | upper + '<br>' +
+                'Last seen: June ' + data["professional-date-year-1"] + '</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: " details for "
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      </div>{# /app-summary-card__body #}
+    </section>
+
+    {% if data['professional2'] == "Yes" %}
+
+      <section class="app-summary-card govuk-!-margin-bottom-6">
+
+        <header class="app-summary-card__header">
+          <h2 class="app-summary-card__title">
+            {{ data['professional-name-2'] | title }}
+          </h2>
+          <div class="app-summary-card__actions">
+            <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-2'] | title }}</span>
+            </a>
+          </div>{# /app-summary-card__actions #}
+        </header>
+
+        <div class="app-summary-card__body">
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Details"
+                },
+                value: {
+                html: '<p class="govuk-body">' +
+                  data["professional-name-2"] | title + '<br>' +
+                  data["professional-profession-2"] | title + '<br>' +
+                  data["professional-phone-2"] | title + '<br>' +
+                  data["professional-address-line-1-2"] | title + '<br>' +
+                  data["professional-address-line-2-2"] | title + '<br>' +
+                  data["professional-address-town-2"] | title + '<br>' +
+                  data["professional-address-postcode-2"] | upper + '<br>' +
+                  'Last seen: February ' + data["professional-date-year-2"] + '</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: " details for "
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+        </div>{# /app-summary-card__body #}
+      </section>
+
+    {% endif %}
+
+    <p><a href="#">Add another health professional</a></p>
+
+    <p><a href="../list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and save</a></p>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

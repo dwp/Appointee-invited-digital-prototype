@@ -1,0 +1,100 @@
+{% extends "layout-idv-sign-out-popup.html" %}
+
+{% set bodyClasses = "overlay" %}
+
+{% set pageQuestion = "Health or care professional details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="overlay-container">
+    <div class="popup">
+      <form class="form" action="/v12v2/signout-popup" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Have you saved your information?
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              If you did not enter any information on the last screen, it's safe to sign out.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-out-yes" name="sign-out" type="radio" value="Yes" >
+                <label class="govuk-label govuk-radios__label" for="sign-out-yes">
+                  Yes, sign me out
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-out-no" name="sign-out" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="sign-out-no">
+                  No, take me back so I can save my information
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <form id="form" method="post" action="#">
+          <h1 class="govuk-heading-xl">
+            Apply for Personal Independence Payment (PIP)
+          </h1>
+
+          <p>Only use this service if you have called the PIP claim line and been invited to claim PIP online.</p>
+
+          <p>Use this service to:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>make a claim for PIP</li>
+              <li>describe how your health conditions or disabilities affect your ability to do certain everyday tasks and get around</li>
+              <li>upload any supporting evidence you have of your conditions or disabilities and how they affect you</li>
+            </ul>
+
+          <h2 class="govuk-heading-l">Before you start</h2>
+
+          <p>You do not have to answer all the questions in one go. You can save your progress at any point and continue later.</p>
+
+          <p>You will need:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>your personal details including National Insurance number</li>
+            <li>details of your health conditions or disabilities and how they affect your ability to do everyday tasks and get around</li>
+            <li>details of any medicines or treatments you have</li>
+            <li>details of your health and care professionals</li>
+            <li>hospital or care home details if you're staying or living in one</li>
+            <li>evidence of your conditions or disabilities if you have it, such as doctors' reports, care or treatment plans, test results or repeat prescription lists </li>
+          </ul>
+
+          <a href="/v12v2/add-support-communicating" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+              Start now
+              <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+              </svg>
+          </a>
+
+          </form>
+      </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+
+{% endblock %}

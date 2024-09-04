@@ -1,0 +1,31 @@
+{% set pageTitle = "There is a problem" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "p5/_beta-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-l">There is a problem</h1>
+
+    <p>You have not uploaded any files to send.</p>
+
+    <p><a href="supporting-evidence-upload-1">Try again</a> if you want to upload and send any files.</p>
+
+    <p>Sign out if you do not want to upload and send any files.</p>
+
+    <a href="signed-out" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Sign out</a>
+
+  </div>{# /govuk-grid-column-one-third #}
+</div>{# /govuk-grid-row #}
+{% endblock %}

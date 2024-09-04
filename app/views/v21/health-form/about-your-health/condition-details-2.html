@@ -1,0 +1,61 @@
+{% set pageTitle = "About your health conditions or disabilities" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "condition-detail-2",
+        id: "condition-detail-2",
+        rows: "18",
+        label: {
+          text: "About this condition or disability" + data['conditions'][0]['condition_name'] | lower,
+          isPageHeading: true,
+        classes: "govuk-label--l"
+        },
+        hint: {
+          html: "<p>Tell us about:</p>
+          <ul class='govuk-list govuk-list--bullet'>
+            <li>
+              tablets or other medication you are taking or will be taking and the dosage
+            </li>
+            <li>
+              any treatments you have had, you are currently having or have planned for the future (include private as well as NHS funded treatments)</li>
+            <li>any side effects these have on you</li>
+          </ul>"
+        }
+      }) }}
+
+      <!-- <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="condition-start-date">
+          Approximate start date?
+          </label>
+        </h1>
+        <div id="condition-start-date-hint" class="govuk-hint">
+          For example, about 14 months ago.
+        </div>
+        <input class="govuk-input" id="condition-start-date" name="condition-start-date" type="text" aria-describedby="condition-start-date-hint">
+      </div>
+ -->
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

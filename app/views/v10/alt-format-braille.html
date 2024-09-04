@@ -1,0 +1,54 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Alternative contact format Braile
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Which Braille format do you need?
+            </h1>
+          </legend>
+
+          <div id="changed-name-hint" class="govuk-hint">
+            Select one option
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="alt-format-braile-1" name="alt-format-braile" type="radio" value="Type 1">
+              <label class="govuk-label govuk-radios__label" for="alt-format-braile-1">
+                Type 1 &ndash; uncontracted
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="alt-format-braile-2" name="alt-format-braile" type="radio" value="Type 2">
+              <label class="govuk-label govuk-radios__label" for="alt-format-braile-2">
+                Type 2 &ndash; contracted
+              </label>
+            </div>
+          </div> <!-- govuk-radios -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <p class="govuk-body">The Department for Work and Pensions may contact you to discuss your communication needs.</p>
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

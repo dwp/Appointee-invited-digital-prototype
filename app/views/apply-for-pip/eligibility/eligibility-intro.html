@@ -1,0 +1,38 @@
+{% block pageTitle %}
+Check if you're eligible to apply for PIP online
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Check if you're eligible for PIP</h1>
+
+      <p>Answer a few questions to find out if you may be eligible for PIP.</p>
+      <p>You can also check if you can claim online. This is a new online service which we are testing with a limited number of people.</p>
+
+      <p>If you're helping someone else, answer the questions as if you're them.</p>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body">If you might have 12 months or less to live there is a different way to claim. This is so you can get PIP more quickly.</p>
+        <p><a href="https://www.gov.uk/pip/claiming-if-you-might-have-6-months-or-less-to-live">Find out how to claim if you have 12 months or less to live</a><p>
+      </div>
+
+      <p>If you’ve done any part of a PIP claim online before you can <a href="../verify/your-details">sign in</a>.</p>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

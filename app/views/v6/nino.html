@@ -1,0 +1,35 @@
+{% extends "layout-signed-in-v6.html" %}
+
+{% block pageTitle %}
+National Insurance number
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="name">
+            Your National Insurance number
+          </label>
+        </h1>
+        <div id="account-number-hint" class="govuk-hint">
+          It's on their National Insurance card, benefit letter, payslip or P60.<br>
+          For example, QQ 12 34 56 Q
+        </div> <!-- account-number-hint -->
+        <input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

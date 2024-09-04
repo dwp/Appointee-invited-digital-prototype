@@ -1,0 +1,85 @@
+{% extends "layout-signed-out-v11.html" %}
+
+{% block pageTitle %}
+Who is claiming?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your ability to complete a PIP claim and communicate with us</h1>
+
+            <p class="govuk-body">We want to understand whether you may have any significant difficulty communicating with us if you have:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>a mental health condition</li>
+            <li>learning, developmental or behavioural difficulties</li>
+            <li>a cognitive impairment</li>
+          </ul>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Examples of conditions
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Severe Depression</li>
+                <li>Bipolar disorder</li>
+                <li>Post Traumatic Stress Disorder (PTSD)</li>
+                <li>Obsessive Compulsive Disorder (OCD)</li>
+                <li>psychosis</li>
+                <li>Schizophrenia</li>
+                <li>personality disorder</li>
+                <li>Attention Deficit Hyperactivity Disorder (ADHD)</li>
+                <li>conduct disorder</li>
+                <li>Down syndrome</li>
+                <li>Autism</li>
+                <li>developmental delay</li>
+                <li>Alzheimer’s or Dementia</li>
+              </ul>
+            </div>
+          </details>
+
+      <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Do you have a mental health condition or a condition that makes it hard to remember things, learn new things, or make everyday decisions?
+                </h1>
+              </legend>
+              <div id="changed-name-hint" class="govuk-hint"></div>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="conditions" name="difficulties" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="condition">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="conditions" name="difficulties" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="condition">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div> <!--div radio-->
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

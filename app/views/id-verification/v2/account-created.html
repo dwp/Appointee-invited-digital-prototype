@@ -1,0 +1,28 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "You have created your PIP account" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>You can now sign in to your account.</p>
+
+      {{ govukButton({
+        text: "Sign in",
+        href: "/id-verification/v2/sign-in"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="condition-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Which condition or conditions is this treatment for?
+            </h1>
+          </legend>
+          <div id="condition-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            {% for query in data['queriesCondition'] %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="relatedCondition" name="treatment-related-condition" type="checkbox" value="{{ query.condition }}">
+              <label class="govuk-label govuk-checkboxes__label" for="treatment-related-condition">
+                {{ query.condition }}
+              </label>
+            </div>
+            {% endfor %}
+            <div class="govuk-checkboxes__divider">or</div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="no-relatedCondition" name="treatment-related-condition" type="checkbox" value="None or not sure" data-behaviour="exclusive">
+              <label class="govuk-label govuk-checkboxes__label" for="treatment-related-condition">
+                None or not sure
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "v12/condition-questions/option-five/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

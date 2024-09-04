@@ -1,0 +1,73 @@
+{% block pageTitle %}
+Which communication format do you need
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Which communication format do you need?
+            </h1>
+          </legend>
+
+          <div id="changed-name-hint" class="govuk-hint">
+            Select one option
+          </div>
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communication-type-1" name="communication-type" type="radio"
+                value="Braille" data-aria-controls="communication-type">
+              <label class="govuk-label govuk-radios__label" for="communication-type-1">
+                Braille
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communication-type-2" name="communication-type" type="radio"
+                value="Sign language" data-aria-controls="communication-type">
+              <label class="govuk-label govuk-radios__label" for="communication-type-2">
+                Sign language
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communication-type-3" name="communication-type" type="radio"
+                value="Audio" data-aria-controls="communication-type">
+              <label class="govuk-label govuk-radios__label" for="communication-type-3">
+                Audio
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communication-type-4" name="communication-type" type="radio"
+                value="Other" data-aria-controls="communication-type">
+              <label class="govuk-label govuk-radios__label" for="communication-type-4">
+                Paper and other formats
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+          </div> <!-- govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

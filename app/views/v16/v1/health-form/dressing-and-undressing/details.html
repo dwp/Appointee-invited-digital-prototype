@@ -1,0 +1,67 @@
+{% set pageTitle = "Tell us about the difficulties you have with dressing and undressing and how you manage them" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukCharacterCount({
+        name: "dressingandundressing-details",
+        id: "dressingandundressing-details",
+        rows: "18",
+        maxlength: "5000",
+        value: data['dressingandundressing-details'],
+        label: {
+          text: "Difficulties dressing and undressing",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any aids or adaptations you use, or help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“About three times a week, I have trouble dressing my upper body because my hands shake too much to do up the buttons on my shirt. I use a button hook to do the buttons on my shirt.”</p>
+            <p>“Most days my partner has to remind me to get dressed during the day.”</p>
+          </div>
+          <h2 class="govuk-heading-m">Tell us about the difficulties you have with dressing and undressing and how you manage them</h2>
+        '
+        }
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save
+        </a>
+      </div>
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

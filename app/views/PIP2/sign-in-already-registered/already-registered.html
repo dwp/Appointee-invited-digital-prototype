@@ -1,0 +1,38 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Your account has been locked" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12?_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12?_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">There is already an account with this email address</h1>
+
+      <p><a href="sign-in">Sign in</a> if you know your password.</p>
+
+      <p><a href="forgot-password">Request a password reset</a> if you have forgotten your password.
+     </p>
+
+     <!-- <p><a href="enter-details">Register with a different email address</a></p> -->
+
+     <p>If you think someone has used your email address to register without your permission contact:</p>
+
+     <p>Phone: 0800 121 4433<br>
+     Textphone: 0800 121 4493 if you have speech or hearing difficulties</p>
+
+      <!-- <a href="/p5-v12?sign-in/enter-details?scenario=locked" class="govuk-button">Continue</a> -->
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

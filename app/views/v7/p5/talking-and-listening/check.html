@@ -1,0 +1,93 @@
+{% set pageTitle = "Check your answers: talking and listening" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5/list">
+
+      <h1 class="govuk-heading-l">Check your answers: talking, listening and understanding</h1>
+
+      {% if data['talkingandlistening-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you talking, listening and understanding?"
+              },
+              value: {
+                text: data['talkingandlistening-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5/talking-and-listening/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to whether your condition affect you talking, listening and understanding"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with talking, listening and understanding and how you manage them"
+              },
+              value: {
+                html: data['talkingandlistening-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5/talking-and-listening/details",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to difficulties you have with talking, listening and understanding and how you manage them"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you talking, listening and understanding?"
+              },
+              value: {
+                text: data['talkingandlistening-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5/talking-and-listening/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to whether your condition affects you talking, listening and understanding?"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/p5/list?talkingandlistening=completed" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

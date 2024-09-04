@@ -1,0 +1,51 @@
+{% set pageTitle = "Upload a file" %}
+
+{% extends "v21/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "v21/includes/phase-banner.html" %}
+  {% include "v21/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Sorry, there is a problem
+            </h1>
+          </legend>
+          <br><br>
+
+
+        <p>Your supporting evidence was not sent</p>
+
+        <p class="govuk-body">
+          <a href="/v21/health-form/supporting-evidence/supporting-evidence-upload-1" class="govuk-link">Try again</a>.</p>
+
+        <h2 class="govuk-heading-m">How to post your evidence</h2>
+
+        <p>Write your name and National Insurance number on each piece of evidence.</p>
+
+        <p>Post your evidence to:
+          <br>FREEPOST DWP PIP 1</p>
+
+            <p>You do not need a stamp. Do not use recorded delivery or special delivery.
+        </p>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue without uploading evidence
+          </button>
+
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

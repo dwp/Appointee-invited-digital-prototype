@@ -1,0 +1,36 @@
+{% set pageTitle = "About your health professionals" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+  	<div class="govuk-form-group">
+	    <h1 class="govuk-heading-l">About your health or care professionals</h1>
+{#	    <p class="govuk-body-l">Tell us about the professional(s) best placed to advise us on how your health condition or disability affects you.</p>
+	    <p>If we need additional information we may contact the health or care professionals that support you.</p> #}
+
+
+
+      <p>We ask you to send us supporting evidence with your form, but sometimes we may contact the health or care professionals who support you for further information.</p>
+
+      <p>Please tell us about any health or care professionals who treat or care for you most regularly and who are best placed to advise us on how your health condition or disability affects you. </p>
+
+
+
+    </div><!-- govuk-form-group -->
+
+    <input type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">
+</form>
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

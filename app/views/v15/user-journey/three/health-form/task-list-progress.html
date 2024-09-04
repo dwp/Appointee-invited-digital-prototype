@@ -1,0 +1,236 @@
+{% set pageTitle = "Tell us how your health condition or disability affects you" %}
+
+{% extends "v15/user-journey/three/layout.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            Submit your application by 3 December 2021
+
+          </p>
+        </div>
+      </div> -->
+
+      <h1 class="govuk-heading-l" style="margin-bottom: 40px;">
+        Tell us how your health condition or disability affects you
+      </h1>
+
+      <p class="govuk-heading">Download and read the instructions <a href="/public/pdfs/pip2-info-booklet-v1.pdf" download>Help with answering questions and providing evidence (PDF)</a></p>
+
+      <p>You can download a copy of your completed application when you've finished.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Tell us about your health
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./about-your-health/summary">
+                About your health
+                <span>
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed">In progress</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./about-your-health-professionals/summary">
+                About your health or care professionals
+                <span>
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed">In progress</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        {# Daily living activities #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Tell us about your daily living activities
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./preparing-food/check">
+                Preparing food
+                <span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./eating-and-drinking/check">
+                Eating and drinking
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./managing-treatments/check">
+                Managing treatments
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./washing-and-bathing/check">
+                Washing and bathing
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./managing-toilet-needs/check">
+                Using the toilet and managing incontinence
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./dressing-and-undressing/check">
+                Dressing and undressing
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./talking-and-listening/check">
+                Talking, listening and understanding
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./reading/check">
+                Reading
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./mixing-with-other-people/check">
+                Mixing with other people
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./managing-money/check">
+                Managing money
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        {# Mobility activities #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Tell us about your mobility activities
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./planning-and-following-a-journey/check">
+                Planning and following a journey
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./moving-around/check">
+                Moving around
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        {# Additional information #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Tell us about anything else
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name " href="./additional-information/check">
+                Additional information
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed">Not started</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        {# Upload supporting evidence and apply #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Upload supporting evidence and apply
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              {% if
+                sectionStatus.preparingfood === "completed" and
+                sectionStatus.eatinganddrinking === "completed" and
+                sectionStatus.managingtreatments === "completed" and
+                sectionStatus.washingandbathing === "completed" and
+                sectionStatus.managingtoiletneeds === "completed" and
+                sectionStatus.dressingandundressing === "completed" and
+                sectionStatus.talkingandlistening === "completed" and
+                sectionStatus.reading === "completed" and
+                sectionStatus.mixingwithotherpeople === "completed" and
+                sectionStatus.managingmoney === "completed" and
+                sectionStatus.planningandfollowingajourney === "completed" and
+                sectionStatus.movingaround === "completed" and
+                sectionStatus.additionalinformation === "completed"
+              %}
+                <a class="app-task-list__task-name " href="./supporting-evidence">
+                 Upload supporting evidence and apply
+                  <span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="uploadsupportingevidenceandapply">Not started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <span class="app-task-list__task-name">
+                  <span style="width: 70%; display: inline-block;">Submit your application</span>
+                  <span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="uploadsupportingevidenceandapply">Do this last</strong>
+                  </span>
+                </span>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+{#       {% include "live-pip2-v1-0/_prototype-shortcuts.html" %} #}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

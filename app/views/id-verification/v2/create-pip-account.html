@@ -1,0 +1,46 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Create an account to apply for PIP" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You will need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an email address</li>
+        <li>a mobile phone</li>
+      </ul>
+
+      <p>We will send security codes to your email and phone to check they belong to you.</p>
+
+      <p>
+        <a href="#">I don't have this information</a>
+      </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/id-verification/v2/email-address"
+      }) }}
+
+      <h2 class="govuk-heading-m">If you’ve made a claim before</h2>
+
+      <p>
+        <a href="/id-verification/v2/sign-in">Sign in</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

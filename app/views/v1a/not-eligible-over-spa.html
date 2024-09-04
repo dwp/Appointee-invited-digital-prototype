@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Not eligible
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<!-- {{data['destination']}} -->
+  
+  <form id="form" method="post" action="#">
+   <!-- <input type="hidden" value="{{data['destination']}}" name="destination"> -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Based on your answers, you’re not eligible for Personal Independence Payment (PIP) 
+        </h1>
+        <p>This because you’re over State Pension age. You must be under State Pension age to get PIP.</p>
+        
+        <p><a href="#">Check if you’re eligible for Attendance Allowance</a></p>
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

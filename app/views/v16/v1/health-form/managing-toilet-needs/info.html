@@ -1,0 +1,72 @@
+{% set pageTitle = "How well do you manage your toilet needs?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "managingtoiletneeds-info",
+        fieldset: {
+          legend: {
+            text: "How well do you manage your toilet needs?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>Select the option that is most relevant to you for more than half of the days in a year.</p>
+        '
+        },
+        items: [
+          {
+            value: "managingtoiletneeds-option-1",
+            text: "I can manage toilet needs or incontinence unaided",
+            checked: checked("managingtoiletneeds-info", "Option 1")
+          },
+          {
+            value: "managingtoiletneeds-option-2",
+            text: "I need to use an aid or applicance to be able to manage toilet need or incontinence",
+            checked: checked("managingtoiletneeds-info", "Option 2")
+          },
+          {
+            value: "managingtoiletneeds-option-3",
+            text: "I need supervision or prompting to be able to manage my toilet needs",
+            checked: checked("managingtoiletneeds-info", "Option 3")
+          },
+          {
+            value: "managingtoiletneeds-option-4",
+            text: "I need assistance to be able to manage toilet needs",
+            checked: checked("managingtoiletneeds-info", "Option 4")
+          },
+          {
+            value: "managingtoiletneeds-option-5",
+            text: "I need assistance to be able to manage incontinence or either bladder or bowel",
+            checked: checked("managingtoiletneeds-info", "Option 5")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

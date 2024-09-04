@@ -1,0 +1,57 @@
+{% set pageTitle = "Does your condition affect you moving around?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "movingaround-question",
+        fieldset: {
+          legend: {
+            text: "Moving around",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means how well you can walk without any specialist equipment or support from another person </p>
+          <h2 class="govuk-heading-m">Does your condition affect you moving around?</h2>
+          '
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("movingaround-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("movingaround-question", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

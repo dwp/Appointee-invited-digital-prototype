@@ -1,0 +1,63 @@
+{% extends "layout-p5-rev-1.html" %}
+
+{% set pageTitle = "Is there anything else you would like to tell us about?" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-rev-1/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-rev-1/additional-information/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "additionalinformation-question",
+        fieldset: {
+          legend: {
+            text: "Is there anything else you would like to tell us about?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>Tell us anything else you think we should know that you have not already told us about how your health condition or disability affects you. </p>
+          <p>Carers, friends or family who want to give us additional information can also do so here. </p>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("additionalinformation-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("additionalinformation-question", "Yes")
+          }
+        ]
+      }) }}
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+      </div>
+
+      </form>
+
+      {% include "p5-rev-1/additional-information/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

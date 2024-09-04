@@ -1,0 +1,80 @@
+{% set pageTitle = "Enter your details" %}
+
+{% extends "layout-signed-out-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+  {% include "p5-v11/_back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/v12v2/sign-in/code-text-op3" method="post" novalidate>
+
+        <h1 class="govuk-heading-l">Enter your details</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Enter your National Insurance number"
+          },
+          hint: {
+            text: "It is on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          classes: "govuk-input--width-10",
+          id: "national-insurance-number",
+          name: "national-insurance-number",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "Enter your date of birth",
+              isPageHeading: false
+            }
+          },
+          hint: {
+            text: "For example, 12 11 2007."
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        {% include "p5-v11/sign-in/_problems.html" %}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

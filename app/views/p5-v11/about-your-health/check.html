@@ -1,0 +1,154 @@
+{% set pageTitle = "Check your answers: about your health" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if getData.remove == "true" %}
+      <div class="moj-banner moj-banner--success">
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+        <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>‘{{data['condition-name-1'] | capitalize}}’ has been removed</div>
+      </div>{# /moj-banner #}
+    {% endif %}
+
+    <h1 class="govuk-heading-l">Check your answers: about your health</h1>
+
+    {% if getData.remove == "true" %}
+    {% else %}
+
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+
+      <!-- <header class="app-summary-card__header">
+        <h2 class="app-summary-card__title">
+          {{ data['condition-name-1'] | capitalize }}
+        </h2>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="/p5-v11/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-1'] | lower }}</span>
+          </a>
+        </div>{# /app-summary-card__actions #}
+      </header> -->
+
+      <div class="app-summary-card__body">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Condition or disability"
+              },
+              value: {
+                html: data['conditions'][0]['condition_name'] | capitalize + "<br>Approximate start date: " + data['conditions'][0]['date']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "condition or disability – " + data['condition-name-1'] | lower
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "About this condition or disability"
+              },
+              value: {
+                text: data['condition-detail-1'] | capitalize
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "about this condition or disability - " + data['condition-name-1']
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      </div>{# /app-summary-card__body #}
+    </section>
+    {% endif %}
+
+
+    {% if data['condition2'] == "Yes" %}
+
+
+
+      <section class="app-summary-card govuk-!-margin-bottom-6">
+
+        <header class="app-summary-card__header">
+          <h2 class="app-summary-card__title">
+            {{ data['condition-name-2'] | capitalize }}
+          </h2>
+          <div class="app-summary-card__actions">
+            <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-2'] | lower }}</span>
+            </a>
+          </div>{# /app-summary-card__actions #}
+        </header>
+
+        <div class="app-summary-card__body">
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Condition or disability"
+                },
+                value: {
+                  html: data['condition-name-2'] | capitalize + "<br>Approximate start date: " + data['condition-date-2']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "condition or disability – " + data['condition-name-2'] | lower
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "About this condition or disability"
+                },
+                value: {
+                  text: data['condition-detail-2'] | capitalize
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "about this condition or disability - " + data['condition-name-2']
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+        </div>{# /app-summary-card__body #}
+      </section>
+
+      {% endif %}
+
+    <p><a href="#">Add another condition or disability</a></p>
+
+    <p><a href="../list-1?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

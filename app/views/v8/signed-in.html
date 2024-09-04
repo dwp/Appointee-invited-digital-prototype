@@ -1,0 +1,40 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+You are sigend in
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              You are now signed in
+            </h1>
+          </legend>
+          <p>You can sign out at any point and your answers will be saved.</p>
+
+      </div> <!-- govuk-form-group -->
+
+      <!-- <input type="submit" class="govuk-button" value="Continue" id="submit"> -->
+
+      <a href="/v8/start" role="button" class="govuk-button" data-module="govuk-button" >
+        Continue your application
+        </a>
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  We need to get in touch with you
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <form id="form" method="post" action="#">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          We need to get in touch with you
+        </h1>
+
+        <p>We need to ask you some more questions before you continue your application.</p>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>This is because you have told us you have spent significant time out of the country.</li>
+        </ul>
+      
+        <p>Enter your contact details and someone from the Department for Work and Pensions will call you in the next xx days.</p>
+
+        <input type="submit" class="govuk-button" value="Enter contact details" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

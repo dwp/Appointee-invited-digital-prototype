@@ -1,0 +1,61 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "A 6-digit code has been emailed to myemail@gmail.com" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" method="POST" novalidate>
+
+        <h1 class="govuk-heading-l">We have sent you an email with your <br>6-digit security code</h1>
+
+        <p>It should only take one minute to arrive.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="code" >Enter your 6-digit security code</label>
+          <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+        </div>
+
+        {% if getData.scenario === "locked" %}
+        <!--<a href="/p5-v11/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>-->
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+              text: "Continue",
+              href: "/p5-v11/sign-in/code-text?scenario=locked"
+          }) }}
+          <p><a href="/p5-v11/sign-in/code-email-get-another?scenario=locked">I did not get a code</a></p>
+        {% elif getData.scenario === "active" %}
+          <!--<a href="/p5-v11/list" class="govuk-button">Continue</a>-->
+          <p><a href="/p5-v11/sign-in/code-email-get-another?scenario=active">I did not get a code</a></p>
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+              text: "Continue",
+              href: "/p5-v11/list"
+          }) }}
+        {% else %}
+          <!--<a href="/p5-v11/sign-in/create-password" class="govuk-button">Continue</a>-->
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+              text: "Continue",
+              href: "/p5-v11/sign-in/create-password"
+          }) }}
+          <p><a href="/p5-v11/sign-in/code-email-get-another">I did not get a code</a></p>
+        {% endif %}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

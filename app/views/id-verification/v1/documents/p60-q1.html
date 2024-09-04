@@ -1,0 +1,65 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Enter the 'Total for year' figure on your P60" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">About your P60</span>
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Use a P60 from the financial year 2020 to 2021</li>
+        <li>Get the figure from the 'Pay column' in the 'Pay and Income Tax details' section</li>
+        <li>Enter the 'Total for the year' figure exactly, including pence</li>
+        <li>The 'Total for year' figure must be more than 0.00</li>
+      </ul>
+
+      <form class="form" action="/id-verification/v1/documents/p60-q2" method="post">
+
+        {{ govukInput({
+          id: "total-year-anount",
+          name: "total-year-anount",
+          label: {
+            text: "'Total for year' figure",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example 21350.75"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p>
+        <a href="#">I don't have that information</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

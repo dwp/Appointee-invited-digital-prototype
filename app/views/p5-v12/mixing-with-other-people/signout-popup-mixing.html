@@ -1,0 +1,109 @@
+{% extends "layout-idv-sign-out-popup.html" %}
+
+{% set bodyClasses = "overlay" %}
+
+{% set pageQuestion = "Health or care professional details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="overlay-container">
+    <div class="popup">
+      <form class="form" action="/p5-v12/mixing-with-other-people/signout-popup-mixing" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Have you saved your information?
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              If you did not enter any information on the last screen, it's safe to sign out.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-out-yes" name="sign-out" type="radio" value="Yes" >
+                <label class="govuk-label govuk-radios__label" for="sign-out-yes">
+                  Yes, sign me out
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-out-no" name="sign-out" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="sign-out-no">
+                  No, take me back so I can save my information
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/p5-v12/mixing-with-other-people/check" method="post" novalidate>
+
+        {{ govukTextarea({
+          name: "mixingwithotherpeople-details",
+          id: "mixingwithotherpeople-details",
+          rows: "18",
+          value: data['mixingwithotherpeople-details'],
+          label: {
+            text: "Tell us about the difficulties you have when mixing with other people and how you manage them",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            html: '
+            <p>For each difficulty, please tell us:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>how often you have this difficulty – tell us about both good and bad days</li>
+              <li>what the difficulty is</li>
+
+              <li>why you have it, or how it relates to your condition</li>
+              <li>any help you get from another person</li>
+              <li>any help you feel you need but do not get</li>
+
+              <li>whether severe anxiety or distress stops you from doing this</li>
+              <li>about any risk of harm to you and others</li>
+            </ul>
+
+            <div class="govuk-inset-text">
+              <h2 class="govuk-heading-m">Example</h2>
+              <p>“I am always unable to meet new people by myself because I become very distressed. My carer supports me when I interact with new people so I do not become distressed.”</p>
+            </div>
+          '
+          }
+        }) }}
+
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+
+      </form>
+
+      {% include "p5-v12/mixing-with-other-people/_return-link.html" %}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+
+{% endblock %}

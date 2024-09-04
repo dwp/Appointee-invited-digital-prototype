@@ -1,0 +1,93 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Which two documents can we use to verify your identity?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post"  class="form" action="/id-verification/v1/documents/passport-details" method="post">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  {{ pageQuestion }}
+                </h1>
+              </legend>
+              <div id="benefits" class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="uk-passport" name="document" type="checkbox" value="uk-passport" aria-describedby="passport-item-hint" data-aria-controls="conditional-passport">
+                  <label class="govuk-label govuk-checkboxes__label" for="uk-passport">
+                    Valid UK passport
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-passport">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Email address
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false" autocomplete="email">
+                  </div>
+
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payslip-p60" name="document" type="checkbox" value="payslip-p60">
+                  <label class="govuk-label govuk-checkboxes__label" for="payslip-p60">
+                    Payslip or P60
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="self-assessment" name="document" type="checkbox" value="self-assessment">
+                  <label class="govuk-label govuk-checkboxes__label" for="self-assessment">
+                    Self Assessment
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tax-credit" name="document" type="checkbox" value="tax-credit">
+                    <label class="govuk-label govuk-checkboxes__label" for="tax-credit">
+                    Tax credit claim details (including Voice ID)
+                    </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="credit-reference" name="document" type="checkbox" value="credit-reference" aria-describedby="credit-reference-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="credit-reference">
+                    Credit reference questions
+                    </label>
+                    <div id="credit-reference-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      For example, the year you took out a credit card or phone contract
+                    </div>
+                </div>
+            </div>
+            </fieldset>
+          </div>
+        <br>
+        <button type="submit" class="govuk-button">
+            Save and continue
+        </button>
+      </form>
+
+      {% set identityDocuments = data['document'] %}
+
+      <p>
+        <a href="#">I don't have any of these</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

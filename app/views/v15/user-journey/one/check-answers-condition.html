@@ -1,0 +1,152 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "v15/user-journey/one/layout.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "v14/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v14/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+      <!-- <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      {% for query in data['queriesMedication'] %}
+      <dt class="govuk-summary-list__key">
+        Medication name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ query.medication }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden">medicaton name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Dosage
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ query.dosage }}
+      </dd>
+          {% endfor %}
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden">dosage</span>
+        </a>
+      </dd>
+    </div> -->
+
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
+    <h2 class="govuk-heading-m">About your health</h2>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Angina</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="remove-condition-confirmation">
+              Remove<span class="govuk-visually-hidden"> {{ Angina }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition name
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Angina
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> age</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              April 2020
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Anxiety</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="remove-condition-confirmation">
+              Remove<span class="govuk-visually-hidden"> {{ Anxiety }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Anxiety
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> age</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+               Spetmember 2021
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+   
+
+    <p><a class="govuk-link" href="condition">Add another condition</a></p>
+
+    <br>
+
+      <div class="govuk-button-group">
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Confirm and save" id="submit">
+      </div>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

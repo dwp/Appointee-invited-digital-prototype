@@ -1,0 +1,45 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Additional information detail
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="additional-information-check" method="post" novalidate>
+
+        {{ govukTextarea({
+            name: "additionalinformation-details",
+            id: "additionalinformation-details",
+            rows: "18",
+            value: data['additionalinformation-details'],
+            label: {
+              text: "Additional information",
+              isPageHeading: true,
+              classes: "govuk-label--l"
+            },
+            hint: {
+              html: '
+              <p>Tell us anything else you think we should know about how your health condition or disability affects you, that you have not mentioned already.</p>
+              '
+            }
+          }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

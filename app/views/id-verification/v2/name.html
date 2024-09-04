@@ -1,0 +1,53 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "What is your name?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <form class="form" action="/id-verification/v2/date-of-birth" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "first-name",
+          name: "first-name",
+          type: "text",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "last-name",
+          name: "last-name",
+          type: "name",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-input--width-20"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

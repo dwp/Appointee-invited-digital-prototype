@@ -1,0 +1,79 @@
+{% extends "layout-signed-in-v12.html" %}
+
+{% block pageTitle %}
+  Conditions summary
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set conditionOrder = data.conditionOrder %}
+
+      {% if conditionOrder | length > 0 %}
+
+        <h1 class="govuk-heading-l">Check your conditions</h1>
+
+        {% for condition in conditionOrder %}
+
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+              {
+                key: {
+                  text: condition.type
+                },
+
+                actions: {
+                  items: [
+                    {
+                      href: "/check-condition?conditionId=" + condition.id,
+                      text: "Change",
+                      visuallyHiddenText: condition.type + "'s condition"
+                    },
+                    {
+                      href: "/remove-condition?conditionId=" + condition.id,
+                      text: "Remove",
+                      visuallyHiddenText: condition.type + "'s condition"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+        {% endfor %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save and continue",
+            href: '/v12/about_your_health/consent'
+          }) }}
+
+          {{ govukButton({
+            text: "Add another condition",
+            classes: "govuk-button--secondary",
+            href: '/condition'
+          }) }}
+        </div>
+
+      {% else %}
+        <h1 class="govuk-heading-l">You have removed all your conditions</h1>
+        <p class="govuk-body">We have not saved your conditions. You can start again by adding a condition.</p>
+        {{ govukButton({
+          text: "Add a condition",
+          href: '/condition'
+        }) }}
+      {% endif %}
+
+    </div>
+  </div>
+{% endblock %}

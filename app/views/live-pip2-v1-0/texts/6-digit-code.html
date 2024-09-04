@@ -1,0 +1,28 @@
+{% set pageTitle = "Text message" %}
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div style="max-width: 400px; margin: 0 auto; background-color: #E5E5E5; border-radius: 10px; padding: 20px;">
+        <p style="margin: 0">
+          <strong>GOV.UK</strong><br>
+          123456 is your access code for Apply for Personal Independence Payment. The code will expire in 5 minutes.
+        </p>
+      </div>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

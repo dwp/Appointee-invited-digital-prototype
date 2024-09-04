@@ -1,0 +1,75 @@
+{% set pageTitle = "Feedback" %}
+
+{% extends "layout-p5-feedback.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Give feedback</h1>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Overall, how do you feel about the service you used today?
+            </h2>
+          </legend>
+          <div class="govuk-radios--small">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="feedback-1" name="feedback" type="radio" value="very-satisfied">
+              <label class="govuk-label govuk-radios__label" for="feedback-1">
+                Very satisfied
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="feedback-2" name="feedback" type="radio" value="satisfied">
+              <label class="govuk-label govuk-radios__label" for="feedback-2">
+                Satisfied
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="feedback-3" name="feedback" type="radio" value="neither">
+              <label class="govuk-label govuk-radios__label" for="feedback-3">
+                Neither satisfied or dissatisfied
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="feedback-4" name="feedback" type="radio" value="dissatisfied">
+              <label class="govuk-label govuk-radios__label" for="feedback-4">
+                Dissatisfied
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="feedback-5" name="feedback" type="radio" value="very-dissatisfied">
+              <label class="govuk-label govuk-radios__label" for="feedback-5">
+                Very dissatisfied
+              </label>
+            </div>
+          </div> <!-- govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+            How can we improve this service?
+          </label>
+        </h3>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="6" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+      <p class="govuk-body">Please do not include any personal or financial information, for example your National Insurance number.</p>
+
+      <a href="feedback-submitted" class="govuk-button">Send feedback</a>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

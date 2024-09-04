@@ -1,0 +1,41 @@
+
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Preparing food</h1>
+      <h2 class="govuk-heading-m">Enter further details about the difficulties you have preparing or cooking food</h2>
+        {{ govukTextarea({
+        name: "anything-else-more-detail",
+        id: "anything-else-more-detail",
+        hint: {
+          text: "For example, how your conditions or disabilities make it difficult, or what help you need but do not get."
+        }
+        }) }}
+
+
+                  {{ govukButton({
+                    text: 'Continue',
+                    href: "preparing-food-check"
+                  }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

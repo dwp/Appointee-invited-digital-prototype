@@ -1,0 +1,71 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Motability Scheme" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="check" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
+
+      <p>The Motability Scheme allows disabled people to lease a car, scooter or powered wheelchair in exchange for all or some of their PIP mobility payments.</p>
+
+      {{ govukRadios({
+        name: "motability-question",
+        fieldset: {
+          legend: {
+            text: "If you're eligible to join the Motability Scheme would you like us to post you information about it?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("motability-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("motability-question", "Yes")
+          }
+        ]
+      }) }}
+
+      <p>We will not share your personal details with the Motability Scheme.</p>
+
+      <p>If you change your mind about receiving Motability Scheme information, contact:</p>
+
+      <p>Telephone: 0800 121 4433<br>
+        Textphone: 0800 121 4493 if you have speech or hearing difficulties</p>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    <p><a href="/id-verification/v4/live-pip2/list-section-3-2">Return to list</a></p>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

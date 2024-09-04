@@ -1,0 +1,54 @@
+{% set pageTitle = "About your health conditions or disabilities" %}
+
+{% extends "layout-p5-v10.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-v10/about-your-health/another-2" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "condition-detail-2",
+        id: "condition-detail-2",
+        rows: "18",
+        label: {
+          text: "About this condition or disability – " + data['condition-name-2'] | lower,
+          isPageHeading: true,
+        classes: "govuk-label--l"
+        },
+        hint: {
+          html: "<p>Tell us about:</p>
+          <ul class='govuk-list govuk-list--bullet'>
+            <li>
+              tablets or other medication you are taking or will be taking and the dosage
+            </li>
+            <li>
+              any treatments you have had, you are currently having or have planned for the future (include private as well as NHS funded treatments)</li>
+            <li>any side effects these have on you</li>
+          </ul>"
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5/about-your-health/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

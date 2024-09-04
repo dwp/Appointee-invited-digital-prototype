@@ -1,0 +1,44 @@
+{% set pageTitle = "Your registration was successful" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out-dth.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" method="post" novalidate>
+
+        <h1 class="govuk-heading-xl">Enter your mobile phone number</h1>
+
+        <p>We will send a security code to this number.</p>
+
+        <p>Whenever you sign in to this service we will send a new security code.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="two-thirds">
+            Mobile phone number
+          </label>
+
+          <div id="event-name-hint" class="govuk-hint">
+            For international numbers use the country code
+          </div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="twoThirds" type="text">
+        </div>
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% set pageTitle = "Is this the first time you’re using this service?" %}
+
+{% extends "layout-signed-out-v11.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "p5/_beta-banner.html" %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="new-existing-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Have you used the Apply for PIP online service before?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="new-existing-1" name="new-existing" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="new-existing-1">
+                Yes, I already have a password
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="new-existing-2" name="new-existing" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="new-existing-2">
+                No, I need to create a password
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% block pageTitle %}
+Health professional
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="#">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="hcp-1-name">
+          Which health or care professional knows your condition or disability best?
+          </label>
+
+          <p>Give details of a health or care professional who knows best how this health condition or disability affects you.</p>
+
+          <p>Tell us about one professional. You can add more health or care professionals later.</p>
+
+        </h1>
+        <label class="govuk-label" for="hcp-1-name">
+          Name
+        </label>
+        <input class="govuk-input" id="hcp-1-name" name="hcp-1-name" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="hcp-1-profession">
+          Profession
+        </label>
+          <div id="event-name-hint" class="govuk-hint">
+            For example, GP, hospital doctor, specialist nurse, community psychiatric nurse, occupational therapist, physiotherapist, social worker, counsellor or support worker.
+          </div>
+        <input class="govuk-input" id="hcp-1-profession" name="hcp-1-profession" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="hcp-1-phone">
+          Phone number, including dialling code
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="hcp-1-phone" name="hcp-1-phone" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="hcp-1-phone">
+          When did you last speak to them?
+        </label>
+        <div id="hcp-1-last-contact" class="govuk-hint">
+          This can be approximate – for example, March 2021 or 18 months ago.
+        </div>
+        <div class="govuk-form-group">
+          <input class="govuk-input govuk-input--width-two-thirds" id="hcp-1-last-contact" name="hcp-1-last-contact"
+            type="text" autocomplete="hcp-1-last-contact">
+        </div> <!-- govuk-form-group-->
+
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% block pageTitle %}
+There is a problem registering you
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">There is a problem registering you</h1>
+
+      <p>If you’ve done any part of a PIP claim online before you can <a href="/apply-for-pip/verify/your-details">sign in</a>.</p>
+
+      <p>Alternatively you can contact DWP to start your claim by phone.</p>
+
+      <h2 class="govuk-heading-m">Contact DWP to start your claim by phone</h2>
+      <p>The sooner you do this, the earlier you could set your date of claim and the earlier your payments could begin if you’re awarded PIP.</p>
+      <p>Telephone: 0800 917 2222<br>
+      Textphone: 0800 917 7777<br>
+      <a href="#">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 917 2222<br>
+      British Sign Language (BSL) <a href="#">video relay service</a> if you’re on a computer - find out how to <a href="#">use the service on mobile or tablet</a><br>
+      Calling from abroad: +44 191 218 7766 <br>
+      Monday to Friday, 8am to 5pm<br>
+      <!-- Closed on public holidays.<br> -->
+      <a href="/call-charges">Find out about call charges</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

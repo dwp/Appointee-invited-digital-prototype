@@ -1,0 +1,56 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "We need to check your identity" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>You'll need to register with our identity checking system and create a password. This is separate from your Apply for PIP password.</p>
+
+      <h2 class="govuk-heading-m">You will need information from 2 sources</h2>
+
+      <p>You can choose from:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a valid UK passport</li>
+        <li>a payslip from the last 3 months</li>
+        <li>a current P60</li>
+        <li>your Self Assessment tax return - the most recent payment you made</li>
+        <li>a current tax credits claim - a recent payment you received</li>
+        <li>your credit record - for example, the date you opened a bank account</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Confirm your identity online",
+        href: "dth/register"
+      }) }}
+
+      <p>
+        <a href="idv-phone">Confirm your identity by phone</a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+  </div>
+{% endblock %}

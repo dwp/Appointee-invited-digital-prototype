@@ -1,0 +1,31 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Another 6-digit code has been texted to XXXX XXX 789" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Get another 6-digit security code sent to mobile number ending 789</h1>
+
+      <a href="mobile-phone-verification" class="govuk-button">Get another code</a>
+
+    </div>
+  </div>
+
+{% endblock %}

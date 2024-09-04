@@ -1,0 +1,66 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "What is the claim start date for the benefit you currently receive?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Confirm your identity</span>
+
+      <form class="form" method="post" action="kbv-post-office-address">
+
+        {{ govukDateInput({
+          id: "claim-date",
+          namePrefix: "claim-date",
+          fieldset: {
+            legend: {
+              text: "What is the claim start date for the benefit you currently receive?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "For example, 12 3 2020"
+          }
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I do not have this information now
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            You can stay on this page for up to 20 minutes if you need to check your answer. Do not close the web page.<br>
+            <br>
+            If you need more time, you can come back and confirm your identity later. You might be asked for different information.
+          </div>
+        </details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="kbv-post-office-address">I cannot answer this question</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

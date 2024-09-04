@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Apply
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="apply">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Apply Personal Independence Payment (PIP)
+        </h1>
+
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+        <p>It may help your application if you provide some additional information to help the Department for Work and Pensions understand how your condition or disability affects you. You will be able to upload any supporting documents online during the application.</p>
+
+        <p class="govuk-body">Examples of helpful information are:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>hospital reports</li>
+          <li>GP reports</li>
+          <li>MRI scans</li>
+          <li>care plans</li>
+          <li>prescription lists</li>
+        </ul>
+
+        <p>Do not send any information that does not tell us anything about your condition such as hospital appointment letters.</p>
+
+        <a href="name" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

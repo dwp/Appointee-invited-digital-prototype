@@ -1,0 +1,93 @@
+@@ -0,0 +1,52 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Your National Insurance number
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#nino1">Enter your National Insurance number</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+        <div class="govuk-form-group govuk-form-group--error">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="nino1">
+              Your National Insurance number
+            </label>
+          </h1>
+          <div id="account-number-hint" class="govuk-hint">
+            It's on your National Insurance card, benefit letter, payslip or P60.<br>
+            For example, QQ 12 34 56 Q
+          </div> <!-- account-number-hint -->
+          <span id="nino-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter your National Insurance number
+          </span>
+          <input class="govuk-input govuk-input--error govuk-input--width-10" id="nino1" name="nino1" type="text">
+        </div> <!-- govuk-form-group govuk-form-group--error -->
+
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#nino2">Enter a National Insurance number in the correct format</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+        <div class="govuk-form-group govuk-form-group--error">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="nino">
+              Your National Insurance number
+            </label>
+          </h1>
+          <div id="account-number-hint" class="govuk-hint">
+            It's on their National Insurance card, benefit letter, payslip or P60.<br>
+            For example, QQ 12 34 56 Q
+          </div> <!-- account-number-hint -->
+          <span id="nino-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter a National Insurance number in the correct format
+          </span>
+          <input class="govuk-input govuk-input--error govuk-input--width-10" id="nino2" name="nino2" type="text" value="@@ 123 B">
+        </div> <!-- govuk-form-group govuk-form-group--error -->
+
+        <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      </div> <!-- govuk-form-group -->
+
+      
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

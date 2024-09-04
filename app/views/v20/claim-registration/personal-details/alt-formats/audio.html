@@ -1,0 +1,73 @@
+{% block pageTitle %}
+Which type of audio format do you need
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Which type of audio format do you need?
+            </h1>
+          </legend>
+
+          <div id="changed-name-hint" class="govuk-hint">
+            Select one option
+          </div>
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="audio-format-1" name="audio-format" type="radio"
+                value="Cassette" data-aria-controls="audio-format">
+              <label class="govuk-label govuk-radios__label" for="audio-format-1">
+                Audio cassette
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="audio-format-2" name="audio-format" type="radio"
+                value="CD" data-aria-controls="audio-format">
+              <label class="govuk-label govuk-radios__label" for="audio-format-2">
+                Audio CD
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="audio-format-3" name="audio-format" type="radio"
+                value="DVD" data-aria-controls="audio-format">
+              <label class="govuk-label govuk-radios__label" for="audio-format-3">
+                Audio DVD
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="audio-format-4" name="audio-format" type="radio"
+                value="MP3" data-aria-controls="audio-format">
+              <label class="govuk-label govuk-radios__label" for="audio-format-4">
+                Audio MP3
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+          </div> <!-- govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

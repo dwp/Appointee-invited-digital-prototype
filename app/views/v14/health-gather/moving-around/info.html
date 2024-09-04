@@ -1,0 +1,86 @@
+{% set pageTitle = "Distance you can walk using any aids or appliances you need" %}
+
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Distance you can walk using any aids or appliances you need</h1>
+
+        <p>To give you an idea of distance, 50 metres is about 5 buses parked end to end.</p>
+
+        <p>Walking aids and appliances include walking sticks, walking frames, crutches and artificial limbs.</p>
+
+        <p>A wheelchair or mobility scooter does not count as an aid or appliance for this question. If you use a wheelchair or mobility scooter, please answer this question by telling us how well you can stand and move without using it.</p>
+
+
+      {{ govukRadios({
+        name: "movingaround-info",
+        fieldset: {
+          legend: {
+            text: "How far can you walk using any aids or appliances you need?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+
+        items: [
+          {
+            value: "I cannot stand and move even using my aids or appliances",
+            text: "I cannot stand and move even using my aids or appliances",
+            checked: checked("movingaround-info", "I cannot stand and move even using my aids or appliances")
+          },
+          {
+            value: "Less than 20 metres",
+            text: "Less than 20 metres",
+            checked: checked("movingaround-info", "Less than 20 metres")
+          },
+          {
+            value: "Between 20 and up to 50 metres",
+            text: "Between 20 and up to 50 metres",
+            checked: checked("movingaround-info", "Between 20 and up to 50 metres")
+          },
+          {
+            value: "Between 50 and up to 200 metres",
+            text: "Between 50 and up to 200 metres",
+            checked: checked("movingaround-info", "Between 50 and up to 200 metres")
+          },
+          {
+            value: "More than 200 metres",
+            text: "More than 200 metres",
+            checked: checked("movingaround-info", "200 metres or more")
+          },
+          {
+            value: "It varies",
+            text: "It varies",
+            checked: checked("movingaround-info", "It varies")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "live-pip2-v1-0/moving-around/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

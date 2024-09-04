@@ -1,0 +1,65 @@
+{% set pageTitle = "Tell us about the difficulties you have with reading words or symbols and how you manage them" %}
+
+{% extends "layout-p5-rev-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-rev-1/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-rev-1/reading/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "reading-details",
+        id: "reading-details",
+        rows: "18",
+        value: data['reading-details'],
+        label: {
+          text: "Tell us about the difficulties you have with reading words or symbols and how you manage them",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any aids or adaptations you use, or help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“I am never able to read one sentence after another because I confuse the order of the letters and words. I use a portable scanner to help me understand written words more quickly.”</p>
+            <p>“I have dyslexia and need to use a yellow filter to help me to read.”</p>
+            <p>“Most days, I am unable to read at all because I experience double vision and am unable to focus. My partner reads for me when I am unable to do it myself.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5-rev-1/reading/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

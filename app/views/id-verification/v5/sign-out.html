@@ -1,0 +1,29 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "You have signed out" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          {{ pageQuestion }}
+        </h1>
+      </div> <!-- govuk-panel -->
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>To complete your claim <a href="#">sign in</a> again.</p>
+      <p>You will need your email address, mobile phone and password when you next sign in.</p>
+      <p>It is now safe to close this window.</p>
+
+    </div>
+    <a class="usability-testing-link" href="blank-2"></a>
+  </div>
+{% endblock %}

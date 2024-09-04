@@ -1,0 +1,66 @@
+{% set pageTitle = "Check your answers: about you" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "v11/p5-v11?_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v11/p5-v11?_beta-banner.html" %}
+  {% include "v11/p5-v11?_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="declaration">
+
+      <h1 class="govuk-heading-l">Check your answers: about you</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Sarah Philips"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "National Insurance number"
+            },
+            value: {
+              text: "QQ 12 34 56 C"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "National Insurance Number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <a href="../list?aboutyou=completed" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

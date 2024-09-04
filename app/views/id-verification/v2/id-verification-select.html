@@ -1,0 +1,173 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Choose 2 items we can ask you about" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post"  class="form" action="/id-verification/v2/documents/passport-details" method="post">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  {{ pageQuestion }}
+                </h1>
+              </legend>
+              <div id="documents" class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="uk-passport" name="document" type="checkbox" value="uk-passport" aria-describedby="passport-item-hint" data-aria-controls="conditional-passport">
+                  <label class="govuk-label govuk-checkboxes__label" for="uk-passport">
+                    UK passport
+                  </label>
+                  <div id="passport-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                    You need a valid UK passport
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-passport">
+                  <div class="govuk-form-group">
+                    <p>We’ll need to check the details you enter with HM Passport Office</p>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="agree">
+                        <label class="govuk-label govuk-checkboxes__label" for="agree">
+                          I agree
+                        </label>
+                      </div>
+                    </div>
+                    <br>
+                    <p class="govuk-body-s">To see how we store and process your information, see our <a href="#">privacy notice (opens in new tab)</a>.</p>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="payslip-p60" name="document" type="checkbox" value="payslip-p60" aria-describedby="payslipP60-item-hint" data-aria-controls="conditional-payslipP60">
+                  <label class="govuk-label govuk-checkboxes__label" for="payslip-p60">
+                    Payslip or P60
+                  </label>
+                  <div id="payslipP60-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                    You need a payslip dated after 17 April 2020 or your most recent P60
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-payslipP60">
+                  <div class="govuk-form-group">
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="payslip-or-p60" name="payslip-or-p60" type="radio" value="payslip">
+                        <label class="govuk-label govuk-radios__label" for=payslip-or-p60">
+                          Payslip
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="payslip-or-p60-2" name="payslip-or-p60" type="radio" value="P60">
+                        <label class="govuk-label govuk-radios__label" for="payslip-or-p60-2">
+                          P60
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="self-assessment" name="document" type="checkbox" value="self-assessment" aria-describedby="selfassessment-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="self-assessment">
+                    Self Assessment
+                  </label>
+                  <div id="selfassessment-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                    You need details from your recent Self Assessment returns
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tax-credit" name="document" type="checkbox" value="tax-credit" aria-describedby="taxcredit-item-hint" data-aria-controls="conditional-taxcredit">
+                  <label class="govuk-label govuk-checkboxes__label" for="tax-credit">
+                  Tax credit claim details (including Voice ID)
+                  </label>
+                  <div id="taxcredit-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                    You need your claim details, you can use Voice ID
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-taxcredit">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                          Do you want to use Voice ID?
+                        </h1>
+                      </legend>
+                      <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="voice-id-1" name="voice-id" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for=voice-id-1">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="voice-id-no" name="voice-id" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="voice-id-no">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="credit-reference" name="document" type="checkbox" value="credit-reference" aria-describedby="credit-reference-item-hint" data-aria-controls="conditional-creditref">
+                  <label class="govuk-label govuk-checkboxes__label" for="credit-reference">
+                  Credit reference questions
+                  </label>
+                  <div id="credit-reference-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                    For example, the year you took out a credit card or phone contract
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-creditref">
+                  <div class="govuk-form-group">
+                    <p class="govuk-body">We use a credit reference agency to ask these questions.</p>
+                    <p class="govuk-body">Our nominated credit reference agency is <a href="#transunion" target="_blank">TransUnion UK Limited (opens in new tab)</a>.</p>
+                    <p class="govuk-body">We’ll need to share your name, address and date of birth with Transunion UK Limited.
+                    </p>
+                    <p>Your credit rating will not be affected.</p>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="agree-credit" name="agree-credit" type="checkbox" value="agree">
+                        <label class="govuk-label govuk-checkboxes__label" for="agree-credit">
+                          I agree
+                        </label>
+                      </div>
+                    </div>
+                    <br>
+                    <p class="govuk-body-s">To see how we store and process your information, see our <a href="#">privacy notice (opens in new tab)</a>.</p>
+                  </div>
+                </div>
+            </div>
+            </fieldset>
+          </div>
+        <br>
+        <button type="submit" class="govuk-button">
+            Save and continue
+        </button>
+      </form>
+
+      {% set identityDocuments = data['document'] %}
+
+      <p>
+        <a href="#">I don't have any of these</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

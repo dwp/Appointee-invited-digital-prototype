@@ -1,0 +1,122 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
+    {% for query in data['queriesCondition'] %}
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">{{ query.condition }}</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="condition-remove">
+              Remove<span class="govuk-visually-hidden"> {{ query.condition }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.condition }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> age</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.startDate }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="condition">
+                Change<span class="govuk-visually-hidden"> nationality</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    {% endfor %}
+
+
+    {% if data['undiagnosed-condition'] === 'Yes' %}
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Undiagnosed health problems</caption>
+
+      <tbody class="govuk-table__body">
+        {% for query in data['queriesConditionUndiagnosed'] %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Symptoms</th>
+          <td class="govuk-table__cell">{{ query.symptoms }}</td>
+          <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Outstanding test results?</th>
+          <td class="govuk-table__cell">{{ query.testResults }}</td>
+          <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    {% endif %}
+
+    {% if data['undiagnosed-condition'] === 'No' %}
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you have any other health problems or symptoms that have not been diagnosed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="undiagnosed-condition">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    {% endif %}
+
+    <br>
+
+      <div class="govuk-button-group">
+        <p><a href="undiagnosed-condition" class="govuk-button">Save and continue</a></p>
+        <p><a href="condition" class="govuk-button govuk-button--secondary">Add another condition</a></p>
+      </div>
+
+    </form>
+    {% include "v12/condition-questions/option-three/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

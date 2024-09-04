@@ -1,0 +1,97 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Your bank or building society account
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#roll-number">Enter a building society roll number</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Bank, building society or credit union account details
+            </h1>
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="account-name">
+              Name on the account
+            </label>
+            <input class="govuk-input govuk-input--width-30" id="account-name" name="account-name" type="text" aria-describedby="account-name-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="sort-code">
+              Sort code
+            </label>
+            <div id="sort-code-hint" class="govuk-hint">
+              Must be 6 digits long
+            </div>
+            <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" aria-describedby="sort-code-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="account-number">
+              Account number
+            </label>
+            <div id="account-number-hint" class="govuk-hint">
+              Must be between 6 and 8 digits long
+            </div>
+            <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint">
+          </div>
+
+          <div class="govuk-form-group govuk-form-group--error">
+            <label class="govuk-label govuk-label--m" for="roll-number">
+              Building society roll number (if you have one)
+            </label>
+            <div id="role-number-hint" class="govuk-hint">
+              You can find it on your card, statement or passbook
+            </div>
+              <span id="roll-number-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a building society roll number
+              </span>
+            <input class="govuk-input govuk-input--error govuk-input--width-10" id="roll-number" name="roll-number" type="text" aria-describedby="roll-number-hint">
+          </div>
+
+        </fieldset>
+
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Continue without saving
+      </button>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

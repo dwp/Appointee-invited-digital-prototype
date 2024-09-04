@@ -1,0 +1,46 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Sorry, there is a problem
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+        <p class="govuk-body">Try again later.</p>
+
+        <p class="govuk-body">
+          If the problem persists, contact the Department for Work and Pensions.
+        </p>
+
+        <div class="indent-hairline">
+          <p>
+            Telephone: 0800 XXX XXXX<br>
+            Textphone: 0800 XXX XXXX<br>
+            <a href="http://ngts.org.uk/"><abbr title="Next Generation Text">NGT</abbr> text relay</a> (if you cannot hear
+            or speak on the phone): 18001 then 0800 XXX XXXX<br>
+            <a href="https://main.signvideo.me/app/8/10031">Video relay service</a> for British Sign Language (<abbr
+              title="British Sign Language">BSL</abbr>) users - <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY">check
+              you can use the service</a><br>
+            Calling from abroad: +44 191 XXX XXX <br>
+            <a href="/call-charges">Find out about call charges</a>
+          </p>
+          <p>Available Monday to Friday Xam to Xpm.<br>
+            Closed public holidays.</p>
+        </div> <!-- indent-hairline -->
+      </div>
+    </div>
+  </main>
+</div>
+
+  </div> <!-- govuk-grid-column-two-thirds -->
+</div> <!-- govuk-grid-row -->
+{% endblock %}

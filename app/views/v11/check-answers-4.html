@@ -1,0 +1,458 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Check your answers about your health
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<!-- {% include "includes/back-link-v11.html" %} -->
+{% endblock %}
+
+{% set conditionsLength %}
+{{ data.conditions | length }}
+{% endset %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h1 class="govuk-heading-l">
+            Check your answers
+          </h1>
+
+          <h2 class="govuk-heading-m">Your health</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <!-- Coditions start -->
+            <!-- <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What health condition or disability do you have?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['your-condition'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="about_your_health/condition-new-2">
+                  Change<span class="govuk-visually-hidden"> condition or disability</span>
+                </a>
+              </dd>
+            </div> --> <!-- govuk-summary-list__row -->
+
+            <!-- <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Approximate start date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['conditions'][0]['date'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="about_your_health/condition-new-2">
+                  Change<span class="govuk-visually-hidden"> condition start date</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <!-- Conditions end  -->
+
+            {% if conditionsLength > 1 %}
+            {% for condition in data.conditions %}
+            {% if not loop.first %}
+            <!-- Coditions start -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What other health condition or disability do you have?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.condition_name }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="about_your_health/condition-new-2">
+                  Change<span class="govuk-visually-hidden"> condition or disability</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <!-- Conditions end  -->
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+            <!-- <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Can the Department for Work and Pensions contact any health and care professionals for information about you?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-q'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-question">
+                  Change<span class="govuk-visually-hidden"> if DWP can contact your health or care professional</span>
+                </a>
+              </dd>
+            </div> --> <!-- govuk-summary-list__row -->
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you agree that your health and care professionals can share relevant information about your health conditions
+                to support your claim?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['consent'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/about_your_health/consent">
+                  Change<span class="govuk-visually-hidden"> health and care professional consent</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+
+            {% if data['consent'] === 'Yes, I agree' %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Health or care professional name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-1-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
+                  Remove<span class="govuk-visually-hidden"> health or care professional name</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-1-profession'] }}<br>
+                {{ data['hcp-1-phone'] }}<br>
+                {{ data['hcp-1-address-line-1'] }}<br>
+                {{ data['hcp-1-address-line-2'] }}<br>
+                {{ data['hcp-1-address-town'] }}<br>
+                {{ data['hcp-1-address-county'] }}<br>
+                {{ data['hcp-1-address-postcode'] }}<br>
+                {{ data['hcp-1-address-country'] }}<br>
+                {{ data['hcp-1-last-contact'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['hcp-2'] === 'No' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are there any other health or care professionals we can contact?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-2'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another">
+                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
+                </a>
+
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['hcp-2'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Second health or care professional name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-2-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
+                  Remove
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-2-profession'] }}<br>
+                {{ data['hcp-2-phone'] }}<br>
+                {{ data['hcp-2-address-line-1'] }}<br>
+                {{ data['hcp-2-address-line-2'] }}<br>
+                {{ data['hcp-2-address-town'] }}<br>
+                {{ data['hcp-2-address-county'] }}<br>
+                {{ data['hcp-2-address-postcode'] }}<br>
+                {{ data['hcp-2-address-country'] }}<br>
+                {{ data['hcp-2-last-contact'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-2">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['hcp-3'] === 'No' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are there any other health or care professionals we can contact?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-3'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another-2">
+                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['hcp-3'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Third health or care professional name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-3-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
+                  Remove<span class="govuk-visually-hidden"> health or care professional name</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-3-profession'] }}<br>
+                {{ data['hcp-3-phone'] }}<br>
+                {{ data['hcp-3-address-line-1'] }}<br>
+                {{ data['hcp-3-address-line-2'] }}<br>
+                {{ data['hcp-3-address-town'] }}<br>
+                {{ data['hcp-3-address-county'] }}<br>
+                {{ data['hcp-3-address-postcode'] }}<br>
+                {{ data['hcp-3-address-country'] }}<br>
+                {{ data['hcp-3-last-contact'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-3">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['hcp-4'] === 'No' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are there any other health or care professionals we can contact?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hcp-4'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another-2">
+                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you currently staying in any of the these places?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospital'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="in-hospital">
+                  Change<span class="govuk-visually-hidden"> if you are in hospital</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% if data['hospital'] === 'Hospital' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into hospital?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospital-admission'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="hospital-admission.html">
+                  Change<span class="govuk-visually-hidden"> date you went into to hospital</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospital address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospital-name'] }}<br>
+                {{ data['hospital-address-line-1'] }}<br>
+                {{ data['hospital-address-line-2'] }}<br>
+                {{ data['hospital-address-town'] }}<br>
+                {{ data['hospital-address-county'] }}<br>
+                {{ data['hospital-address-postcode'] }}<br>
+                {{ data['hospital-address-country'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="hospital-address">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% endif %}
+
+            {% if data['hospital'] === 'Hospice' %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into the hospice?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospice-admission'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="hospice-admission.html">
+                  Change<span class="govuk-visually-hidden"> date you went into the hospice</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospice address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospice-name'] }}<br>
+                {{ data['hospice-address-line-1'] }}<br>
+                {{ data['hospice-address-line-2'] }}<br>
+                {{ data['hospice-address-town'] }}<br>
+                {{ data['hospice-address-county'] }}<br>
+                {{ data['hospice-address-postcode'] }}<br>
+                {{ data['hospice-address-country'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="hospice-address">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% endif %}
+
+            {% if data['hospital'] === 'Care or nursing home' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into this accommodation?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-admission'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="care-home-admission">
+                  Change<span class="govuk-visually-hidden"> date you went into to the care home</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Accommodation address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-name'] }}<br>
+                {{ data['care-home-address-line-1'] }}<br>
+                {{ data['care-home-address-line-2'] }}<br>
+                {{ data['care-home-address-town'] }}<br>
+                {{ data['care-home-address-county'] }}<br>
+                {{ data['care-home-address-postcode'] }}<br>
+                {{ data['care-home-address-country'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="care-home-address">
+                  Change<span class="govuk-visually-hidden"> care home or nursing home address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            
+            {% endif %}
+
+            {% if data['hospital'] === 'Other' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into this accommodation?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-admission'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="care-home-admission">
+                  Change<span class="govuk-visually-hidden"> date you went into the other accommodation</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Other accommodation address?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-name'] }}<br>
+                {{ data['care-home-address-line-1'] }}<br>
+                {{ data['care-home-address-line-2'] }}<br>
+                {{ data['care-home-address-town'] }}<br>
+                {{ data['care-home-address-county'] }}<br>
+                {{ data['care-home-address-postcode'] }}<br>
+                {{ data['care-home-address-country'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="care-home-address">
+                  Change<span class="govuk-visually-hidden"> other accommodation address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            
+            {% endif %}
+          </dl>
+
+          <h2 class="govuk-heading-m">Submit the first stage of your claim</h2>
+            <p class="govuk-body">Make sure you've checked your answers before you submit them.</p>
+            <p>You are now ready to submit the first stage of your claim. </p>
+
+          <input type="submit" class="govuk-button" data-module="govuk-button" value="Submit" id="submit">
+
+        </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
+      </div> <!-- govuk-grid-row -->
+
+    </main>
+  </div> <!-- govuk-width-container -->
+
+</form>
+
+{% endblock %}

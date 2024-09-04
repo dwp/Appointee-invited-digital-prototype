@@ -1,0 +1,43 @@
+{% extends "layout-signed-in-v12.html" %}
+
+{% block pageTitle %}
+  Remove condition - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/remove-condition" method="post" novalidate>
+
+        <input type="hidden" id="binnedConditionId" name="binnedConditionId" value="{{ binnedCondition.id }}">
+
+        {{ govukRadios({
+          idPrefix: "confirm-condition-deletion",
+          name: "binCondition",
+          fieldset: {
+            legend: {
+              text: "Are you sure you want to remove " + binnedCondition.type + " from your conditions?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout-signed-out-v11.html" %}
+
+{% block pageTitle %}
+Who is claiming?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Can you manage your post and send information by post?
+                </h1>
+              </legend>
+              <div id="changed-name-hint" class="govuk-hint"></div>
+
+              <p class="govuk-body">This includes:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>opening and sort through post</li>
+                    <li>managing deadlines</li>
+                    <li>going to the post box</li>
+                  </ul>
+
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="complete-posts" name="complete-post" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="complete-post">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="complete-posts" name="complete-post" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="complete-post">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div> <!--div radio-->
+
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

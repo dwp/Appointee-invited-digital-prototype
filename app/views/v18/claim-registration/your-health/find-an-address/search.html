@@ -1,0 +1,53 @@
+{% block pageTitle %}
+Find address
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              {% if data['hospital'] === 'Hospital' %}
+              Hospital address
+              {% elseif data['hospital'] === 'Hospice' %}
+              Hospice address
+              {% else %}
+              Accommodation address
+              {% endif %}
+            </h1>
+          </legend>
+
+          <div class="govuk-width-container">
+
+            <div class="govuk-form-group">
+            <label class="govuk-label" for="postcode">
+                Postcode
+            </label>
+            <div id="postcode-hint" class="govuk-hint">
+                For example, AA3 1AB.
+            </div><input class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+            </div>
+            <br><br>
+            <button class="govuk-button" data-module="govuk-button">
+            Find address
+            </button>
+            <p class="govuk-body govuk-!-margin-bottom-0"><a href="../accommodation-address" class="govuk-link">Enter address manually</a></p>
+            </div>
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

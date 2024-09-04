@@ -1,0 +1,56 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "A 6-digit code has been texted to XXXX XXX 789" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+  {% include "p5-v11/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+      
+        <form action="/v11/sign-in/create-password" method="POST" novalidate>
+      
+
+      {% if data['code'] == '123456' %}
+      <script>
+          window.location.href = 'create-password'
+      </script>
+      {% endif %}
+
+        <h1 class="govuk-heading-l">We have texted your 6-digit security code to mobile number ending 789</h1>
+
+        <p>This is the mobile number you gave us when you first called to apply for PIP.</p>
+
+        <p>The text should take one minute to arrive.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="code" >Enter your 6-digit security code</label>
+          <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+        </div>
+
+       
+         
+          <a href="/v11/sign-in/create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+          <p><a href="/v11/sign-in/code-text-get-another">I did not get a code</a></p>
+          <p><a href="/v11/sign-in/code-email">Get a code by email instead</a></p>
+       
+
+
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

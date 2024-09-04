@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    We have sent you a text message with your security code -
+        {{ serviceName  }}
+    - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/phase-banner.njk' %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="" method="post">
+
+              <h1 class="govuk-heading-l">A 6-digit code has been texted to mobile number ending 789</h1>
+
+              <p>The code expires after 5 minutes.</p>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="code" >Enter your 6-digit code</label>
+                <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+              </div>
+
+
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
+
+                <p><a href="#">Get another code by text</a></p>
+                <p><a href="#">Get another code by email</a></p>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

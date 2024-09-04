@@ -1,0 +1,99 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'Enter another medication',
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <!-- {{ govukInput({
+        id: 'medications',
+        name: "medication-name",
+        label: {
+          html: 'Medication name'
+        }
+      }) }}
+
+      {{ govukInput({
+          label: {
+            text: "Dosage and frequency (if you know)"
+          },
+          hint: {
+            text: "For example, 50mg 3 times a day"
+          },
+            classes: "govuk-input--width-10",
+            id: "doseage",
+            name: "dosage-name"
+          }) }} -->
+
+      {% endcall %}
+
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            <b>Medication name</b>
+          </label>
+          <input class="govuk-input" id="medications" name="medication-name" type="text">
+     </div>
+
+     <div class="govuk-form-group">
+          <label class="govuk-label" for="width-10">
+            <b>Approximate start date</b>
+          </label>
+          <div id="event-name-hint" class="govuk-hint">
+                 For example, March 2010.
+          </div>
+          <input class="govuk-input govuk-!-width-full" id="startDate" name="medication-start-date" type="text">
+     </div>
+
+     <div class="govuk-form-group">
+          <label class="govuk-label" for="width-10">
+            <b>How much you take and how often</b>
+          </label>
+          <div id="event-name-hint" class="govuk-hint">
+                 For example, '50mg 3 times a day' or 'It varies'.
+         </div>
+          <input class="govuk-input govuk-input--width-10" id="doseage" name="dosage-name" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+         <label class="govuk-label" for="width-10">
+           <b>Side effects you experience (optional)</b>
+         </label>
+         <div id="event-name-hint" class="govuk-hint">
+                For example, nausea, headache, dizziness, drowsiness or confusion.
+        </div>
+         <input class="govuk-input govuk-input--width-10" id="effects-two" name="side-effects-name" type="text">
+   </div>
+
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

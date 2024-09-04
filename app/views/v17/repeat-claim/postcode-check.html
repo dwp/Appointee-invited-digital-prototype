@@ -1,0 +1,37 @@
+{% block pageTitle %}
+Confirm your postcode
+{% endblock %}
+
+{% extends "v17/layout.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl for="width-10"" for="postcode">
+           What is your postcode?
+          </label>
+        </h1>
+        <div id="action-hint" class="govuk-hint">
+          This service is currently only available to people in certain postcode areas.
+        </div>
+        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+      </div>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

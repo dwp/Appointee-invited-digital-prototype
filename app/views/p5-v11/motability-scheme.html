@@ -1,0 +1,66 @@
+{% set pageTitle = "Motability scheme" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-v11/apply/declaration" method="post" novalidate>
+        <div class="govuk-form-group">
+
+            <h1 class="govuk-heading-xl">
+                Motability Scheme
+              </h1>
+
+
+              <p class="govuk-body">The Motability Scheme allows disabled people to lease a car, scooter or powered wheelchair in exchange for all or some of their PIP mobility payments.</p>
+
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-heading-m">If you're eligible to join the Motability Scheme would you like us to post you information about it?</h2>
+              </legend>
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="eu-insurance-1" name="eu-insurance" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="eu-insurance">
+                    Yes
+                  </label>
+                </div> <!-- govuk-radios__item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="eu-insurance-2" name="eu-insurance" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="eu-insurance-2">
+                    No
+                  </label>
+                </div> <!-- govuk-radios__item -->
+              </div> <!-- govuk-radios govuk-radios -->
+
+            </fieldset>
+
+          </div> <!-- govuk-form-group -->
+          <p>We will not share your personal details with the Motability Scheme.</p>
+              <p>If you decide you do not want to receive information about Motability in the future, contact:
+
+              <p>Telephone: 0800 121 4433 <br>
+              Textphone: 0800 121 4493 if you have speech or hearing difficulties</p>
+
+          <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

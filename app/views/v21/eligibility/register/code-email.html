@@ -1,0 +1,42 @@
+{% set pageTitle = "Your registration was successful" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out-dth.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" method="POST" novalidate>
+
+        <h1 class="govuk-heading-xl">Check your email</h1>
+
+        <div class="govuk-inset-text">
+          <p>We have sent an email to: <br><strong>emailaddress@email.com</strong></p>
+        </div>
+
+        <p>It might take up to a minute to arrive.</p>
+
+        <p>The email will come from DWP login and includes a security code. If you do not get an email, check your spam folder.</p>
+
+        <p>The code will expire in 15 minutes.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="code" >Enter your security code</label>
+          <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+        </div>
+
+          <input type="submit" class="govuk-button" value="Continue" id="submit">
+          <p><a href="#">I did not get an email</a></p>
+
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

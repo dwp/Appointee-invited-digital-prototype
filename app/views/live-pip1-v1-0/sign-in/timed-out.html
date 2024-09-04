@@ -1,0 +1,32 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Your session has ended due to inactivity" %}
+
+{% extends "layout-p4.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p4/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">For your security, we signed you out</h1>
+
+      <p>We signed you out because you have not saved your progress for 60 minutes.</p>
+
+      <p>We saved the answers you entered up to when you last saved your progress.</p>
+
+      <div style="margin-top: 30px"></div>
+
+      <p class="govuk-!-margin-top-5"><a href="/live-pip1-v1-0/sign-in/sign-in" class="govuk-button">Sign in</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

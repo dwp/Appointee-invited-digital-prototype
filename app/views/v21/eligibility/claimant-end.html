@@ -1,0 +1,29 @@
+{% block pageTitle %}
+You cannot claim online for someone else
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">You cannot claim online for someone else</h1>
+
+      <p>Claim by telephone if you're a registered appointee, deputy, power of attorney or belong to a corporate acting body.</p>
+
+      <p><a href="https://www.gov.uk/pip/how-to-claim">Find out about other ways to claim</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

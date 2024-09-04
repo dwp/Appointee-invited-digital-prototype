@@ -1,0 +1,57 @@
+{% extends "layout-signed-in-v6.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Application registered
+          </h1>
+          <div class="govuk-panel__body">
+            Finish your application by <br><strong>[DD Month Year]</strong>
+          </div>
+        </div>
+
+      <p class="govuk-body">The first stage of your application for PIP has been registered with the Department for Work and Pensions. Your reference is your National Insurance number.</p>
+
+      <h1 class="govuk-heading-m">What you need to do next</h1>
+
+      <p class="govuk-body">In the next section, describe how your conditions or disabilities affect your ability to do everyday tasks and get around.</p>
+
+      <p class="govuk-body">You can also upload and send any documentary evidence to support your application.</p>
+
+      <p class="govuk-body">You must do this by [DD Month Year]. If you do not, we may end your PIP claim.</p>
+
+      <p class="govuk-body">If you are getting Disability Living Allowance at the moment, this will stop if you do not send your answers and upload any evidence you have by this date.</p>
+
+      <p class="govuk-body">If you need to ask for more time, please contact:</p>
+
+      <p class="govuk-body">Phone: 0800 121 4433 <br>
+        Textphone: 0800 121 4493 if you have speech or hearing difficulties</p>
+
+
+      <p class="govuk-body">You can <a href="/v6/signed-out">sign out</a> of the service and return to it later to finish your application.</p>
+
+      <input type="submit" class="govuk-button" value="Tell us how your conditions affect you" id="submit">
+
+      <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Sign out
+      </button> -->
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+</form>
+
+{% endblock %}

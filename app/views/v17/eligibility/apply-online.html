@@ -1,0 +1,37 @@
+{% block pageTitle %}
+Based on your answers you're eligible to claim PIP online
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Based on your answers you're eligible to claim PIP online</h1>
+
+      <p>Register and complete the first stage of the claim as soon as you can. This usually takes around 15 minutes. </p>
+      <p>The date you submit this first stage will be the date of claim. The sooner you do this, the earlier your payments could begin if you're awarded PIP.</p>
+
+      <div class="govuk-inset-text">
+        This is a new online service. It is being tested with a limited number of people before being made available to everyone.
+      </div>
+
+
+      <p>In the next steps we will ask you to create a password so that you can save your answers and return later.</p>
+
+      <input type="submit" class="govuk-button" value="Register" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

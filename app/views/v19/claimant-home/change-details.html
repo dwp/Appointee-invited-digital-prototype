@@ -1,0 +1,45 @@
+{% set pageTitle = "Change your personal details" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  div.govuk-grid-column-one-third h2 {border-top: 1px solid #b1b4b6; padding-top: 20px;
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Change your personal details</h1>
+
+      <p>You must call the PIP enquiry line if your personal details change, for example your name, address or doctor.</p>
+
+
+      <div class="govuk-inset-text">
+        <h2 class="govuk-heading-s">PIP enquiry line</h2>
+        <p>Telephone: 0800 121 4433<br>
+        Textphone: 0800 121 4493<br>
+        Relay UK (if you cannot hear or speak on the phone): 18001 then 0800 121 4433<br>
+        British Sign Language (BSL) video relay service if you’re on a computer - find out how to use the service on mobile or tablet<br>
+        Monday to Friday, 9am to 5pm<br>
+        Find out about call charges</p>
+      </div>
+
+      <p>If you need someone to help you, you can:
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>ask for them to be added to your call - you cannot do this if you use textphone</li>
+        <li>ask someone else to call on your behalf - you’ll need to be with them when they call</li>
+      </ul>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+
+{% endblock %}

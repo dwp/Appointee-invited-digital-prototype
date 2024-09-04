@@ -1,0 +1,57 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Additional information 
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="additional-information-detail" method="post" novalidate>
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="additional-information-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    Is there anything else you would like to tell us about?
+                </h1>
+              </legend>
+              <div id="additional-information-hint" class="govuk-hint">
+                <p>Tell us anything else you think we should know that you have not already told us about how your health condition or disability affects you. </p>
+                <p>Carers, friends or family who want to give us additional information can also do so here. </p>
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="additional-information" name="additional-information" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="additional-information">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="additional-information-2" name="additional-information" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="additional-information-2">
+                    No
+                  </label>
+                </div>
+              </div>
+          
+            </fieldset>
+          </div>
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

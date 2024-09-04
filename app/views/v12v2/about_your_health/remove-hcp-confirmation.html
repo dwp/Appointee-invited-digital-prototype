@@ -1,0 +1,53 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Confirm removing a health professional
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to remove this health professional?<br>
+              <!-- {{ data['hcp-1-name'] }} -->
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="remove-health-professional-1" name="remove-health-professional"
+                type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="remove-health-professional-1">
+                Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="remove-health-professional-2" name="remove-health-professional"
+                type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="remove-health-professional-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+
+          </div> <!-- govuk-radios -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Confirm" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

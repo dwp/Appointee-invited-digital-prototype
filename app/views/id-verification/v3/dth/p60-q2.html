@@ -1,0 +1,67 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Enter the 'Employee's contribution' figure on your P60" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">About your P60</span>
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Use a P60 from the financial year 2020 to 2021</li>
+        <li>Get the figure from the 'Employee's contributions due on all earnings above the PT' column</li>
+        <li>Enter the figure exactly, including pence</li>
+        <li>The 'Employee's contribution' amount must be more than 0.00</li>
+      </ul>
+
+      <form class="form" method="post" action={% if tcKbv === "true" %} "./tax-credits-q1"
+          {% elif selfassessment === "true" %} "./self-assessment" {% elif tuKbv === "true" %} "./credit-ref-q1" {% elif voiceId === "true" %} "./voice-id"
+          {% else %} "./doc-verification-finish" {% endif %}>
+
+        {{ govukInput({
+          id: "employee-contribution",
+          name: "employee-contribution",
+          label: {
+            text: "'Employee's contribution' figure",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example 836.16"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="more-information">I don't have that information</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

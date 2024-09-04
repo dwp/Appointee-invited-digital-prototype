@@ -1,0 +1,67 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+When were you admitted to hospital
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="hospital-admission">
+                When did you go into the hospital?
+              </label>
+            </h1>
+
+          </div>
+
+            <div id="hospital-admission" class="govuk-hint">
+              For example, 30 9 2021
+            </div>
+
+          <div class="govuk-date-input" id="hospital-admission">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="hospital-admission">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospital-admission-day" name="hospital-admission-day"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="hospital-admission-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospital-admission-month" name="hospital-admission-month"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="hospital-admission-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hospital-admission-year" name="hospital-admission-year"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+          </div> <!-- govuk-date-input -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

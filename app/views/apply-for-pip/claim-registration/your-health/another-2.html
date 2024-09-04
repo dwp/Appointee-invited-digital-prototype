@@ -1,0 +1,56 @@
+{% block pageTitle %}
+Other health professioanals
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-!-font-size-24">You have added details for:
+        <br><strong>{{ data['hcp-1-name'] | title }}</strong>
+        <br><strong>{{ data['hcp-2-name'] | title }}</strong>
+      </p>
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "professional3",
+          name: "professional3",
+          fieldset: {
+            legend: {
+              text: "Are there any other health or care professionals that you would like to tell us about?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

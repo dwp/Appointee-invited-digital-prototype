@@ -1,0 +1,64 @@
+{% set pageTitle = "Tell us more about the difficulties you have with moving around and how you manage them" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/sign-out-pop-up-moving-around.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-v12v2/moving-around/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "movingaround-details",
+        id: "movingaround-details",
+        rows: "18",
+        value: data['movingaround-details'],
+        label: {
+          text: "Tell us more about the difficulties you have with moving around and how you manage them",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is </li>
+
+            <li>why you have it, or how it relates to your condition</li>
+            <li>any aids, appliances or devices you use to get around including wheelchairs or mobility scooters</li>
+            <li>any help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+          </ul>
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“I can only walk down one aisle of my local supermarket leaning on the trolley for support.”</p>
+            <p>“I am never able to walk more than 20 metres as quickly as most people do, because I can only walk very slowly without being at risk of falling. My carer physically supports me when we walk outside to make sure I do not&nbsp;fall.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5-v12/moving-around/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

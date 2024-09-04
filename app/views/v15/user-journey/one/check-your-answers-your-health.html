@@ -1,0 +1,227 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "v15/user-journey/one/layout.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "v14/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v14/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+.link-position {
+width: 130%;
+}
+
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+      <h1 class="govuk-heading-l">Check your answers</h1>
+
+    <h2 class="govuk-heading-m">Consent</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Health and care professionals can share information to support your claim
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes, I agree
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/v12/about_your_health/consent">
+              Change<span class="govuk-visually-hidden"> health and care professional consent</span>
+            </a>
+          </dd>
+        </div> <!-- govuk-summary-list__row -->
+        </dl>
+
+
+      
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">{{ query.hcpName }}</h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action"> <a class="govuk-link" href="remove-condition-confirmation">
+                  Remove<span class="govuk-visually-hidden"> {{ query.hcpName }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Health professional name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Dr.Smith
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> age</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Profession
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Doctor
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> start date</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Phone number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  078934847383
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> start date</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address line one
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  1 Doctors Surgery
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> start date</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address line two
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> start date</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Town
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Manchester
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> start date</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  County
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Greater Manchester
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> start date</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Postcode
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  M1 XNX
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> start date</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Last contact with professional
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Last month
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="condition">
+                    Change<span class="govuk-visually-hidden"> start date</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+       
+
+    <p><a class="govuk-link" href="about_your_health/hcp-1">Add another health or care profession</a></p>
+
+    <p>Make sure you've checked your answers before you save and continue.</p>
+
+<!-- table for medications and dosage -->
+<!-- <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+
+  <tbody class="govuk-table__body">
+    {% for query in data['queriesCondition'] %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Condition name</th>
+      <td class="govuk-table__cell">{{ query.condition }}</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Start date</th>
+      <td class="govuk-table__cell">{{ query.startDate }}</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
+    <!-- <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{ query.medication }} side effects</th>
+      <td class="govuk-table__cell">{{ query.sideEffects }}</td>
+      <td class="govuk-table__cell"><a href="#">Change</a></td>
+    </tr> -->
+    <!-- {% endfor %}
+  </tbody>
+</table> -->
+
+    <br>
+      <!-- {{ govukButton({
+        text: 'Save and continue',
+        href: "list-1"
+      }) }} -->
+
+      <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue" id="submit">
+
+    </form>
+   
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

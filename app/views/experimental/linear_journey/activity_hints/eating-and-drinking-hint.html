@@ -1,0 +1,45 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Eating and drinking hint
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                What we mean by eating and drinking
+            </h1>
+          </legend>
+          <div id="mobility-activity-hint" class="govuk-hint">
+            <p>This means:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>remembering when to eat</li>
+                <li>cutting food into pieces</li>
+                <li>putting food and drink in your mouth</li>
+                <li>chewing and swallowing food and drink </li>
+              </ul>
+            </p>
+
+          </div>
+
+      </div> <!-- govuk-form-group -->
+
+
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+
+{% endblock %}

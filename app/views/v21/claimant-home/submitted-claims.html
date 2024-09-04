@@ -1,0 +1,43 @@
+{% set pageTitle = "Change of circumstances" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  div.govuk-grid-column-one-third h2 {border-top: 1px solid #b1b4b6; padding-top: 20px;
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Your health information</h1>
+
+    <p>View, save or print a copy of your previous health information forms.</p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date submitted</th>
+          <!-- <th scope="col" class="govuk-table__header govuk-table__header--numeric">Name</th> -->
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">February 21st 2024</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="submission">View</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+
+{% endblock %}

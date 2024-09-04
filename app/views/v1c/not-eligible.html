@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Not eligible
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<!-- {{data['destination']}} -->
+
+
+<form id="form" method="post" action="">
+  <input type="hidden" value="{{data['destination']}}" name="destination">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Based on your answers you might not be eligible for Personal Independence Payment (PIP)
+      </h1>
+      <p class="govuk-body">This is because you told us:</p>
+      <ul class="govuk-list govuk-list--bullet">
+
+        {% if data['overspa'] == 'No' %}
+        <li>you're over State Pension age - <a href="https://www.gov.uk/attendance-allowance/eligibility">check if you're eligible for Attendance Allowance instead</a></li>
+        {% endif %}
+        {% if data['condition'] == 'No' %}
+        <li>you do not have a health condition</li>
+        <!-- <p>You can <a href="#">see what other benefits are available</a></p> -->
+        {% endif %}
+        {% if data['condition'] == 'Not sure' %}
+        <li>you're not sure if you have a health condition</li>
+        <!-- <p>You can <a href="#">see what other benefits are available</a></p> -->
+        {% endif %}
+        {% if data['over-9-months'] == 'Less than 9 months' %}
+        <li>you do not expect to need help doing everyday tasks or getting around for at least another 9 months</li>
+        <!-- <p>You can <a href="#">see what other benefits are available</a></p> -->
+        {% endif %}
+        
+      </ul>
+
+      <p>PIP supports you if you have a health condition or disability that affects your ability to do everday tasks or get around.</p>
+      <p>You can still apply and we will ask for more information to assess your application.</p>
+      <p><a href="https://www.gov.uk/browse/benefits/disability">Check what other benefits are available</a></p>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

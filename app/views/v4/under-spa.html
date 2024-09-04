@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Under State Pension age
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Are you under State Pension age content here
+              </h1>
+            </legend>
+            <p>Link to <a href="#">check your State pension age (opens in new tab)</a>.</p>
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="under-spa-1" name="underspa" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="under-spa-1">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="under-spa-2" name="underspa" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="under-spa-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="under-spa-3" name="underspa" type="radio" value="Not sure">
+                <label class="govuk-label govuk-radios__label" for="under-spa-3">
+                  Not sure
+                </label>
+              </div> <!-- govuk-radios__item -->
+              
+            </div> <!-- govuk-radios govuk-radios -->
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

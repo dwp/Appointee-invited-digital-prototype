@@ -1,0 +1,46 @@
+{% set pageTitle = "Information sent" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Stage 2 submitted
+  </h1>
+</div>
+
+
+    <p class="govuk-body">We have received your stage 2 form within the time allowed. We have sent a confirmation email to <strong>jeff.bridges@gmail.com</strong>.</p>
+
+    <h2 class="govuk-heading-m">Download a copy of your completed form</h2>
+
+    <p><a href="../claimant-home/submission">Download Jeff Bridges completed form (PDF)</a></p>
+
+    <p>You can also view or download your completed form later from your <a href="../claimant-home/landing-2">account home</a>.</p>
+
+
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>We will keep you up to date about your PIP claim by text message if you have agreed for us to do this.</p>
+
+    <p>You might be contacted to arrange an assessment with a health professional if more information is needed. You may not need an assessment if you have provided enough information for us to make a decision.</p>
+
+
+
+    <h2 class="govuk-heading-m">If you want to upload more supporting evidence</h2>
+
+    <p>You can <a href="sign-out">sign out</a> and return later to confirm your identity or upload more supporting evidence.</p>
+
+  </div>
+</div>
+{% endblock %}

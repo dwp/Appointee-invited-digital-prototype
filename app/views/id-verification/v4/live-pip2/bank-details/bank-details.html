@@ -1,0 +1,90 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Bank or building society account details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="check" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
+
+      {{ govukInput({
+        label: {
+          text: "Name on the account"
+        },
+        id: "name-on-the-account",
+        name: "name-on-the-account",
+        autocomplete: "name",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Sort code"
+        },
+        classes: "govuk-input--width-5",
+        hint: {
+          text: "Must be 6 digits long"
+        },
+        id: "sort-code",
+        name: "sort-code",
+        inputmode: "numeric",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Account number"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          text: "Must be between 6 and 8 digits long"
+        },
+        id: "account-number",
+        name: "account-number",
+        inputmode: "numeric",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Building society roll number (if you have one)"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          text: "You can find it on your card, statement or passbook"
+        },
+        id: "roll-number",
+        name: "roll-number",
+        spellcheck: false
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    <p><a href="/id-verification/v4/live-pip2/list-section-5">Return to list</a></p>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

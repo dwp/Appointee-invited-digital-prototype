@@ -1,0 +1,75 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Preparing food</h1>
+
+            {{ govukCheckboxes({
+              idPrefix: "prep-food-adapt-aids-1-1",
+              name: "prep-food-adapt-aids-1-1",
+              fieldset: {
+                legend: {
+                  text: "Do you use any aids or adaptations?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "Select all options that apply"
+              },
+              items: [
+                {
+                  value: "Adapted food preparation board",
+                  text: "Adapted food preparation board"
+                },
+                {
+                  value: "Automatic tin opener",
+                  text: "Automatic tin opener"
+                },
+                {
+                  value: "Jar or bottle opener",
+                  text: "Jar or bottle opener"
+                },
+                {
+                  value: "Tap turner",
+                  text: "Tap turner"
+                },
+                {
+                  value: "Kettle tipper",
+                  text: "Kettle tipper"
+                },
+                {
+                  value: "Perching stool",
+                  text: "Perching stool"
+                },
+                {
+                  value: "Other",
+                  text: "Other"
+                }
+              ]
+            }) }}
+
+                  {{ govukButton({
+                    text: 'Continue'
+                  }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

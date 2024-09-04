@@ -1,0 +1,151 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+.link-position {
+width: 130%;
+}
+
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <!-- <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      {% for query in data['queriesMedication'] %}
+      <dt class="govuk-summary-list__key">
+        Medication name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ query.medication }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden">medicaton name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Dosage
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ query.dosage }}
+      </dd>
+          {% endfor %}
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden">dosage</span>
+        </a>
+      </dd>
+    </div> -->
+
+  <!--  <h1 class="govuk-heading-l">Check your answers</h1>
+
+<!-- table for medications and dosage -->
+<!--<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Condition name</th>
+      <td class="govuk-table__cell">Angina</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+      <td class="govuk-table__cell"><b>Start date</b></td>
+      <td class="govuk-table__cell">April 2017</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
+
+    {% for query in data['queriesCondition'] %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Condition name</th>
+      <td class="govuk-table__cell">{{ query.condition }}</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Start date</th>
+      <td class="govuk-table__cell">{{ query.startDate }}</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>-->
+  <form action="#" method="post" novalidate>
+        <h1 class="govuk-heading-l">Check your answers</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition name <br>
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Angina <br>
+              April 2017
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <div class="link-position">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="condition-additional"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change condition</span></a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove conditon</span></a></li>
+              </ul>
+              </div>
+            </dd>
+          </div>
+
+            {% for query in data['queriesCondition'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition name <br>
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.condition }} <br>
+              {{ query.startDate }}
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+                <div class="link-position">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="condition-additional"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change condition</span></a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove conditon</span></a></li>
+              </ul>
+              </div>
+            </dd>
+          </div>
+          {% endfor %}
+        </dl>
+
+    <br>
+
+          {{ govukButton({
+            text: "Save and continue",
+            href: "list-1?aboutyourhealth=completed"
+          }) }}
+
+          {{ govukButton({
+              text: "Add another condition",
+              classes: "govuk-button--secondary",
+              href: "condition-additional"
+          }) }}
+
+    </form>
+    {% include "v12/condition-questions/option-three/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

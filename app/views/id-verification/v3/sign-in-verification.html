@@ -1,0 +1,54 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Check your phone" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
+
+      <form class="form" action="signed-in" method="post">
+
+        <p>We’ve sent you a text message with a security code.</p>
+
+        <p>It should take 1 minute to arrive.</p>
+
+        {{ govukInput({
+          label: {
+            text: "6-digit security code",
+            isPageHeading: false
+          },
+          id: "mobile-security-code",
+          name: "mobile-security-code",
+          type: "text",
+          classes: "govuk-input--width-10"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="#">I did not get a text message</a><br>
+        <a href="#">I cannot access the mobile phone number I use to sign in</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

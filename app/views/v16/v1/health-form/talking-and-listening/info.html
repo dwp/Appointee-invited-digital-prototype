@@ -1,0 +1,72 @@
+{% set pageTitle = "How well can you communicate verbally?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "talkingandlistening-info",
+        fieldset: {
+          legend: {
+            text: "How well can you communicate verbally?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>Select the option that is most relevant to you for more than half of the days in a year.</p>
+        '
+        },
+        items: [
+          {
+            value: "talkingandlistening-option-1",
+            text: "I can express and understand verbal information unaided",
+            checked: checked("talkingandlistening-info", "Option 1")
+          },
+          {
+            value: "talkingandlistening-option-2",
+            text: "I need to use an aid or applicance to be able to speak or hear",
+            checked: checked("talkingandlistening-info", "Option 2")
+          },
+          {
+            value: "talkingandlistening-option-3",
+            text: "I need communication support to be able to express or understand complex verbal information",
+            checked: checked("talkingandlistening-info", "Option 3")
+          },
+          {
+            value: "talkingandlistening-option-4",
+            text: "I need communication support to be able to express or understand basic verbal information",
+            checked: checked("talkingandlistening-info", "Option 4")
+          },
+          {
+            value: "talkingandlistening-option-5",
+            text: "I cannot express or understand verbal information at all evenn with communication support",
+            checked: checked("talkingandlistening-info", "Option 5")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

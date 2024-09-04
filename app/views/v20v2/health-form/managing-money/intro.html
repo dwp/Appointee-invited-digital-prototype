@@ -1,0 +1,64 @@
+{% set pageTitle = "Does your condition affect you managing your money?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "managingmoney-question",
+        fieldset: {
+          legend: {
+            text: "Managing your money",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>understanding how much things cost</li>
+            <li>understanding how much change you should get</li>
+            <li>managing your own budgets, paying your own bills and planning your own future purchases</li>
+          </ul>
+          <p>This does not mean taking a bill to the post box or being able to hold your change.</p>
+          <p>This also does not mean being able to read a bill or physically open a letter.</p>
+          <h2 class="govuk-heading-m">Does your condition affect you managing your money?</h2>
+          '
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("managingmoney-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("managingmoney-question", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

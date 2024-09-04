@@ -1,0 +1,44 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Talking listneing and understanding hint
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                What we mean by talking, listening and understanding
+            </h1>
+          </legend>
+          <div id="mobility-activity-hint" class="govuk-hint">
+            <p>This means doing the following in your own language:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>communicating by speaking clearly to people</li>
+                <li>being understood by others</li>
+                <li>listening and understanding what people say</li>
+              </ul>
+            </p>
+
+          </div>
+
+      </div> <!-- govuk-form-group -->
+
+
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+
+{% endblock %}

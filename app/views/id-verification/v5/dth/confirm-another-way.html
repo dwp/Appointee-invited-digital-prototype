@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+We need more information before we can confirm your identity
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block serviceName %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        We have been unable to verify your identity
+    </h1>
+
+    <p class="govuk-body">We have been unable to verify your identity. If you think you may have entered your details incorrectly, you can start again.</p>
+
+    {{ govukButton({
+      text: "Start again",
+      href: "choose-2-items"
+    }) }}
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Verify your identity by phone
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <h2 class="govuk-heading-m">Call us to verify your identity</h2>
+        <p>Before we can start to assess your claim, we need to check your identity. We check everyone's identity to protect from fraud.</p>
+        <p>When you call, you’ll need to give the following information:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your contact details, for example telephone number</li>
+          <li>your date of birth</li>
+          <li>your National Insurance number, if you have one (you can find this on letters about tax, pensions and benefits)</li>
+        </ul>
+        <p>This page will close after 20 minutes of inactivity. You might find it useful to write down the details you need, or take a screenshot of this page.</p>
+        <p>Telephone: 0800 917 2222<br>
+        Textphone: 0800 917 7777<br>
+        <a href="">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 917 2222<br>
+        British Sign Language (BSL) <a href="">video relay service</a> if you’re on a computer - find out how to <a href="">use the service on mobile or tablet</a><br>
+        Calling from abroad: +44 191 218 7766 <br>
+        Monday to Friday, 8am to 5pm<br>
+        <a href="">Find out about call charges</a></p>
+      </div>
+    </details>
+
+{% endblock %}

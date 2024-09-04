@@ -1,0 +1,77 @@
+{% set pageTitle = "How well can you prepare and cook food?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "preparingfood-info",
+        fieldset: {
+          legend: {
+            text: "How well can you prepare and cook food?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>Select the option that is most relevant to you for more than half of the days in a year.</p>
+        '
+        },
+        items: [
+          {
+            value: "I can prepare and cook a simple meal unaided",
+            text: "I can prepare and cook a simple meal unaided",
+            checked: checked("preparingfood-info", "I can prepare and cook a simple meal unaided")
+          },
+          {
+            value: "I need to use an aid or appliance to be able to wither prepare or cook a simple meal",
+            text: "I need to use an aid or appliance to be able to wither prepare or cook a simple meal",
+            checked: checked("preparingfood-info", "I need to use an aid or appliance to be able to wither prepare or cook a simple meal")
+          },
+          {
+            value: "I cannot cook a simple meal using a conventional cooker but am able to so using a microwave",
+            text: "I cannot cook a simple meal using a conventional cooker but am able to so using a microwave",
+            checked: checked("preparingfood-info", "I cannot cook a simple meal using a conventional cooker but am able to so using a microwave")
+          },
+          {
+            value: "I need prompting to be able to either prepare of cook a simple meal",
+            text: "I need prompting to be able to either prepare of cook a simple meal",
+            checked: checked("preparingfood-info", "I need prompting to be able to either prepare of cook a simple meal")
+          },
+          {
+            value: "I need supervision or assistance to either prepare or cook a simple meal",
+            text: "I need supervision or assistance to either prepare or cook a simple meal",
+            checked: checked("preparingfood-info", "I need supervision or assistance to either prepare or cook a simple meal")
+          },
+          {
+            value: "I cannot prepare and cook food",
+            text: "I cannot prepare and cook food",
+            checked: checked("preparingfood-info", "I cannot prepare and cook food")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

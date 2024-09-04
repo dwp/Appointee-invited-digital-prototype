@@ -1,0 +1,134 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "What is your nationality?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/id-verification/v1/live-pip1/living-in-gb" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                What is your nationality?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="British">
+                <label class="govuk-label govuk-radios__label" for="nationality">
+                  British
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="Irish">
+                <label class="govuk-label govuk-radios__label" for="nationality-2">
+                  Irish
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio"
+                    value="A nationality of the European Economic Area (EEA) or Switzerland"
+                    data-aria-controls="conditional-nationality-eea">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                    A nationality of the European Economic Area (EEA) or Switzerland
+                  </label>
+                </div> <!-- govuk-radios__item -->
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nationality-eea">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="eea-country">
+                      Nationality
+                    </label>
+                    <select class="govuk-select" id="eea-country" name="eea-country">
+                      <option value="updated" selected>Select a nationality</option>
+                      <option value="Austrian">Austrian</option>
+                      <option value="Belgian">Belgian</option>
+                      <option value="Bulgarian">Bulgarian</option>
+                      <option value="Croatian">Croatian</option>
+                      <option value="Cypriot">Cypriot</option>
+                      <option value="Czech">Czech</option>
+                      <option value="Danish">Danish</option>
+                      <option value="Department of Guadeloupe">Department of Guadeloupe</option>
+                      <option value="Dutch">Dutch</option>
+                      <option value="Estonian">Estonian</option>
+                      <option value="Finnish">Finnish</option>
+                      <option value="French">French</option>
+                      <option value="Frnech Guianan">French Guianan</option>
+                      <option value="German">German</option>
+                      <option value="Greek">Greek</option>
+                      <option value="Hungarian">Hungarian</option>
+                      <option value="Icelandic">Icelandic</option>
+                      <option value="Irish">Irish</option>
+                      <option value="Italian">Italian</option>
+                      <option value="Latvia">Latvian</option>
+                      <option value="Lichtenstein">Lichtenstein</option>
+                      <option value="Lithuanian">Lithuanian</option>
+                      <option value="Luxembourger">Luxembourger</option>
+                      <option value="Maltese">Maltese</option>
+                      <option value="Martiniquais">Martiniquais</option>
+                      <option value="Norwegian">Norwegian</option>
+                      <option value="Polish">Polish</option>
+                      <option value="Portuguese">Portuguese</option>
+                      <option value="Reunion">Reunion</option>
+                      <option value="Romanian">Romanian</option>
+                      <option value="Slovak">Slovak</option>
+                      <option value="Slovenian">Slovenian</option>
+                      <option value="Spanish">Spanish</option>
+                      <option value="Swedish">Swedish</option>
+                      <option value="Swiss">Swiss</option>
+                      <option value="Wallis and Funtuna Islander">Wallis and Funtuna Islander</option>
+                    </select>
+                  </div>
+                </div> <!-- govuk-radios__item -->
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="nationality-4" name="nationality" type="radio"
+                      value="Another nationality" data-aria-controls="conditional-nationality">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Another nationality
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nationality">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="nationality-country">
+                        Nationality
+                      </label>
+                      <select class="govuk-select" id="nationality-country" name="nationality-country">
+                        <option value="updated" selected>Select a nationality</option>
+                        {% for nationality in nationalities %}
+                        <option value="{{nationality}}">{{nationality}}</option>
+                        {% endfor %}
+                      </select>
+                    </div> <!-- govuk-form-group -->
+                  </div> <!-- govuk-radios__item -->
+                </div> <!-- govuk-radios -->
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

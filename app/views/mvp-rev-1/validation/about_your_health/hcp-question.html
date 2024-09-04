@@ -1,0 +1,68 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Your health and care professionals
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+        data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#add-support">Select yes if DWP can contact your health and care professionals for information about you</a>
+            </li>
+          </ul>
+        </div>
+      </div> <!-- govuk-error-summary -->
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Can the Department for Work and Pensions contact your health and care professionals for information about you?
+            </h1>
+          </legend>
+            <p>Tell us about any health and care professionals who know best how your health condition or disability affects you.</p>
+            <p>For example, a GP, hospital doctor, specialist nurse, community psychiatric nurse, occupational therapist, physiotherapist, social worker, counsellor or support worker.</p>
+          <span id="add-support-communicating-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span>Select yes if DWP can contact your health and care professionals for information about you
+          </span>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hcp-q-1" name="hcp" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="hcp">
+                Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hcp-q-2" name="hcp" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="hcp-q-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

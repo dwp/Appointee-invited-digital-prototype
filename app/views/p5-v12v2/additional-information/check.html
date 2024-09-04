@@ -1,0 +1,148 @@
+{% extends "layout-p5-v11.html" %}
+
+{% set pageTitle = "Check your answers: additional information" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5-v12/list-1">
+
+      <h1 class="govuk-heading-l">Check your answers: additional information</h1>
+
+
+      {% if data['additionalinformation-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Is there anything else you would like to tell us about?"
+              },
+              value: {
+                text: data['additionalinformation-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/additional-information/",
+                    text: "Change",
+                    visuallyHiddenText: "your answer to whether there is anything else you would like to tell us about"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Additional information"
+              },
+              value: {
+                html: data['additionalinformation-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/additional-information/details",
+                    text: "Change",
+                    visuallyHiddenText: "additional information"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Is there anything else you would like to tell us about?"
+              },
+              value: {
+                text: data['additionalinformation-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5-v12/additional-information/",
+                    text: "Change",
+                    visuallyHiddenText: "your answer to whether there is anything else you would like to tell us about"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% endif %}
+
+
+
+
+
+
+{#
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Anything else to tell us about"
+            },
+            value: {
+              html: '<p class="govuk-body">
+                Yes
+              </p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "anything else to tell us about"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Additional information"
+            },
+            value: {
+              html: '<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }} #}
+
+      <a href="/v12v2/condition-questions/option-three/list-1?additionalinformation=completed" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

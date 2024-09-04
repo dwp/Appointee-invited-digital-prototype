@@ -1,0 +1,77 @@
+{% set pageTitle = "How well can you plan and follow journeys?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "managingmoney-info",
+        fieldset: {
+          legend: {
+            text: "How well can you plan and follow journeys?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>Select the option that is most relevant to you for more than half of the days in a year.</p>
+        '
+        },
+        items: [
+          {
+            value: "managingmoney-option-1",
+            text: "I can plan and follow the route of a journey unaided",
+            checked: checked("managingmoney-info", "Option 1")
+          },
+          {
+            value: "managingmoney-option-2",
+            text: "I need prompting to be able to undertake any journey to avoid overwhelming psychological distress",
+            checked: checked("managingmoney-info", "Option 2")
+          },
+          {
+            value: "managingmoney-option-3",
+            text: "I cannot plan the route of a journey",
+            checked: checked("managingmoney-info", "Option 3")
+          },
+          {
+            value: "managingmoney-option-4",
+            text: " I cannot follow the route of an unfamiliar journey withoyt another person, assistance dog or orientation aid",
+            checked: checked("managingmoney-info", "Option 4")
+          },
+          {
+            value: "managingmoney-option-5",
+            text: " I cannot undertake any journey because it would cause overwhelming psychological distress",
+            checked: checked("managingmoney-info", "Option 5")
+          },
+          {
+            value: "managingmoney-option-6",
+            text: " I cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid",
+            checked: checked("managingmoney-info", "Option 6")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% set pageTitle = "Does your condition affect you mixing with other people?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "mixingwithotherpeople-question",
+        fieldset: {
+          legend: {
+            text: "Mixing with other people",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>meeting people face to face</li>
+            <li>understanding how they are behaving towards you including body language</li>
+            <li>behaving appropriately towards them</li>
+            <li>being able to make new relationships with other people</li>
+          </ul>
+          <p>This means doing these things with both people you know well and people you do not know.</p>
+          <h2 class="govuk-heading-m">Does your condition affect you mixing with other people?</h2>
+          '
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("mixingwithotherpeople-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("mixingwithotherpeople-question", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

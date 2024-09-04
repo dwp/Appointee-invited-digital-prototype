@@ -1,0 +1,63 @@
+{% set pageTitle = "Tell us about the difficulties you have with eating and drinking and how you manage them" %}
+
+{% extends "layout-p5-v1-1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v1-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v1-1/_beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-v1-1/eating-and-drinking/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "eatinganddrinking-details",
+        id: "eatinganddrinking-details",
+        rows: "18",
+        value: data['eatinganddrinking-details'],
+        label: {
+          text: "Tell us about the difficulties you have with eating and drinking and how you manage them",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often you have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is </li>
+
+            <li>why you have it, or how it relates to your condition </li>
+            <li>any aids or adaptations you use, or help you get from another person</li>
+            <li>any help you feel you need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“At least 5 times a week, I have difficulty cutting up my food at dinner because my right hand hurts when I hold a knife. I need adapted cutlery so I can cut up my food myself.”</p>
+            <p>“I always have difficulty eating enough food at mealtimes to keep healthy because I am preoccupied with my weight and get very upset. My partner prompts me to manage my portion size and eat my meals.”</p>
+          </div>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "p5-v1-1/eating-and-drinking/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

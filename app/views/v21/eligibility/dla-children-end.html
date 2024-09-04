@@ -1,0 +1,27 @@
+{% block pageTitle %}
+Based on your answers, you may be eligible for PIP
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Based on your answers, you may be eligible for PIP when you are 16</h1>
+
+      <p><a href="https://www.gov.uk/disability-living-allowance-children/when-your-child-turns-16">Find out what to do when a child turns 16</a> if they're getting Disability Living Allowance.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

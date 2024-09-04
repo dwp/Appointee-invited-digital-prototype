@@ -1,0 +1,102 @@
+{% extends "layout-signed-in-v6.html" %}
+
+{% block pageTitle %}
+Additional support address
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Address of the person helping you
+            </h1>
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-address-line-1">
+              Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <input class="govuk-input" id="add-support-address-line-1" name="add-support-address-line-1" type="text"
+              autocomplete="add-support-address-line1">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-address-line-2">
+              <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+            </label>
+            <input class="govuk-input" id="add-support-address-line-2" name="add-support-address-line-2" type="text"
+              autocomplete="add-support-address-line2">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="add-support-address-town"
+              name="add-support-address-town" type="text" autocomplete="add-support-address-level2">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-address-county">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="add-support-address-county"
+              name="add-support-address-county" type="text">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add-support-address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="add-support-address-postcode"
+              name="add-support-address-postcode" type="text" autocomplete="postal-code">
+          </div> <!-- govuk-form-group -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Can we write to them at this address?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-support-safe-address-1" name="add-support-safe-address"
+                type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="add-support-safe-address-1">
+                Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-support-safe-address-2" name="add-support-safe-address"
+                type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="add-support-safe-address-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios--inline -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

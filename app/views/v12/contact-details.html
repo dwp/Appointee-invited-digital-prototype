@@ -1,0 +1,96 @@
+{% extends "layout-signed-in-v12.html" %}
+
+{% block pageTitle %}
+Contact details
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Your contact details
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="phone-number">
+              Mobile number <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <!-- <div id="dob-hint" class="govuk-hint">
+              Enter your mobile number.
+            </div> -->
+            <input class="govuk-input govuk-!-width-two-thirds" id="phone-number" name="phone-number" type="text"
+              autocomplete="phone-number">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="alternative-phone-number">
+              Alternative phone number (optional) <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <div id="dob-hint" class="govuk-hint">
+              Enter an alternative number you can be contacted on, including the dialling code.
+            </div>
+            <input class="govuk-input govuk-!-width-two-thirds" id="alternative-phone-number" name="alternative-phone-number" type="text"
+              autocomplete="phone-number">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="textphone">
+              Textphone (optional)
+            </label>
+            <div id="dob-hint" class="govuk-hint">
+              Textphones do not accept text messages from mobile phones.<br>
+              They're for people who cannot speak or hear clearly.
+            </div>
+            <input class="govuk-input govuk-!-width-two-thirds" id="textphone" name="textphone" type="text"
+              autocomplete="textphone">
+          </div> <!-- govuk-form-group -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to receive text messages to update you on the progress of your claim?
+            </h1>
+          </legend>
+
+            <div id="sms-updates-hint" class="govuk-hint">
+              If you do not want to receive text messages, we will write to you instead.
+            </div>
+
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sms-updates-1" name="sms-updates"
+                  type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="sms-updates-1">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sms-updates-2" name="sms-updates"
+                  type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="sms-updates-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div>
+          </div><!-- govuk-for-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

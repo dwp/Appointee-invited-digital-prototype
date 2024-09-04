@@ -1,0 +1,67 @@
+{% set pageTitle = "Check your answers: about your health" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">About your health</span>
+    <h1 class="govuk-heading-xl">Check your answers</h1>
+
+    
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">{{ data['condition-name'] | capitalize }}</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition or disability
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['condition-name'] | capitalize }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./condition">
+                Change<span class="govuk-visually-hidden"> condition or disability</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              About this condition or disability
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['condition-detail-1'] | capitalize }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./condition-details">
+                Change<span class="govuk-visually-hidden"> condition details</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <p><a href="./condition">Add another condition or disability</a></p>
+
+    <div class="govuk-button-group">
+      <a href="../about-your-health-professionals/introduction" class="govuk-button">Confirm and continue</a>
+      <a href="../task-list?aboutyourhealth=completed" class="govuk-button govuk-button--secondary">Confirm and return to list</a>
+    </div>
+
+
+    <!-- <p><a href="../task-list?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p> -->
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

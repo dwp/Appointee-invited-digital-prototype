@@ -1,0 +1,24 @@
+{% set pageTitle = "Feedback submitted" %}
+
+{% extends "layout-p5-rev-1-feedback.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Your feedback has been submitted</h1>
+
+      <h2 class="govuk-heading-m">You can now close this page</h2>
+
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

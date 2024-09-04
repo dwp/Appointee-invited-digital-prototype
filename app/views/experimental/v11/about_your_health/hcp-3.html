@@ -1,0 +1,143 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Other health professionals
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-experimental.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="#">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="hcp-3-name">
+          Health or care professional details
+          </label>
+
+          <p>Give details of a health or care professional who knows how your health condition or disability affects you.</p>
+
+          <p class="govuk-body govuk-!-font-weight-bold">You can add more health or care professionals later.</p>
+
+        </h1>
+        <label class="govuk-label" for="hcp-3-name">
+          Name
+        </label>
+        <input class="govuk-input" id="hcp-3-name" name="hcp-3-name" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="hcp-3-profession">
+          Profession
+        </label>
+          <div id="event-name-hint" class="govuk-hint">
+            For example, GP, hospital doctor, specialist nurse, community psychiatric nurse, occupational therapist, physiotherapist, social worker, counsellor or support worker.
+          </div>
+        <input class="govuk-input" id="hcp-3-profession" name="hcp-3-profession" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="hcp-3-phone">
+          Phone number, including dialling code
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="hcp-3-phone" name="hcp-3-phone" type="text">
+      </div> <!-- govuk-form-group -->
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Address
+          </h1>
+        </legend>
+
+          <div id="event-name-hint" class="govuk-hint">
+            This is where you see them such as a health centre, GP surgery or hospital address.
+          </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="hcp-3-address-line-1">
+            Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+          </label>
+          <input class="govuk-input" id="hcp-3-address-line-1" name="hcp-3-address-line-1" type="text"
+            autocomplete="hcp-3-address-line1">
+        </div> <!-- govuk-form-group -->
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="hcp-3-address-line-2">
+            <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+          </label>
+          <input class="govuk-input" id="hcp-3-address-line-2" name="hcp-3-address-line-2" type="text"
+            autocomplete="hcp-3-address-line2">
+        </div> <!-- govuk-form-group -->
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="hcp-3-address-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="hcp-3-address-town" name="hcp-3-address-town"
+            type="text" autocomplete="hcp-3-address-level2">
+        </div> <!-- govuk-form-group -->
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="hcp-3-address-county">
+            County
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="hcp-3-address-county" name="hcp-3-address-county"
+            type="text">
+        </div> <!-- govuk-form-group -->
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="hcp-3-address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="hcp-3-address-postcode" name="hcp-3-address-postcode"
+            type="text" autocomplete="hcp-3-postal-code">
+        </div> <!-- govuk-form-group-->
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="country">
+            Country
+          </label>
+          <select class="govuk-select" id="country" name="country">
+            <option value="updated" selected>Select a country</option>
+            {% for country in countries %}
+            <option value="{{country}}">{{country}}</option>
+            {% endfor %}
+          </select>
+        </div> <!-- govuk-form-group -->
+
+      </fieldset>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="hcp-3-last-contact">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              When did you last speak to them?
+            </h1>
+          </legend>
+          <div id="hcp-1-last-contact" class="govuk-hint">
+            This can be approximate – for example, March 2021 or 18 months ago.
+          </div>
+
+          <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-two-thirds" id="hcp-3-last-contact" name="hcp-3-last-contact"
+              type="text" autocomplete="hcp-3-last-contact">
+          </div> <!-- govuk-form-group-->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

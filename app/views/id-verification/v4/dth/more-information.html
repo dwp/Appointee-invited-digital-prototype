@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+We need to ask some questions to prove your identity
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block serviceName %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        We need more information before we can confirm your identity
+    </h1>
+
+    <p class="govuk-body">You can go back and <a href="choose-2-items">choose different items for us to ask you about</a>.</p>
+    <p class="govuk-body">If you cannot give us details about these items, you can <a href="confirm-another-way">confirm your identity another way</a>.</p>
+
+{% endblock %}

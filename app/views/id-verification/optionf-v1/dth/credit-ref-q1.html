@@ -1,0 +1,82 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Which one of these addresses have you been associated with?" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">About your mortgage</span>
+
+      <form class="form" action="credit-ref-q2" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                {{ pageQuestion }}
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="previous-addresses-1" name="previous-addresses" type="radio" value="address1">
+                <label class="govuk-label govuk-radios__label" for="previous-addresses-1">
+                  Address 1
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="previous-addresses-2" name="previous-addresses" type="radio" value="address2">
+                <label class="govuk-label govuk-radios__label" for="previous-addresses-2">
+                  Address 2
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="previous-addresses-3" name="previous-addresses" type="radio" value="address3">
+                <label class="govuk-label govuk-radios__label" for="previous-addresses-3">
+                  Address 3
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="previous-addresses-4" name="previous-addresses" type="radio" value="address4">
+                <label class="govuk-label govuk-radios__label" for="previous-addresses-4">
+                  Address 5
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="previous-addresses-5" name="previous-addresses" type="radio" value="none">
+                <label class="govuk-label govuk-radios__label" for="previous-addresses-5">
+                  None of the above
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>
+        <a href="more-information">I don't have that information</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

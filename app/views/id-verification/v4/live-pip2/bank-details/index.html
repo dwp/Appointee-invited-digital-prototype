@@ -1,0 +1,38 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "We need your bank or building society account details" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
+
+      <p>We ask for your account details before we make a decision on your claim so we can pay you straight away if you qualify for Personal Independence Payment (PIP).</p>
+
+      <p>There is no guarantee that your claim will be successful.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "bank-details"
+      }) }}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

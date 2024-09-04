@@ -1,0 +1,59 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Other healthcare professionals" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/id-verification/v1/live-pip1/in-hospital" method="post">
+
+        <form id="form" method="post" action="#">
+
+          {{ govukRadios({
+            idPrefix: "hcp-2",
+            name: "hcp-2",
+            fieldset: {
+              legend: {
+                text: "Are there any other health or care professionals we can contact?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

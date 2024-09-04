@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Not eligible
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<!-- {{data['destination']}} -->
+
+
+<form id="form" method="get" action="https://www.gov.uk/attendance-allowance">
+  <input type="hidden" value="{{data['destination']}}" name="destination">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Based on your answers, you're not eligible for Personal Independence Payment (PIP)
+      </h1>
+      <!--<p class="govuk-body">This is because you told us:</p>-->
+
+          <p>This is because you told us you're over State Pension age. PIP is only for people who are under State Pension Age.</p>
+
+          <p>You might be eligible for Attendance Allowance instead. This is for people who have reached State Pension age and need help with everyday tasks or getting around.</p>
+
+
+     <!-- <p>PIP supports you if you have a health condition or disability that affects your ability to do everday tasks or get around.</p>-->
+      <!-- <p>You can <a href="name">continue to apply for PIP</a> if you still think you're eligible. We will ask you for more information to assess your application.</p> -->
+
+      <button class="govuk-button" href="https://www.gov.uk/attendance-allowance">
+        Apply for Attendance Allowance
+      </button>
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

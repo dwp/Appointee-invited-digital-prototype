@@ -1,0 +1,40 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Help and contact
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v11.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Help and contact</h1>
+
+    <h2 class="govuk-heading-m">If you need a paper form or no longer want to apply</h2>
+
+    <p><p>Call the Department for Work and Pensions if:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you would like to fill in and post a paper form</li>
+      <li>you no longer want to apply for PIP</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Contact</h2>
+    <p>Telephone: 0800 121 6279<br>
+    Textphone: 0800 121 4493<br>
+    <a href="https://www.relayuk.bt.com//">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 121 6279<br>
+    <a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video relay service</a> for British Sign Language (<abbr title="British Sign Language">BSL</abbr>) users - <a href="https://www.dalanguages.co.uk/dwp-bsl/">check you can use the service</a><br>
+    Monday to Friday, 9am to 5pm. <br>
+    <!-- Closed on public holidays.<br> -->
+    <a href="/call-charges">Find out about call charges</a>
+
+    </p>
+    </div> <!-- indent-hairline -->
+
+  </div> <!-- govuk-grid-column-two-thirds -->
+</div> <!-- govuk-grid-row -->
+{% endblock %}

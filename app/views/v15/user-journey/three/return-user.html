@@ -1,0 +1,40 @@
+{% extends "v15/user-journey/three/layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">After your PIP application</h2> 
+
+          <p class="govuk-body">After you have submitted your PIP application it will be reviewed by DWP. It will also be reviewed by a health professional.</p>
+          <p class="govuk-body">We may need you to attend a consultation with a health professional before we make our decision.</p>
+
+      <h2 class="govuk-heading-m">When we will contact you</h2>
+
+      <p class="govuk-body">We will contact you if we need you to attend a consultation. We will also write to you when we have decided whether you can get PIP.</p>
+
+      <p class="govuk-body">You don't need to contact us unless any of the details you gave us have changed.</p>
+
+      <h2 class="govuk-heading-m">You can upload supporting documents</h2>
+      <p class="govuk-body">This might be care plans, reports, letters or other information from health or care professionals.</p>
+
+     <p><a href="#">Upload supporting documents</a></p>
+
+
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+</form>
+
+{% endblock %}

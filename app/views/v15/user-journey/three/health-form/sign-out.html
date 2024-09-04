@@ -1,0 +1,44 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "You have signed out" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          You have signed out
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>If you have not finished your application your progress has been saved. To complete your application or upload and send supporting evidence <a href="/apply-for-pip/verify/your-details">sign in</a> again. You might find it useful to bookmark the sign in page in your internet browser or use the link in the email we sent you.</p>
+
+
+      <p>You will need your email address, mobile phone and password when you next sign in.</p>
+
+      <h2 class="govuk-heading-m">Give feedback</h2>
+
+      <p><a class="govuk-link" href="feedback/feedback" target="_blank">What did you think of this service? (opens in new tab)</a> takes 30 seconds</p>
+
+      <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
+
+
+      <p>It is now safe to close this window.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

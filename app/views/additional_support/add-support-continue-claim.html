@@ -1,0 +1,67 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Do you need help to complete your claim
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v11.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you think you can complete your claim online by yourself?
+            </h1>
+            <div id="continue-claim-hint" class="govuk-hint">
+              If you cannot, or you're not sure, we will contact you by phone to discuss the best way for you to claim.
+            </div>
+          </legend>
+          <!-- <p>This could include help with talking, listening, writing or understanding information that we might send to
+            you.</p> -->
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-support-continue-1" name="add-support-continue"
+                type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="add-support-continue-1">
+                Yes, I can continue by myself
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-support-continue-2" name="add-support-continue"
+                type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="add-support-continue-2">
+                No, I cannot continue by myself
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-support-continue-3" name="add-support-continue"
+                type="radio" value="not sure">
+              <label class="govuk-label govuk-radios__label" for="add-support-continue-3">
+                I'm not sure
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+
+    <div class="govuk-grid-column-one-third">
+      {% include "includes/help-one-third.html" %}
+    </div> <!-- govuk-grid-column-one-third -->
+  </div> <!-- govuk-grid-row -->
+</form>
+
+{% endblock %}

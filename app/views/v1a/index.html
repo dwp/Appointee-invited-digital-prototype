@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Appl;y for PIP
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="special-rules">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Apply for Personal Independence Payment (PIP)
+        </h1>
+
+        <p>Use this service to apply for PIP.</p>
+        <p>You should only use this service if the Department for Work and Pensions (DWP) has asked you to.</p>
+
+        <h2 class="govuk-heading-l">What to expect</h2>
+        <p>You will be asked to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>answer a few basic questions to check if you’re eligible for PIP</li>
+          <li>provide some personal details</li>
+          <li>confirm your identity </li>
+          <li>create a password so you can save your progress</li>
+          <li>give details about how your health condition or disability affects you</li>
+        </ul>
+
+        <h2 class="govuk-heading-l">Other ways to apply</h2>
+        <p>DWP - PIP claims <br>
+          Telephone: 0800 917 2222 <br>
+          Textphone: 0800 917 7777 <br>
+          <a href="#">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 917 2222 <br>
+          <a href="#">Video relay service</a> for British Sign Language (BSL) users - <a href="#">check you can use the service</a>
+          Calling from abroad: +44 191 218 7766 <br>
+          Monday to Friday, 8am to 5pm <br>
+          <a href="#">Find out about call charges</a></p>
+
+        <h2 class="govuk-heading-l">After you apply</h2>
+        <p>DWP will look at your application to make a decsion.</p>
+        <p>You might be invited to an assessment appointment to make sure DWP has enough information about you to make a decsion on your application.</p>
+        <p>Once DWP has all the information it needs to make a decision it will write to you to let you know if you’re entitled to PIP and how much you will get.</p>
+
+        <!-- <input type="submit" class="govuk-button govuk-!-margin-top-6" value="Continue" id="submit"> -->
+
+        <a href="special-rules" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+            Start now
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg>
+        </a>
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

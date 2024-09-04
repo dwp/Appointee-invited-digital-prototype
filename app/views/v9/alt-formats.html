@@ -1,0 +1,85 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Do you need communications in another format
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you need communications in another format?
+            </h1>
+          </legend>
+
+          <div id="changed-name-hint" class="govuk-hint">
+            This means things we might send you after you apply, like letters and leaflets. Other formats could be Braille, Sign Language, audio formats or other paper formats.
+          </div>
+
+          <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communication-format-1" name="communication-format" type="radio"
+                value="Yes" data-aria-controls="communication-format">
+              <label class="govuk-label govuk-radios__label" for="communication-format-1">
+                Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="communication-format">
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="format-type-1" name="format-type" type="radio" value="Braille">
+                    <label class="govuk-label govuk-radios__label" for="format-type-1">
+                      Braille
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="format-type-2" name="format-type" type="radio"
+                      value="Sign Language">
+                    <label class="govuk-label govuk-radios__label" for="format-type-2">
+                      Sign Language
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="format-type-3" name="format-type" type="radio"
+                      value="Audio">
+                    <label class="govuk-label govuk-radios__label" for="format-type-3">
+                      Audio
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="format-type-4" name="format-type" type="radio"
+                      value="Paper and other formats">
+                    <label class="govuk-label govuk-radios__label" for="format-type-4">
+                      Paper and other formats
+                    </label>
+                  </div> <!-- govuk-radios__item -->
+                </div> <!-- govuk-radios govuk-radios -->
+              </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communication-format-2" name="communication-format" type="radio"
+                value="No">
+              <label class="govuk-label govuk-radios__label" for="communication-format-2">
+                No
+              </label>
+            </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+When were you admitted to hospital
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v11.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              When did you go into hospital?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-admission-1" name="hospital-admission" type="radio" value="Today">
+              <label class="govuk-label govuk-radios__label" for="hospital-admission-1">
+                Today
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-admission-2" name="hospital-admission" type="radio" value="Before today">
+              <label class="govuk-label govuk-radios__label" for="hospital-admission-2">
+                Before today
+              </label>
+            </div>
+          </div> <!-- govuk-radios -->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

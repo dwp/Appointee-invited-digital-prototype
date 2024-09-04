@@ -1,0 +1,80 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-v14.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} 
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v14/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Enter a condition or disability</h1>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What we mean by condition or disability
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+             Conditions and disabilities include:
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>physical conditions, like arthritis, heart disease or diabetes</li>
+                  <li>blindness and sight impairment</li>
+                  <li>hearing and speech difficulties</li>
+                  <li>learning, developmental or behavioural difficulties</li>
+                  <li>cognitive impairment</li>
+                  <li>mental health conditions, like depression, anxiety or bipolar disorder</li>
+                  <li>neurological conditions, like Parkinson's or epilepsy</li>
+                </ul>
+          </div>
+    </details>
+
+      {{ govukInput({
+        id: 'condition-name-1',
+        name: 'condition-name',
+        label: {
+          html: 'Name of condition or disability',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, kidney failure."
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'startDate',
+        name: 'condition-start-date',
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          html: 'Approximate start date',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, March 2010."
+        }
+      }) }}
+
+
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

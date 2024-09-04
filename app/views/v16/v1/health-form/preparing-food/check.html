@@ -1,0 +1,112 @@
+{% set pageTitle = "Check your answers: preparing food" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="#">
+
+      <span class="govuk-caption-xl">Preparing food</span>
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <!-- <h1 class="govuk-heading-l">Check your answers: preparing food</h1> -->
+
+      {% if data['preparingfood-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you preparing food, or prevent you from doing so?"
+              },
+              value: {
+                text: data['preparingfood-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "./intro",
+                    text: "Change",
+                    visuallyHiddenText: " your answer for whether your condition affects you preparing food, or prevents you from doing so"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "How well can you prepare and cook food?"
+              },
+              value: {
+                text: data['preparingfood-info']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "./info",
+                    text: "Change",
+                    visuallyHiddenText: " your answer for how well can you prepare and cook food"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with preparing food and how you manage them"
+              },
+              value: {
+                html: data['preparingfood-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "./details",
+                    text: "Change",
+                    visuallyHiddenText: " your answer for difficulties you have with preparing food and how you manage them"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you preparing food, or prevent you from doing so?"
+              },
+              value: {
+                text: data['preparingfood-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "./intro",
+                    text: "Change",
+                    visuallyHiddenText: " your answer for whether your condition affects you preparing food, or ever prevents you from doing so"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <div class="govuk-button-group">
+        <a href="../eating-and-drinking/intro" class="govuk-button">Confirm and continue</a>
+        <a href="../task-list?preparingfood=completed" class="govuk-button govuk-button--secondary">Confirm and return to list</a>
+      </div>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

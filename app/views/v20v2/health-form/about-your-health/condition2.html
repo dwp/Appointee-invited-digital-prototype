@@ -1,0 +1,69 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'What health condition or disability do you have?',
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>By condition or disability, we mean physical, sight, hearing or speech difficulties, learning, developmental or behavioural difficulties or mental health conditions.</p>
+
+      <p>You can add other conditions and disabilities later if you need to.</p>
+
+      {{ govukInput({
+        id: 'condition-name-2',
+        name: 'condition-name-2',
+        label: {
+          html: 'Name of your condition or disability',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, kidney failure."
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'condition-date-2',
+        name: 'condition-date-2',
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          html: 'Approximate start date',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example, about 14 months ago."
+        }
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

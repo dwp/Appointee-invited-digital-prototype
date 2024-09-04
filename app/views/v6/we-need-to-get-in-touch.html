@@ -1,0 +1,42 @@
+{% extends "layout-signed-in-v6.html" %}
+
+{% block pageTitle %}
+We need to get in touch with you
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        We need to get in touch with you
+      </h1>
+      <p class="govuk-body-l">You might get PIP, but we need to talk to you about your residence in the UK or time you’ve spent abroad.</p>
+      <p>It’s easier to speak to you to get the information we need. This is because the rules around claiming PIP can be complicated if you’re not a UK citizen or have been abroad for a significant period.</p>
+      
+      <p>Someone from the Department for Work and Pensions will call you in the next xx days between 8am and 8pm, Monday to Friday.</p> 
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="call-times">
+            Enter the times you are not available
+          </label>
+        </h1>
+        <div id="call-times-hint" class="govuk-hint">
+          For example Monday 1st January, 12 pm to 2pm
+        </div>
+        <input class="govuk-input govuk-!-width-full" id="call-times" name="call-times" type="text" aria-describedby="call-times-hint">
+      </div> <!-- govuk-form-group -->
+      <p>When we get in touch, we’ll tell you what information we need and what to do next.</p>
+
+      <input type="submit" class="govuk-button" value="Submit" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

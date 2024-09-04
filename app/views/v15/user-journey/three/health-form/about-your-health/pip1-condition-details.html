@@ -1,0 +1,66 @@
+{% set pageTitle = "About your health conditions or disabilities" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-!-font-size-24">Condition or disability: <strong>{{ data['your-condition'] | capitalize }}</strong></p>
+
+    <h1 class="govuk-heading-l">About this condition or disability</h1>
+
+    <p>Tell us about:</p>
+
+    <!-- <p>For "{{ data['your-condition'] | capitalize }}", tell us about:</p> -->
+
+    <!-- <p>For {{ data['your-condition'] | capitalize }}, tell us about:</p> -->
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "pip1-condition-detail",
+        id: "pip1-condition-detail",
+        rows: "18",
+        hint: {
+          html: "
+          <ul class='govuk-list govuk-list--bullet'>
+            <li>
+              tablets or other medication you are taking or will be taking and the dosage
+            </li>
+            <li>
+              any treatments you have had, you are currently having or have planned for the future (include private as well as NHS funded treatments)</li>
+            <li>any side effects these have on you</li>
+          </ul>"
+        }
+      }) }}
+
+      <!-- <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="condition-start-date">
+          Approximate start date?
+          </label>
+        </h1>
+        <div id="condition-start-date-hint" class="govuk-hint">
+          For example, about 14 months ago.
+        </div>
+        <input class="govuk-input" id="condition-start-date" name="condition-start-date" type="text" aria-describedby="condition-start-date-hint">
+      </div>
+ -->
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    <p><a href="/v15/user-journey/three/health-form/task-list-health-return">Return to list</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

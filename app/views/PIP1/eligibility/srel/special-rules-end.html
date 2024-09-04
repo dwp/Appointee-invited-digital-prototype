@@ -1,0 +1,33 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+Based on your answer, you may be eligible for PIP
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Based on your answer, you may be eligible for PIP</h1>
+
+      <p>Because you might have x months or less to live, we will ask you fewer questions to complete your PIP claim than usual.</p>
+
+      <p>You may also start getting PIP payments sooner than usual.</p>
+
+      <p>This is sometimes called 'special rules for end of life'.</p>
+
+      <p><a href="">How to claim if you have 6 months or less to live</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

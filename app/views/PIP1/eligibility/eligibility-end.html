@@ -1,0 +1,29 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+You may be eligible for PIP
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Based on your answers, you may be eligible for PIP</h1>
+
+      <p>Continue to check if you can claim online or <a href="https://www.gov.uk/pip/how-to-claim"</a>find out about other ways to claim.</p>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

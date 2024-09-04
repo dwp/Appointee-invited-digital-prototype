@@ -1,0 +1,56 @@
+{% set pageTitle = "Other conditions" %}
+
+{% extends "layout-signed-in-v5.html" %}
+
+{% block pageTitle %}
+Condition
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-!-font-size-24">You have added details for:
+      <br><strong>{{ data['hcp-1-name'] | capitalize }}</strong>
+      <br><strong>{{ data['hcp-2-name'] | capitalize }}</strong>
+    </p>
+
+    <form id="form" method="post" action="#">
+
+      {{ govukRadios({
+      idPrefix: "hcp-3",
+      name: "hcp-3",
+      fieldset: {
+      legend: {
+      text: "Are there any other health professionals we can contact?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+      }
+      },
+      items: [
+      {
+      value: "Yes",
+      text: "Yes"
+      },
+      {
+      value: "No",
+      text: "No"
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-one-third #}
+</div>{# /govuk-grid-row #}
+{% endblock %}

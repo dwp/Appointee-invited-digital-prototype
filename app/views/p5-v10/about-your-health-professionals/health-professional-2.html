@@ -1,0 +1,150 @@
+{% set pageTitle = "Health professional details" %}
+
+{% extends "layout-p5-v10.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Health professional details</h1>
+
+      <p class="govuk-hint">You can add details for other health professionals later if you need to.</p>
+
+      <form action="/p5-v10/about-your-health-professionals/another-2" method="post" novalidate>
+
+        {{ govukInput({
+          label: {
+            text: "Their name"
+          },
+          id: "professional-name-2",
+          name: "professional-name-2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Profession"
+          },
+          id: "professional-profession-2",
+          name: "professional-profession-2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Phone number, including dialling code"
+          },
+          id: "professional-phone-2",
+          name: "professional-phone-2",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
+        }) }}
+
+
+        {% call govukFieldset({
+          legend: {
+            text: "Their address",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: true
+          }
+        }) %}
+
+        <span id="address-hint" class="govuk-hint">
+          This is where you see them such as the health centre, GP surgery or hospital address.
+        </span>
+
+        {{ govukInput({
+          label: {
+            html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+          },
+          id: "professional-address-line-1-2",
+          name: "professional-address-line-1-2",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+          },
+          id: "professional-address-line-2-2",
+          name: "professional-address-line-2-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Town or city"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "professional-address-town-2",
+          name: "professional-address-town-2",
+          autocomplete: "address-level2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "professional-address-postcode-2",
+          name: "professional-address-postcode-2",
+          autocomplete: "postal-code"
+        }) }}
+
+      {% endcall %}
+
+        {{ govukDateInput({
+        id: "professional-date-2",
+        fieldset: {
+          legend: {
+            text: "When did you last see them?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "This can be an approximate date – for example, 3 2020"
+        },
+        items: [
+          {
+            id: "professional-date-month-2",
+            name: "professional-date-month-2",
+            label: "Month",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'condition-%index%--dob--month-',
+              'data-id': 'condition-%index%--dob--month-'
+            }
+          },
+          {
+            id: "professional-date-year-2",
+            name: "professional-date-year-2",
+            label: "Year",
+            classes: "govuk-input--width-4",
+            attributes: {
+              'data-name': 'condition-%index%--dob--year-',
+              'data-id': 'condition-%index%--dob--year-'
+            }
+          }
+        ]
+      }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      {% include "p5-v10/about-your-health-professionals/_return-link.html" %}
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

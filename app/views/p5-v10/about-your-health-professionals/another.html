@@ -1,0 +1,62 @@
+{% set pageTitle = "Other health professionals" %}
+
+{% extends "layout-p5-v10.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-!-font-size-24">You have added details for:
+        <br><strong>{{ data['professional-name-1'] | title }}</strong>
+      </p>
+
+      <form action="/p5-v10/about-your-health-professionals/another-answer" method="post" novalidate>
+
+        {{ govukRadios({
+          idPrefix: "professional2",
+          name: "professional2",
+          fieldset: {
+            legend: {
+              text: "Are there any other health professionals that you would like to tell us about?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: '
+            <p class="govuk-!-margin-top-2">For example, a GP, hospital doctor, specialist nurse, community psychiatric nurse, occupational therapist, physiotherapist, social worker, counsellor or support worker.</p>
+            '
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      {% include "p5-v10/about-your-health-professionals/_return-link.html" %}
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

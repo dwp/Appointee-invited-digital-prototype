@@ -1,0 +1,59 @@
+{% set pageTitle = "Does your condition affect you moving around?" %}
+
+{% extends "layout-p5-v10.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p5-v10/moving-around/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "movingaround-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you moving around?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means how well you can walk without any specialist equipment or support from another person </p>
+          '
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("movingaround-question", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("movingaround-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p5-v10/moving-around/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

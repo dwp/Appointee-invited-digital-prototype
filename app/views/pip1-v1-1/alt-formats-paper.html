@@ -1,0 +1,61 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Alternative contact format paper
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Which paper format do you need?
+                        </h1>
+                    </legend>
+                    <div id="contact-hint" class="govuk-hint">
+                        Select one option.
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-formats-paper-1" name="alt-formats-paper" type="radio" value="Coloured paper" data-aria-controls="conditional-coloured-paper">
+                            <label class="govuk-label govuk-radios__label" for="alt-formats-paper-paper-1">
+                                Coloured paper
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-formats-paper-2" name="alt-formats-paper" type="radio" value="Large print 16 point font" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-radios__label" for="alt-formats-paper-paper-2">
+                                Large print &ndash; 16 point font
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt-formats-paper-paper-3" name="alt-formats-paper" type="radio" value="Large print with a custom font" data-aria-controls="conditional-contact-3">
+                            <label class="govuk-label govuk-radios__label" for="alt-formats-paper-paper-3">
+                                Large print with a custom font
+                            </label>
+                        </div> <!-- govuk-radios__item -->
+                      </div> <!-- govuk-radios -->
+                </fieldset>
+            </div> <!-- govuk-form-group -->
+
+            <p class="govuk-body">The Department for Work and Pensions may contact you to discuss your communication needs.</p>
+
+            <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+
+        </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

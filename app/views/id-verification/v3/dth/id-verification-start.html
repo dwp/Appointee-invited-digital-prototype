@@ -1,0 +1,41 @@
+{% extends "layout-idv-signed-in.html" %}
+
+{% set pageQuestion = "Prove your identity" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        We need to ask some questions to prove your identity
+      </h1>
+
+      <p>You’ll need to choose 2 things we can ask you about:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your valid UK passport</li>
+        <li>a payslip dated after 17 April 2020, or your most recent P60</li>
+        <li>a recent Self Assessment tax return</li>
+        <li>your tax credit claims - this can include Voice ID</li>
+        <li>your credit record - for example, the year you took out a credit card or phone contract.</li>
+      </ul>
+
+      <p>
+        If you cannot answer the questions, you can <a href="more-information">confirm your identity another way</a>.
+      </p>
+
+      <p>We ask these questions to protect against fraud.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "your-details"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

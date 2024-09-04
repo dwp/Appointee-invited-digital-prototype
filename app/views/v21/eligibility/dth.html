@@ -1,0 +1,59 @@
+{% set pageTitle = "Sign in" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Sign in</h1>
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+          classes: "govuk-input--width-20",
+          id: "email",
+          name: "email",
+          type: "email",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+        {{ govukInput({
+        label: {
+          text: "Enter password"
+        },
+          classes: "govuk-input--width-20",
+          id: "password",
+          name: "password",
+          type: "password",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p><a href="/v21/eligibility/register-start">Register now</a> if you have not used this service before.</p>
+
+      <h2 class="govuk-heading-m">Problems signing in</h2>
+
+      <p><a href="#">I forgot my password</a></p>
+      <p><a href="#">I can't access the email I use to sign in</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

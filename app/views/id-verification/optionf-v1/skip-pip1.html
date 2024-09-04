@@ -1,0 +1,21 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="panel--prototype">
+      <h1 class="govuk-heading-m">
+        PIP1 questions
+      </h1>
+      <p>In real life, a citizen would answer some questions about themselves.</p>
+      <p>We won't go through them as part of the option F prototype.</p>
+      <p>You can check the Apply for PIP registration and PIP1 questions in the <a href="https://pip-starting.herokuapp.com/index-live-v1-0">private beta prototype</a> (password: gnitrats-pip).</p>
+    </div>
+    <a class="govuk-button" href="live-pip1/confirmation">Continue</a>
+  </div>
+</div>
+{% endblock %}

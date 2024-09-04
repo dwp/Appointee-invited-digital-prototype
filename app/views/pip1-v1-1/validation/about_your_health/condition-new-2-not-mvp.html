@@ -1,0 +1,143 @@
+{% extends "layout-signed-in-v7.html" %}
+{% block pageTitle %}
+Your health condition
+{% endblock %}
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form id="form" method="post" action="#">
+
+            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+                data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                        <li>
+                            <a href="#your-condition">Enter a physical or mental health condition</a>
+                        </li>
+                        <li>
+                            <a href="#condition-start-date">Enter an approximate start date</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- govuk-error-summary -->
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Enter a physical or mental health condition or
+                disability you have</h1>
+
+            <div class="govuk-body">
+                <p>You can add other conditions or disabilities later.</p>
+                <p>Conditions and disabilities include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>physical conditions, like arthritis, heart disease or diabetes</li>
+                    <li>blindness and sight impairment</li>
+                    <li>hearing and speech difficulties</li>
+                    <li>learning, developmental or behavioural difficulties</li>
+                    <li>cognitive impairment</li>
+                    <li>mental health conditions, like depression, anxiety or bipolar disorder</li>
+                    <li>neurological conditions, like Parkinson's or epilepsy</li>
+                </ul>
+            </div> <!-- govuk-body -->
+
+            <div class="govuk-form-group govuk-form-group--error">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="your-condition">
+                        Condition or disability
+                    </label>
+                </h1>
+                <span id="add-support-communicating-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span>Enter a physical or mental health condition
+                </span>
+
+                <input class="govuk-input govuk-input--error" id="your-condition" name="your-condition" type="text"
+                    aria-describedby="your-condition">
+            </div> <!-- govuk-form-group -->
+
+            <div class="govuk-form-group govuk-form-group--error">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="condition-start-date">
+                        Approximate start date?
+                    </label>
+                </h1>
+                <div id="condition-start-date-hint" class="govuk-hint">
+                    For example, about 14 months ago.
+                </div>
+                <span id="add-support-communicating-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span>Enter an approximate start date
+                </span>
+                <input class="govuk-input govuk-input--error" id="condition-start-date" name="condition-start-date" type="text"
+                    aria-describedby="condition-start-date-hint">
+            </div> <!-- govuk-form-group -->
+
+            <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+                data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                        <li>
+                            <a href="#your-condition-2">Health condition or disability must be 200 characters or fewer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- govuk-error-summary -->
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Enter a physical or mental health condition or
+                disability you have</h1>
+
+            <div class="govuk-body">
+                <p>You can add other conditions or disabilities later.</p>
+                <p>Conditions and disabilities include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>physical conditions, like arthritis, heart disease or diabetes</li>
+                    <li>blindness and sight impairment</li>
+                    <li>hearing and speech difficulties</li>
+                    <li>learning, developmental or behavioural difficulties</li>
+                    <li>cognitive impairment</li>
+                    <li>mental health conditions, like depression, anxiety or bipolar disorder</li>
+                    <li>neurological conditions, like Parkinson's or epilepsy</li>
+                </ul>
+            </div> <!-- govuk-body -->
+
+            <div class="govuk-form-group govuk-form-group--error">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="your-condition-2">
+                        Condition or disability
+                    </label>
+                </h1>
+                <span id="add-support-communicating-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span>Health condition or disability must be 200 characters or fewer
+                </span>
+
+                <input class="govuk-input govuk-input--error" id="your-condition-2" name="your-condition-2" type="text"
+                    aria-describedby="your-condition">
+            </div> <!-- govuk-form-group -->
+
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="condition-start-date">
+                        Approximate start date?
+                    </label>
+                </h1>
+                <div id="condition-start-date-hint" class="govuk-hint">
+                    For example, about 14 months ago.
+                </div>
+                <input class="govuk-input" id="condition-start-date" name="condition-start-date" type="text"
+                    aria-describedby="condition-start-date-hint">
+            </div> <!-- govuk-form-group -->
+
+            <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        </form>
+    </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+{% endblock %}

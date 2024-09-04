@@ -1,0 +1,37 @@
+{% extends "layout-signed-out-p5.html" %}
+
+{% block pageTitle %}
+What is your postcode?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl for="width-10"" for="postcode">
+           What is your postcode?
+          </label>
+        </h1>
+        <div id="action-hint" class="govuk-hint">
+          This is a new service. We are testing it with people in certain postcode areas.
+        </div>
+        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+      </div>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}
