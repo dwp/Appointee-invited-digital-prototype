@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Name
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="apply" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="nino">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="name">
+              What is their name?
+            </label>
+          </h1>
+          <p>Tell us about the person with the health condition or disability</p>
+          <div id="account-number-hint" class="govuk-hint">
+            First name
+          </div>
+          <input class="govuk-input govuk-input--width-30" id="first-name" name="first-name" type="text">
+          <div id="account-number-hint" class="govuk-hint">
+            Last name
+          </div>
+          <input class="govuk-input govuk-input--width-30" id="last-name" name="last-name" type="text">
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

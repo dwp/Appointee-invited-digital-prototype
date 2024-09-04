@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Applying for someone else
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="special-rules" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="over-16">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Applying for someone else
+        </h1>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="terminally-ill">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Are you applying on behalf of someone else?
+              </h2>
+            </legend>
+            <div id="changed-name-hint" class="govuk-hint">
+              This can be in an official capacity or just helping someone else answwer the questions.
+            </div>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="somone-else" name="someone-else" type="radio" value="No, the application is for myself">
+                <label class="govuk-label govuk-radios__label" for="someone else">
+                  No, the application is for myself
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="someone-else-2" name="someone-else" type="radio" value="Yes, helping someone with their application">
+                <label class="govuk-label govuk-radios__label" for="someone-else-2">
+                  Yes, I'm helping somone with their application
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="someone-else-3" name="someone-else" type="radio" value="Yes, applying as an aofficially appointed person">
+                <label class="govuk-label govuk-radios__label" for="someone-else-3">
+                  Yes, I'm applying as an offically appointed person (or am in the process of doing so)
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios -->
+
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

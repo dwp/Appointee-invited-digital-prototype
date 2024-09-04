@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Over 16
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="apply-for-someone-else" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="health-condition">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Are they over 16 but under State Pension age?
+              </h1>
+            </legend>
+              <p>If your unsure you can <a href="#">check your State pension age (opens in new tab)</a>.</p>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="over-16" name="over-16" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="over-16">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="over-16-2" name="over-16" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="over-16-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios--inline -->
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

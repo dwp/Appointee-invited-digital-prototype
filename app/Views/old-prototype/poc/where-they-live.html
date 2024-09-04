@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Where they live
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="health-condition" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="check-answers-1">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Have they lived in England, Scotland or Wales for at least 2 of the last 3 years?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-lived" name="where-lived" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="where-lived">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-lived-2" name="where-lived" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="where-lived-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios--inline -->
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

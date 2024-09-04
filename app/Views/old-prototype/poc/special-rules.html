@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Special rules
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="start" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="apply-for-someone-else">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Special rules for terminally ill people
+        </h1>
+
+        <p>We have special rules for people who are terminally ill. This means people with a progressive disease who are not expected to live longer than anothjer 6 months.</p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="terminally-ill">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Do you want to claim under the special rules for terminally ill people?
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="terminall-ill-1" name="terminally-ill" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="terminally-ill-1">
+                  Yes
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="terminally-ill-2" name="terminally-ill" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="terminally-ill-2">
+                  No
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios govuk-radios--inline -->
+
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}
