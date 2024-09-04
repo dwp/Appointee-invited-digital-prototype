@@ -1,0 +1,61 @@
+{% set pageTitle = "Tell us about the difficulties you have with monitoring changes in your health condition or disability and taking medication, and how you manage them" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "managingtreatments-details",
+        id: "managingtreatments-details",
+        rows: "18",
+        value: data['managingtreatments-details'],
+        label: {
+          text: "Difficulties managing treatments",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often they have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why they have it, or how it relates to their condition</li>
+            <li>any aids or adaptations they use, or help they get from another person</li>
+            <li>any help you feel they need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“About four days a week, they have trouble taking their arthritis medication because their wrists hurt when they try to open the pill bottle. They put their pills in a dosette box so they do not need to open the pill bottle on days when they are unable.”</p>
+            <p>“Every evening, they have trouble monitoring their blood glucose levels because they forget and get confused on how to do it. Their partner prompts them and helps them measure their blood glucose levels in the evening.”</p>
+          </div>
+          <h2 class="govuk-heading-m">Tell us about the difficulties they have with monitoring changes in their health condition or disability and taking medication, and how they manage them</h2>
+
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

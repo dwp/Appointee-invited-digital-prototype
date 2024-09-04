@@ -1,0 +1,43 @@
+{% block pageTitle %}
+Start
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form id="form" method="post" action="#">
+        <h1 class="govuk-heading-xl">
+          How to answer the questions</h1>
+
+        <p>As an appointee, please answer the questions from your 
+          point of view.
+        </p>
+            <p>You can tell us about their needs and the help they require 
+              from your perspective. </p>
+              <div class="govuk-inset-text">
+                <h2 class="govuk-heading-m">Examples</h2>
+                <p> "Alex always has difficulty cooking safely by himself as he forgets 
+                  if the hob is on."</p>
+                <p>“Alex's carer helps by supervising him while he cooks and 
+                  prompting him if he forgets something."</p>
+              </div>
+      
+          </ul>
+
+        <a href="health-form/task-list.html" class="govuk-button govuk-button">Continue</a>
+      
+      
+
+        </form>
+    </div> <!-- govuk-grid-column-two-thirds -->
+</div> <!-- govuk-grid-column-two-thirds -->
+
+
+{% endblock %}

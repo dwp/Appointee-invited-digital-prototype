@@ -1,0 +1,77 @@
+{% set pageTitle = "How well can you dress and undress?" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "dressingandundressing-info",
+        fieldset: {
+          legend: {
+            text: "How well can you dress and undress?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>Select the option that is most relevant to you for more than half of the days in a year.</p>
+        '
+        },
+        items: [
+          {
+            value: "dressingandundressing-option-1",
+            text: "I can dress and undress unaided",
+            checked: checked("dressingandundressing-info", "Option 1")
+          },
+          {
+            value: "dressingandundressing-option-2",
+            text: "I need to use an aid or applicance to be able to dress and undress",
+            checked: checked("dressingandundressing-info", "Option 2")
+          },
+          {
+            value: "dressingandundressing-option-3",
+            text: "I need either prompting to be able to dress, undress or determine appropriate circumstances for remianing clothed, or need prompting or assistance to be able to select appropriate clothing",
+            checked: checked("dressingandundressing-info", "Option 3")
+          },
+          {
+            value: "dressingandundressing-option-4",
+            text: "I need assistance to be able to dress and undress my lower body",
+            checked: checked("dressingandundressing-info", "Option 4")
+          },
+          {
+            value: "dressingandundressing-option-5",
+            text: "I need assistance to be able to dress and undress my upper body",
+            checked: checked("dressingandundressing-info", "Option 5")
+          },
+          {
+            value: "dressingandundressing-option-6",
+            text: "I cannot dress or undress at all",
+            checked: checked("dressingandundressing-info", "Option 6")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

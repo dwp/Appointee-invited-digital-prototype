@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "123456 is your access code for Apply for PIP" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+<p style="padding: 20px; margin: 0"><strong>Subject:</strong> {{ pageTitle }}</p>
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "notify-width-container-border"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="notify-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full sans">
+
+      <h1 class="govuk-heading-m">123456 is your access code for Apply for Personal Independence Payment.</h1>
+
+      <p>The code will expire in 5 minutes.</p>
+
+{#       <p>Your Apply for Personal Independence Payment access code is:</p> #}
+
+{#       <p class="govuk-body-l"><strong>123456</strong></p> #}
+
+{#       <div class="govuk-inset-text">
+  123456
+</div>
+
+      <p>The code will expire at x:xxam/pm.</p> #}
+      <p>Regards,</p>
+      <p>Apply for PIP service</p>
+
+
+
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+</div>{# /notify-width-container #}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

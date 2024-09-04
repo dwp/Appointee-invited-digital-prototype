@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Personal Independence Payment: We have received your information" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+<p style="padding: 20px; margin: 0"><strong>Subject:</strong> {{ pageTitle }}</p>
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "notify-width-container-border"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="notify-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full sans">
+
+      <p>This is an automatic reply email. Thank you for sending information about how your disability affects you.</p>
+
+      <p>We will send your information to a health professional to consider, before we make our decision. If we need more information about how your health condition or disability affects your daily life we may invite you to a telephone assessment.</p>
+
+      <h2 class="govuk-heading-m">If you have uploaded any supporting evidence</h2>
+
+      <p>We will include this in your claim to PIP and will consider this before we make our decision.</p>
+
+      <h2 class="govuk-heading-m">If you need to upload more supporting evidence</h2>
+
+      <!-- <p>If you receive any more evidence that might support your application, you can <a href="/p4/sign-in/sign-in">sign in</a> and upload it later. You might find it useful to bookmark the sign in page in your internet browser or keep this email.</p> -->
+
+      <p>If you need to upload any more evidence that might support your application you will need to sign in again. Go to: <a href="/p5-v12/sign-in/sign-in">[URL of sign in page]</a></p>
+
+      <p>You might find it useful to bookmark the sign in page in your internet browser or keep this email.</p>
+
+      <p>You will need your email address, mobile phone and password to sign in.</p>
+
+      <p>You will not need to answer the questions about your daily living activities or mobility again.</p>
+
+      <h2 class="govuk-heading-m">If anything changes or you need help</h2>
+
+      <p>Please call us if any of the details you gave us have changed or if you need help with your claim.</p>
+
+      <p>If you do not want to continue with your PIP claim, please let us know.</p>
+
+      <p>You can call us on 0800 121 4433 or Textphone: 0800 121 4493 if you have speech or hearing difficulties.</p>
+
+      <h2 class="govuk-heading-m">General enquiries</h2>
+
+      <p>This email address is only being used to receive PIP claim forms and supporting evidence that has been uploaded. We will not answer any emails sent to this email address. </p>
+
+      <p>If you have any questions about PIP please call 0800 121 4433 or Textphone: 0800 121 4493 if you have speech or hearing difficulties.</p>
+
+      <p>Yours sincerely </p>
+
+      <p>Office manager</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+</div>{# /notify-width-container #}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

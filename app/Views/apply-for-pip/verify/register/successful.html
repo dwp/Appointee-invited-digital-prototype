@@ -1,0 +1,39 @@
+{% set pageTitle = "Your registration was successful" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out-dth.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your registration was successful</h1>
+
+      <form action="#" method="post" novalidate>
+
+        <p>You've successfully registered for this service and can now sign in.</p>
+
+        <p>You will recieve a confirmation email shortly.</p>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <p>When you sign back in for the first time, you'll be asked to enter the email and password you used to register for this service.</p>
+
+        <p>A code will be sent to the mobile phone number you gave us so we can confirm it is you.</p>
+
+        <p>You will then be taken to your service homepage.</p>
+
+        {{ govukButton({
+          text: "Continue to sign in"
+        }) }}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

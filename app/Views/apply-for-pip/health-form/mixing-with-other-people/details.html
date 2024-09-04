@@ -1,0 +1,62 @@
+{% set pageTitle = "Tell us about the difficulties you have with mixing with other people and how you manage them" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "mixingwithotherpeople-details",
+        id: "mixingwithotherpeople-details",
+        rows: "18",
+        value: data['mixingwithotherpeople-details'],
+        label: {
+          text: "Difficulties mixing with other people",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often they have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is</li>
+
+            <li>why they have it, or how it relates to their condition</li>
+            <li>any help they get from another person</li>
+            <li>any help you feel they need but do not get</li>
+
+            <li>whether severe anxiety or distress stops them from doing this</li>
+            <li>about any risk of harm to them and others</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Example</h2>
+            <p>“They are always unable to meet new people by themselves because they become very distressed. Their carer supports them when they interact with new people so they do not become distressed.”</p>
+          </div>
+          <h2 class="govuk-heading-m">Tell us about the difficulties they have when mixing with other people and how they manage them</h2>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

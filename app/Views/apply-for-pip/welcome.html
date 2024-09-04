@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Personal Independence Payment: health condition or disability" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+<p style="padding: 20px; margin: 0"><strong>Subject:</strong> {{ pageTitle }}</p>
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "notify-width-container-border"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="notify-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full sans">
+
+      <p>Dear Jasmine,</p>
+
+      <p>Thank you for starting a Personal Independence Payment (PIP) claim for <br> James Smith.</p>
+
+      <p>For stage 2 of the PIP application, we will ask about their daily living and mobility 
+        needs to help us make our decision.</p>
+      <p>If we need more information, we may invite you to complete an assessment by phone.
+      </p>
+
+      <h2 class="govuk-heading-m">When you need to do it by</h2>
+
+      <p>Please answer all the questions and upload any evidence you have by: <br>
+       <b>15 October 2024 </b> </p>
+
+      <p>If you miss this date, we may end this PIP claim. If you need more time to complete, 
+        let us know. </p>
+      
+        <h1 class="govuk-heading-l">What you need to do next </h1>
+
+     <p>You need to register to access our online service. </p>
+     <h2 class="govuk-heading-m">Useful tips before you start</h2>
+
+     <p>It might be helpful to keep a diary for a few days. Note down: <br>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>how their condition or disability affects their daily life </li>
+          <li>a list of things they need help with or find difficult</li>
+          </ul>
+          <br>
+          <p>You can also gather information to help you fill in the form and it can be uploaded as evidence to support your answers</p>.
+
+
+     <h2 class="govuk-heading-m">How to register for the online service</h2>
+
+     <p>You will be prompted to register and set a password. We will verify it's you through a text message. <br>
+      <h2 class="govuk-heading-m">Before you start you will need</h2> 
+     <ul class="govuk-list govuk-list--bullet">
+      <li>the email address we sent this email to and access to your emails </li>
+        <li>your mobile phone</li>
+      <li>James' National Insurance number</li>
+      <li>James' date of birth </li>
+    </ul>
+
+      <p><a href="../apply-for-pip/account-home.html" >Register now</a></p>
+
+      <h2 class="govuk-heading-l">How to complete the form</h2>
+
+      <p>Once logged in, you will be asked questions about James' health condition 
+        or disability and how it affects them. You'll also be prompted to upload any 
+        supporting evidence.</p>
+
+      <p>You do not need to answer all the questions in one go and can save and return. </p>
+
+      <p>Save this email or bookmark the sign in page so you can continue.</p>
+
+  
+
+      <h2 class="govuk-heading-l">Are you receiving Disability Living 
+        Allowance (DLA)?</h2>
+
+      <p>DLA is being replaced by PIP. If you are getting DLA at the moment, this will stop if 
+        you do not complete the form by the return date.</p>
+
+        <h2 class="govuk-heading-l">Help completing the form</h2>
+      <p>There is information at each step of the online service to help you. </p>
+      <p>You can also refer to the 'help with answering questions and providing evidence' 
+        PDF guide for completing the form. You can download it once you have registered.</p>
+        <p>If you change your mind and would prefer to complete a paper form instead, contact us so we can post it to you.</p>
+
+        <h2 class="govuk-heading-l">Contact DWP</h2>
+        <div class="govuk-inset-text">
+      <p>Telephone: 0800 121 4433<br>
+      Textphone (if you have speech or hearing difficulties): 0800 121 4493 <br>Relay UK (if you cannot hear or speak on the phone): 18001 then 0800 121 4433 <br>
+      <a href="#">https://www.relayuk.bt.com </a></p>
+
+      <p>Video relay service for British Sign Language (BSL) users:<br> <a href="#">https://
+        conntect.interpreterslive.co.uk/vrs?ilc=DWP</a> <br> <br>
+        Check if you can use the video relay service: <br> 
+        <a href="#"> https://www.youtube.com/watch?v=oELNMfAvDxw </a></p>
+        <p>Open 9am to 5pm, Monday to Friday</p>
+        </div>
+        
+        <h2 class="govuk-heading-l">Keep your information safe</h2>
+        <p>Please do not reply to this message. Any email sent in response will be deleted 
+          without being read. DWP will never ask you to send any usernames, passwords, 
+          personal, health, medical or bank account information via email.</p>
+
+      <p>Yours sincerely,</p>
+
+      <p>Office manager</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+</div>{# /notify-width-container #}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

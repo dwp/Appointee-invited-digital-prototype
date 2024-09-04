@@ -1,0 +1,61 @@
+{% set pageTitle = "Tell us about the difficulties you have with eating and drinking and how you manage them" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "eatinganddrinking-details",
+        id: "eatinganddrinking-details",
+        rows: "18",
+        value: data['eatinganddrinking-details'],
+        label: {
+          text: "Difficulties eating and drinking",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        hint: {
+          html: '
+          <p>For each difficulty, please tell us:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how often they have this difficulty – tell us about both good and bad days</li>
+            <li>what the difficulty is </li>
+
+            <li>why they have it, or how it relates to their condition </li>
+            <li>any aids or adaptations they use, or help they get from another person</li>
+            <li>any help you feel they need but do not get</li>
+          </ul>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-m">Examples</h2>
+            <p>“At least 5 times a week, they have difficulty cutting up their food at dinner because their right hand hurts when they hold a knife. They need adapted cutlery so they can cut up their food themselves.”</p>
+            <p>“They always have difficulty eating enough food at meal times to keep healthy because they are preoccupied with their weight and get very upset. Their partner prompts them to manage their portion size and eat their meals.”</p>
+          </div>
+          <h2 class="govuk-heading-m">Tell us about the difficulties they have with eating 
+            and drinking and how they manage them</h2>
+        '
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "./_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

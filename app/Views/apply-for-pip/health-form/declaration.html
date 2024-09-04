@@ -1,0 +1,40 @@
+{% set pageTitle = "Declaration" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Declaration</h1>
+
+      <p>The information I have given on this form is correct and complete.</p>
+
+      <p>I have provided the best information available to me at this time to support the claim.</p>
+
+      <p>I will tell the Department for Work and Pensions straightaway, by phone or in writing, of any changes that may affect the claim. </p>
+
+      <p>If James' ability to carry out day-to-day activities or get around improves or gets worse, the amount of Personal Independence Payment (PIP) they get might change.</p>
+
+      <p>If the information I provide you is wrong or incomplete, or I do not report changes straightaway:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>James' PIP payments might stop or reduce</li>
+        <li>you might be paid too much PIP and have to pay this back</li>
+        <li>you might have to pay a financial penalty</li>
+        <li>you might be prosecuted
+      </li>
+
+      </ul>
+
+      <a href="confirmation" class="govuk-button">I agree – send the information</a>
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
