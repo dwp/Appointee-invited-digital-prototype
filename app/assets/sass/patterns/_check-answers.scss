@@ -1,0 +1,6 @@
+.check-info {
+  @include govuk-responsive-margin(6, "bottom");
+  span {
+    padding-right: govuk-spacing(4);
+  }
+}

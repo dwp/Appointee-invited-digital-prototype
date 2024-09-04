@@ -1,0 +1,358 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import ".tmp/sass/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/related-items";
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+@import "patterns/related-items";
+@import "patterns/check-answers";
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+// styles for p5
+
+.card {
+  border: 1px solid $govuk-border-colour;
+  margin-bottom: 20px;
+}
+
+.card-head {
+  padding: 1em;
+  background-color: govuk-colour("light-grey");
+}
+
+.card-body {
+  padding: 1em;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  h1, h2, h3, h4, h5, h6, ul {
+    max-width: 600px
+  }
+
+  h5 {
+    margin-bottom: 10px !important;
+  }
+
+}
+
+.responsive-image img {
+  width: 100%;
+  margin-bottom: govuk-spacing(2);
+}
+
+.sans * {
+  font-family: sans-serif !important;
+}
+
+// Task list pattern
+
+.tag-started {
+  background-color: govuk-colour("white");
+  color: govuk-colour("blue");
+  border: 2px solid govuk-colour("blue");
+}
+
+.tag-inprogress {
+  background-color: govuk-colour("white");
+  color: govuk-colour("blue");
+  border: 2px solid govuk-colour("blue");
+}
+
+.tag-notstarted {
+  background-color: govuk-colour("light-grey");
+  color: govuk-colour("dark-grey");
+  border: 2px solid govuk-colour("light-grey");
+}
+
+// // Tag layout to include the label within the link
+
+.app-task-list__task-name {
+  span {
+    display: block;
+  }
+}
+
+.app-task-list__item .govuk-tag {
+  display: inline-block;
+  clear: both;
+}
+
+@include govuk-media-query($from: 450px) {
+  .app-task-list__task-name {
+    width: 100%;
+    span {
+      display: inline;
+    }
+  }
+}
+
+@include govuk-media-query($from: 450px) {
+  .app-task-list__item .govuk-tag {
+    display: inline;
+    width: auto;
+  }
+}
+
+// downloads
+
+.responsive-image {
+  width: 100%;
+}
+
+// uploading
+
+.progress-container {
+  background-image: url(/public/images/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center top;
+  text-align: center;
+  padding-top: 40px;
+  min-height: 400px;
+}
+
+
+//
+
+.govuk-panel__title {
+  @include govuk-font($size: 36);
+  font-weight: bold;
+}
+
+a:visited {
+  color: $govuk-link-colour;
+}
+
+.govuk-phase-banner a:visited {
+  color: $govuk-link-colour;
+}
+
+.placeholder {
+  background-color: #eee;
+  padding: 80px;
+  text-align: center;
+  margin-bottom: govuk-spacing(2);
+}
+
+.indent-hairline {
+  border-left: 1px solid #b1b4b6;
+  padding-left: 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+.notify-width-container {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.notify-width-container-border {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: -10px;
+  padding-top: 10px;
+  border-bottom: 10px solid #1d70b8;
+}
+
+.thumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include govuk-font($size: 19);
+  li a {
+    margin: 0 10px 20px 0;
+    padding: 0;
+    max-width: 200px;
+    padding: 10px;
+    border: 1px solid $govuk-border-colour;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    min-height: 150px;
+  }
+  a,
+  a:visited {
+    color: $govuk-text-colour;
+    text-decoration: none;
+    &:hover {
+      background-color: #F8F7F7;
+    }
+  }
+}
+
+.thumb {
+  width: 100%;
+  max-width: 300px;
+}
+
+.app-task-list__intro {
+  padding-left: 30px;
+}
+
+body .interruption{
+  background-color: $govuk-link-colour;
+  padding: 20px;
+  p, h1 {
+    color: white;
+    max-width: 540px;
+  }
+  .govuk-button {
+    background-color: white;
+    color: black
+  }
+}
+
+// Guide page
+.govspeak .steps, .gem-c-govspeak .steps {
+  padding-left: 0;
+  margin-left: 0;
+  overflow: hidden;
+  ol, ul {
+    list-style: decimal;
+    list-style-position: outside;
+    margin-left: 20px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .govspeak ol, .govspeak ul, .govspeak p, .gem-c-govspeak ol, .gem-c-govspeak ul, .gem-c-govspeak p {
+    margin-top: 20px;
+    margin-bottom:20px
+  }
+}
+
+.govspeak .steps > li, .gem-c-govspeak .steps > li {
+  background-position: 0 .87em;
+  background-repeat: no-repeat;
+  list-style-type: decimal;
+  margin-left: 0;
+  padding:.75em 0 .75em 2.5em;
+  p {
+    margin: 0;
+  }
+}
+.govspeak .steps > li:nth-child(1), .gem-c-govspeak .steps > li:nth-child(1) {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E1%3C/text%3E%3C/g%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: .2em .7em;
+  background-size:1.4em 1.4em
+}
+.govspeak .steps > li:nth-child(2), .gem-c-govspeak .steps > li:nth-child(2) {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E2%3C/text%3E%3C/g%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: .2em .7em;
+  background-size:1.4em 1.4em
+}
+.govspeak .steps > li:nth-child(3), .gem-c-govspeak .steps > li:nth-child(3) {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E3%3C/text%3E%3C/g%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: .2em .7em;
+  background-size:1.4em 1.4em
+}
+.govspeak .address, .govspeak .contact, .gem-c-govspeak .address, .gem-c-govspeak .contact {
+  border-left: 1px solid #b1b4b6;
+  padding-left: 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+// email layout styles
+.govuk-container-centred {
+  margin: 0 auto;
+  float: none;
+}
+
+.govuk-email-container {
+  border: 1px solid $govuk-border-colour;
+  padding: 0;
+
+  .govuk-width-container {
+    padding-left: govuk-spacing(6);
+    padding-right: govuk-spacing(6);
+  }
+
+  .govuk-email-content {
+    padding-top: govuk-spacing(6);
+  }
+}
+
+// Magic link we can use during UR sessions
+.usability-testing-link {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: govuk-colour("orange");
+  &:hover {
+    width: 47px;
+    height: 47px;
+  }
+  &:focus {
+    width: 47px;
+    height: 47px;
+    background-color: $govuk-focus-colour;
+  }
+}
+.flow {
+  max-width: 100%;
+  @include govuk-responsive-margin(4, "bottom");
+}
+.panel--prototype {
+  background-color: govuk-colour("light-grey");
+  @include govuk-responsive-padding(4, "top");
+  @include govuk-responsive-padding(4, "left");
+  @include govuk-responsive-padding(4, "right");
+  border: 2px dashed  govuk-colour("mid-grey");
+  @include govuk-responsive-margin(6, "bottom");
+}
+
+// Overlay and popup
+body.overlay {
+  overflow: hidden;
+
+  .overlay-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.85);
+    z-index: 100;
+  }
+
+  .popup {
+    width: 50%;
+    background-color: white;
+    z-index: 1000;
+    padding: govuk-spacing(6);
+    margin: 60px auto;
+  }
+}
