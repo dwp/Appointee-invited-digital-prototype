@@ -1,0 +1,248 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="working-living-abroad" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="#">
+
+        <div class="govuk-width-container">
+            <main class="govuk-main-wrapper " id="main-content" role="main">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                  <h1 class="govuk-heading-l">Check your answers</h1>
+
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        First name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['first-name'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden">  fisrt name</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Last name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                      {{ data['last-name'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        National Insurance number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['nino'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> national insurance number</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Date of birth
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['dob-day'] }} - {{ data['dob-month'] }} - {{ data['dob-year'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> date of birth</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Address
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['address-line-1'] }}<br>
+                        {{ data['address-line-2'] }}<br>
+                        {{ data['address-county'] }}<br>
+                        {{ data['address-postcode'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> address</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Can we write to you at this address?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['safe-address'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> safe address</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+
+                  <!--  {% if data['safe-address'] === 'No' %} -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Address
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['other-address-line-1'] }}<br>
+                        {{ data['other-address-line-2'] }}<br>
+                        {{ data['other-address-county'] }}<br>
+                        {{ data['other-address-postcode'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> address</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                  <!--  {% endif %} -->
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Phone number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['phone-number'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> phone number</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Contact preference
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['contact-preference'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> contact preference</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Do you need another communication format E.G. Braille, large print or CD audio?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['communication-format'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> communication format</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+
+                    {% if data['communication-format'] === 'Yes' %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        What format do you need communications in?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['communication-format']['format-type'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> other communication format</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    {% endif %}
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        What is your nationality?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['nationality'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> nationality</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+
+                    {% if data['nationality'] === 'Another nationality' %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Which nationality are you?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['nationality-extra'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden">  another nationality</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    {% endif %}
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Which country do you normally live in?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['country'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> where you live</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have you been abroad for more than 4 weeks at a time in the last 3 years?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['outside-britain'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> time abroad</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                  </dl>
+
+                  <input type="submit" class="govuk-button" value="Confirm and continue to how your disability or condition affects you" id="submit">
+                </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
+              </div> <!-- govuk-grid-row -->
+
+            </main>
+        </div> <!-- govuk-width-container -->
+
+  </form>
+
+{% endblock %}

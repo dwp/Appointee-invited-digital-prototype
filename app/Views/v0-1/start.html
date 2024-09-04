@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="special-rules">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Personal Independence Payment (PIP)
+        </h1>
+
+        <p>You have bee invited to apply for Personal Independence Payment (PIP) using the new online service.</p>
+
+        <h2 class="govuk-heading-l">What to expect.</h2>
+        <ol class="govuk-list govuk-list--number">
+          <li>You'll be asked some initial questions to make sure this service is right for you and so that we only ask you for information that's relevant to your situation.</li>
+          <li>You'll be advised whether or not you may be eligilbe to apply. If you're not eligible we will tell you why and what else might help your situation.</li>
+          <li>If you are eligible to apply you'll be asked to complete some further questions about your conditions and how they affect your daily life. You may also be asked to upload some supporting information such as a hospital report.</li>
+          <li>When you have answered all the questions you will be able to check your answers before submitting your application.</li>
+          <li>DWP will look at your application to see if they can make a decision. You may be invited to a health assessment if there isn't enough information in your application.</li>
+          <li>You will receive a decision in the post. If you disagree with the decision you can ask for it to be looked at again.</li>
+        </ol>
+
+        <input type="submit" class="govuk-button govuk-!-margin-top-6" value="Check eligibility" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check you answers
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="where-you-live" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="eligible">
+
+    <input type="hidden" name="special-rules" value="{{ data['special-rules'] }}">
+    <input type="hidden" name="over-16" value="{{ data['over-16'] }}">
+    <input type="hidden" name="condition" value="{{ data['condition'] }}">
+    <input type="hidden" name="where-lived" value="{{ data['where-lived'] }}">
+
+        <div class="govuk-width-container">
+            <main class="govuk-main-wrapper " id="main-content" role="main">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                  <h1 class="govuk-heading-l">Check your answers</h1>
+
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Do you want to claim under the Special Rules for Terminaslly Ill people?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['terminally-ill'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="special-rules">
+                          Change<span class="govuk-visually-hidden"> special rules</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Are you applying on behalf of someone else?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['someone-else'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> apply for someone else</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                      Are you over 16 but under State Pension age?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['over-16'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> over 16</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Do you find it hard to do daily activities or get around because of a health condition?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['condition'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> health condition</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+
+                    {% if data ['condition'] === 'Yes'%}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have you had the health condition or disability for more than 3 months?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['over-3-months'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> condition over 3 months</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Is the health condition or disability expected to last at least another 9 months?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['over-9-months'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> condition over 3 months</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    {% endif %}
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have you lived in England, Scotland or Wales for at least 2 of the last 3 years?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['where-lived'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> where they live</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                  </dl>
+
+                  <input type="submit" class="govuk-button" value="Confirm and submit" id="submit">
+                </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
+              </div> <!-- govuk-grid-row -->
+
+            </main>
+        </div> <!-- govuk-width-container -->
+
+  </form>
+
+{% endblock %}

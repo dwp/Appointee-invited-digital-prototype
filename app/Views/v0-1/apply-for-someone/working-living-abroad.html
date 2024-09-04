@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Working and living abroad
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="nationality" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="check-answers-2">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl">Working and living abroad</h1>
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="country">
+                Which country do they normally live in?
+              </label>
+            </h2>
+            <input class="govuk-input govuk-input--width-20" id="country" name="afse-country" type="text">
+        </div> <!-- govuk-form-group -->
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Have they been abroad for more than 4 weeks at a time in the last 3 years?
+              </h1>
+            </legend>
+            <div id="outside-britain-hint" class="govuk-hint">
+              By 'abroad' we mean outside Great Britain or Northern Ireland.<br>
+              Include holidays of more than 4 weeks.
+            </div>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="outside-britain" name="afse-outside-britain" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="outside-britain">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="outside-britain-2" name="afse-outside-britain" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="outside-britian-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}

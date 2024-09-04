@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Not eligible
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="apply">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Based on your answers you will not be eligible for Personal Independence Payment
+        </h1>
+        <p>This is because .....[an answer has been given that doesn't meet the eligility criteria]
+        <p>You can still apply and we will ask for more details about [the answer that didn't meet the eligility criteria].</p>
+        <p>You can also <a href="#">see what other benefits aee available</a></p>
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}
