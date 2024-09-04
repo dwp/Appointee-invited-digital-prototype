@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Error: Enter your email address -
+        {{ serviceName  }}
+    - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/phase-banner.njk' %}
+   
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+                {
+                text: "Enter your email address",
+                href: "#register-email-address"
+                }
+            ]
+            }) }}
+                {{ govukFieldset({
+                    legend: {
+                        html: "Enter your email address",
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                <p>We will send a security code to this email address.</p>
+
+               
+
+                <div class="govuk-form-group  govuk-form-group--error govuk-!-margin-top-6">
+                    <label class="govuk-label" for="email-security-code">
+                        Email address
+                    </label>
+                    <span id="security-code-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Enter your email address
+                    </span>
+                    <input class="govuk-input govuk-!-width-full-width" id="register-email-address" name="register-email-address" type="text">
+                </div>
+
+                
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+        </div>
+    </div>
+{% endblock %}

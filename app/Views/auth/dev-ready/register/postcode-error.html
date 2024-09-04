@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Error: What is your postcode? -
+        {{ serviceName  }}
+    - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/phase-banner.njk' %}
+   
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="/idv/hmrciv/start-page" method="post">
+                {{ govukErrorSummary({
+                  "titleText": "There is a problem",
+                  "errorList": [
+                    {
+                      "text": "Enter a real postcode",
+                      "href": "#postcode"
+                    }
+                  ]
+                }) }}
+
+                {{ govukFieldset({
+                    legend: {
+                        html: "What is your postcode?",
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                {{ govukInput({
+                  label: {
+                    text: "Postcode"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "postcode",
+                  name: "postcode",
+                  value: "LS1666HL",
+                  errorMessage: {
+                    text: "Enter a real postcode"
+                  },
+                  autocomplete: "postal-code"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

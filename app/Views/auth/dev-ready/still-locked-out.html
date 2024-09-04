@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You are still locked out -
+        {{ serviceName  }}
+    - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/phase-banner.njk' %}
+    {% include 'includes/language-toggle.njk' %}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">You are still locked out</h1>
+
+            <p>This is because you have tried to sign in unsuccessfully too many times.</p>
+
+            <p>You will be able to <a href="sign-in">try again</a> after 15 minutes have passed from when you last tried to sign in.</p>
+
+        </div>
+    </div>
+{% endblock %}

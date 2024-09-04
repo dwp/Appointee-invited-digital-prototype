@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Register - {{ serviceName }} - GOV.UK 
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/phase-banner.njk' %}
+    
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Register</h1>
+
+            <p>Create an account so you can sign in securely each time you visit.</p>
+
+            <!-- <div class="govuk-inset-text">
+              <a href="/auth/default/sign-in">I have already registered</a>
+            </div> -->
+            <p>
+              <a href="/auth/dev-ready/sign-in">I have already registered</a>
+            </p>
+
+            <h2 class="govuk-heading-m">Before you start</h2>
+            <p>You will need:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>an email address</li>
+                <li>a mobile phone</li>
+            </ul>
+
+            <p>You will also need information from 2 sources so we can check we are dealing with the right person. You can choose from:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>a UK passport</li>
+                <li>payslips or P60</li>
+                <li>information about tax credits, if you claim them</li>
+                <li>details of your bank accounts, loans, mortgages or credit agreements</li>
+            </ul>
+
+            <p><a href="">I do not have this information</a></p>
+
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p>We will send security codes to your email and mobile phone to check that they belong to you.</p>
+            <p>You will create a password, which you will use with your email address to sign in securely.</p>
+            <p>We will ask some questions to check we are dealing with the right person and to protect you against fraud. We will then check this information against our records.</p>
+            <p>Each time you sign in we will send a new security code to your mobile phone.</p>
+            
+            {{ govukButton({
+                text: "Continue",
+                href: "email-address.html"
+            }) }}
+
+        </div>
+    </div>
+{% endblock %}

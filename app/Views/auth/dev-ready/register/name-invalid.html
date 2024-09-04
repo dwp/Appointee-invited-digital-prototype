@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Error: What is your name?  -
+        {{ serviceName  }}
+    - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/phase-banner.njk' %}
+   
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: "First name must only include letters a to z, hyphens, spaces and apostrophes",
+                  href: "#first-name"
+                },
+                {
+                  text: "Last name must only include letters a to z, hyphens, spaces and apostrophes",
+                  href: "#last-name"
+                }
+              ]
+            }) }}
+
+            <form action="date-of-birth" method="post">
+                {{ govukFieldset({
+                    legend: {
+                        html: "What is your name?",
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                {{ govukInput({
+                    label: {
+                        text: "First name"
+                    },
+                    errorMessage: {
+                      text: "First name must only include letters a to z, hyphens, spaces and apostrophes"
+                    },
+                    id: "first-name",
+                    name: "first-name",
+                    classes: "govuk-!-width-two-thirds govuk-input--error"
+                }) }}
+
+                {{ govukInput({
+                    label: {
+                        text: "Last name"
+                    },
+                    errorMessage: {
+                      text: "Last name must only include letters a to z, hyphens, spaces and apostrophes"
+                    },
+                    id: "last-name",
+                    name: "last-name",
+                    classes: "govuk-!-width-two-thirds govuk-input--error"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

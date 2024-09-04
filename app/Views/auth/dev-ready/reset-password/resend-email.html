@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Send me a new email -
+        {{ serviceName  }}
+    - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/phase-banner.njk' %}
+   
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Send me a new email</h1>
+
+            <p>We will send you an email with a new security code.</p>
+
+            <p>If you have not received an email after several attempts check your junk folders. If you have still not received a code, try again later.</p>
+
+           <!-- {{ govukDetails({
+                summaryText: "After several attempts, I have not received an email",
+                html: '<p>Check your junk folders. If you cannot find your security code the email address you entered may be wrong.</p>  <p><a href="email">Enter your email address again</a> and we will send a new code.</p> <p>If you still do not receive a code, try again later.</p>'
+            }) }} -->
+
+            {{ govukButton({
+                text: "Continue",
+                href: "email-code.html"
+            }) }}
+
+            <p><a href="../account-recovery/access">I cannot access the email address I use to sign in</a></p>
+
+
+        </div>
+    </div>
+{% endblock %}
