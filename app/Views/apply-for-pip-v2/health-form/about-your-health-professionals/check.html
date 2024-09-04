@@ -1,0 +1,174 @@
+{% set pageTitle = "Check your answers: about your health or care professionals" %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Check your answers: about your health or care professionals</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are there any health or care professionals you would like to tell us about
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['health-hcps'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> health and care professional consent</span>
+          </a>
+        </dd
+      </div> <!-- govuk-summary-list__row -->
+
+    </dl>
+
+    {% if data['health-hcps'] === 'Yes' %}
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">{{ data['hcp-1-name'] }}</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> of {{ data['hcp-1-name'] }}</span>
+            </a>
+          </li>
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Remove<span class="govuk-visually-hidden"> {{ data['hcp-1-name'] }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-1-name'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Profession
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-1-profession'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-1-phone'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-1-address-line-1'] }}<br>
+              {{ data['hcp-1-address-line-2'] }}<br>
+              {{ data['hcp-1-address-town'] }}<br>
+              {{ data['hcp-1-address-county'] }}<br>
+              {{ data['hcp-1-address-postcode'] }}<br>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Last contact
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-1-last-contact'] }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    {% if data['professional2'] === 'Yes' %}
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">{{ data['hcp-2-name'] }}</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> of {{ data['hcp-1-name'] }}</span>
+            </a>
+          </li>
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Remove<span class="govuk-visually-hidden"> {{ data['hcp-1-name'] }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-2-name'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Profession
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-2-profession'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-2-phone'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-2-address-line-1'] }}<br>
+              {{ data['hcp-2-address-line-2'] }}<br>
+              {{ data['hcp-2-address-town'] }}<br>
+              {{ data['hcp-2-address-county'] }}<br>
+              {{ data['hcp-2-address-postcode'] }}<br>
+              {{ data['hcp-2-address-country'] }}<br>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Last contact
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hcp-2-last-contact'] }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    {% endif %}
+
+    <p><a href="#">Add another health or care professional</a></p>
+    {% endif %}
+
+    <p><a href="../task-list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and save</a></p>
+
+    <!-- <p><a href="../task-list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and save</a></p> -->
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

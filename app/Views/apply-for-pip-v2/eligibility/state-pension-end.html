@@ -1,0 +1,39 @@
+{% block pageTitle %}
+Based on your answers, you may be eligible for PIP or Attendance Allowance
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Based on your answers, you may not be eligible for PIP</h1>
+
+      <p>Most people over State Pension age cannot get PIP.</p>
+
+      <p>You might be eligible for <a href="https://www.gov.uk/attendance-allowance">Attendance Allowance</a> instead.</p>
+
+      <p>You might still be eligible for PIP if:
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you had a PIP award that stopped in the last year</li>
+        <li>you're getting Disability Living Allowance or it stopped in the last year</li>
+      </ul>
+
+      <p>You can still claim PIP if you think you're eligible but you cannot claim online.</p>
+
+      <p><a href="https://www.gov.uk/pip/how-to-claim">Find out about other ways to claim PIP</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

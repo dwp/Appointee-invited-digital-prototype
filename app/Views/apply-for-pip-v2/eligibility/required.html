@@ -1,0 +1,64 @@
+{% block pageTitle %}
+Do you have all of the following?
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">What you will need to claim online</h1>
+
+      <p>You will need your:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>National Insurance number</li>
+        <li>email address</li>
+        <li>mobile phone</li>
+      </ul>
+
+      <p>This is so you can create a password which will let you save your answers and return later.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="required-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you have what you need to claim online?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="required-1" name="required" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="required-1">
+                 Yes
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="required-2" name="required" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="required-2">
+                   No
+                </label>
+              </div> <!-- govuk-radios__item -->
+          </div> <!-- govuk-radios govuk-radios -->
+
+        </fieldset>
+      </div>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}

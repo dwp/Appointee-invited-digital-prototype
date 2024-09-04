@@ -1,0 +1,41 @@
+{% set pageTitle = "Enter your email address" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out-dth.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" method="post" novalidate>
+
+        <h1 class="govuk-heading-xl">Enter your email address</h1>
+
+        <p>We will send a security code to this email address.</p>
+
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          classes: "govuk-input--width-10",
+          id: "email",
+          name: "email",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

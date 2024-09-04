@@ -1,0 +1,39 @@
+{% set pageTitle = "A 6 digit code has been texted to mobile number ending 789" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-xl">A 6 digit code has been texted to mobile number ending 789</h1>
+
+      <p>The code expires after 5 minutes.</p>
+
+      <p>Do not close this screen before you enter the code unless you need to request another.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="code">Enter your 6 digit code</label>
+        <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6"
+          data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+      </div>
+
+      <p>When you continue we will email another 6 digit code to you.</p>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      <p><a href="code-text-get-another">I need a new code</a></p>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
